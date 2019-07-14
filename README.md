@@ -35,6 +35,10 @@ Follow these steps for completing your project.
 
 ## Minimum Viable Product
 
+- [ ] Render a list of team members from state
+- [ ] Build a form to add a new member to the list of members
+- [ ] Add the functionality to edit team members
+
 ### STEP 1 - Setup your state
 
 - Import the `useState` hook
