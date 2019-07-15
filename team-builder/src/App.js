@@ -22,7 +22,7 @@ function App() {
   ]);
 
   const addMember = (e) => {
-
+    console.log(e)
   }
   return (
     <div className="App">

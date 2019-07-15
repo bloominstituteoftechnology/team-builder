@@ -11,8 +11,12 @@ const Form = props => {
   const changeHandler = e => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
+  const addMember = e => {
+      e.preventDefault()
+      props.addMember(formState)
+  }
   return (
-    <form>
+    <form onSubmit={addMember}>
       <label>Name</label>
       <input
         type="text"
@@ -50,6 +54,7 @@ const Form = props => {
         value={formState.favFood}
         name="favFood"
       />
+      <button>ADD</button>
     </form>
   );
 };
