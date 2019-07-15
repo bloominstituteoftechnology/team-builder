@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 
 const Form = props => {
-  const [formState, setFormState] = useState({
-    name: "",
-    age: "",
-    email: "",
-    occupation: "",
-    favFood: ""
-  });
+  const [formState, setFormState] = useState(
+    props.edit
+      ? props.member
+      : {
+          name: "",
+          age: "",
+          email: "",
+          occupation: "",
+          favFood: ""
+        }
+  );
   const changeHandler = e => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
   const addMember = e => {
-      e.preventDefault()
-      props.addMember(formState)
-  }
+    e.preventDefault();
+    props.addMember(formState);
+  };
   return (
     <form onSubmit={addMember}>
       <label>Name</label>
