@@ -22,7 +22,8 @@ function App() {
   ]);
 
   const addMember = (e) => {
-    console.log(e)
+    setMembers([...members, e])
+    console.log(members)
   }
   return (
     <div className="App">
