@@ -8,6 +8,7 @@ const Form = props => {
     occupation: "",
     favFood: ""
   });
+  useEffect(() => setFormState(props.edit.member), [props.edit]);
   const changeHandler = e => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
