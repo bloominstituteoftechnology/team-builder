@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Form = props => {
   const [formState, setFormState] = useState(
@@ -19,6 +19,7 @@ const Form = props => {
     e.preventDefault();
     props.addMember(formState);
   };
+  console.log("formstate", formState, "editfromProps", props.edit);
   return (
     <form onSubmit={addMember}>
       <label>Name</label>

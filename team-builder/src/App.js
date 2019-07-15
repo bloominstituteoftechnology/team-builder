@@ -47,7 +47,6 @@ function App() {
     setEdit({ edit: true, member: member });
     // console.log("edit", member)
   };
-  console.log(edit);
   return (
     <div className="App">
       <TeamMemberList members={members} editMember={editMember} />
