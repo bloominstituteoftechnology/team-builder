@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Form = props => {
 
-    const [formState, setFormState] = useState({
-        name: '',
-        age: '',
-        email: '',
-        occupation: '',
-        favFood: ''
-    })
-  const changeHandler = e => {};
+
   return (
     <form>
       <label>Name</label>

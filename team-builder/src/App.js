@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import TeamMemberList from "./views/TeamMemberList";
-import Form from "./components/Form"
+import Form from "./components/Form";
 
 function App() {
   const [members, setMembers] = useState([
@@ -20,6 +20,15 @@ function App() {
       favFood: "Asparagus"
     }
   ]);
+
+  const [formState, setFormState] = useState({
+    name: "",
+    age: "",
+    email: "",
+    occupation: "",
+    favFood: ""
+  });
+  const changeHandler = e => {};
   return (
     <div className="App">
       <TeamMemberList members={members} />
