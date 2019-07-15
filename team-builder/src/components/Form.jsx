@@ -16,7 +16,6 @@ const Form = props => {
     e.preventDefault();
     props.addMember(formState);
   };
-  console.log("formstate", formState, "editfromProps", props.edit);
   return (
     <form onSubmit={addMember}>
       <label>Name</label>

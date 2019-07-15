@@ -45,6 +45,7 @@ function App() {
   });
 
   const addMember = e => {
+    id += 1
     setMembers([...members, e]);
   };
   const editMember = name => {
@@ -52,6 +53,7 @@ function App() {
     setEdit({ edit: true, member: member });
     // console.log("edit", member)
   };
+  console.log(id)
   return (
     <div className="App">
       <TeamMemberList members={members} editMember={editMember} />
