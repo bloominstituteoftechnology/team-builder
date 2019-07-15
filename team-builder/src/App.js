@@ -6,6 +6,7 @@ import Form from "./components/Form";
 function App() {
   const [members, setMembers] = useState([
     {
+      id: 0,
       name: "Jeff",
       age: "26",
       occupation: "Chef",
@@ -13,6 +14,7 @@ function App() {
       email: "test123@yahoo.com"
     },
     {
+      id: 1,
       name: "April",
       age: "20",
       occupation: "Jr Developer",
@@ -20,6 +22,7 @@ function App() {
       email: "turlesarepeopletoo@hotmail.com"
     },
     {
+      id: 2,
       name: "Devin",
       age: "43",
       occupation: "Marketing Director",
@@ -27,6 +30,7 @@ function App() {
       email: "blahblah@gmail.com"
     },
     {
+      id: 3,
       name: "Maddie",
       age: "31",
       occupation: "Self - Employed",
