@@ -20,12 +20,13 @@ function App() {
       favFood: "Asparagus"
     }
   ]);
+  const [edit, setEdit] = useState(false)
 
   const addMember = (e) => {
     setMembers([...members, e])
   }
   const editMember = e => {
-    console.log("edit")
+    console.log("edit", e)
   }
   return (
     <div className="App">
