@@ -20,18 +20,22 @@ function App() {
       favFood: "Asparagus"
     }
   ]);
-  const [edit, setEdit] = useState(false)
+  const [edit, setEdit] = useState({
+    edit: false,
+    member: {}
+  })
 
   const addMember = (e) => {
     setMembers([...members, e])
   }
   const editMember = name => {
-    setEdit(true)
     const member = members.find(mem => mem.name === name)
-    console.log("edit", member)
-    return member;
+    setEdit({edit: true, member: member})
+    // console.log("edit", member)
   }
+  console.log(edit)
   return (
+    
     <div className="App">
       <TeamMemberList members={members} editMember={editMember}/>
       <Form addMember={addMember} edit={edit}/>

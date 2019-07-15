@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 const Form = props => {
   const [formState, setFormState] = useState(
-    props.edit
-      ? props.member
+    props.edit.edit
+      ? props.edit.member
       : {
           name: "",
           age: "",
