@@ -22,12 +22,12 @@ function App() {
   ]);
 
   const addMember = (e) => {
-    
+
   }
   return (
     <div className="App">
       <TeamMemberList members={members} />
-      <Form />
+      <Form addMember={addMember}/>
     </div>
   );
 }
