@@ -45,19 +45,18 @@ function App() {
   });
 
   const addMember = e => {
-    id += 1
     setMembers([...members, e]);
+    console.log(id)
   };
   const editMember = name => {
     const member = members.find(mem => mem.name === name);
     setEdit({ edit: true, member: member });
     // console.log("edit", member)
   };
-  console.log(id)
   return (
     <div className="App">
       <TeamMemberList members={members} editMember={editMember} />
-      <Form addMember={addMember} edit={edit} />
+      <Form addMember={addMember} edit={edit} members={members}/>
     </div>
   );
 }

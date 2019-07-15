@@ -14,10 +14,13 @@ const Form = props => {
   };
   const addMember = e => {
     e.preventDefault();
-    props.addMember(formState);
+    const id =  props.members.length === 0 ? 0 : props.members[props.members.length -1].id + 1
+
+    props.addMember({...formState, id});
   };
   return (
-    <form onSubmit={addMember}>
+    <form onSubmit={addMember} className="member-form">
+        <legend><h2>Member Info</h2></legend>
       <label>Name</label>
       <input
         type="text"
@@ -29,6 +32,7 @@ const Form = props => {
       <label>Age</label>
       <input
         type="number"
+        placeholder="age"
         onChange={changeHandler}
         value={formState.age}
         name="age"
@@ -44,6 +48,7 @@ const Form = props => {
       <label htmlFor="">Occupation</label>
       <input
         type="text"
+        placeholder="occupation"
         onChange={changeHandler}
         value={formState.occupation}
         name="occupation"
@@ -51,6 +56,7 @@ const Form = props => {
       <label htmlFor="">Favorite Food</label>
       <input
         type="text"
+        placeholder="favorite food"
         onChange={changeHandler}
         value={formState.favFood}
         name="favFood"

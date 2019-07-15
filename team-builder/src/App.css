@@ -5,6 +5,7 @@
 }
 .App {
   text-align: center;
+  position: relative;
 }
 
 .member {
@@ -14,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   padding: 15px;
-  margin: 10px auto;
+  margin: 10px;
 }
 .member aside {
   display: flex;
@@ -31,4 +32,18 @@
   font-size: 1.5rem;
   align-self: center;
   width: 40%;
+}
+.member-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+}
+.member-form input {
+  display: block;
 }
