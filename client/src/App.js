@@ -5,7 +5,9 @@ import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   const [team, setTeam] = useState([{id:1,email:'steve@dave.com',name:'Steve',role:'Front End Developer'}]);
-  const [newMem, setnewMem] = useState({email:'',name:'',role:''});
+  const [newMem, setNewMem] = useState({email:'',name:'',role:''});
+  const [editNum, setEditNum] = useState(0);
+  
   return (
     <div className="App">
         <Segment placeholder>
@@ -36,7 +38,7 @@ function App() {
 
             <Grid.Column textAlign='justified' verticalAlign='middle'>
               <Card.Group>
-                {team.map(mem => <TeamCard {...mem} />)}
+                {team.map(mem => <TeamCard {...mem} editNum={editNum} toggleEdit={toggleEdit}/>)}
               </Card.Group>
             </Grid.Column>
           </Grid>
@@ -47,12 +49,15 @@ function App() {
   );
 
   function changeHandler(e) {
-    setnewMem({...newMem, [e.target.name]:e.target.value});
+    setNewMem({...newMem, [e.target.name]:e.target.value});
   }
   function addNewMember(e) {
     e.preventDefault();
     setTeam([...team, {...newMem, id:team.length+1}]);
-    setnewMem({email:'',name:'',role:''})
+    setNewMem({email:'',name:'',role:''})
+  }
+  function toggleEdit(id) {
+    editNum === id ? setEditNum() : setEditNum(id);
   }
 }
 
