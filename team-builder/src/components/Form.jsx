@@ -8,7 +8,9 @@ const Form = props => {
     occupation: "",
     favFood: ""
   });
-  const changeHandler = e => {};
+  const changeHandler = e => {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  };
   return (
     <form>
       <label>Name</label>
