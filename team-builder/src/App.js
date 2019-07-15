@@ -23,11 +23,13 @@ function App() {
 
   const addMember = (e) => {
     setMembers([...members, e])
-    console.log(members)
+  }
+  const editMember = e => {
+    console.log("edit")
   }
   return (
     <div className="App">
-      <TeamMemberList members={members} />
+      <TeamMemberList members={members} editMember={editMember}/>
       <Form addMember={addMember}/>
     </div>
   );
