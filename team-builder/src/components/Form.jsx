@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 const Form = props => {
-  const [formState, setFormState] = useState(
-    props.edit.edit
-      ? props.edit.member
-      : {
-          name: "",
-          age: "",
-          email: "",
-          occupation: "",
-          favFood: ""
-        }
-  );
+  const [formState, setFormState] = useState({
+    name: "",
+    age: "",
+    email: "",
+    occupation: "",
+    favFood: ""
+  });
   const changeHandler = e => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
