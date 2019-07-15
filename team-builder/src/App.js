@@ -25,9 +25,11 @@ function App() {
   const addMember = (e) => {
     setMembers([...members, e])
   }
-  const editMember = e => {
+  const editMember = name => {
     setEdit(true)
-    console.log("edit", e)
+    const member = members.find(mem => mem.name === name)
+    console.log("edit", member)
+    return member;
   }
   return (
     <div className="App">
