@@ -58,14 +58,30 @@ Follow these steps for completing your project.
 
 Next we're going to reuse the `Form` component to edit team members
 
-- Update `Form.js` to take a prop called `memberToEdit`
-- Create a function in `App.js` that will edit one or more of the details of a team member and pass it down to the second form component
-- In the `initialState` that you are passing into the state hooks for your inputs, you'll want to write logic that checks to see if `props.memberToEdit` exists and pass that in as the `initialState`, otherwise pass in empty data. (This will populate the inputs if we are trying to edit a member, and keep it blank if we are just trying to add a new member)
-- You'll have to find a way to loop over the data in your state, find the specific team member you intend to edit, and finally change the details with the data sent up to you from the second form component. `.map()` will be your friend for that task. You'll also want to avoid directly mutating your data. The `...` spread operator will be your friend there
+**Get App.js ready for editing members**
+- Add an edit button, or an edit icon next to each member you are rendering. When the button/icon is clicked, we want to set that member to a state property in `App` called `memberToEdit`. The function to do this should live in `App`, even if the button/icon invoking it are in a different component. Just pass the function down as a prop.
+
+**Get Form.js ready to edit members**
+- Pass `memberToEdit` down to `Form.js`
+- If `Form` receives `props.memberToEdit`, then that member object should populate your state object that is controlling your forms. Now, it may be tempting to do something like this: `const [member, setMember] = useState(props.memberToEdit || {name: '', email: '', role: ''})` for our form to update with whatever member we click on. However, this is a trap that will cause a pretty big bug in our app. If props are used to set state like this, the state property will _NOT_ update when the prop changes. So... what kind of technique have we learned to keep something in sync with props when they change? `useEffect`! Write an effect that syncs with `props.memberToEdit`. When `props.memberToEdit` changes, the effect will update the `member` state object with the new data. This will populate the inputs with whichever member we are trying to update.
+
+The flow for editing is hard to conceptualize. It should go something like this:
+
+1. Our user clicks the `Edit` button/icon to start editing a team member
+1. A function in App is invoked that sets the clicked member to `memberToEdit` on state
+1. `Form.js` is receiving `memberToEdit` as a prop, and if that prop changes, the effect we built will set that object to state and populate the form with that member's info
+1. The user updates the member info
+1. Uh... now what do we do with this new data? If we submit the form, it will just add a new member 😫. Never fear! We will fix this in the next section!
 
 ### STEP 4 - Form submit
 
-This is an interesting bit of architecture we've done so far. We have built a reusable form that can be used to add a team member, or edit a team member. The last piece of the puzzle is this - when we submit the form, do we run an `addMember` function, or an `editMember` function? And how will the form know? Well, our form knows if we are editing a team member by whether or not there is the prop `memberToEdit`. So, when submitting the form, do an `if` check to see if that prop is there or not, and run the correct function based in the `if` block and the `else` block.
+
+This is an interesting bit of architecture we've done so far. We have built a reusable form that can be used to add a team member, or edit a team member. The last piece of the puzzle is this - when we submit the form, do we run an `addMember` function, or an `editMember` function? And how will the form know? Well, our form knows if we are editing a team member by whether or not there is the prop `memberToEdit`. (P.S. This can also be done with a boolean - something like `isEditing`...)
+
+Okay, now that we understand how `Form.js` knows if we are editing or creating members, we can finish this app!
+
+- Create a new function in `App.js` called `editMember` that will edit one or more of the details of a team member and pass it down to the second form component. You'll have to find a way to loop over the data in your state, find the specific team member you intend to edit, and finally change the details with the data sent up to you from the second form component. `.map()` will be your friend for that task. You'll also want to avoid directly mutating your data. The `...` spread operator will be your friend there.
+- On form submit, do an `if` check to see if the `memberToEdit` prop is there or not, and run the correct functions in the `if` and `else` blocks based on that check.
 
 Observe the power of reusability!
 
