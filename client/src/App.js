@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Button, Form} from 'semantic-ui-react';
+import {Button,Card,Form,Segment,Grid,Divider} from 'semantic-ui-react';
+import TeamCard from './TeamCard';
 import 'semantic-ui-css/semantic.min.css'
 
 function App() {
@@ -7,42 +8,50 @@ function App() {
   const [newMem, setnewMem] = useState({email:'',name:'',role:''});
   return (
     <div className="App">
-      <Form onSubmit={(e) => addNewMember(e)}>
-        <Form.Input
-          // control={Input}
-          label='Name'
-          name='name'
-          value={newMem.name}
-          onChange={(e) => changeHandler(e)}
-          width={4}
-        />
-        <Form.Input
-          // control={Input}
-          label='Email'
-          name='email'
-          value={newMem.email}
-          onChange={(e) => changeHandler(e)}
-          width={4}
-        />
-        <Form.Input
-          // control={Input}
-          label='Role'
-          name='role'
-          value={newMem.role}
-          onChange={(e) => changeHandler(e)}
-          width={4}
-        />
-        <Button type='submit'>Add New Member</Button>
-      </Form>
-      {team.map(mem => <p key={mem.id}>{mem.id}: {mem.name}</p>)}
+        <Segment placeholder>
+          <Grid columns={2} relaxed='very' stackable centered>
+            <Grid.Column>
+              <Form onSubmit={(e) => addNewMember(e)}>
+                <Form.Input
+                  label='Name'
+                  name='name'
+                  value={newMem.name}
+                  onChange={(e) => changeHandler(e)}
+                />
+                <Form.Input
+                  label='Email'
+                  name='email'
+                  value={newMem.email}
+                  onChange={(e) => changeHandler(e)}
+                />
+                <Form.Input
+                  label='Role'
+                  name='role'
+                  value={newMem.role}
+                  onChange={(e) => changeHandler(e)}
+                />
+                <Button type='submit'>Add New Member</Button>
+              </Form>
+            </Grid.Column>
+
+            <Grid.Column textAlign='justified' verticalAlign='middle'>
+              <Card.Group>
+                {team.map(mem => <TeamCard {...mem} />)}
+              </Card.Group>
+            </Grid.Column>
+          </Grid>
+
+          <Divider vertical hidden/>
+        </Segment>
     </div>
   );
+
   function changeHandler(e) {
     setnewMem({...newMem, [e.target.name]:e.target.value});
   }
   function addNewMember(e) {
     e.preventDefault();
-    setTeam([...team, {id:team.length+1,name:newMem.name}]);
+    setTeam([...team, {...newMem, id:team.length+1}]);
     setnewMem({email:'',name:'',role:''})
   }
 }
