@@ -1,18 +1,34 @@
 import React, {useState} from 'react';
-import {Button, Input, Form} from 'semantic-ui-react';
+import {Button, Form} from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css'
 
 function App() {
-  const [team, setTeam] = useState([{id:1,name:'Steve'}]);
-  const [newMem, setnewMem] = useState({name:''});
+  const [team, setTeam] = useState([{id:1,email:'steve@dave.com',name:'Steve',role:'Front End Developer'}]);
+  const [newMem, setnewMem] = useState({email:'',name:'',role:''});
   return (
     <div className="App">
       <Form onSubmit={(e) => addNewMember(e)}>
-        <Form.Field 
-          control={Input}
+        <Form.Input
+          // control={Input}
           label='Name'
           name='name'
           value={newMem.name}
+          onChange={(e) => changeHandler(e)}
+          width={4}
+        />
+        <Form.Input
+          // control={Input}
+          label='Email'
+          name='email'
+          value={newMem.email}
+          onChange={(e) => changeHandler(e)}
+          width={4}
+        />
+        <Form.Input
+          // control={Input}
+          label='Role'
+          name='role'
+          value={newMem.role}
           onChange={(e) => changeHandler(e)}
           width={4}
         />
@@ -22,12 +38,12 @@ function App() {
     </div>
   );
   function changeHandler(e) {
-    setnewMem({[e.target.name]:e.target.value})
+    setnewMem({...newMem, [e.target.name]:e.target.value});
   }
   function addNewMember(e) {
     e.preventDefault();
     setTeam([...team, {id:team.length+1,name:newMem.name}]);
-    setnewMem({name:''})
+    setnewMem({email:'',name:'',role:''})
   }
 }
 
