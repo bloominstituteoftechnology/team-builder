@@ -10,7 +10,7 @@ function App() {
     { name: "Maddie", age: "31", occupation: "Self - Employed", favFood: "Asparagus" }
   ]);
   return <div className="App" >
-    <TeamMemberList />
+    <TeamMemberList members={members} />
   </div>;
 }
 
