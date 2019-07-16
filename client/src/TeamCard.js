@@ -31,36 +31,36 @@ function TeamCard (props) {
 
                         <Form.Field
                         control={Radio}
+                        onChange={radioHandler}
+                        checked={thisMember.role === 'UX Designer'}
                         label='UX Designer'
                         value='UX Designer'
-                        checked={thisMember.role === 'UX Designer'}
-                        onChange={radioHandler}
                         />
                         <Form.Field
                             control={Radio}
+                            onChange={radioHandler}
+                            checked={thisMember.role === 'Front End Developer'}
                             label='Front End Developer'
                             value='Front End Developer'
-                            checked={thisMember.role === 'Front End Developer'}
-                            onChange={radioHandler}
                         />
                         <Form.Field
                             control={Radio}
+                            onChange={radioHandler}
+                            checked={thisMember.role === 'Back End Developer'}
                             label='Back End Developer'
                             value='Back End Developer'
-                            checked={thisMember.role === 'Back End Developer'}
-                            onChange={radioHandler}
                         />
                     </Form>
                 </Card.Content>
                 <Card.Content extra>
-                    <div className='ui two buttons'>
-                    <Button basic color='yellow' onClick={() => props.toggleEdit(props.id)}>
-                        Cancel
-                    </Button>
-                    <Button color='green' onClick={(e) => props.editMember(e, thisMember)}>
-                        Submit
-                    </Button>
-                    </div>
+                    <Button.Group compact widths={2}>
+                        <Button basic color='yellow' onClick={() => props.toggleEdit(props.id)}>
+                            Cancel
+                        </Button>
+                        <Button color='green' onClick={(e) => props.editMember(e, thisMember)}>
+                            Submit
+                        </Button>
+                    </Button.Group> 
                 </Card.Content>
             </>
             ) : (
@@ -71,14 +71,14 @@ function TeamCard (props) {
                     <Card.Description>{props.role}</Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                    <div className='ui two buttons'>
-                    <Button color='yellow' onClick={() => props.toggleEdit(props.id)}>
-                        Edit
-                    </Button>
-                    <Button color='red' onClick={(e) => props.removeMember(e, props.id)}>
-                        Remove
-                    </Button>
-                    </div>
+                    <Button.Group compact widths={2}>
+                        <Button color='yellow' onClick={() => props.toggleEdit(props.id)}>
+                            Edit
+                        </Button>
+                        <Button color='red' onClick={(e) => props.removeMember(e, props.id)}>
+                            Remove
+                        </Button>
+                    </Button.Group>
                 </Card.Content>
             </>
             )}

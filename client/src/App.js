@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button,Card,Form,Segment,Grid,Divider,Radio,Label} from 'semantic-ui-react';
+import {Button,Form,Segment,Grid,Radio} from 'semantic-ui-react';
 import TeamCard from './TeamCard';
 import 'semantic-ui-css/semantic.min.css'
 
@@ -15,8 +15,8 @@ function App() {
   return (
     <div className="App">
         <Segment placeholder>
-          <Grid columns={2} relaxed='very' stackable centered>
-            <Grid.Column centered>
+          <Grid columns={2} stackable>
+            <Grid.Column>
               <Form onSubmit={(e) => addNewMember(e)}>
                 <Form.Input
                   label='Name'
@@ -32,54 +32,51 @@ function App() {
                 />
 
                 <Form.Field
-                      control={Radio}
-                      label='UX Designer'
-                      value='UX Designer'
-                      checked={newMem.role === 'UX Designer'}
-                      onChange={radioHandler}
-                  />
-                  <Form.Field
-                      control={Radio}
-                      label='Front End Developer'
-                      value='Front End Developer'
-                      checked={newMem.role === 'Front End Developer'}
-                      onChange={radioHandler}
-                  />
-                  <Form.Field
-                      control={Radio}
-                      label='Back End Developer'
-                      value='Back End Developer'
-                      checked={newMem.role === 'Back End Developer'}
-                      onChange={radioHandler}
-                  />
+                    control={Radio}
+                    onChange={radioHandler}
+                    checked={newMem.role === 'UX Designer'}
+                    label='UX Designer'
+                    value='UX Designer'
+                />
+                <Form.Field
+                    control={Radio}
+                    onChange={radioHandler}
+                    checked={newMem.role === 'Front End Developer'}
+                    label='Front End Developer'
+                    value='Front End Developer'
+                />
+                <Form.Field
+                    control={Radio}
+                    onChange={radioHandler}
+                    checked={newMem.role === 'Back End Developer'}
+                    label='Back End Developer'
+                    value='Back End Developer'
+                />
 
-                <Button type='submit'>Add New Member</Button>
+                <Button color='green' type='submit'>Add New Member</Button>
               </Form>
             </Grid.Column>
 
             <Grid.Column>
-                {team.map(mem => 
-                  <TeamCard 
-                    {...mem} 
-                    editHandler={editHandler}
-                    editMember={editMember} 
-                    editNum={editNum} 
-                    memberToEdit={memberToEdit}
-                    toggleEdit={toggleEdit}
-                    key={mem.id}
-                    removeMember={removeMember}
-                  />
-                )}
+              {team.map(mem => 
+                <TeamCard 
+                  {...mem} 
+                  editHandler={editHandler}
+                  editMember={editMember} 
+                  editNum={editNum} 
+                  key={mem.id}
+                  memberToEdit={memberToEdit}
+                  removeMember={removeMember}
+                  toggleEdit={toggleEdit}
+                />
+              )}
             </Grid.Column>
           </Grid>
-
-          <Divider vertical hidden/>
         </Segment>
     </div>
   );
 
   function changeHandler(e) {
-    console.log(e.target)
     setNewMem({...newMem, [e.target.name]:e.target.value});
   }
 
@@ -99,8 +96,7 @@ function App() {
 
   function editMember(e, memberToEdit) {
     e.preventDefault();
-    // let newTeam = team.filter(mem => mem.id !== memberToEdit.id);
-    let editedTeam = team.map(mem => mem.id === memberToEdit.id ? memberToEdit : mem)
+    let editedTeam = team.map(mem => mem.id === memberToEdit.id ? memberToEdit : mem);
     setTeam(editedTeam);
     setEditNum(0);
   }
