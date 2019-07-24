@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Forms from "./components/Forms";
+import Display from "./components/Display";
 
 function App() {
   const [team, setTeam] = useState([]);
@@ -16,9 +16,11 @@ function App() {
       <Forms teamAdd={teamChange} />
 
       <h2>Meet Your Team!</h2>
-      <div>{/* {team.map((member, index) => (
-
-        ))} */}</div>
+      <div>
+        {team.map((member, index) => (
+          <Display key={index} newMember={member} />
+        ))}
+      </div>
     </div>
   );
 }
