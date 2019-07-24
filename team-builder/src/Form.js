@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function Form() {
+function Form(props) {
+  console.log(props);
   const [user, setUser] = useState({ username: "", password: "", role: "" });
 
   return (
@@ -23,7 +24,7 @@ function Form() {
             </div>
           </label>
         </div>
-        <div className="form-group">
+        <div className="form-group" className="">
           <label for="exampleInputEmail1">Email address</label>
           <input
             type="email"
@@ -35,8 +36,15 @@ function Form() {
             // onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group" className="">
           <label for="exampleInputRole1">Role</label>
+          <button
+            type="edit"
+            className="btn btn-primary"
+            onClick={() => props.setMember(props.member)}
+          >
+            Edit
+          </button>
           <input
             type="text"
             className="form-control"

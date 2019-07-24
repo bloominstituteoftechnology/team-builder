@@ -4,11 +4,11 @@ import Form from "./Form.js";
 import "./App.css";
 
 function App() {
-  const [user, setUser] = useState("");
+  const [member, setMember] = useState("");
 
   return (
     <div className="App">
-      <Form />
+      <Form member={member} setMember={setMember} />
     </div>
   );
 }
