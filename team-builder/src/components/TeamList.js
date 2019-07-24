@@ -1,22 +1,25 @@
-import React from 'react';
+// import React from 'react';
 
-const TeamList = [
-    {
-        name:'Kenya Alston',
-        email:'kenya@gmail.com',
-        Role:'Front-End Engineer',
-    },
-    {
-        name:'Luke Skywalker',
-        email:'skywalker45@yahoo.com',
-        Role:'Back-End Engineer',
-    },
+// const TeamList = [
+//     {
+//         id: 1,
+//         name:'Kenya Alston',
+//         email:'kenya@gmail.com',
+//         Role:'Front-End Engineer',
+//     },
+//     {
+//         id: 2,
+//         name:'Luke Skywalker',
+//         email:'skywalker45@yahoo.com',
+//         Role:'Back-End Engineer',
+//     },
 
-    {
-        name:'Benjamin Franklin',
-        email:'bfranklin@gmail.com',
-        Role:'UX Design',
-    }
-]
+//     {
+//         id: 3,
+//         name:'Benjamin Franklin',
+//         email:'bfranklin@gmail.com',
+//         Role:'UX Design',
+//     }
+// ]
 
-export default TeamList;
+// export default TeamList;

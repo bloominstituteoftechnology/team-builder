@@ -1,28 +1,37 @@
 import React from 'react';
-import { useState } from 'react'
+import { useState } from 'react';
 
-function MemberForm() {
-    const [member,setMember] = useState({member: "", email: "", role: ""});
+const MemberForm = props => {
+    const initialForm = {member: "", email: "", role: ""};
+    const [members, setMembers] = useState(initialForm)
 
-    function handleChange(event){
-       const updatedMember = { ...member, [event.target.name]:
-        event.target.value};
-        console.log(
-            "handleChange",
-            event.target.name,
-            event.target.value,
-            updatedMember
-        );
-        setMember(updatedMember)
-    };
+    const handleChange = event => {
+        const {name, value } = event.target
+        setMembers({...members, [name]: value})
+    }
+    // function handleChange(event){
+    //    const updatedMember = { ...member, [event.target.name]:
+    //     event.target.value};
+    //     console.log(
+    //         "handleChange",
+    //         event.target.name,
+    //         event.target.value,
+    //         updatedMember
+    //     );
+    //     setMember(updatedMember)
+    // };
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log('Member Name',member);
+        if (!members.name || !members.email) return
+
+        props.addMember(members)
+        setMembers(initialForm)
+        console.log('Member Name',members);
     }
     return (
         <form onSubmit = {handleSubmit}>
-            {console.log(member)}
+            {/* {console.log(member)} */}
             <fieldset>
                 <legend>Become A Member</legend>
                 {/* Enter Name */}
@@ -31,10 +40,10 @@ function MemberForm() {
                          <div>
                             <input
                                 type='text'
-                                name='member'
+                                name='name'
                                 placeholder='Enter Your Name Here'
                                 onChange = {handleChange}
-                                value = {member.name} />
+                                value = {members.name} />
                         </div>
                     </label>
                 </div>
@@ -44,10 +53,10 @@ function MemberForm() {
                          <div>
                             <input
                                 type='text'
-                                id='#'
+                                name='email'
                                 placeholder='Enter Your Email Here'
                                 onChange = {handleChange}
-                                value = {member.email} />
+                                value = {members.email} />
                         </div>
                     </label>
                 </div>
@@ -57,10 +66,10 @@ function MemberForm() {
                          <div>
                             <input
                                 type='text'
-                                id='#'
+                                name='role'
                                 placeholder='Enter Your Role Here' 
                                 onChange = {handleChange}
-                                value = {member.role}/>
+                                value = {members.role}/>
                         </div>
                     </label>
                 </div>
