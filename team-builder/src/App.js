@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import { Home, About, Contact, Navigation } from './components';
 
+const [teamMember, setTeamMember]= useState(teamData)
+
 const App = () => (
   <div>
     <Navigation />
