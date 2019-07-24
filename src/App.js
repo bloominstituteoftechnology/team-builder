@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import Form from "./Components/Form"
+import Form from "./Components/Form";
+import teamMembers from "./Components/teamMembers";
 
 function App() {
   const [teamArray, setTeamArray] = useState([])
