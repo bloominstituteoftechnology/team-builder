@@ -4,6 +4,16 @@ function Form(props) {
   console.log(props);
   const [user, setUser] = useState({ username: "", password: "", role: "" });
 
+  function handleChange(event) {
+    const updatedUser = { ...user, [event.target.name]: event.target.value };
+    console.log(
+      "handleChange",
+      event.target.name,
+      event.target.value,
+      updatedUser
+    );
+    setUser(updatedUser);
+  }
   return (
     // <form onSubmit={handleSubmit}>
     <form>
@@ -19,7 +29,7 @@ function Form(props) {
                 name="username"
                 placeholder="Enter your username"
                 value={user.username}
-                // onChange={handleChange}
+                onChange={handleChange}
               />
             </div>
           </label>
@@ -33,11 +43,11 @@ function Form(props) {
             aria-describedby="emailHelp"
             placeholder="Enter email"
             value={user.email}
-            // onChange={handleChange}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group" className="">
-          <label for="exampleInputRole1">Role</label>
+          <label>Front-End Engineer</label>
           <button
             type="edit"
             className="btn btn-primary"
@@ -49,8 +59,8 @@ function Form(props) {
             type="text"
             className="form-control"
             name="role"
-            placeholder="Enter your role"
-            // onChange={handleChange}
+            placeholder="Front-End Engineer"
+            onChange={handleChange}
             value={user.role}
           />
         </div>
