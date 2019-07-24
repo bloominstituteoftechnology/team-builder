@@ -2,14 +2,14 @@ import React from "react";
 
 
 const TeamCard = (props) => {
-  console.log('tcprops', props);
 
 
   return (
     <div className = "team-card">
-      Name: {props.fName} {props.lName}
-      Email: {props.email}
-      Role: {props.role}
+      <p>Name: {props.name}</p>
+      <p>Email: {props.email}</p>
+      <p>Role: {props.role}</p>
+      <button className="edit-button">Edit</button>
     </div>
   );
 };

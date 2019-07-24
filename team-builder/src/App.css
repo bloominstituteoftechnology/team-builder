@@ -48,11 +48,24 @@ button {
   border: none;
   padding: 5px 10px;
   color: #fff;
-  width: 150px;
+  width: 100px;
   height: 30px;
 }
 button[disabled] {
   opacity: 0.5;
+}
+
+.team-list-wrapper {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.team-list-wrapper p {
+  margin-left: 10px;
+  margin-right: 10px
 }
 
 fieldset {

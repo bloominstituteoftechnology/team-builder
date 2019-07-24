@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-export default function NewMemberForm() {
-
+export default function NewMemberForm(props) {
+  console.log('form props', props);
   const [teamMember, setTeamMember] = useState({
     username: "",
     email: "",
     role: ""
   });
+
 
   const submitHandler = event => {
     event.preventDefault();
@@ -20,6 +21,7 @@ export default function NewMemberForm() {
       ...teamMember,
       [event.target.name]: event.target.value
     });
+
   };
 
   return (

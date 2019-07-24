@@ -1,31 +1,26 @@
 const teamData = [
     {
-        fName:"Greg",
-        lName: "Johnston",
+        name:"Greg Johnston",
         email: "Greg@gmail.com",
         role: "Intern",
     },
     {
-        fName:"Rick",
-        lName: "Moranis",
+        name:"Rick Moranis",
         email: "Rick@gmail.com",
         role: "FrontEnd",
     },
     {
-        fName:"Tyler",
-        lName: "Jones",
+        name:"Tyler Jones",
         email: "Tyler@gmail.com",
         role: "Backend",
     },
     {
-        fName:"Craig",
-        lName: "Reynolds",
+        name:"Craig Reynolds",
         email: "Craig@gmail.com",
         role: "Team Lead",
     },
     {
-        fName:"Barry",
-        lName: "Sandwich",
+        name:"Barry Sandwich",
         email: "Barry@gmail.com",
         role: "Security",
     }
