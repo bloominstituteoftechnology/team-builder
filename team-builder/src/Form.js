@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Form() {
+  const [user, setUser] = useState({ username: "", password: "", role: "" });
+
   return (
     // <form onSubmit={handleSubmit}>
     <form>
@@ -15,7 +17,7 @@ function Form() {
                 className="form-control"
                 name="username"
                 placeholder="Enter your username"
-                // value={user.username}
+                value={user.username}
                 // onChange={handleChange}
               />
             </div>
@@ -29,7 +31,7 @@ function Form() {
             name="email"
             aria-describedby="emailHelp"
             placeholder="Enter email"
-            // value={user.email}
+            value={user.email}
             // onChange={handleChange}
           />
         </div>
@@ -39,9 +41,9 @@ function Form() {
             type="text"
             className="form-control"
             name="role"
-            placeholder="Role"
+            placeholder="Enter your role"
             // onChange={handleChange}
-            // value={user.role}
+            value={user.role}
           />
         </div>
         <button type="submit" className="btn btn-primary">
