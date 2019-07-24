@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Form from './components/Form'
-import MemberList from './components/MemeberList'
 
 function App() {
+  const [memberList, setMemberList] = useState([])
+
   return (
     <div className="App">
-      <MemberList />
-      <Form />
+      <Form memberList={memberList} setMemberList={setMemberList} />
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 
 const MemberList = (props) => {
-  console.log('list props', props, typeof props)
+  console.log('list props', props
+  )
   return (
     <>
       <p>
-        tests
-
+        test
         {/* {props} */}
       </p>
     </>
