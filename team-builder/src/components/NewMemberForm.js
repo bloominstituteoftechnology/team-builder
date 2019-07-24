@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 export default function NewMemberForm(props) {
   console.log('form props', props);
   const [teamMember, setTeamMember] = useState({
-    username: "",
+    name: "",
     email: "",
     role: ""
   });
@@ -34,7 +34,7 @@ export default function NewMemberForm(props) {
               Team Member
               <input
                 type="text"
-                name="username"
+                name="name"
                 placeholder="Enter Team Member Name"
                 onChange={changeHandler}
               />

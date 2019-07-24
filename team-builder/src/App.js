@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
 
-  const [member, setMember] = useState()
+  const [member, setMember] = useState('ricky')
 
 
   return (
