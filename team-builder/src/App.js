@@ -31,7 +31,7 @@ function App() {
 
   const [members, setMembers] = useState(TeamList)
 
-  const addMember = member => {
+  const addMembers = member => {
     member.id = members.length +1
     setMembers([...members, member])
   }
@@ -45,7 +45,7 @@ function App() {
       </div>
       <div>
         <h2>Add Members</h2>
-        <MemberForm />
+        <MemberForm addMembers={addMembers} />
       </div>
     </div>
   );

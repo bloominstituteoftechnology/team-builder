@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 const MemberForm = props => {
-    const initialForm = {member: "", email: "", role: ""};
+    const initialForm = {id: null, member: "", email: "", role: ""};
     const [members, setMembers] = useState(initialForm)
 
     const handleChange = event => {
@@ -25,7 +25,7 @@ const MemberForm = props => {
         event.preventDefault();
         if (!members.name || !members.email) return
 
-        props.addMember(members)
+        props.addMembers(members)
         setMembers(initialForm)
         console.log('Member Name',members);
     }
