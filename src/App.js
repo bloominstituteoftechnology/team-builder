@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MemberList from './UserData';
+import Form from './Form';
 
 function App() {
   const membersData = [
@@ -9,7 +10,7 @@ function App() {
   
   const [members, setMembers] = useState(membersData);
   
-  const addMember = member =>{
+  const addToList = member =>{
     member.id = members.length + 1
     setMembers([...members, member])
   }
@@ -19,6 +20,7 @@ function App() {
       <div className="flex-row">
         <div className="flex-large">
           <h2>Join Us!</h2>
+          <Form addToList={addToList}/>
         </div>
         <div className="flex-large">
           <h2>Meet the Team</h2>
