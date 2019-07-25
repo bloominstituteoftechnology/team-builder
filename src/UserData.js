@@ -21,8 +21,8 @@ function MemberList(props) {
                         <td>{member.email}</td>
                         <td>{member.role}</td>
                         <td>
-                         <button className='button muted-button'>Edit</button>
-                         <button className='button muted-button'>Delete</button>
+                         <button onClick ={() => {props.editRow(member)}} className='button muted-button'>Edit</button>
+                         <button onClick={() => props.removeFromList(member.id)} className='button muted-button'>Delete</button>
 
                         </td>
                     </tr>
