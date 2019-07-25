@@ -9,6 +9,10 @@ function App() {
   
   const [members, setMembers] = useState(membersData);
   
+  const addMember = member =>{
+    member.id = members.length + 1
+    setMembers([...members, member])
+  }
   return (
     <div className="container">
       <h1> The Llambda Llamas</h1>
