@@ -9,14 +9,16 @@ import './App.css';
 
 function App() {
 
-  const [member, setMember] = useState('ricky')
+  const [members, setMembers] = useState(teamData)
+  console.log(members);
+
 
 
   return (
     <div className="App">
       <NewMemberForm
-        member={member}
-        setMember={setMember}
+        member={members}
+        setMember={setMembers}
        />
       <TeamList
         teamData={teamData}

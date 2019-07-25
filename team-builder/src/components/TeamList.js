@@ -2,9 +2,10 @@ import React from "react";
 import TeamCard from "./TeamCard"
 
 export default function TeamList(props) {
-  console.log(props);
+
+
   const teamArray = props.teamData;
-  console.log('team array', teamArray);
+
 
 
   return (

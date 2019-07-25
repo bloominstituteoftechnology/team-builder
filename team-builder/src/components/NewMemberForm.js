@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 export default function NewMemberForm(props) {
-  console.log('form props', props);
+
+  console.log(props);
+
   const [teamMember, setTeamMember] = useState({
     name: "",
     email: "",
@@ -10,17 +12,16 @@ export default function NewMemberForm(props) {
   });
 
 
+
   const submitHandler = event => {
     event.preventDefault();
-    console.log("teamMember", teamMember);
+    console.log('teamMember', teamMember);
+
   };
 
   const changeHandler = event => {
-    console.log(teamMember);
-    setTeamMember({
-      ...teamMember,
-      [event.target.name]: event.target.value
-    });
+    const newTeamMember = { ...teamMember, [event.target.name]: event.target.value };
+    setTeamMember(newTeamMember);
 
   };
 
