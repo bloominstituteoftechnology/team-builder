@@ -15,15 +15,17 @@ function App() {
     {name: "Rick", email: "rick@gmail.com", role: "Actor"}
   ]);
 
-
-
+  const addPerson = person => {
+    setPeople([...people, person]);
+  }
 
   return (
     <div className="App">
       <NewMemberForm
-        setPeople={setPeople}
+        submitPerson={addPerson}
        />
-       {people.map(person => <TeamCard person={person} />)}
+         {people.map(person => <TeamCard person={person} />)}
+
     </div>
   );
 }
