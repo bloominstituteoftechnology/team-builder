@@ -11,64 +11,10 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 90vw;
-  margin: 40px auto;
-  background: #fff;
-  padding: 15px;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-}
-
-label {
-  font-size: 0.8rem;
-  text-align: left;
-}
-
-legend {
-  font-size: 1.5rem;
-}
-
-input {
-  display: block;
+  max-width: 500px;
   margin: 10px auto;
-  padding: 4px;
-  max-width: 458px;
-  width: 100%;
-  height: 30px;
-  border: 1px solid #e1467c;
-  box-sizing: border-box;
-  border-radius: 8px;
 }
 
-button {
-  background: linear-gradient(109.1deg, #4f73c3 0%, #3c46a2 100%);
-  box-shadow: 0px 10px 20px rgba(101, 41, 255, 0.15);
-  border-radius: 30px;
-  border: none;
-  padding: 5px 10px;
-  color: #fff;
-  width: 100px;
-  height: 30px;
-}
-button[disabled] {
-  opacity: 0.5;
-}
-
-.team-list-wrapper {
-  margin: auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-
-.team-list-wrapper p {
-  margin-left: 10px;
-  margin-right: 10px
-}
-
-fieldset {
-  width: 100%;
-  border: 0px;
+form input {
+  margin: 5px;
 }

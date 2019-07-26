@@ -3,67 +3,60 @@ import ReactDOM from "react-dom";
 
 export default function NewMemberForm(props) {
 
-  console.log(props);
 
-  const [teamMember, setTeamMember] = useState({
+
+  const [person, setPerson] = useState({
     name: "",
     email: "",
     role: ""
   });
-
-
-
-  const submitHandler = event => {
+  const handleChange = event => {
+    setPerson({...person, [event.target.name]: event.target.value})
+  };
+  const handleSumbit = event => {
     event.preventDefault();
-    console.log('teamMember', teamMember);
-
-  };
-
-  const changeHandler = event => {
-    const newTeamMember = { ...teamMember, [event.target.name]: event.target.value };
-    setTeamMember(newTeamMember);
-
-  };
-
+    console.log('handleSubmit', person);
+  }
   return (
     <div>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={handleSumbit}>
         <fieldset>
           <legend>Team Member Signup</legend>
           <div className="form-group row">
             <label>
-              Team Member
               <input
                 type="text"
                 name="name"
                 placeholder="Enter Team Member Name"
-                onChange={changeHandler}
+                value={person.name}
+                onChange={handleChange}
               />
             </label>
           </div>
           <div className="form-group">
             <label>
-              Email
               <input
                 type="text"
                 name="email"
                 placeholder="Enter Email"
-                onChange={changeHandler}
+                value={person.email}
+                onChange={handleChange}
+
               />
             </label>
           </div>
           <div className="form-group">
             <label>
-              Role
               <input
                 type="text"
                 name="role"
                 placeholder="Role"
-                onChange={changeHandler}
+                value={person.role}
+                onChange={handleChange}
               />
             </label>
           </div>
-          <button type="submit" className="submit-button">Submit</button>
+          <button type="submit" className="submit-button">Add Person</button>
         </fieldset>
       </form>
     </div>

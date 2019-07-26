@@ -3,26 +3,26 @@ import ReactDOM from "react-dom";
 import NewMemberForm from './components/NewMemberForm'
 import TeamList from './components/TeamList'
 import teamData from './TeamMembers.js'
+import TeamCard from './components/TeamCard';
 
 import './App.css';
 
 
 function App() {
 
-  const [members, setMembers] = useState(teamData)
-  console.log(members);
+  const [people, setPeople] = useState([
+    {name: "Greg", email: "greg@gmail.com", role: "React"},
+    {name: "Rick", email: "rick@gmail.com", role: "Actor"}
+  ]);
+
 
 
 
   return (
     <div className="App">
       <NewMemberForm
-        member={members}
-        setMember={setMembers}
        />
-      <TeamList
-        teamData={teamData}
-       />
+       {people.map(person => <TeamCard person={person} />)}
     </div>
   );
 }
