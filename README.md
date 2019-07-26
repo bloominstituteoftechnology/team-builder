@@ -37,11 +37,10 @@ Follow these steps for completing your project.
 
 - [ ] Render a list of team members from state
 - [ ] Build a form to add a new member to the list of members
-- [ ] Add the functionality to edit team members
 
 ### STEP 1 - Setup your state
 
-- Import the `useState` hook
+- Import the `useState` hook and set up a state property for your team members list
 
 - Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
 
@@ -54,7 +53,9 @@ Follow these steps for completing your project.
 - Import the useState hook and utilize what we learned about two-way data binding
 - Render your `Form` component in `App` and pass a setter method (the `set_____` method from your team members state in `App`) down to it so you can add team members to your state.
 
-### STEP 3 - Add the edit functionality
+Now you are finished with MVP! Move on to the stretch goals at the bottom. The first is to add the functionality to edit members. As this is a very complicated process, steps have been included here to help you through that.
+
+### STEP 3 - Add the edit functionality (STRETCH)
 
 Next we're going to reuse the `Form` component to edit team members
 
@@ -73,7 +74,7 @@ The flow for editing is hard to conceptualize. It should go something like this:
 1. The user updates the member info
 1. Uh... now what do we do with this new data? If we submit the form, it will just add a new member 😫. Never fear! We will fix this in the next section!
 
-### STEP 4 - Form submit
+### STEP 4 - Form submit (STRETCH CONT.)
 
 
 This is an interesting bit of architecture we've done so far. We have built a reusable form that can be used to add a team member, or edit a team member. The last piece of the puzzle is this - when we submit the form, do we run an `addMember` function, or an `editMember` function? And how will the form know? Well, our form knows if we are editing a team member by whether or not there is the prop `memberToEdit`. (P.S. This can also be done with a boolean - something like `isEditing`...)
@@ -88,6 +89,8 @@ Observe the power of reusability!
 ## Stretch Problems
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
+
+- Follow the steps above to edit members. This is difficult to do, and the architecture is tough. But it is a great skill to practice! Pay attention the the implementation details, and to the architecture. There are many ways to accomplish this. When you finish, can you think of another way?
 
 - Build another layer of your App so that you can keep track of multiple teams, each with their own encapsulated list of team members.
 
