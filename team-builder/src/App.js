@@ -21,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <NewMemberForm
+        setPeople={setPeople}
        />
        {people.map(person => <TeamCard person={person} />)}
     </div>

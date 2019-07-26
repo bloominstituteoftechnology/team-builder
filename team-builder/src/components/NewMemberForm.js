@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 
 export default function NewMemberForm(props) {
 
-
+  const { setPeople } = props;
+  console.log('setpeople', props);
 
   const [person, setPerson] = useState({
     name: "",
@@ -15,6 +16,7 @@ export default function NewMemberForm(props) {
   };
   const handleSumbit = event => {
     event.preventDefault();
+    setPeople(people => [...people, person])
     console.log('handleSubmit', person);
   }
   return (

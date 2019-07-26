@@ -18,3 +18,17 @@ form {
 form input {
   margin: 5px;
 }
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 5px;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.team-card button {
+  max-width: 100px;
+}
