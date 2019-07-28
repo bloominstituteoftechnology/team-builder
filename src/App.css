@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+form input {
+    margin: 5px 0;
+}

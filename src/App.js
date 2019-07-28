@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
-import Card from './components/Card.js';
-import Form from './components/Form.js';
+import Card from './Components/Card';
+import Form from './Components/Form.js';
 import { Route, Link } from 'react-router-dom';
 
 function App() {
   const [people, setPeople] = useState([
-    {id: 0, name: "Mike Jones", email: "whome@yesu.com", role: "TL"},
-    {id: 1, name: "Rich", email: "not@me", role: "student"},
+    {id: 0, name: "Jimmy John", email: "jimmyjohn34@haha", role: "TL"},
+    {id: 1, name: "scott beeker", email: "itsme@scottbeeker", role: "student"},
+    {id: 2, name: "james bond", email: "itsme@bond", role: "student"},
+    {id: 3, name: "harlod jones", email: "itsme@mikejones", role: "student"},
   ]);
 
   const addPerson = person => {
@@ -52,10 +54,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
 
 
 
