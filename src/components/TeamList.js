@@ -46,10 +46,12 @@ const TeamList = props => {
             <form onSubmit={submitForm}> 
                     <label htmlFor='name'></label>
                         <input type='text' name='name' value={member.name} placeholder='Name' onChange={changeHandler} />
+                    
                     <label htmlFor='email'></label>
-            <input type='text' name='email' placeholder='Email' value={member.email} onChange={changeHandler} />
-                        <label htmlFor='email'></label>
-            <input type='text' name='role' placeholder='Role' value={member.role} onChange={changeHandler} />
+                        <input type='text' name='email' placeholder='Email' value={member.email} onChange={changeHandler} />
+                    
+                    <label htmlFor='email'></label>
+                        <input type='text' name='role' placeholder='Role' value={member.role} onChange={changeHandler} />
 
                 <button type='submit'>Add Team Member</button>
             </form>
