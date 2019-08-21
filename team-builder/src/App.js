@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TeamData from './TeamData';
+import Card from './components/Card.js';
+import { TeamData}  from './TeamData.js';
+import Form from "../src/Form.js";
+
 
 
 function App() {
+  const [people, setPeople] = useState (TeamData
+    // {Name: "Kelly", Occupation: "student"}
+  );
+console.log(people);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+<div className="Form">
+      <Form />
+      </div>
+
+      <div className="Friends">      
+      {people.map (person => <Card {...person} />)}
+      </div>
+
+      
+      
     </div>
   );
 }
+
 
 export default App;

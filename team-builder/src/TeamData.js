@@ -1,11 +1,12 @@
-import React from 'react';
+
 
 
 
 export const TeamData = [
 
 
-    {   Name: 'Ross Geller',
+    {   
+        Name: 'Ross Geller',
         Occupation: 'Professor',
         Hobby: 'Dinosaurs'
     },
@@ -26,7 +27,7 @@ export const TeamData = [
         Hobby: "Lady's man"
     },
 
-    {   Name: 'Pheebe Buffet',
+    {   Name: 'Phoebe Buffay',
         Occupation: 'Masseuse',
         Hobby: 'Composing innapropriate music'
     },

@@ -40,3 +40,6 @@ console.log(props)
 
 
 }
+
+
+export default Form;
