@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import Card from './components/Card.js';
 import { TeamData}  from './TeamData.js';
@@ -11,17 +11,22 @@ function App() {
   const [people, setPeople] = useState (TeamData
     // {Name: "Kelly", Occupation: "student"}
   );
+
+  function addPerson (person) {
+
+    setPeople([...people, person])
+
+  }
+
+
 console.log(people);
   return (
     <div className="App">
 
-<div className="Form">
-      <Form />
-      </div>
+      <Form setPeople={setPeople} />    
 
-      <div className="Friends">      
-      {people.map (person => <Card {...person} />)}
-      </div>
+            <div className="card">      {people.map (person => <Card {...person} />)}    </div>
+ 
 
       
       
