@@ -1,0 +1,23 @@
+{
+  "name": "team-builder",
+  "version": "1.0.0",
+  "description": "team-builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juarezfrench/team-builder.git"
+  },
+  "keywords": [
+    "Forms",
+    "TeamTemplate"
+  ],
+  "author": "Mark French",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juarezfrench/team-builder/issues"
+  },
+  "homepage": "https://github.com/juarezfrench/team-builder#readme"
+}
