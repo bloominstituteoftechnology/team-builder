@@ -4,10 +4,11 @@ const Forms = (props) => {
     console.log(props)
     const [member, setMember] = useState({
         name: "",
-        role: ""
+        email: "",
+        role: "",
     });
     
-    const changeHandler = event => {
+    const handleChange = event => {
         setMember({ ...member, [event.target.name]: event.target.value });
     }
 
@@ -19,14 +20,14 @@ const Forms = (props) => {
         <form onSubmit={submitForm}>
             <label htmlFor="name">Name </label>
             <input type="text" name="name" placeholder="Name" 
-                onChange={changeHandler}
+                onChange={handleChange}
                 />
             <label htmlFor="email">Email </label>
-            <input type="text" name="email" placeholder="Email"
+            <input type="email" placeholder="Email"
              />
             <label htmlFor="role">Role </label>
-            <input type="text" name="role" placeholder="Role"
-                onChange={changeHandler}
+            <input type="role" placeholder="Role"
+                onChange={handleChange}
                 />
         </form>
     )
