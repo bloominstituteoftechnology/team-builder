@@ -2,14 +2,14 @@ import React from 'react';
 
 import './App.css';
 
-import Forms from './Form';
+import Form from './Form';
 
 function App() {
 
   return (
     <div className="App">
       <header className="App-header">
-        < Forms />
+        < Form />
         <button>Edit</button>
       </header>
     </div>
