@@ -1,34 +1,48 @@
 import React, { useState } from 'react';
 
+
 const Forms = (props) => {
     console.log(props)
-    const [member, setMember] = useState({
+    const [member, setNewMember] = useState([{
         name: "",
         email: "",
         role: "",
-    });
+    }]);
     
     const handleChange = event => {
-        setMember({ ...member, [event.target.name]: event.target.value });
+        setNewMember({ ...member, [event.target.name]: event.target.value });
     }
 
     const submitForm = event => {
+        console.log(member)
         event.preventDefault();
+        props.addMember(member);
     }
     
     return (
         <form onSubmit={submitForm}>
             <label htmlFor="name">Name </label>
-            <input type="text" name="name" placeholder="Name" 
-                onChange={handleChange}
+            <input type="text" 
+                   name="name" 
+                   value={member.name}
+                   placeholder="Name" 
+                   onChange={handleChange}
                 />
             <label htmlFor="email">Email </label>
-            <input type="email" placeholder="Email"
-             />
-            <label htmlFor="role">Role </label>
-            <input type="role" placeholder="Role"
-                onChange={handleChange}
+            <input type="email" 
+                   name="email"
+                   value={member.email}
+                   placeholder="Email"
+                   onChange={handleChange}
                 />
+            <label htmlFor="role">Role </label>
+            <input type="role" 
+                   name="role"
+                   value={member.role}
+                   placeholder="Role"
+                   onChange={handleChange}
+                />
+                <button type="submit" >Submit</button> 
         </form>
     )
 }

@@ -31,7 +31,7 @@ form {
   border-radius: 4px;
   padding: 20px;
   margin-bottom: 10px;
-  width: 50%;
+  width: 35%;
   height: 320px;
 }
 
@@ -45,7 +45,7 @@ input, textarea {
 }
 
 button {
-  width: 5%;
+  width: 20%;
   height: 20px;
   box-sizing: border-box;
   border-radius: 2px;
