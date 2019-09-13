@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -23,16 +17,25 @@
   color: #61dafb;
 }
 
-form {
+Form {
   display: inline-flex;
   flex-flow: column nowrap;
   align-items: center;
   background: lightblue;
   border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+  0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 20px;
   margin-bottom: 10px;
   width: 35%;
   height: 320px;
+}
+
+Form input {
+  width: 45%;
+  height: 20px;
+  color: lightblue;
+  border-radius: 2px;
 }
 
 input, textarea {
@@ -40,13 +43,22 @@ input, textarea {
   padding: 15px 22px;
   margin: 10px 5px;
   box-sizing: border-box;  
-  border: none;
+  border: 1px solid whitesmoke;
   border-radius: 4px;
 }
 
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
 button {
-  width: 20%;
+  width: 35%;
   height: 20px;
   box-sizing: border-box;
-  border-radius: 2px;
+  border-radius: 4px;
+
 }
