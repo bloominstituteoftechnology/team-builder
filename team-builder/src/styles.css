@@ -1,0 +1,43 @@
+html,
+body,
+.App,
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+input {
+    width:100%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.entry-field {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 270px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+label {
+    font-size:25px;
+    color: indianred;
+    text-align: left;
+    /* padding-left: 2%; */
+    padding-bottom:2%;
+
+}
+
+

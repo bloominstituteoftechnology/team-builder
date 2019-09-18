@@ -10,7 +10,7 @@ const Form = props => {
 
     const handleChanges = event => {
         console.log(teamMember);
-        setTeamMember({...teamMember, [event.target.name]: event.target.value});
+        setTeamMember({...teamMember, [event.target.id]: event.target.value});
     };
 
     const submitForm = event => {
@@ -25,30 +25,34 @@ const Form = props => {
 
     return (
         <form onSubmit={submitForm}>
-            <label htmlFor="name">Name</label>
-            <input
-            name="name"
-            type="text"
-            value={teamMember.name}
-            onChange={handleChanges}
-            />
+            <div className = "entry-field">
+                <label htmlFor="name">Name</label>
+                <input
+                id="name"
+                type="text"
+                value={teamMember.name}
+                onChange={handleChanges}
+                />
+            </div>
 
-            <label htmlFor="email">Email</label>
-            <input
-            name="email"
-            type="text"
-            value={teamMember.email}
-            onChange={handleChanges}
-            />
-
-            <label htmlFor="role">Role</label>
-            <input
-            name="role"
-            type="text"
-            value={teamMember.role}
-            onChange={handleChanges}
-            />
-
+            <div className = "entry-field">
+                <label htmlFor="email">Email</label>
+                <input
+                id="email"
+                type="text"
+                value={teamMember.email}
+                onChange={handleChanges}
+                />
+            </div>
+            <div className = "entry-field">
+                <label htmlFor="role">Role</label>
+                <input
+                id="role"
+                type="text"
+                value={teamMember.role}
+                onChange={handleChanges}
+                />
+            </div>
             <button type="submit">Add Team Member</button>
         </form>
     )

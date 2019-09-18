@@ -10,6 +10,7 @@ const TeamMembers = props => {
                 <h2>{teamMember.name}</h2>
                 <p>{teamMember.role}</p>
                 <p>{teamMember.email}</p>
+                <button>Edit</button>
             </div>
         ))}
     </div>

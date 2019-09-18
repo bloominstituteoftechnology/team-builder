@@ -4,6 +4,8 @@ import './App.css';
 import TeamMembers from "./components/TeamMembers.js";
 import Form from "./components/Form.js";
 
+import styles from "./styles.css";
+
 function App() {
 
 
@@ -28,12 +30,17 @@ function App() {
     setTeamMembers([...teamMembers, newTeamMember]);
   };
 
+  const memberToEdit = teamMember => {
+    
+  }
+
 
 
   return (
     <div className="App">
+      <h1>Add a New Team Member</h1>
       <Form addNewTeamMember = {addNewTeamMember}/>
-      <TeamMembers teamMembers = {teamMembers} />
+      <TeamMembers teamMembers = {teamMembers}/>
     </div>
   );
 }
