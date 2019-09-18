@@ -6,19 +6,23 @@ import styled from 'styled-components';
 //     flex-direction: column;
 // `    
 
-export default function Form () {
+function Form (props) {
+  const {nameChange, emailChange, roleChange} = props;
+  const {name, age, role} = props.teamForm;
     return(
       <div>
       <label htmlFor='nameInput'>Name</label>
-      <input id='nameInput' type='text'/>
+      <input id='nameInput' type='text' onChange={nameChange}/>
 
       <label htmlFor='emailInput'>Email</label>
-      <input id='emailInput' type='text'/>
+      <input id='emailInput' type='text' onChange={emailChange}/>
 
       <label htmlFor='roleInput'>Role</label>
-      <input id='roleInput' type='text'/>
+      <input id='roleInput' type='text' onChange={roleChange}/>
 
       <button> Add </button>
       </div>
     );
 }
+
+export default Form;

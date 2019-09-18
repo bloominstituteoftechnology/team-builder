@@ -45,9 +45,10 @@ function TeamList () {
     return(
        <div>
         <Form 
-            onNameChange = {nameChange}
-            onEmailChange = {emailChange}
-            onRoleChange = {roleChange}
+            nameChange = {onNameChange}
+            emailChange = {onEmailChange}
+            roleChange = {onRoleChange}
+            teamForm = {teamMemberForm}
         />
 
        {
