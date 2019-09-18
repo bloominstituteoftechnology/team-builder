@@ -6,9 +6,10 @@ const FormCard = props => {
         <>
             {props.members.map(member => (
                 <div className="member" key ={member.id}>
-                    <h2>{member.name}</h2>
-                    <p>{member.email}</p>
-                    <p>{member.role}</p>
+                    <h2>Name: {member.name}</h2>
+                    <p>Email: {member.email}</p>
+                    <p>Role: {member.role}</p>
+                    <i class="far fa-edit"></i>
                 </div>
             ))}
         </>
