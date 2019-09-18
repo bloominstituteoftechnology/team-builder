@@ -3,7 +3,6 @@ import React from 'react'
 
 function Team(props){
 
-     console.log(props.teamData)
      return(
           <>
           {
