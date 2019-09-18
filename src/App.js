@@ -27,9 +27,6 @@ const initialTeam = [
 ]
 
 const formDefault = {
-  name: '',
-  email: '',
-  role: '',
 }
 
 function App() {
