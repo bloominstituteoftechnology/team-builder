@@ -1,10 +1,10 @@
-import React from 'react';
 import React, { useState } from 'react';
+import uuid from 'uuid';
 
 const initialTeamList = [
-    { id: uuid(), name: 'Maryam', age: 20},
-    { id: uuid(), name: 'Kiyani', age: 20},
-    { id: uuid(), name: 'Mildred', age: 20},
+    { id: uuid(), name: 'Maryam', email: 'maryam@gmail.com' role: 'developer'},
+    { id: uuid(), name: 'Kiyani', email: 'kiyani@gmail.com' role: 'developer'},
+    { id: uuid(), name: 'Mildred',email: 'mildred@gmail.com' role: 'developer'},
 ]
 
 function TeamList () {
