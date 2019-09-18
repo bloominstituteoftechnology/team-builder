@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.far{
+  color: red;
+} 
+
+.fa-edit{
+  color: red;
+}

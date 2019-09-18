@@ -9,7 +9,7 @@ const FormCard = props => {
                     <h2>Name: {member.name}</h2>
                     <p>Email: {member.email}</p>
                     <p>Role: {member.role}</p>
-                    <i class="far fa-edit"></i>
+                    <button>Edit</button>
                 </div>
             ))}
         </>
