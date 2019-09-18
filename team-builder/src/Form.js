@@ -16,10 +16,18 @@ function Form () {
 
      return (<form>
          <label htmlFor='nameinput'>Name</label>
-         <input/>
+         <input
+         value={formValues.name}/>
 
          <label htmlFor='ageInput'>Age</label>
-     </form>)
+         <input
+         value={formValues.age}/>
+
+       <label htmlFor='roleInput'>Role</label>
+         <input
+         value={formValues.role}/>
+     </form>
+     )
 }
 
 export default Form;
