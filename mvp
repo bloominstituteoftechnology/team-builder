@@ -1,0 +1,7 @@
+#! /bin/bash
+
+git checkout -b "patrick-stevenson"
+echo "## PATRICK STEVENSON" >> README.md
+git add .
+git commit -m "added name to end of readme"
+pnb "patrick-stevenson"
