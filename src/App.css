@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.team-container {
+  padding: 1em;
+  width: 30%;
+  margin: 0 auto;
+  text-align: left;
+}
