@@ -16,9 +16,30 @@ const initialTeamForm = {
 
 function TeamList () {
     const [teamMemberList, setTeamMemberList] = useState(initialTeamList);
+    const [teamMemberForm, setTeamMemberForm] = useState(initialTeamForm);
 
     const onNameChange = event => {
-        set
+        setTeamMemberForm({
+            name: event.target.value,
+            email: teamMemberForm.email,
+            role: teamMemberForm.role,
+        });
+    }
+
+    const onEmailChange = event => {
+        setTeamMemberForm({
+            name: teamMemberForm.name,
+            email: event.target.value,
+            role: teamMemberForm.role,
+        });
+    }
+
+    const onRoleChange = event => {
+        setTeamMemberForm({
+            name: teamMemberForm.name,
+            email: teamMemberForm.email,
+            role: event.target.value,
+        });
     }
 
     return(
