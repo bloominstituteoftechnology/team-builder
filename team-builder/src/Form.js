@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
+import App from './App'
 
 const initialFormValues = {
     name:'1',
-    email:'2',
+    age:'2',
     role:'3',
 };
 
@@ -13,7 +14,12 @@ function Form () {
    const [formValues, setFormValues] = useState(initialFormValues);
 
 
-    return
+     return (<form>
+         <label htmlFor='nameinput'>Name</label>
+         <input/>
+
+         <label htmlFor='ageInput'>Age</label>
+     </form>)
 }
 
 export default Form;

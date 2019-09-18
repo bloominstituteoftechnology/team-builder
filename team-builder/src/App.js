@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import uuid from 'uuid';
 import './App.css';
+import Form from './Form';
 
 const initialTeamMembers = [
   { id: uuid(), name: 'Amira', age: '20', role: 'Product Manager' },
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <Form/>
     </div>
   );
 }
