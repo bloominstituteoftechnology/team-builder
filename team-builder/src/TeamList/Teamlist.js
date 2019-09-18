@@ -44,7 +44,11 @@ function TeamList () {
 
     return(
        <div>
-        <Form />
+        <Form 
+            onNameChange = {nameChange}
+            onEmailChange = {emailChange}
+            onRoleChange = {roleChange}
+        />
 
        {
         teamMemberList.map(team => (
