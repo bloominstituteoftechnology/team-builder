@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import App from './App'
 
 const initialFormValues = {
-    name: '1',
-    age: '2',
-    role: '3',
+    name: '',
+    email: '',
+    role: '',
 };
 
 
@@ -20,10 +20,10 @@ function Form() {
         })
     }
 
-    const onAgeChange = (e) => {
+    const onEmailChange = (e) => {
         setFormValues({
             ...formValues,
-            age: e.target.value,
+            email: e.target.value,
         })
     }
 
@@ -34,40 +34,36 @@ function Form() {
         })
     }
 
-    const onSubmit = (e) => {
+    const OnFormSubmit = (e) => {
         e.preventDefault();
     }
 
     return (<form onSubmit={OnFormSubmit} >
-        <div>
-            <label htmlFor='nameinput'>Name</label>
-            <input
-                value={formValues.name}
-                onChange={onNameChange}
-            />
-        </div>
 
-        <div>
-            <label htmlFor='ageInput'>Age</label>
-            <input
+        <label htmlFor='nameinput'>Name</label>
+        <input
+            value={formValues.name}
+            onChange={onNameChange}
+        />
 
-                value={formValues.age}
-                onChange={onAgeChange} />
-        </div>
 
-        <div>
-            <label htmlFor='roleInput'>Role</label>
-            <input
-                value={formValues.role}
-                onChange={onRoleChange} />
+        <label htmlFor='emailInput'>Email</label>
+        <input
 
-        </div>
+            value={formValues.email}
+            onChange={onEmailChange} />
 
-        <div>
-            <button>Submit</button>
-        </div>    
+
+        <label htmlFor='roleInput'>Role</label>
+        <input
+            value={formValues.role}
+            onChange={onRoleChange} />
+
+
+        <button>Submit</button>
+        
     </form>
-        )
-    }
-    
+    )
+}
+
 export default Form;
