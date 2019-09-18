@@ -1,16 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// const CharacterStyle = styled.div`
-//     display: flex;
-//     flex-direction: column;
-// `    
+const TeamStyle = styled.div`
+    display: flex;
+    flex-direction: column;
+`    
 
 function Form (props) {
-  const {nameChange, emailChange, roleChange} = props;
-  const {name, age, role} = props.teamForm;
+  const {nameChange, emailChange, roleChange, formSubmit} = props;
+  const {name, email, role} = props.teamForm;
+
+  const isDisabled = () => {
+    if (!name || !email || !role) {
+      return true;
+    }
+    return false;
+  };
     return(
-      <div>
+      <TeamStyle>
       <label htmlFor='nameInput'>Name</label>
       <input id='nameInput' type='text' onChange={nameChange}/>
 
@@ -20,8 +27,8 @@ function Form (props) {
       <label htmlFor='roleInput'>Role</label>
       <input id='roleInput' type='text' onChange={roleChange}/>
 
-      <button> Add </button>
-      </div>
+      <button onClick={formSubmit} disabled={isDisabled()}> Add </button>
+      </TeamStyle>
     );
 }
 

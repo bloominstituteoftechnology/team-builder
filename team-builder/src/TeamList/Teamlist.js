@@ -42,6 +42,19 @@ function TeamList () {
         });
     }
 
+    const onFormSubmit = event =>{
+        event.preventDefault();
+        const newTeam = {
+            id: uuid(),
+            name: teamMemberForm.name,
+            email: teamMemberForm.email,
+            role: teamMemberForm.role,
+        };
+        const newTeamList = teamMemberList.concat(newTeam);
+        setTeamMemberList(newTeamList);
+        setTeamMemberForm(initialTeamForm);
+    }
+
     return(
        <div>
         <Form 
@@ -49,6 +62,7 @@ function TeamList () {
             emailChange = {onEmailChange}
             roleChange = {onRoleChange}
             teamForm = {teamMemberForm}
+            formSubmit = {onFormSubmit}
         />
 
        {
