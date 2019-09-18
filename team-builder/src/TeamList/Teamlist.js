@@ -8,8 +8,18 @@ const initialTeamList = [
     { id: uuid(), name: 'Mildred', email: 'mildred@gmail.com', role: 'developer'},
 ]
 
+const initialTeamForm = {
+    name: '',
+    email: '',
+    role: '',
+}
+
 function TeamList () {
     const [teamMemberList, setTeamMemberList] = useState(initialTeamList);
+
+    const onNameChange = event => {
+        set
+    }
 
     return(
        <div>
