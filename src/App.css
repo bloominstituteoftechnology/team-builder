@@ -8,3 +8,17 @@
   margin: 0 auto;
   text-align: left;
 }
+
+.form-container { 
+  padding: 0.5em;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.form-container * {
+  margin: 0.5em;
+}
+
+.form-input {
+  width: 200px;
+}

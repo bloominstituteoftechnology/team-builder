@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import uuid from 'uuid'
+import Form from './components/Form';
 import './App.css';
 
 const initialTeam = [
@@ -25,10 +26,16 @@ const initialTeam = [
   }
 ]
 
+const formDefault = {
+  name: '',
+  email: '',
+  role: '',
+}
+
 function App() {
 
   const [team, setTeam] = useState(initialTeam);
-
+  const [formState, setFormState] = useState(formDefault);
   return (
     <div className="App">
       {team.map(teamMember => 
@@ -38,6 +45,10 @@ function App() {
       Email: {teamMember.email}<br></br>
       Role: {teamMember.role}<br></br>
       </div>)}
+      <Form setter={setFormState} data={formState} />
+      <h3>Name: {formState.name}</h3>
+      <h3>Email: {formState.email}</h3>
+      <h3>Role: {formState.role}</h3>
     </div>
   );
 }
