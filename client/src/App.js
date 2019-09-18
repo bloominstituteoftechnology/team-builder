@@ -13,15 +13,16 @@ function App() {
       role: "Example Role"
     }
   ]);
+  console.log(`This is members state from App.js`, members);
   
-  const addNewMember = member => {
+  const addNewMember = (member) => {
     const newMember = {
       id: Date.now(),
       name: member.name,
       email: member.email,
       role: member.role
     }
-    setMembers([...member, newMember]);
+    setMembers([...members, newMember]);
   };
 
   return (
