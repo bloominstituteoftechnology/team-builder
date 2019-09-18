@@ -12,7 +12,17 @@ function TeamList () {
     const [teamMemberList, setTeamMemberList] = useState(initialTeamList);
 
     return(
-       <Form />
+       <div>
+        <Form />
+
+       {
+        teamMemberList.map(team => (
+          <p key={team.id}>
+            {team.name} email is {team.email} and has a {team.role} role.
+          </p>
+        ))
+       }
+       </div>
     );
 
 }
