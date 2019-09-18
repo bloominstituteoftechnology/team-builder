@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -26,7 +26,7 @@ function App() {
       email: teamMember.email,
       role: teamMember.role
     };
-    setNotes([...teamMembers, newNote]);
+    setTeamMembers([...teamMembers, newTeamMember]);
   };
 
 
