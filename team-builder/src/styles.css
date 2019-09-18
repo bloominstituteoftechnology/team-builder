@@ -37,7 +37,40 @@ label {
     text-align: left;
     /* padding-left: 2%; */
     padding-bottom:2%;
-
 }
+
+.team-member {
+    border: 1.3px solid #4682b4;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.team-member h2{
+    color: #4682b4;
+}
+
+.team-member p{
+    color: #4682b4;
+}
+
+.team-member button {
+    margin-bottom: 20px;
+}
+
+.card-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+button { 
+    border: 1.3px solid #4682b4;
+    width: 70px;
+    border-radius: 5px;
+    font-size:15px;
+    background: #4682b4;
+    color: white;
+}
+
 
 
