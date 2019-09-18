@@ -16,43 +16,58 @@ function Form() {
     const onNameChange = (e) => {
         setFormValues({
             ...formValues,
-            name:e.target.value,
+            name: e.target.value,
         })
     }
 
     const onAgeChange = (e) => {
         setFormValues({
             ...formValues,
-            age:e.target.value,
+            age: e.target.value,
         })
     }
 
     const onRoleChange = (e) => {
         setFormValues({
             ...formValues,
-            role:e.target.value,
+            role: e.target.value,
         })
     }
 
-    return (<form>
-        <label htmlFor='nameinput'>Name</label>
-        <input
-            value={formValues.name}
-            onChange={onNameChange}
-             />
+    const onSubmit = (e) => {
+        e.preventDefault();
+    }
 
-        <label htmlFor='ageInput'>Age</label>
-        <input
-        
-         value={formValues.age}
-         onChange={onAgeChange} />
+    return (<form onSubmit={OnFormSubmit} >
+        <div>
+            <label htmlFor='nameinput'>Name</label>
+            <input
+                value={formValues.name}
+                onChange={onNameChange}
+            />
+        </div>
 
-        <label htmlFor='roleInput'>Role</label>
-        <input
-            value={formValues.role}
-            onChange={onRoleChange} />
+        <div>
+            <label htmlFor='ageInput'>Age</label>
+            <input
+
+                value={formValues.age}
+                onChange={onAgeChange} />
+        </div>
+
+        <div>
+            <label htmlFor='roleInput'>Role</label>
+            <input
+                value={formValues.role}
+                onChange={onRoleChange} />
+
+        </div>
+
+        <div>
+            <button>Submit</button>
+        </div>    
     </form>
-    )
-}
-
+        )
+    }
+    
 export default Form;
