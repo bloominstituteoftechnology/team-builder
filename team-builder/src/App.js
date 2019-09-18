@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
+import Teamlist from './TeamList/Teamlist';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Teamlist />
   );
 }
 
