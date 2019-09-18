@@ -7,8 +7,8 @@ function TeamMembersList(props) {
     for (let member of props.myTeamMembers) {
         newTeamMembers.push(<div>
             <p>{member.name} </p>
-            <p>{member.email} </p>
-            <p>{member.role} </p>
+            {/* <p>{member.email} </p> */}
+            {/* <p>{member.role} </p> */}
         </div>);
     }
 

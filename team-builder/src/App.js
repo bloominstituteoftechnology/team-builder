@@ -20,10 +20,16 @@ function App() {
   const [teamMembers, setTeamMembers] = useState(initialTeamMembers);
 
 
+  const addToTeamMembers = (member) => {
+    let team = [...teamMembers];
+    team.push(member)
+    setTeamMembers(team)
+  }
+
   return (
     <div className="App">
-      <Form/>
-      <TeamMembersList myTeamMembers={teamMembers}/>
+      <Form add={addToTeamMembers} />
+      <TeamMembersList myTeamMembers={teamMembers} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import App from './App'
+import uuid from 'uuid';
 
 const initialFormValues = {
     name: '',
@@ -9,7 +9,7 @@ const initialFormValues = {
 
 
 
-function Form() {
+function Form(props) {
     // passed in initialFormValues to the useState so that my state variable would use it as the initial value
     const [formValues, setFormValues] = useState(initialFormValues);
 
@@ -36,8 +36,11 @@ function Form() {
 
     const OnFormSubmit = (e) => {
         e.preventDefault();
+
+        props.add(formValues)
     }
 
+    
     return (<form onSubmit={OnFormSubmit} >
 
         <label htmlFor='nameinput'>Name</label>
@@ -60,8 +63,8 @@ function Form() {
             onChange={onRoleChange} />
 
 
-        <button>Submit</button>
-        
+        <button onClick={OnFormSubmit}>Submit</button>
+
     </form>
     )
 }
