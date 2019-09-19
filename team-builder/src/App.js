@@ -11,7 +11,7 @@ function App() {
       
       name: 'Carlos Venegas',
       email: 'lambda@lambda.com',
-      role: 'Chief Engineer'
+      role: 'VP of Engineering'
   }])
 
 const addForm = form => {

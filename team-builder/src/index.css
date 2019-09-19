@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #525252;
+  background-image: url("https://pbs.twimg.com/profile_images/1146473233895440384/p97lN1Jk_400x400.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
 }
 
 code {
