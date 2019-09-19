@@ -1,4 +1,16 @@
 import React, {useState} from "react";
+import styled from "styled-components";
+
+const Header = styled.form`
+    width: 100%;
+    box-shadow: 0px 20px 10px grey;
+    border: 1px solid black;
+    padding-bottom: 20px;
+`;
+
+const Input = styled.div`
+    padding-left: 20px;
+`;
 
 const Form = (props) => {
     console.log(`This is props from the Form.js`, props);
@@ -19,7 +31,8 @@ const Form = (props) => {
         setMember({ name: " ", email: " ", role: " " });
     }
     return (
-        <form onSubmit={submitForm}>
+        <Header onSubmit={submitForm}>
+            <h1>My Team</h1>
             <label htmlFor="name">Name:</label>
             <input 
                 id= "name"
@@ -45,7 +58,7 @@ const Form = (props) => {
                 value={member.role}
             />
             <button type="submit">Add a team member!</button>
-        </form>
+        </Header>
     );
 }
 
