@@ -4,11 +4,10 @@ import styled from "styled-components";
 const EditHeader = styled.form`
     width: 800px;
     margin: 0 auto;
-    box-shadow: 0px 20px 10px grey;
+    box-shadow: 0px 20px 10px #FFA07A;
     border: 1px solid black;
     padding-bottom: 20px;
     border-radius: 10px 50px; 
-    background-color: #FFA07A;
     margin-top: 50px; 
 `;
 
@@ -20,6 +19,26 @@ const TeamCard = styled.div`
     border-radius: 10px 50px; 
     border: 1px solid black;
     padding-bottom: 20px;
+`;
+
+const EditChild = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+`;
+
+const EditMember = styled.h1`
+    color: black;
+    
+`;
+
+const EditButton = styled.button`
+    border-radius: 20px;
+    &:hover{
+        background: #fff;
+        border-radius: 20px;
+        border: 1px solid lightgrey;
+    }
 `;
 
 const FormCard = (props) => {
@@ -55,45 +74,44 @@ const FormCard = (props) => {
 
     return editing ? (
         <EditHeader onSubmit={handleUpdate}>
-            <h1>Edit Team Member</h1>
-            <label htmlFor="name">Name: {" "}
-                <input 
-                    id= "name"
-                    type= "text"
-                    name= "name"
-                    onChange= {inputHandler}
-                    value={input.name}
-                />
-            </label>
-            <label htmlFor="email">Email: {" "}
-                <input 
-                    id= "email"
-                    type= "text"
-                    name= "email"
-                    onChange= {inputHandler}
-                    value={input.email}
-                />
-            </label>
-            <label htmlFor="role">Role: {" "}
-                <input 
-                    id= "role"
-                    type= "text"
-                    name= "role"
-                    onChange= {inputHandler}
-                    value={input.role}
-                />
-            </label>
-            <button type="submit">Add a team member!</button>
+            <EditMember>Edit Team Member</EditMember>
+            <EditChild>
+                <label htmlFor="name">Name: {" "}
+                    <input 
+                        id= "name"
+                        type= "text"
+                        name= "name"
+                        onChange= {inputHandler}
+                        value={input.name}
+                    />
+                </label>
+                <label htmlFor="email">Email: {" "}
+                    <input 
+                        id= "email"
+                        type= "text"
+                        name= "email"
+                        onChange= {inputHandler}
+                        value={input.email}
+                    />
+                </label>
+                <label htmlFor="role">Role: {" "}
+                    <input 
+                        id= "role"
+                        type= "text"
+                        name= "role"
+                        onChange= {inputHandler}
+                        value={input.role}
+                    />
+                </label>
+                <EditButton type="submit">Add a team member!</EditButton>
+            </EditChild>
         </EditHeader>
     ) : (
         <TeamCard>
-            <h3>Name</h3>
-            <p>{name}</p>
-            <h3>Email</h3>
-            <p>{email}</p>
-            <h3>Role</h3>
-            <p>{role}</p>
-            <button onClick={handleEdit}>Edit</button>
+            <h3>Name: {name}</h3>
+            <p>Email: {email}</p>
+            <p>Role: {role}</p>
+            <EditButton onClick={handleEdit}>Edit</EditButton>
         </TeamCard>
     )
 }
