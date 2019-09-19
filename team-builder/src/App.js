@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import Form from "./Components/Form";
+import MemberForm from "./Components/MemberForm";
+
 function App() {
   //State to shape members, and hold array of all members.
   const [teamMember, setTeamMember] = useState({
@@ -10,16 +11,16 @@ function App() {
   });
   const [team, setTeam] = useState([]);
   //handle changes on form
-  function handleChange(event) {
-    setTeamMember({ ...teamMember, [event.target.name]: event.target.value });
-  }
+  const handleChange = e => {
+    setTeamMember({ ...teamMember, [e.target.name]: e.target.value });
+  };
   //handle submit of the form
-  function handleSubmit(event) {
-    event.preventDefault();
+  const handleSubmit = e => {
+    e.preventDefault();
     setTeamMember({ name: "", email: "", role: "" });
-  }
+  };
   //renderMember function. based on simple checks of input
-  function renderMember(e) {
+  const renderMember = e => {
     if (teamMember.name === "") {
       e.preventDefault();
     } else if (teamMember.email === "") {
@@ -31,11 +32,11 @@ function App() {
     } else {
       setTeam([...team, teamMember]);
     }
-  }
+  };
   return (
     <div className="App">
       <h1>Add A Member</h1>
-      <Form
+      <MemberForm
         team={team}
         teamMember={teamMember}
         handleSubmit={handleSubmit}
