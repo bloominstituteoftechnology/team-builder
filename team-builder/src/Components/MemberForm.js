@@ -38,7 +38,7 @@ const MemberForm = ({
         />
       </FormGroup>
       <Button type="submit" className="btn" onClick={renderMember}>
-        Submit
+        ✔️
       </Button>
     </Form>
   );

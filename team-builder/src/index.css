@@ -10,6 +10,7 @@ body {
   background: radial-gradient(tan, beige);
   padding: 2.5%;
   opacity: 1;
+  letter-spacing: 1.5px;
 }
 
 code {
@@ -30,6 +31,8 @@ code {
   border: 1px solid beige;
   margin-left: 25%;
   width: 50%;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
 }
 
 .form-group {
@@ -40,11 +43,21 @@ code {
   padding: 1%;
 }
 .btn {
-  width: 5rem;
-  height: 2.5rem;
-  border-radius: 35%;
-  border: 2px solid beige;
+  width: 8rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1.5px solid rgb(151, 125, 92);
   background: tan;
   color: rgb(97, 75, 46);
-  font-size: 1.2rem;
+  font-size: 1.7rem;
+  margin: 1%;
+  margin-bottom: 0;
+  padding: 1%;
+}
+
+.title {
+  background: tan;
+  background-size: contain;
+  border: 1px ridge rgb(151, 125, 92);
+  padding: 1%;
 }

@@ -35,7 +35,7 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Add A Member</h1>
+      <h1 className="title">🏁 Add A Member 🏁</h1>
       <MemberForm
         team={team}
         teamMember={teamMember}
@@ -45,9 +45,18 @@ function App() {
       />
       {team.map((member, index) => (
         <section className="member-card" key={index}>
-          <h1 className="member-card-text">📋 {member.name}</h1>
-          <h1 className="member-card-text">📧 {member.email}</h1>
-          <h1 className="member-card-text">🏅 {member.role}</h1>
+          <h1 className="member-card-text">
+            📋
+            {member.name}
+          </h1>
+          <h1 className="member-card-text">
+            📧
+            {member.email}
+          </h1>
+          <h1 className="member-card-text">
+            🏅
+            {member.role}
+          </h1>
         </section>
       ))}
     </div>
