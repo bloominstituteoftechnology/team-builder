@@ -5,13 +5,46 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: beige;
-  color: black;
+
+  color: rgb(97, 75, 46);
+  background: radial-gradient(tan, beige);
   padding: 2.5%;
-  overlay: 1.5%;
+  opacity: 1;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.member-card {
+  background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2014/07/Abstract-Black-Rose-Backgrounds.jpg");
+  background-size: contain;
+  border: 1px ridge tan;
+  margin: 2%;
+  color: rgb(97, 75, 46);
+}
+.member-card-text {
+  background: tan;
+  padding: 0.25%;
+  border: 1px solid beige;
+  margin-left: 25%;
+  width: 50%;
+}
+
+.form-group {
+  font-size: 1.2rem;
+  margin: 0.5%;
+  background: #f9e6c8;
+  border: 1px ridge tan;
+  padding: 1%;
+}
+.btn {
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 35%;
+  border: 2px solid beige;
+  background: tan;
+  color: rgb(97, 75, 46);
+  font-size: 1.2rem;
 }

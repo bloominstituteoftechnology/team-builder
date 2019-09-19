@@ -45,9 +45,9 @@ function App() {
       />
       {team.map((member, index) => (
         <section className="member-card" key={index}>
-          <h1>{member.name}</h1>
-          <h1>{member.email}</h1>
-          <h1>{member.role}</h1>
+          <h1 className="member-card-text">📋 {member.name}</h1>
+          <h1 className="member-card-text">📧 {member.email}</h1>
+          <h1 className="member-card-text">🏅 {member.role}</h1>
         </section>
       ))}
     </div>

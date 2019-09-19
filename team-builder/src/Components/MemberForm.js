@@ -37,7 +37,7 @@ const MemberForm = ({
           onChange={e => handleChange(e)}
         />
       </FormGroup>
-      <Button type="submit" onClick={renderMember}>
+      <Button type="submit" className="btn" onClick={renderMember}>
         Submit
       </Button>
     </Form>
