@@ -8,6 +8,10 @@ const Header = styled.form`
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
 `;
 
 const Child = styled.div`

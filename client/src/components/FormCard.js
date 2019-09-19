@@ -4,7 +4,7 @@ import styled from "styled-components";
 const EditHeader = styled.form`
     width: 800px;
     margin: 0 auto;
-    box-shadow: 0px 20px 10px #FFA07A;
+    box-shadow: 20px 20px 10px #FFA07A;
     border: 1px solid black;
     padding-bottom: 20px;
     border-radius: 10px 50px; 
@@ -35,7 +35,7 @@ const EditMember = styled.h1`
 const EditButton = styled.button`
     border-radius: 20px;
     &:hover{
-        background: #fff;
+        background: #DCDCDC;
         border-radius: 20px;
         border: 1px solid lightgrey;
     }
