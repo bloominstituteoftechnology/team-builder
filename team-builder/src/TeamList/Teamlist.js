@@ -57,21 +57,21 @@ function TeamList () {
 
     return(
        <div>
-        <Form 
-            nameChange = {onNameChange}
-            emailChange = {onEmailChange}
-            roleChange = {onRoleChange}
-            teamForm = {teamMemberForm}
-            formSubmit = {onFormSubmit}
-        />
+            <Form 
+                nameChange={onNameChange}
+                emailChange={onEmailChange}
+                roleChange={onRoleChange}
+                teamForm={teamMemberForm}
+                formSubmit={onFormSubmit}
+            />
 
-       {
-        teamMemberList.map(team => (
-          <p key={team.id}>
-            {team.name} email is {team.email} and has a {team.role} role.
-          </p>
-        ))
-       }
+            {
+                teamMemberList.map(team => (
+                    <p key={team.id}>
+                        {team.name} email is {team.email} and has a {team.role} role.
+                    </p>
+                ))
+            }
        </div>
     );
 

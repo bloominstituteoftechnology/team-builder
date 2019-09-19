@@ -4,6 +4,17 @@ import styled from 'styled-components';
 const TeamStyle = styled.div`
     display: flex;
     flex-direction: column;
+    align-items:center;
+    width: 50rem;
+    border-radius: 2px dashed white;
+
+    button{
+      margin-top:1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      background: green;
+      color: white;
+    }
 `    
 
 function Form (props) {
@@ -18,16 +29,16 @@ function Form (props) {
   };
     return(
       <TeamStyle>
-      <label htmlFor='nameInput'>Name</label>
-      <input id='nameInput' type='text' onChange={nameChange}/>
+        <label htmlFor='nameInput'>Name</label>
+        <input id='nameInput' type='text' onChange={nameChange}/>
 
-      <label htmlFor='emailInput'>Email</label>
-      <input id='emailInput' type='text' onChange={emailChange}/>
+        <label htmlFor='emailInput'>Email</label>
+        <input id='emailInput' type='text' onChange={emailChange}/>
 
-      <label htmlFor='roleInput'>Role</label>
-      <input id='roleInput' type='text' onChange={roleChange}/>
+        <label htmlFor='roleInput'>Role</label>
+        <input id='roleInput' type='text' onChange={roleChange}/>
 
-      <button onClick={formSubmit} disabled={isDisabled()}> Add </button>
+        <button onClick={formSubmit} disabled={isDisabled()}> Add </button>
       </TeamStyle>
     );
 }
