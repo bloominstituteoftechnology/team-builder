@@ -13,68 +13,68 @@ const initialTeamMemberList = [
   {id: uuid(), name: 'Monique', email: 'monique@loreal.com', role: 'Chemical engineer'},
 ]
    
-const initialTeamMemberForm = {
-name:'',
-email:'',
-role:'',
-}
+// const initialTeamMemberForm = {
+// name:'',
+// email:'',
+// role:'',
+// }
 
 
 function App() {
   const [TeamMemberList, setTeamMemberList] = useState(initialTeamMemberList);
-  const [TeamMemberForm, setTeamMemberForm] = useState (initialTeamMemberForm);
+  // const [TeamMemberForm, setTeamMemberForm] = useState (initialTeamMemberForm);
     
   const handleChange = event => {
     setTeamMemberList ({ ...TeamMemberList, [event.target.name]: event.target.value });
   };
     
-      // const handleSubmit = event => {
-      //   event.preventDefault();
-      //   console.log(members.name);
-      // };
+  const handleSubmit = event => {
+  event.preventDefault();
+  };
     
-      return (
-        <div className="App">
-
-          <form>
-            <label>
-              Name:
-              <input type="text"
-              name="name"
-              value={TeamMemberList.name}
-              onChange={event => handleChange(event)}
-              />
-            </label>
-
-            <label>
-              Email:
-              <input type="text"
-              email="name"
-              value={TeamMemberList.email}
-              onChange={event => handleChange(event)}
-              />
-            </label>
-
-            <label>
-              Role:
-              <input type="text"
-              role="name"
-              value={TeamMemberList.role}
-              onChange={event => handleChange(event)}
-              />
-            </label>
-
-            {
-             TeamMemberList.map ( members => (
-               <h4 key = {members.id}>
-                 {members.name}, {members.role}. Contact : {members.email}.
-               </h4>
-             )) 
-            }
-            <button> Submit </button>
-          </form>
-        </div>
-      );
+  
+  return (
+    <div className="App">
+    {
+      TeamMemberList.map(members => (
+      <h4 key={members.id}>
+        {members.name}, {members.role}. Contact : {members.email}.
+        </h4>
+      )) 
     }
-    
-    export default App;
+
+    <form onSubmit={event => handleSubmit(event)}>>
+      <label>
+          Name:
+        <input type='text'
+        name='name'
+        value={TeamMemberList.name}
+        onChange={event => handleChange(event)}
+        />
+      </label>
+
+      <label>
+      Email:
+      <input type='text'
+      email='email'
+      value={TeamMemberList.email}
+      onChange={event => handleChange(event)}
+      />
+      </label>
+
+      <label>
+      Role:
+      <input type="text"
+      role='role'
+      value={TeamMemberList.role}
+      onChange={event => handleChange(event)}
+      />
+    </label>
+
+    <button> Submit </button>
+    </form>
+    </div>
+  );
+ }
+      
+export default App;
