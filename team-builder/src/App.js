@@ -7,12 +7,12 @@ import Users from './components/Users';
 function App() {
 
   const [users, setUsers] = useState([
-    {
-      id: v4(),
-      name: "Sample User",
-      email: "a@be.com",
-      role: "Lab Minion"
-    }
+    // {
+    //   id: v4(),
+    //   name: "Sample User",
+    //   email: "a@be.com",
+    //   role: "Lab Minion"
+    // }
   ]);
 
   const addUser = user => {
