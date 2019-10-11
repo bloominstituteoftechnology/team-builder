@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {uuid} from 'uuid';
-import {UserForm} from './components/UserForm';
-import {Users} from './components/Users';
+import UserForm from './components/UserForm';
+import Users from './components/Users';
 
 
 function App() {
