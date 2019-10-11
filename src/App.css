@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+.name-label, .email-label, .role-label {
+  display: block;
+}
+
+label {
+  padding-right: 10px;
+}
+
+.team-card {
+  border: 2px solid black;
+  width: 25%;
+  margin-bottom: 50px;
+}
+
+.team {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
