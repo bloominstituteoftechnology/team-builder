@@ -1,10 +1,8 @@
-.App {
+/* .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -15,8 +13,143 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+form{
+  border: 1px solid white;
+  background-color: #e9e9e9;
+  padding: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+input, textarea {
+  width: 200px;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;  
+  border: 1px solid #302f30;
+  border-radius: 4px;
+}
+button {
+  background: #d0dfe4;
+  background-image: linear-gradient(-315deg, #918e90 40%,#b1acae 100%);
+  border: 1px solid #e6ecec;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #191919;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.12), 0 2px 2px 1px rgba(0, 0, 0, 0.24);
+  transition: all 0.2 ease-in;
+  margin-top: 10px
+}
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.12), 0 2px 3px 2px rgba(0, 0, 0, 0.24);
+  background: #d0dfe4;
+}
+button:active {
+  background: #d0dfe4;
+          box-shadow: inset 0px 0px 5px #ff65a3;
+   outline: none;
+}
+#remove-btn{
+  background: #d0dfe4;
+  border: 1px solid #f2ecec;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 3px;
+}
+label {
+  margin-bottom: -25px;
+  text-align: left;
+  width: 50%;
+  font-size: 20px;
+}
+.container{
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #cdf0cd;
+}
+.memberDiv {
+  border: 1px solid #9c1717;
+  border: 10px;
+  width: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  
+
+  
+}
+.member-info{
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column nowrap;
+  text-align: left;
+  padding: 10px;
+}
+.member-info p{
+  font-size: 1rem;
+  margin-bottom: 3px;
+  width: 400px;
+}
+.removeBtn{
+  
+}
+.membersBox{
+  
 }
 
-.App-link {
-  color: #09d3ac;
-}

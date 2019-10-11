@@ -1,51 +1,60 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 // import MembersList from './components/membersList.js';
 import Member from './components/member.js'
 import MemberForm from './components/newMemberForm.js';
 
 function App() {
-  const [member, setMember] = useState([
+  const [members, setMembers] = useState([
     {
-      id:1,
-      name: "My name"
+      id: 1,
+      fname: "Jon",
+      lname: "Addison",
+      profession: "web developer",
+      city: "New York"
     },
     {
-      id:1,
-      name: "My name"
+    id:2,
+    fname: "Ana",
+    lname: "Tulea",
+    city: "San Jose",
+    profession: "WEB Developer"
     },
     {
-      id:1,
-      name: "My name"
+      id: 3,
+      fname: "Jony",
+      lname: "Peterson",
+      profession: "developer",
+      city: "New Orleans"
     }
-  ]); 
+  ]);
 
-  const addMember = member =>{
-    const newMember ={
-      id:Date.now(),
-      name: member.name
+  const addMember = member => {
+    const newMember = {
+      id: Date.now(),
+      fname: member.fname,
+      lname: member.lname,
+      city:member.city,
+      profession:member.profession
     };
-    setMember([...member,newMember]);
+    setMembers([...members, newMember]);
   };
 
   const delMember = id => {
-    const newArray = member.filter(member => {
+    const newArray = members.filter(member => {
       return member.id !== id;
     });
-    setMember(newArray);
+    setMembers(newArray);
   };
 
   return (
     <div className="App">
       <header className="App-header">
-       <h1>Hello Ana!</h1>
-       <MemberForm addMemberFn={addMember} />
+        <div className='container' >
+        <MemberForm  addMemberFn={addMember} />
 
-       <Member membersList= {member} delMemberFn={delMember} />
-       {/* <MembersList/>
-       <MembersList/>
-       <MembersList/>
-        */}
+        <Member membersList={members} delMemberFn={delMember} />
+        </div>
       </header>
     </div>
   );
