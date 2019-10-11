@@ -11,13 +11,13 @@ function App() {
       fname: "Jon",
       lname: "Addison",
       profession: "web developer",
-      city: "New York"
+      email: "jonaddison@gmail.com"
     },
     {
     id:2,
     fname: "Ana",
     lname: "Tulea",
-    city: "San Jose",
+    email: "anatulea@gmail.com",
     profession: "WEB Developer"
     },
     {
@@ -25,7 +25,7 @@ function App() {
       fname: "Jony",
       lname: "Peterson",
       profession: "developer",
-      city: "New Orleans"
+      email: "jonypeterson@gmail.com"
     }
   ]);
 
@@ -34,7 +34,7 @@ function App() {
       id: Date.now(),
       fname: member.fname,
       lname: member.lname,
-      city:member.city,
+      email:member.city,
       profession:member.profession
     };
     setMembers([...members, newMember]);

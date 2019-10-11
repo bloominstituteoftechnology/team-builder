@@ -9,7 +9,7 @@ const Member = props => {
                         <div className= 'member-info' >
                             <p>First Name: {member.fname}</p>
                             <p>Last Name:{member.lname}</p>
-                            <p>Location: {member.city}</p>
+                            <p>E-mail: {member.email}</p>
                             <p>Profession: {member.profession}</p>
                         </div>
                         <div className="removeBtn" >

@@ -5,7 +5,7 @@ const MemberForm = props => {
         id:1,
         fname: "",
         lname: "",
-        city: "",
+        email: "",
         profession: ""
     });
  
@@ -20,7 +20,7 @@ const MemberForm = props => {
             id:1,
             fname: "",
             lname: "",
-            city: "",
+            email: "",
             profession: ""});
     };
 
@@ -51,13 +51,13 @@ const MemberForm = props => {
                 />
             </label>
         <br/>
-            <label> Location: 
+            <label> Email: 
                 <input
-                name='city'
-                value={member.city}
-                id='cityInput'
+                name='email'
+                value={member.email}
+                id='emailInput'
                 onChange={handleChange}
-                placeholder='City'
+                placeholder='Email'
                 maxLength='15'
                 type='textarea'
                 />
