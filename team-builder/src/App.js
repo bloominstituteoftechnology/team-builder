@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import {uuid} from 'uuid';
+import {UserForm} from './components/UserForm';
+import {Users} from './components/Users';
+
 
 function App() {
 
@@ -12,11 +15,17 @@ function App() {
       email: user.email,
       role: user.role
     }
+
+    setUsers([...users, newUser]);
   }
 
   return (
     <div className="App">
+      <h1>User List</h1>
+      <UserForm addUserCB={addUser} />
       
+      <Users userList={users} />
+
     </div>
   );
 }
