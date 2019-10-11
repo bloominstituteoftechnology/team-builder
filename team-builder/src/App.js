@@ -34,7 +34,7 @@ function App() {
       id: Date.now(),
       fname: member.fname,
       lname: member.lname,
-      email:member.city,
+      email:member.email,
       profession:member.profession
     };
     setMembers([...members, newMember]);
