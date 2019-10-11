@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/team-builder/node_modules
+/team-builder/.pnp
+/team-builder/.pnp.js
+
+# testing
+/team-builder/coverage
+
+# production
+/team-builder/build
+
+# misc
+/team-builder/.DS_Store
+/team-builder/.env.local
+/team-builder/.env.development.local
+/team-builder/.env.test.local
+/team-builder/.env.production.local
+
+/team-builder/npm-debug.log*
+/team-builder/yarn-debug.log*
+/team-builder/yarn-error.log*
