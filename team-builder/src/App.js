@@ -10,10 +10,22 @@ function App() {
     role: 'Owner' 
   }
   ])
+  const addNewMember = member => {
+    const newPerson = {
+      name: member.name,
+      email: member.email,
+      role: member.role
+    }
+    setTeamData([...teamData, newPerson])
+  }
+
+  console.log('teamData', teamData);
 
   return (
     <div className="App">
-    <h1>The Lambda setTeamData</h1>
+    <h1>The Lambda Team</h1>
+    <p addNewMember={addNewMember} />
+    <p teamData={teamData} />
     </div>
   );
 }
