@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
+import Form from './components/Form';
+import Team from './components/Team';
 import './App.css';
 
 function App() {
 
   const [teamData, setTeamData] = useState([
-    {
-    name: 'Leighton Fritze',
-    email: 'Leighton.Fritze.Tech@gmail.com',
-    role: 'Owner' 
-  }
+  //   {
+  //   name: 'Leighton Fritze',
+  //   email: 'Leighton.Fritze.Tech@gmail.com',
+  //   role: 'Owner' 
+  // }
   ])
   const addNewMember = member => {
     const newPerson = {
@@ -19,13 +21,13 @@ function App() {
     setTeamData([...teamData, newPerson])
   }
 
-  console.log('teamData', teamData);
+  
 
   return (
     <div className="App">
     <h1>The Lambda Team</h1>
-    <p addNewMember={addNewMember} />
-    <p teamData={teamData} />
+    <Form addNewMember={addNewMember} />
+    <Team teamData={teamData} />
     </div>
   );
 }
