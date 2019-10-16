@@ -17,7 +17,7 @@ function App() {
     setTeam([...team, newMember]);
   };
 
-  
+  console.log(data);
 
   return (
 

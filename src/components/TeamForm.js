@@ -2,14 +2,19 @@ import React, { useState } from "react";
 
 const TeamForm = () => {
 
-  const [value, setValue] = useState(" ");
+  const [value, setValue] = useState({
+    name:"",
+    linkedIn: "",
+    github:""
+  });
 
   const changeHandler = event => {
-    setValue({[event.target.name]: event.target.value });
+    setValue({...value, [event.target.name]: event.target.value });
   };
 
   const submitForm = event => {
     event.preventDefault();
+    alert(`submitting ${value.name},${value.linkedIn},${value.github}`);
     // props.setValue();
     // setValue({ name: "", linkedIn: "" , github:""});
   };
@@ -18,7 +23,6 @@ const TeamForm = () => {
     <form onSubmit={submitForm}>
       <label htmlFor="name">Name</label>
       <input
-        id="name"
         type="text"
         name="name"
         placeholder ="Enter Name Here"
@@ -27,7 +31,6 @@ const TeamForm = () => {
       />
       <label htmlFor="linkedIn">LinkedIn</label>
       <input
-        id="linkedIn"
         name="linkedIn"
         placeholder ="Enter LinkedIn Handle"
         onChange={changeHandler}
@@ -36,7 +39,6 @@ const TeamForm = () => {
 
       <label htmlFor="github">Github</label>
       <input
-        id="github"
         name="github"
         placeholder ="Enter Github Handle"
         onChange={changeHandler}
