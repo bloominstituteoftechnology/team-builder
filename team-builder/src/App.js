@@ -4,8 +4,10 @@ import "./App.css";
 import MemberCards from "./components/MemberCards";
 import MemberForm from "./components/MemberForm";
 
+import { data } from "./data";
+
 function App() {
-  const [cards, setCards] = useState();
+  const [cards, setCards] = useState(data);
 
   const addNewCard = newCard => {
     setCards([...cards, newCard]);
