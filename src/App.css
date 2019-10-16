@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+  padding: 32px;
+  letter-spacing: 2px
+}
+
+
+label {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+button {
+width: 60%;
+height: 30px;
+border-radius: 10px;
+margin: 5%;
+font-size: 1.2rem;
+}
+
+input, textarea {
+  width: 200px;
+  padding: 8px 8px;
+  margin: 10px 5px;
+  box-sizing: border-box;  
+  border-radius: 4px;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.12), 0 2px 3px 2px rgba(0, 0, 0, 0.24);
+  background: #56a8d8;
+}
+button:active {
+  background: #376bca;
+          box-shadow: inset 0px 0px 5px #65d3ff;
+   outline: none;
+}
