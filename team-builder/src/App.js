@@ -7,12 +7,12 @@ import MemberForm from "./components/MemberForm";
 function App() {
   const [cards, setCards] = useState();
 
-  const addCard = newCard => {
+  const addNewCard = newCard => {
     setCards([...cards, newCard]);
   };
   return (
     <div className="App">
-      <MemberForm addCard={addCard} />
+      <MemberForm addNewCard={addNewCard} />
       <MemberCards cards={cards} />
     </div>
   );
