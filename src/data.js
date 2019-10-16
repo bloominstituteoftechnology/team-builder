@@ -1,4 +1,3 @@
-
 const team = [
     {
       name:"Thomas Utsey",
