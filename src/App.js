@@ -1,17 +1,23 @@
 import React, {useState} from 'react';
-import Form from './Components/Form';
+import TeamForm from './Components/TeamForm';
+import TeamMember from './Components/TeamMember';
 
 import './App.css';
 
 function App() {
-  const [teamMember, setTeamMember] = useState('')
+  const [teamMember, setTeamMember] = useState([{
+      name: '',
+      email: '',
+      role:''
+    }]);
 
   const submit = person => {
-    setTeamMember(...teamMember, person)
+    setTeamMember([...teamMember, person])
   }
   return (
     <div className="App">
-      <Form submit={submit}/>
+      <TeamForm submit={submit}/>
+      <TeamMember mates={teamMember}/>
     </div>
   );
 }

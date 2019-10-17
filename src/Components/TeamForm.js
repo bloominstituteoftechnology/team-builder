@@ -44,7 +44,12 @@ export default function Form(props) {
                     <br />
 
                 <label htmlFor="role">Role </label>
-                    <select>
+                    <select 
+                    name="role" 
+                    id="role" 
+                    type="text"
+                    onChange={changeHandler}
+                    value={input.role}>
                         <option>GoFour</option> 
                         <option>UI</option>  
                         <option>UX</option>  
@@ -53,7 +58,7 @@ export default function Form(props) {
                         <option>Project Manager</option>  
                     </select>
                      <br />
-                    <input type='submit' />
+                    <button type='submit'>Submit</button>
             </form>
         </div>
     )
