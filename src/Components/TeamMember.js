@@ -10,6 +10,9 @@ font-size: 2rem;
 width: 30%;
 margin: 3%;
 border-radius: 8px;
+h3 {
+    font-size:1.5rem;
+}
 
 `;
 
