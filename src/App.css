@@ -20,3 +20,53 @@
 .App-link {
     color: #09d3ac;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin-bottom: 0.25rem;
+}
+
+form input {
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    border: solid 2px lightgray;
+}
+
+form select {
+    color: gray;
+    border-radius: 0.3rem;
+    background-color: transparent;
+    border: solid 2px lightgray;
+}
+
+form button {
+    font-weight: bold;
+    margin-top: 3.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    border: solid 2px lightgray;
+}
+
+.member {
+    width: 50%;
+    margin: 3rem auto;
+    padding: 0.1rem 0;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: solid 2px lightgray;
+}
+
+.member:last-child {
+    margin-bottom: 0rem;
+}
+
+.member:hover {
+    background-color: lightgray;
+}

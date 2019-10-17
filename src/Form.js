@@ -3,38 +3,55 @@ import logo from "./logo.svg";
 
 import "./App.css";
 
-function Form() {
-    const [members, setMembers] = useState({
+function Form(props) {
+    const [member, setMember] = useState({
         name: "",
         email: "",
         role: ""
     });
 
+    const changeHandler = event => {
+        setMember({ ...member, [event.target.name]: event.target.value });
+    };
+
     const submitForm = event => {
         event.preventDefault();
-        props.addNewMember;
-        setMembers({ name: "", email: "", role: "" });
+        props.addNewMember(member);
+        setMember({ name: "", email: "", role: "" });
     };
 
     return (
         <form onSubmit={submitForm}>
-            <label htmlFor="name">Name</label>
-            <input name="name" id="name" type="text" placeholder="Name..." />
+            <label htmlFor="name">Name:</label>
+            <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={member.name}
+                onChange={changeHandler}
+                required
+            />
 
-            <label htmlFor="email">E-mail</label>
-            <input name="email" id="email" type="email" placeholder="E-mail..." />
+            <label htmlFor="name">E-mail:</label>
+            <input
+                id="email"
+                type="text"
+                name="email"
+                placeholder="Email"
+                value={member.email}
+                onChange={changeHandler}
+                required
+            />
 
-            <label htmlFor="role">Role</label>
-            <select name="role">
-                <option selected value="frontendEngineer">
-                    Frontend Engineer
-                </option>
-                <option value="backendEngineer">Backend Engineer</option>
-                <option value="designer">Designer</option>
-                <option value="dataScientist">Data Scientist</option>
+            <label htmlFor="role">Select a Role</label>
+            <select onChange={changeHandler} id="role" name="role" required>
+                <option value="">Select a Role</option>
+                <option value={member.role1}>Frontend</option>
+                <option value={member.role2}>Backend</option>
+                <option value={member.role3}>UI Designer</option>
             </select>
-
-            <button type="submit">Add Member</button>
+            <button type="submit">Submit Member</button>
         </form>
     );
 }
