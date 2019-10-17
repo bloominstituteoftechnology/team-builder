@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TeamForm = () => {
+const TeamForm = (props) => {
 
   const [value, setValue] = useState({
     name:"",
@@ -14,37 +14,42 @@ const TeamForm = () => {
 
   const submitForm = event => {
     event.preventDefault();
-    alert(`submitting ${value.name},${value.linkedIn},${value.github}`);
-    // props.setValue();
-    // setValue({ name: "", linkedIn: "" , github:""});
+    // alert(`submitting ${value.name},${value.linkedIn},${value.github}`);
+    props.AddNewMember(value);
+    setValue({ name: "", linkedIn: "" , github:""});
   };
 
   return (
     <form onSubmit={submitForm}>
       <label htmlFor="name">Name</label>
       <input
+        id="name"
         type="text"
         name="name"
-        placeholder ="Enter Name Here"
+        placeholder ="New Member Name"
         onChange={changeHandler}
         value={value.name}
       />
       <label htmlFor="linkedIn">LinkedIn</label>
       <input
+        id="linkedIn"
+        type="text"
         name="linkedIn"
-        placeholder ="Enter LinkedIn Handle"
+        placeholder ="New Member LinkedIn"
         onChange={changeHandler}
         value={value.linkedIn}
       />
 
       <label htmlFor="github">Github</label>
       <input
+        id="github"
+        type="text"
         name="github"
-        placeholder ="Enter Github Handle"
+        placeholder ="New Member Github"
         onChange={changeHandler}
         value={value.github}
       />
-      <button type="submit">Add Member</button>
+      <button type="submit">Add New Member</button>
     </form>
     
   );

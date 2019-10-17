@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import data from "./data";
 import TeamForm from "./components/TeamForm";
+import CurrentMembers from "./components/CurrentMembers";
 import './App.css';
 
 
 function App() {
 
   const [team, setTeam] = useState(data);
+
 
   const addNewMember = member => {
     const newMember = {
@@ -17,17 +19,17 @@ function App() {
     setTeam([...team, newMember]);
   };
 
-  console.log(data);
 
   return (
 
 
     <div className="App">
-      <form>
-        <label>
-          <TeamForm addNewMember ={addNewMember} className="form"/>
-        </label>
-      </form>
+     
+     <h1>Team Members</h1>
+          <TeamForm  addNewMember ={addNewMember} className="form"/>
+          <CurrentMembers team ={team}/>
+     
+    
     </div>
   );
 }
