@@ -1,4 +1,28 @@
 import React, {useState} from 'react';
+import styled from "styled-components";
+
+const FormDiv = styled.div`
+   color: yellow;
+   font-size: 2.5rem;
+   input {
+       font-size:2.5rem;
+       border-radius: 5px;
+       text-align: center;
+       margin: 1%;
+   }
+   select {
+       background: yellow;
+    font-size: 2rem;
+   }
+   button {
+       font-size: 3rem;
+       color: white;
+       background: dodgerblue;
+       margin: 3%;
+       border-radius: 8px;
+       width: 15%;
+   }
+`;
 
 export default function Form(props) {
 
@@ -19,9 +43,9 @@ export default function Form(props) {
         console.log("I'm submitting :")
       }
     return (
-        <div>
+        <FormDiv>
             <form onSubmit={submitInfo}>
-                <label htmlFor="title">Name</label>
+                <label htmlFor="title">   Name   </label>
                     <input 
                          name="name"
                          id="name"
@@ -30,9 +54,10 @@ export default function Form(props) {
                          onChange={changeHandler}
                          value={input.name}
                     />
-                     <br />
+                    <br />
+                  
 
-                <label htmlFor="email">e-mail </label>
+                <label htmlFor="email">   email   </label>
                     <input 
                          name="email"
                          id="email"
@@ -41,9 +66,9 @@ export default function Form(props) {
                          onChange={changeHandler}
                          value={input.email}
                     />
-                    <br />
+                   <br />
 
-                <label htmlFor="role">Role </label>
+                <label htmlFor="role">  Role </label>
                     <select 
                     name="role" 
                     id="role" 
@@ -58,8 +83,8 @@ export default function Form(props) {
                         <option>Project Manager</option>  
                     </select>
                      <br />
-                    <button type='submit'>Submit</button>
+                    <button type='submit'>  Submit    </button>
             </form>
-        </div>
+        </FormDiv>
     )
 };
