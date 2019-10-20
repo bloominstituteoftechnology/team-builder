@@ -1,26 +1,17 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
-
-import TeamForms from './Components/TeamForms';
-import Teams from './Components/Teams';
-import data from "./data";
-
-
+import Form from './Components/Form';
+import Member from './Components/Member';
 
 function App() {
-  const [team, setTeam] = useState(data);
-
-  const addNewTeam = team => {
-    setTeam([...team, team])
-  }
+  const [members, setMembers] = useState([])
 
   return (
     <div className="App">
-      <h1>Teams</h1>
-      <TeamForms addNewTeam={addNewTeam}/>
-      <Teams TeamList={team}/>
+      <Form setMembers={setMembers} members={members} />
+      {members.map((member, i) => <Member member={member} key={i} />)}
     </div>
   );
-}
 
+}
 export default App;
