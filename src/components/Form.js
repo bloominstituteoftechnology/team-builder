@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Form = props => {
-    console.log(props);
+    console.log("our props", props);
     const [data, setData] = useState({
         name: " ",
         email: "",
@@ -21,17 +21,16 @@ const Form = props => {
         ...data,
         id: Date.now()
       };
-      props.addNewNote(newCard);
-      setData({ title: "", body: "" });
+      props.addNewCard(newCard);
+      setData({name: " ", email: "", role: " " });
     };
 
     return (
-      <div className="form-container">
-          <h1>The Form</h1>
+      <div>
         <form onSubmit={submitHandler}>
             <label htmlFor="nameInput">Enter Name: </label>
             <input 
-            onChange={event => {setData(dataHandler)}}
+            onChange={dataHandler}
             type="text"
             id="nameInput"
             name="name"
@@ -40,7 +39,7 @@ const Form = props => {
 
             <label htmlFor="emailInput">Enter Email: </label>
             <input 
-            onChange={event => {setData(dataHandler)}}
+            onChange={dataHandler}
             type="text"
             id="emailInput"
             name="email"
@@ -49,7 +48,7 @@ const Form = props => {
 
             <label htmlFor="roleInput">Enter Role: </label>
             <input 
-            onChange={event => {setData(dataHandler)}}
+            onChange={dataHandler}
             type="text"
             id="roleInput"
             name="role"
@@ -59,5 +58,5 @@ const Form = props => {
         </form>
       </div>
     );
-  }
+  };
   export default Form;

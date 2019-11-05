@@ -4,13 +4,21 @@ import Card from './components/Card';
 import './App.css';
 
 function App() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([
+    {
+      id: 1,
+      name: "Trey",
+      email: "trey.mcgarity",
+      role: "student"
+    }
+  ]);
 
   const addNewCard = card => {
-    const newCard = setCards([...cards, card]);
+    setCards([...cards, card]);
   }
   return (
     <div className="App">
+      <h1>The Form</h1>
       <Form addNewCard={addNewCard}/>
       <Card cards={cards}/>
     </div>
