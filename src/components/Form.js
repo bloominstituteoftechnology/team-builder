@@ -15,10 +15,20 @@ const Form = props => {
         });
     };
 
+    const submitHandler = event => {
+      event.preventDefault();
+      const newCard = {
+        ...data,
+        id: Date.now()
+      };
+      props.addNewNote(newCard);
+      setData({ title: "", body: "" });
+    };
+
     return (
       <div className="form-container">
           <h1>The Form</h1>
-        <form>
+        <form onSubmit={submitHandler}>
             <label htmlFor="nameInput">Enter Name: </label>
             <input 
             onChange={event => {setData(dataHandler)}}
@@ -44,6 +54,8 @@ const Form = props => {
             id="roleInput"
             name="role"
             />
+            <br />
+            <button type="submit">Submit</button>
         </form>
       </div>
     );
