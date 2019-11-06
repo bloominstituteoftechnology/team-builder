@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+.card-list{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  background-color: #09d3ac;
+  margin: 20px;
+  width: 25%;
+}
+.form{
+  display: flex;
+  justify-content: center;
+}
+.input{
+  margin: 0 20px;
+}
