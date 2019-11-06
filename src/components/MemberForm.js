@@ -22,9 +22,8 @@ const MemberForm = props => {
   };
 
   return (
-    <div>
+    <div className="form-header">
       <form onSubmit={submitHandler}>
-        <h1>{member.name}</h1>
         <label htmlFor="title">Team Member Name</label>
         <input
           onChange={handleChanges}
