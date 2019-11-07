@@ -4,5 +4,5 @@ export default [
         name: "Bob Ross",
         email: "Bobross@gmail.com",
         dob: "12/12/2019"
-    },
+    }
 ]

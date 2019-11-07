@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 const TeamForm = props => {
   const [user, setUser] = useState({
-    title: "",
-    body: "",
-    date: "",
+    name: "",
+    email: "",
+    dob: "",
   })
 
 // console.log(props)
@@ -31,18 +31,17 @@ const changeHandler = event => {
 
   return (
       <form onSubmit={submitForm}>
-        <label htmlFor="title" >Team Builder: </label>
+        <label htmlFor="name" >Team Builder: </label>
         <input 
-        id="title"
-        type="text" 
-        name="title"
+        type="text"
+        name="name"
         placeholder="First name..."
-        value={user.title}
+        value={user.name}
         onChange={changeHandler} 
          />
 
         <textarea 
-        name="body" 
+        name="email" 
         placeholder="Type Your Note Here"
         value={user.body}
         onChange={changeHandler} 

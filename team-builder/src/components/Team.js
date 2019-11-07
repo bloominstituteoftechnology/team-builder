@@ -5,15 +5,17 @@ const Team = props => {
     console.log(props)
     return (
       <div>
-          {props.formData.map( user =>{
-              return(
-                  <div className="styling" key={user.id}>
-                      <h2>{user.name}</h2>
-                      <h3>{user.email}</h3>
-                      <h4>{user.dob}</h4>
+          {props.formData.map( item =>{
+           console.log(item)
+          
+           return(
+                  <div className="styling" key={item.id}>
+                      <h2>{item.name}</h2>
+                      <h3>{item.email}</h3>
+                      <h4>{item.dob}</h4>
                   </div>
               )
-          })}
+            })}
       </div>
     );
 }
