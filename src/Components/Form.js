@@ -16,7 +16,7 @@ const Form = props => {
     const submitForm = event =>{
         event.preventDefault();
         props.addNewNote(note);
-        setNote({name: "", Email: "", role: "", })
+        setNote({name: "", email: "", role: "", })
     };
 
     return(
