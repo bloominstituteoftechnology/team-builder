@@ -9,7 +9,7 @@ const MemberForm = props => {
     });
 
     const changeHandler = event => {
-        setMember({title: event.target.value})
+        setMember({...member, [event.target.name]: event.target.value})
        
     }
 
@@ -27,7 +27,26 @@ const MemberForm = props => {
             name="title" 
             type="text" 
             placeholder="title" 
-            onChange={changeHandler}/>
+            onChange={changeHandler}
+            value={member.name}/>
+
+            <label htmlFor="title">Email</label>
+            <input 
+            id="title" 
+            name="title" 
+            type="text" 
+            placeholder="title" 
+            onChange={changeHandler}
+            value={member.email}/>
+
+            <label htmlFor="title">Role</label>
+            <input 
+            id="title" 
+            name="title" 
+            type="text" 
+            placeholder="title" 
+            onChange={changeHandler}
+            value={member.role}/>
             <button type="submit">Submit</button>
         </form>
     );
