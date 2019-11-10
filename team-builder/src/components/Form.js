@@ -13,7 +13,7 @@ const MemberForm = props => {
 
   const changeHandler = (e) =>{
     console.log(e.target.name);
-    setPerson({[e.target.name]: e.target.value})
+    setPerson({...person, [e.target.name]: e.target.value})
     console.log(person);
   }
 
