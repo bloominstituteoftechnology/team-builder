@@ -1,19 +1,28 @@
-import React, { useState } from 'react';
+import React, {
+  useState
+} from 'react';
+import Form from './Components/Form';
 import './App.css';
+
+
+
+
+
 
 function App() {
 
-  const [members, setMembers] = useState([
 
-    {name:"Dave", email: "dave@thisemail.com", role:"Bus driver",},
-    {name:"Mike", email: "mike@thisemail.com", role:"Banker",},
-    {name:"Bill", email: "bill@thisemail.com", role:"Programmer",}
-  ]);
-  
-  
-  
-  
-  return <div className="App" />;	  
-}	
+
+
+  return ( 
+    <div className = "App"> <Form /> </div>
+  )
+
+
+
+
+
+
+}
 
 export default App;
