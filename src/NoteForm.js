@@ -3,7 +3,7 @@ import './App.css';
 import React, { useState } from "react";
 
 const NoteForm = props => {
-    const [note, setNote] = useState({ title: "", body: "" });
+    const [note, setNote] = useState({ name: "", email: "", role:"" });
   
     const handleChanges = e => {
       setNote({ ...note, [e.target.name]: e.target.value });
@@ -13,26 +13,35 @@ const NoteForm = props => {
     const submitForm = e => {
       e.preventDefault();
       props.addNewNote(note);
-      setNote({ title: "", body: "" });
+      setNote({ name: "", email: "", role:"" });
     };
     return (
       <form onSubmit={submitForm}>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="name">Name:</label>
         <input
-          id="title"
+          id="name"
           type="text"
-          name="title"
+          name="name"
           onChange={handleChanges}
-          value={note.title}
+          value={note.name}
         />
-        <label htmlFor="note">Note</label>
-        <textarea
-          id="note"
-          name="body"
-          value={note.body}
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="text"
+          name="email"
+          value={note.email}
           onChange={handleChanges}
         />
-        <button type="submit">Add Note</button>
+        <label htmlFor="role">Role:</label>
+        <input
+          id="role"
+          type="text"
+          name="role"
+          value={note.role}
+          onChange={handleChanges}
+        />
+        <button type="submit">Add Team Member</button>
       </form>
     );
   };

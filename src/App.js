@@ -5,8 +5,10 @@ import React, { useState } from 'react'
 
 import NoteForm from './NoteForm.js';
 import Notes from './Notes.js'
-import ReactDOM from "react-dom";
-import logo from './logo.svg';
+
+//import ReactDOM from "react-dom";
+
+//import logo from './logo.svg';
 
 // function App() {
 //   return (
@@ -34,23 +36,33 @@ function App() {
   const [notes, setNotes] = useState([
     {
       id: 1,
-      title: "Happy little quote",
-      body:
-        "Talent is a pursued interest. Anything that you're willing to practice, you can do.― Bob Ross "
+      name: "Robert Elias",
+      email:
+        "robertelias@gmail.com",
+      role: "Lead Software Engineer"
+    },
+
+    {
+      id: 2,
+      name: "John Smith",
+      email:
+        "JSmith@gmail.com",
+      role: "Software Developer"
     }
   ]);
 
   const addNewNote = note => {
     const newNote = {
       id: Date.now(),
-      title: note.title,
-      body: note.body
+      name: note.name,
+      email: note.email,
+      role: note.role
     };
     setNotes([...notes, newNote]);
   };
   return (
     <div className="App">
-      <h1>My Notes</h1>
+      <h1>My Team</h1>
       {/* we are going to pass a function down as a prop */}
       <NoteForm addNewNote={addNewNote} />
       <Notes notes={notes} />

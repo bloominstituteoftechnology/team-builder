@@ -5,8 +5,9 @@ const Notes = props => {
     <div className="note-list">
       {props.notes.map(note => (
         <div className="note" key={note.id}>
-          <h2>{note.title}</h2>
-          <p>{note.body}</p>
+          <p>Name: {note.name}</p>
+          <p>Email: {note.email}</p>
+          <p>Role: {note.role}</p>
         </div>
       ))}
     </div>
