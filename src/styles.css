@@ -11,18 +11,23 @@ body,
 }
 
 .App {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Arial', 'Roboto';
   text-align: center;
-  background-image: linear-gradient(-315deg, #7afcff 40%,#41b6d7 100%);
+  /* background-image: linear-gradient(-315deg, #6cb4b4 40%,#d74141 100%); */
+  background-image: url("https://images.unsplash.com/photo-1520509414578-d9cbf09933a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=649&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 32px;
-  letter-spacing: 2px
+  letter-spacing: 2px;
+  color: white;
 }
 .note-list {
   display: flex;
   flex-wrap: wrap;
 }
 .note {
-  background: #ffff88;
+  background: #2f76b99d;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
   width: 100%;
   max-width: 250px;
@@ -47,13 +52,13 @@ input, textarea {
   padding: 15px 22px;
   margin: 10px 5px;
   box-sizing: border-box;  
-  border: 1px solid #ff65a3;
+  border: 1px solid #caf071;
   border-radius: 4px;
 }
 button {
-  background: #ff7eb9;
-  background-image: linear-gradient(-315deg, #ff7eb9 40%,#ff65a3 100%);
-  border: 1px solid #ff65a3;
+  background: #7efff9;
+  background-image: linear-gradient(-315deg, #ff7e7e 40%,#5d3638 100%);
+  border: 2px solid #313030;
   padding: 10px 15px;
   font-size: 16px;
   color: #191919;
