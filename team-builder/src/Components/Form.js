@@ -26,6 +26,7 @@ let team = [
 const Form = props => {
 
     const [Members, addNewMember ] = useState([...team]);
+      
 
     const [currentForm, changeForm] = useState ({
         name: "",
@@ -35,7 +36,7 @@ const Form = props => {
 
     const handleFormChange = event => {
         changeForm({...currentForm, [event.target.name]:
-        event.target.value })
+        event.target.value });
     };
 
     const handleSubmit = e => {
@@ -55,23 +56,46 @@ const Form = props => {
         return(
             <div className="Forms">
             <form onSubmit={handleSubmit}>
-              <label htmlFor="currentForm_name"> name </label>
+              <label htmlFor="currentForm_name"> Name </label>
               <input
                 type="text"
-                name="username"
+                name="name"
                 id="currentForm_username"
-                placeholder="Enter your username here"
+                placeholder="Enter your name here"
                 onChange={handleFormChange}
                 // We are telling our input what its value should be
                 // It's value corresponds to its property in state
                 value={currentForm.name}
               />
-      
-             
+
+              <label htmlFor="currentFrom_email">Email</label>
+              <input 
+                type="text"
+                name="email"
+                placeholder="Enter your email here"
+                onChange={handleFormChange}
+                value={currentForm.email}
+              />
+
+                <label htmlFor="currentFrom_role">Role</label>
+              <input 
+                type="text"
+                name="role"
+                placeholder="What is you prefered role"
+                onChange={handleFormChange}
+                value={currentForm.role}
+                />
+             <input type="submit" />
             </form>
-          </div>
+            </div>
+            
+
+
         );
       }
+
+     
+
       
         
 
