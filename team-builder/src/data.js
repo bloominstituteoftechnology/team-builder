@@ -8,7 +8,7 @@ const members = [
     {
         id: 2,
         name: 'Lois Griffin',
-        email: 'lgrifiin@gmail.com',
+        email: 'lgrifiin@yahoo.com',
         role: 'React Developer',
     },
     {
