@@ -10,13 +10,16 @@ const TeamMemebers = props => {
         <div className = "teammemebers">
             {props.team.map((note, index) => {
                 return(
-                    <div classname = "note" key={index}>
+                    <div className = "note" key={index}>
                         <h1>{note.name}</h1>
                         <p>{note.Email}</p>
                         <p>{note.role}</p>
+                        <button> Edit</button>
                         </div>
+                        
                 )
             })}
+            
 
 
         </div>

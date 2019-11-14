@@ -7,6 +7,7 @@ import TeamMemebersForm from './component/TeamMemebersForm';
 
 function App() {
   const[notes, setNotes] = useState(data)
+  
 
   const addNewNote = note => {
     setNotes([...notes, note])

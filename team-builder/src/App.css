@@ -20,3 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+
+.teammemebers{
+  border: 3px solid red;
+}
+
+.note{
+  border: 3px solid black;
+}
