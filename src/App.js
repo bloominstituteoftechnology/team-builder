@@ -3,34 +3,10 @@ import "./styles.css";
 
 import React, { useState } from 'react'
 
-import NoteForm from './NoteForm.js';
-import Notes from './Notes.js'
+//import Form from './Form.js'
+import NoteForm from './Forms.js';
 
 //import ReactDOM from "react-dom";
-
-//import logo from './logo.svg';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
 
 function App() {
   const [notes, setNotes] = useState([
@@ -51,6 +27,20 @@ function App() {
     }
   ]);
 
+  const Form = props => {
+    return (
+      <div className="note-list">
+        {props.notes.map(note => (
+          <div className="note" key={note.id}>
+            <p>Name: {note.name}</p>
+            <p>Email: {note.email}</p>
+            <p>Role: {note.role}</p>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   const addNewNote = note => {
     const newNote = {
       id: Date.now(),
@@ -65,7 +55,7 @@ function App() {
       <h1>My Team</h1>
       {/* we are going to pass a function down as a prop */}
       <NoteForm addNewNote={addNewNote} />
-      <Notes notes={notes} />
+      <Form notes={notes} />
     </div>
   );
 }
