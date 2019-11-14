@@ -12,6 +12,51 @@ code {
     monospace;
 }
 
-li {
-  list-style: none;
+html {
+  text-align: center;
+  background-color: #7dadaf;
+  color: #aa5618;
+  margin: 5% 12%;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10%;
+}
+
+input {
+  background-color: #e8d2d4;
+  color: #9b392a;
+  font-size: 100%;
+  margin: 0 3% 0 3%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+::placeholder {
+  color: #9b392a;
+  font-size: 120%;
+}
+
+p {
+  color: #9b392a;
+  font-size: 115%;
+}
+
+button {
+  background-color: #ceaf32;
+  color: #9b392a;
+  font-size: 100%;
+  border-radius: 20px;
+  border: none;
+  padding: 5px;
+  margin: 3% 40%;
+  width: 100%;
+}
+
+.member-card {
+  background-color: rgba(232, 210, 212, 0.4);
+  margin: 0 25% 0 25%;
 }
