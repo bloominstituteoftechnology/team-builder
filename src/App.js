@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import TeamForm from './Components/TeamForm';
 import TeamMember from './Components/TeamMember';
@@ -15,10 +15,11 @@ background-position: center;
 background-size: cover;
 display:flex;
 flex-direction:column;
-/* justify-content:space-around; */
+
 height: 100vh;
 h1 {color: white;
 font-size:7rem;}
+box-sizing: border-box;
 `;
 
 const TeamDiv = styled.div`
@@ -27,10 +28,10 @@ margin: 3%;
 
 function App() {
   const [teamMember, setTeamMember] = useState([{
-      name: '',
-      email: '',
-      role:''
-    }]);
+    name: '',
+    email: '',
+    role: ''
+  }]);
 
   const submit = person => {
     setTeamMember([...teamMember, person])
@@ -39,12 +40,12 @@ function App() {
     <div className="App">
       <Container>
         <h1>Team Builder</h1>
-        
-        <TeamForm submit={submit}/>
+
+        <TeamForm submit={submit} />
         <TeamDiv>
-          <TeamMember mates={teamMember}/>
+          <TeamMember mates={teamMember} />
         </TeamDiv>
-       
+
       </Container>
     </div>
   );
