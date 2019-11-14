@@ -7,7 +7,7 @@ const MateCard = styled.div`
 background: white;
 opacity: .7;
 font-size: 2rem;
-width: 30%;
+/* width: 30%; */
 margin: 3%;
 border-radius: 8px;
 h3 {

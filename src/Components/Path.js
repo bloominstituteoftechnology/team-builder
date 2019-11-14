@@ -21,11 +21,7 @@ const Path = () => {
         <div>
             <a href="https://github.com/J2Macwilliams/team-builder">
                 <Button>Code</Button>
-            </a>
-            <a href="https://j2macwilliams.github.io/My-Portfolio/">
-                <Button>Portfolio</Button>
-            </a>
-            
+            </a> 
         </div>
     )
 }

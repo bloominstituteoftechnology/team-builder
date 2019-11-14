@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+
+import Path from './Path';
 import styled from "styled-components";
 
 const FormDiv = styled.div`
@@ -14,13 +16,19 @@ const FormDiv = styled.div`
        background: yellow;
     font-size: 2rem;
    }
-   button {
+
+   .button {
        font-size: 3rem;
        color: white;
        background: dodgerblue;
        margin: 3%;
        border-radius: 8px;
-       width: 15%;
+
+       &:hover{
+        background: white;
+        color: dodgerblue;
+        border: 1px solid dodgerblue;
+        } 
    }
 `;
 
@@ -83,8 +91,9 @@ export default function Form(props) {
                         <option>Project Manager</option>  
                     </select>
                      <br />
-                    <button type='submit'>  Submit    </button>
+                    <button type='submit' className="button" >  Submit    </button>
             </form>
+            <Path />
         </FormDiv>
     )
 };
