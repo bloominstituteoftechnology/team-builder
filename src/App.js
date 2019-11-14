@@ -3,10 +3,7 @@ import "./styles.css";
 
 import React, { useState } from 'react'
 
-//import Form from './Form.js'
 import NoteForm from './Forms.js';
-
-//import ReactDOM from "react-dom";
 
 function App() {
   const [notes, setNotes] = useState([
