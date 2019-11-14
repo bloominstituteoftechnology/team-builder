@@ -14,39 +14,39 @@ function App() {
 
   ]);
   const addNewMember = member =>{
-    const newMember = {
-      id: Date.now(),
-      name: member.name,
-      email: member.email,
-      role: member.role
+    // const newMember = {
+      // id: member.email,
+      // name: member.name,
+      // email: member.email,
+      // role: member.role
 
-    };
-    setMembers([...members, newMember]);
+    // };
+    console.log(member);
+    setMembers([...members, member]);
   };
 
 
 
   return (
-    <div className="App">
-      <header className="App-header">
+  <div className="App">
+      {/* <header className="App-header">
+        
         <h3>Chance's Fancy Team Roster Builder v0.01a.5 and a half</h3>
-        <Form addNewMemer={addNewMember}/>
+      </header> */}
+        
+        <Form addNewMember={addNewMember}/>
+        
         <Team members={members}/>
+        {/* {members.map(value =>(
+          <div>
+          <p>Name: {value.name}</p>
+          <p>Email: {value.email}</p>
+          </div>
+        ))} */}
+        
 
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          {/* Edit <code>src/App.js</code> and save to reload. */}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>Ask me How!</p>
-      </header>
+
+     
     </div>
   );
 }

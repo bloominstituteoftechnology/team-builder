@@ -5,7 +5,7 @@ const Team = props =>{
     return(
         <div>
             {props.members.map(value =>(
-            <div className="teams" key={value.id}>
+            <div className="teams" key={value.email}>
                 <p className="name">Name: {value.name} </p>
                 <p>Email: {value.email} </p>
                 <p>Role: {value.role}</p>
@@ -17,7 +17,7 @@ const Team = props =>{
 }
 
 
-
+  
 
 
 
