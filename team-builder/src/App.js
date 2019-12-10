@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './css/index.css';
 import TeamMember from './Components/TeamMember'
+import Menu from './Components/Menu'
 
 function App() {
   const [person, setPerson] = useState([
@@ -14,7 +15,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Team Member List</h1>
+        <nav>
+          <Menu />
+        </nav>
+        <h1>Meet the Team</h1>
       </header>
       <div>
         <TeamMember person={person} />
