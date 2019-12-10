@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+nav {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: right;
+  align-content: right;
+  align-items: right;
+  flex-flow: row ;
+}
+.menu {
+  color: pink;
+  display: flex;
+  flex-flow: row ;
+}
+.menu h2 {
+  padding: 1% 5%;
+}
