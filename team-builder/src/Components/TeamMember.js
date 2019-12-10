@@ -1,10 +1,17 @@
 import React, {useState} from 'react'
 
 
-const TeamMember =()=>{
-    const [memberList, setMemberList] = useState({firstName:'', lastName:'' })
+const TeamMember = props =>{
     return(
-        
+        <div className='teamList'>
+            {props.person.map(person =>(
+                <div>
+                    <h2>{`${person.firstName}  ${person.lastName}`}</h2>
+                </div>
+            ))
+
+            }
+        </div>
     )
 }
 
