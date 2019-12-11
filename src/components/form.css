@@ -1,0 +1,31 @@
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+input {
+    margin: 10px;
+    height: 30px;
+    width: 200px;
+}
+
+
+button {
+    border: 1px solid black;
+    background: black;
+    font-size: 1rem;
+    color: rgb(106, 199, 175);
+    box-shadow: 5px 5px 14px grey;
+    width: 180px;
+    height: 40px;
+    border-radius: 19px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background: rgb(149, 148, 148);
+    color: aqua;
+    cursor: pointer;
+}
