@@ -1,21 +1,45 @@
 .App {
+  height: 100%;
   text-align: center;
+  height: 800px;
+  background-image: linear-gradient(#ffffff, rgba(255, 255, 255, 0.5)), url('https://images.pexels.com/photos/691710/pexels-photo-691710.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 nav {
   background-color: black;
   width: 100%;
   display: flex;
   justify-content: center;
-  justify-items: right;
-  align-content: right;
-  align-items: right;
-  flex-flow: row ;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  flex-flow: row nowrap;
 }
 .menu {
   color: pink;
   display: flex;
-  flex-flow: row ;
+  flex-flow: row nowrap;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
 }
 .menu h2 {
   padding: 1% 5%;
+  font-size: 18px;
+}
+.body {
+  text-align: center;
+}
+.teamList {
+  width: 95%;
+  margin: auto;
+}
+.teamList .person {
+  width: 30%;
+  background-color: white;
 }
