@@ -9,8 +9,10 @@ function App() {
   const [person, setPerson] = useState([
     {
         id: 1,
-        firstName:'Doctor',
-        lastName:'Who' 
+        firstName:'David',
+        lastName:'Tennant', 
+        email: 'doctorwho@gmail.com',
+        role: 'Time Traveler'
     }
 ]);
 
@@ -18,8 +20,12 @@ function App() {
     const newPerson ={
       id: Date.now(),
       firstName: '',
-      lastName: ''
-    }
+      lastName: '',
+      email: "",
+      role: ""
+    };
+    const newPersonCollection = [...person, newPerson]
+    setPerson(newPersonCollection)
   }
   return (
 
@@ -31,7 +37,7 @@ function App() {
         <h1>Creat Your Team</h1>
       </header>
       <div className='body'>
-        <Form />
+        <Form addPerson={addPerson}/>
         <TeamMember person={person} />
       </div>
     </div>
