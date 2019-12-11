@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './css/index.css';
 import TeamMember from './Components/TeamMember'
-import Menu from './Components/Menu'
+import Menu from './Components/Menu';
+import Form from './Components/Form'
 
 function App() {
   const [person, setPerson] = useState([
@@ -12,15 +13,25 @@ function App() {
         lastName:'Who' 
     }
 ]);
+
+  const addPerson = person =>{
+    const newPerson ={
+      id: Date.now(),
+      firstName: '',
+      lastName: ''
+    }
+  }
   return (
+
     <div className="App">
       <header>
         <nav>
           <Menu />
         </nav>
-        <h1>Meet the Team</h1>
+        <h1>Creat Your Team</h1>
       </header>
-      <div>
+      <div className='body'>
+        <Form />
         <TeamMember person={person} />
       </div>
     </div>
