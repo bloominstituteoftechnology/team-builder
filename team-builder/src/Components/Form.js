@@ -2,6 +2,19 @@ import React, {useState} from 'react'
 
 
 const Form = ({addPerson})=>{
+    const [person, setPerson] = useState({
+    firstName:'',
+    lastName:'', 
+    email: '',
+    role: ''
+    })
+
+    const handleChanges = event => {
+        console.log('event', event.target.value)
+        setPerson({...person, [event.target.name]:event.target.value})
+    }
+
+    console.log('person', person)
     return(
     <form>
         <label htmlFor='firstName'>
@@ -11,7 +24,7 @@ const Form = ({addPerson})=>{
             type="text"
             placeholder="First Name"
             name="firstName"
-            //onChange={handleChanges}
+            onChange={handleChanges}
              
             />
         </label>
@@ -22,6 +35,7 @@ const Form = ({addPerson})=>{
             type="text"
             placeholder="Last Name"
             name="lastName"
+            onChange={handleChanges}
             />
         </label>
         <label htmlFor='email'>
@@ -31,6 +45,7 @@ const Form = ({addPerson})=>{
             type="email"
             placeholder="Email"
             name="email"
+            onChange={handleChanges}
             />
         </label>
         <label htmlFor='role'>
@@ -39,6 +54,7 @@ const Form = ({addPerson})=>{
             id="role"  
             placeholder="Role Description"
             name="role"
+            onChange={handleChanges}
             />
         </label>
     </form>
