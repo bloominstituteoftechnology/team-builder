@@ -1,3 +1,34 @@
+/*! App */
 .App {
   text-align: center;
+}
+
+/*! Form */
+.form {
+}
+.form-label {
+}
+.form-label-name {
+}
+.form-label-email {
+}
+.form-label-role {
+}
+.form-btn {
+  color: red;
+  background: lightskyblue;
+}
+
+/*! Team */
+.team-member-btn-wrapper {
+}
+.btn {
+}
+.team-member {
+}
+.team-member h3 {
+}
+.team-member p {
+}
+.team-member-btn {
 }

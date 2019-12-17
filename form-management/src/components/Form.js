@@ -9,35 +9,38 @@ const Form = props => {
     role: ""
   });
 
-  //   useEffect(() => {
-
-  //   }, [edit]);
-
   const onChangeHandler = e => {
-    setNewMember({ ...newMember, [e.target.name]: e.target.value });
-    // console.log(newMember);
+    if (edit.name == "Name") {
+      setNewMember({ ...newMember, [e.target.name]: e.target.value });
+      console.log("new", newMember);
+    } else {
+      if (newMember.name === "") {
+        setNewMember({ ...edit });
+        console.log("setNewMember to member", newMember);
+      } else {
+        setNewMember({ [e.target.name]: [e.target.value] });
+        console.log(newMember);
+        console.log(e.target.name);
+        // console.log(e.target.value);
+        // console.log("edit", edit);
+      }
+    }
   };
 
   const onFormSubmit = e => {
     e.preventDefault();
-    if (edit.name == "name") {
+    if (edit.name == "Name") {
       setTeam([...team, newMember]);
     } else {
-      //   console.log(team);
-      //   let old = team.find(e => e.name == edit.name);
-      //   let testArray = team.filter(e => e.name === edit.name);
-      //   console.log(testArray);
-      //   old.name = newMember.name;
-      //   old.email = newMember.email;
-      //   old.role = newMember.role;
-      //   console.log(old);
+      team.splice(edit.index, 1);
+      setTeam([...team, newMember]);
     }
   };
 
   return (
     <>
-      <form onSubmit={onFormSubmit}>
-        <label>
+      <form onSubmit={onFormSubmit} className="form">
+        <label className="form-label-name form-label">
           Name:
           <input
             type="text"
@@ -47,7 +50,7 @@ const Form = props => {
             onChange={onChangeHandler}
           />
         </label>
-        <label>
+        <label className="form-label-email form-label">
           Email:
           <input
             type="text"
@@ -57,7 +60,7 @@ const Form = props => {
             onChange={onChangeHandler}
           />
         </label>
-        <label>
+        <label className="form-label-role form-label">
           Role:
           <input
             type="text"
@@ -67,7 +70,7 @@ const Form = props => {
             onChange={onChangeHandler}
           />
         </label>
-        <button>Submit</button>
+        <button className="form-btn">Submit</button>
       </form>
     </>
   );

@@ -9,23 +9,33 @@ function App() {
       name: "Braden",
       email: "email@lostMail.never",
       role: "Full-Stack-Web-Developer"
+    },
+    {
+      name: "Kacee",
+      email: "kacee@missionMail.com",
+      role: "OUTTA HERE"
+    },
+    {
+      name: "Colten",
+      email: "culton@gmail.com",
+      role: "Hes Back"
     }
   ]);
 
   const [memberToEdit, setMemberToEdit] = useState({
-    name: "name",
-    email: "email",
-    role: "role"
+    index: null,
+    name: "Name",
+    email: "Email",
+    role: "Role"
   });
 
   return (
     <div className="App">
       <Form team={team} setTeam={setTeam} edit={memberToEdit} />
 
-      {team.map(e => (
-        <Team member={e} setEdit={setMemberToEdit} />
+      {team.map((e, i) => (
+        <Team member={e} setEdit={setMemberToEdit} index={i} />
       ))}
-      {console.log(memberToEdit)}
     </div>
   );
 }
