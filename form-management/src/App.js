@@ -21,8 +21,7 @@ function App() {
   return (
     <div className="App">
       <Form team={team} setTeam={setTeam} edit={memberToEdit} />
-      {/* <Team team={team}  setEdit={setMemberToEdit}/>
-       */}
+
       {team.map(e => (
         <Team member={e} setEdit={setMemberToEdit} />
       ))}

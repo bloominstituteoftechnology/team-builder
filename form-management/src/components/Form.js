@@ -10,7 +10,7 @@ const Form = props => {
   });
 
   //   useEffect(() => {
-  //     // fname.value = edit.name;
+
   //   }, [edit]);
 
   const onChangeHandler = e => {
@@ -23,8 +23,10 @@ const Form = props => {
     if (edit.name == "name") {
       setTeam([...team, newMember]);
     } else {
-      console.log(team);
-      let old = team.find(e => e.name == edit.name);
+      //   console.log(team);
+      //   let old = team.find(e => e.name == edit.name);
+      //   let testArray = team.filter(e => e.name === edit.name);
+      //   console.log(testArray);
       //   old.name = newMember.name;
       //   old.email = newMember.email;
       //   old.role = newMember.role;
