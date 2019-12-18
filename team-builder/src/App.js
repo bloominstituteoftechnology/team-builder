@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Form from './Forms'
+
 
 function App() {
+  const [person, setPerson] = useState([
+    {
+    name: 'Jess',
+    email: 'jlwolff2012@gmail.com',
+    role: 'Head of Creativity'
+    },
+    {
+      name: 'Doren',
+      email: 'doren@yahoo.com',
+      role: 'Leader of the Snake People'
+    },
+    {
+      name: 'Ark',
+      email: 'arkraga@twitch.com',
+      role: 'Council Member of the Weebaloo Tribe'
+    }
+  ]);
+
+  const addNewPerson = peep => {
+    const newPerson = {
+      name: peep.name,
+      email: peep.email,
+      role: peep.role
+    };
+    setPerson([...person, newPerson]);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form addNewPerson={addNewPerson} />
+      <h1>Hello World</h1>
     </div>
   );
 }
