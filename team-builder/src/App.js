@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Form from './Forms'
+import PeopleForm from './Forms'
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form addNewPerson={addNewPerson} />
+      <PeopleForm addNewPerson={addNewPerson} />
       <h1>Hello World</h1>
     </div>
   );
