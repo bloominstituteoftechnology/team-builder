@@ -19,21 +19,33 @@ function App() {
       name: "Colten",
       email: "Colton@gmail.com",
       role: "Hes Back"
+    },
+    {
+      name: "Fred",
+      email: "Fred@msn.com",
+      role: "Worker"
     }
   ]);
 
   function sort(arr) {
+    console.log(arr);
     let nameArray = [];
     let newTeam = [];
+    // sorts names
     for (let i = 0; i < arr.length; i++) {
       nameArray.push(arr[i].name);
     }
     nameArray.sort();
+
     for (let j = 0; j < nameArray.length; j++) {
       newTeam.push(arr.find(e => e.name === nameArray[j]));
     }
     setTeam(newTeam);
   }
+
+  //   .sort(function(a, b) {
+  //     return a[0] - b[0];
+  // });
 
   const [memberToEdit, setMemberToEdit] = useState({
     index: null,
@@ -64,3 +76,21 @@ function App() {
 }
 
 export default App;
+
+const [state, setState] = useState({
+  name: "Braden",
+  email: "email@lostMail.never",
+  role: "Full-Stack-Web-Developer"
+});
+
+setState(data)
+
+const state = {
+  name: "Braden",
+  email: "email@lostMail.never",
+  role: "Full-Stack-Web-Developer"
+};
+
+function setState(data){
+state = data
+}
