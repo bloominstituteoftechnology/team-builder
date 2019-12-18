@@ -1,12 +1,36 @@
 /*! App */
 .App {
   text-align: center;
+  width: 95%;
+  margin: auto;
+}
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+span {
+  /* border: 1px solid red; */
+  font-size: 2rem;
+  font-weight: 100;
 }
 
 /*! Form */
 .form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 2rem;
+  border: 2px solid rebeccapurple;
+  margin-bottom: 2rem;
 }
 .form-label {
+  /* margin: 10px; */
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+  /* width: 40%; */
 }
 .form-label-name {
 }
@@ -17,18 +41,48 @@
 .form-btn {
   color: red;
   background: lightskyblue;
+  border: 2px solid green;
+  font-size: 1rem;
+  width: 85px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.form-input {
+  margin-left: 5px;
+}
+.form-input-name {
+}
+.form-input-email {
+}
+.form-input-role {
 }
 
 /*! Team */
 .team-member-btn-wrapper {
+  border: 1px solid coral;
+  width: 48%;
+  margin: auto;
+  margin-top: 1rem;
 }
 .btn {
+  /* border: 1px solid red; */
 }
 .team-member {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid pink; */
 }
 .team-member h3 {
+  color: blue;
 }
 .team-member p {
+  margin: auto;
+  margin-bottom: 5px;
+  color: grey;
 }
 .team-member-btn {
+  background: aqua;
+  color: darkgreen;
+  margin: 5px;
+  border: 0.5px dotted green;
 }
