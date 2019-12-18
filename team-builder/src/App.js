@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Form from "./Components/Form";
+import Team from "./Components/Team";
 
 function App() {
+  const [team, setTeam] = useState([//holding user data(teammate) each is a seperate object in the array
+    {
+      id: Date.now(),
+      username: "Wesley",
+      email: "wgm3190@gmail.com",
+      role: "The new guy"
+    }
+  ]);
+
+  // const addNewTeammate = Teammate => {
+  //   const newTeammate = {
+  //     id: Date.now(),
+  //     name: Teammate.username,
+  //     email: Teammate.email,
+  //     role: Teammate.role
+  //   };
+  //   setTeam([...team, newTeammate]);
+  // };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>      
+      <h1>Purple Parrots</h1>
+      <form>
+        <input type='search' value={team.filterValue} />
+      </form>
+      <Form setTeam={setTeam} team={team} />
+
+      <div className="team">
+        <Team team={team} />        
+      </div>
+
+      
     </div>
   );
 }
