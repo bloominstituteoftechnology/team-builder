@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 const PersonForm = props => {
 
     const [person, setPerson] = useState({
-        name: '',
-        email: '',
-        role: ''
+        name: "",
+        email: "",
+        role: ""
     });
 
     const handleChanges = e => {
@@ -16,22 +16,22 @@ const PersonForm = props => {
         console.log(e.target.name);
     }
 
-    const submitForm = e => {
+    const SubmitForm = e => {
         e.preventDefault();
         props.addNewPerson(person);
-        setPerson({ name:'', email:'', role:''});
+        setPerson({ name:"", email:"", role:""});
     };
 
     return (
     <div className='form-wrapper'>
         <br /><br />
-        <form onSubmit={submitForm}>
+        <form onSubmit={SubmitForm}>
             <label htmlFor='name'>Name: </label>
             <input
                 id='name'
                 type='text'
-                placeholder='First Name'
-                name='nameField'
+                placeholder=' First Name'
+                name='name'
                 onChange={handleChanges}
                 value={person.name}
             />
@@ -41,7 +41,7 @@ const PersonForm = props => {
                 id='email'
                 type='text'
                 placeholder='Email'
-                name='emailField'
+                name='email'
                 onChange={handleChanges}
                 value={person.email}
             /><br /><br />
@@ -50,7 +50,7 @@ const PersonForm = props => {
                 id='role'
                 type='text'
                 placeholder='Occupation'
-                name='roleField'
+                name='role'
                 onChange={handleChanges}
                 value={person.role}
                 />
