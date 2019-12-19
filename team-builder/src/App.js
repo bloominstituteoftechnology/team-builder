@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>WELCOME TO MY TEAM, LOSERS!!!</h1>
+      <h1>WELCOME TO MY TEAM!!!</h1>
       <Form things={things} setThings={setThings}/>
       <Usrs things={things}/>
     </div>
