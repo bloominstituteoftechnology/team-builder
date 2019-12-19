@@ -13,7 +13,7 @@ return (
         things={things}
         setThings={setThings}/>
     
-    {/* <Usrs things={things}/> */}
+    <Usrs things={things}/>
   </div>
 );
 }

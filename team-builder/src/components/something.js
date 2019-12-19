@@ -3,8 +3,8 @@ import React from 'react';
     const Usrs = props => {
         return(
             <div>
-                {props.things.map(things => (
-                    <div>
+                {props.things.map((things) => (
+                    <div
                         key={things.id}>
                         <h2>{things.name}</h2>
                         <h3>{things.email}</h3>
