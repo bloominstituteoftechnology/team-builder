@@ -1,57 +1,59 @@
 import React, { useState } from 'react';
 
 const Form = props => {
-    const [user, setUser] = useState({
+    const [things, setThings] = useState({
+        id: Date.now(),
         username: '',
         email: '',
         role: ''
     });
     const handleStuff = event => {
-            setUser({
-            ...user,
+            setThings({
+            ...things,
             [event.target.name]: event.target.value
             });
-        console.log(event.target.name);
     }
     const sbmitHandlr = event => {
-        console.log('user.name');
-        console.log('user.email');
-        console.log('user.role');
         event.preventDefault();
-        props.adNwInf(user);
-        setUser({ username: '',email: '',role: ''})
+        props.setThings([...props.things, things]);
+        setThings({ username: '',email: '',role: '',  id: Date.now(),})
     };
     return (
         <form onSubmit={sbmitHandlr}>
-            <label>
+            <label htmlFor="name">
                 Full Name : 
+            </label>
                 <input 
+                    id= {things.id}
                     type='text'
                     placeholder='Full Name'
-                    name='username'
-                    value={user.name}
+                    name='name'
+                    wtfdis='name'
+                    value={things.name}
                     onChange={handleStuff}/>
+            <br/>
+            <label htmlFor="email">
+                Email : 
             </label>
+                <input 
+                    type='text'
+                    placeholder='Email'
+                    wtfDis='email'
+                    name='email'
+                    value={things.email}
+                    onChange={handleStuff}/>
             <br/>
             <label>
-                Full Name : 
+                Role :
+            </label> 
                 <input 
+                    id= {things.id}
                     type='text'
-                    placeholder='Full Name'
-                    name='username'
-                    value={user.name}
+                    placeholder='Role'
+                    name='role'
+                    wtfDis='role'
+                    value={things.role}
                     onChange={handleStuff}/>
-            </label>
-            <br/>
-            <label>
-                Full Name : 
-                <input 
-                    type='text'
-                    placeholder='Full Name'
-                    name='username'
-                    value={user.name}
-                    onChange={handleStuff}/>
-            </label>
                 <br/>
                 <button type="submit">Add Team Members</button>
         </form>
