@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from "react";
+// import ReactDOM from "react-dom";
+import Form from './components/form';
+import Usrs from './components/usrs';
 import './App.css';
 
 function App() {
+  const {inf} = useState([
+    {
+      id: 0,
+      username: 'Aaron Andersen',
+      email: 'anderseana@tutanota.com',
+      role: 'Full-Stack Developer'
+    }
+]);
+const adNwInf = usr => {
+  const nwUsr = {
+    id: Date.now(),
+    username: user.username,
+    email: user.email,
+    role: user.role
+  }
+  setInf([...nfo, nwUsr]);
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form adNwInf={adNwInf}/>
+      <Users inf={inf}/>
     </div>
   );
 }
