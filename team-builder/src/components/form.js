@@ -16,7 +16,7 @@ const Form = props => {
     const sbmitHandlr = event => {
         event.preventDefault();
         props.setThings([...props.things, things]);
-        setThings({ username: '',email: '',role: '',  id: Date.now(),})
+        setThings({ id: Date.now(), username: '',email: '',role: ''})
     };
     return (
         <form onSubmit={sbmitHandlr}>
@@ -28,17 +28,18 @@ const Form = props => {
                     type='text'
                     placeholder='Full Name'
                     name='name'
-                    wtfdis='name'
+                    apple='name'
                     value={things.name}
                     onChange={handleStuff}/>
             <br/>
             <label htmlFor="email">
                 Email : 
             </label>
-                <input 
+                <input
+                    id= {things.id} 
                     type='text'
                     placeholder='Email'
-                    wtfDis='email'
+                    apple='email'
                     name='email'
                     value={things.email}
                     onChange={handleStuff}/>
@@ -51,7 +52,7 @@ const Form = props => {
                     type='text'
                     placeholder='Role'
                     name='role'
-                    wtfDis='role'
+                    apple='role'
                     value={things.role}
                     onChange={handleStuff}/>
                 <br/>

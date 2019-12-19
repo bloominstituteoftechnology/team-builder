@@ -4,7 +4,7 @@ import React from 'react';
         return(
             <div>
                 {props.things.map(things => (
-                    <div
+                    <div>
                         key={things.id}>
                         <h2>{things.name}</h2>
                         <h3>{things.email}</h3>
