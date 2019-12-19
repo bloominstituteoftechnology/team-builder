@@ -7,20 +7,11 @@ import People from './People'
 function App() {
   const [person, setPerson] = useState([
     {
-    name: 'Jess',
-    email: 'jlwolff2012@gmail.com',
-    role: 'Head of Creativity'
+    name: 'Henry',
+    email: 'Henrybsms@outlook.com',
+    role: 'Frontend Engineer'
     },
-    {
-      name: 'Doren',
-      email: 'doren@yahoo.com',
-      role: 'Leader of the Snake People'
-    },
-    {
-      name: 'Ark',
-      email: 'arkraga@twitch.com',
-      role: 'Council Member of the Weebaloo Tribe'
-    }
+
   ]);
   const addNewPerson = peep => {
     const newPerson = {
