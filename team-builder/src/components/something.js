@@ -3,11 +3,11 @@ import React from 'react';
     const Usrs = props => {
         return(
             <div className="usr-lst">
-                {props.info.map(usr => (
-                    <div className="usr" key={usr.id}>
-                        <h2>{usr.username}</h2>
-                        <h3>{usr.email}</h3>
-                        <h3>{usr.role}</h3>
+                {props.inf.map(user => (
+                    <div className="usr" key={user.id}>
+                        <h2>{user.username}</h2>
+                        <h3>{user.email}</h3>
+                        <h3>{user.role}</h3>
                     </div>
                 ))}
             </div>

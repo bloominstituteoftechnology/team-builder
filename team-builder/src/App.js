@@ -5,7 +5,7 @@ import Usrs from './components/something.js';
 import './App.css';
 
 function App() {
-  const {inf} = useState([
+  const {inf, setInf} = useState([
     {
       id: 0,
       username: 'Aaron Andersen',
@@ -20,12 +20,12 @@ const adNwInf = usr => {
     email: usr.email,
     role: usr.role
   }
-  setInf([...nfo, nwUsr]);
+  setInf([...inf, nwUsr]);
     }
   return (
     <div className="App">
       <Form adNwInf={adNwInf}/>
-      <Users inf={inf}/>
+      <Usrs inf={inf}/>
     </div>
   );
 }

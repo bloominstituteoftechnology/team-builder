@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Form = props => {
-    const [usr, setUsr] = useState({
+    const [user, setUser] = useState({
         username: '',
         email: '',
         role: ''
@@ -18,7 +18,7 @@ const Form = props => {
         console.log('user.email');
         console.log('user.role');
         event.preventDefault();
-        props.adNwInf(usr);
+        props.adNwInf(user);
         setUser({ username: '',email: '',role: ''})
     };
     return (
@@ -29,7 +29,7 @@ const Form = props => {
                     type='text'
                     placeholder='Full Name'
                     name='username'
-                    value={usr.name}
+                    value={user.name}
                     onChange={handleStuff}/>
             </label>
             <br/>
@@ -39,7 +39,7 @@ const Form = props => {
                     type='text'
                     placeholder='Full Name'
                     name='username'
-                    value={usr.name}
+                    value={user.name}
                     onChange={handleStuff}/>
             </label>
             <br/>
@@ -49,7 +49,7 @@ const Form = props => {
                     type='text'
                     placeholder='Full Name'
                     name='username'
-                    value={usr.name}
+                    value={user.name}
                     onChange={handleStuff}/>
             </label>
                 <br/>
@@ -57,4 +57,4 @@ const Form = props => {
         </form>
     )
 }
-export default form
+export default Form;
