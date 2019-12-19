@@ -5,7 +5,7 @@ import Usrs from './components/usrs';
 import './App.css';
 
 function App() {
-    const {user, setUsers} = useState([
+    const [user, setUsers] = useState([
         {
           id: 1,
           name: 'Aaron Andersen',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Forms = props => {
-    const {user, setUser} = useState({
+    const [user, setUser] = useState({
         name: '',
         email: '',
         role: ''
@@ -12,8 +12,8 @@ const Forms = props => {
             [event.target.name]: event.target.value
         });
     };
-    const submitForm = events => {
-        events.preventDefault();
+    const submitForm = event => {
+        event.preventDefault();
         setUser({name: '', email: '', role: ''});
     };
     return (

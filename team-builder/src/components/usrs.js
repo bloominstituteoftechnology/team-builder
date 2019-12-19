@@ -4,11 +4,11 @@ const Usrs = props => {
     const { user} = props;
   return (
     <div>
-        {user.map( u => (
-        <div key={"u.id"}>
-          <h3>{"u.name"}</h3>
-          <h3>{"u.email"}</h3>
-          <h3>{"u.role"}</h3>
+        {props.user.map( u => (
+        <div key={u.id}>
+          <h3>{u.name}</h3>
+          <h3>{u.email}</h3>
+          <h3>{u.role}</h3>
         </div>
       ))}
     </div>
