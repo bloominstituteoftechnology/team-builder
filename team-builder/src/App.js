@@ -14,12 +14,12 @@ function App() {
     }
   ]);
 
-  const addNewMember = member => {
+  const addNewMember = mem => {
     const newMember = {
       id: Date.now(),
-      name: member.name,
-      email: member.email,
-      role: member.role
+      name: mem.name,
+      email: mem.email,
+      role: mem.role
     };
     setMember([...member, newMember]);
   };

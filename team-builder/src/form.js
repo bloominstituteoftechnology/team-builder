@@ -54,10 +54,10 @@ const Form = props => {
           value={member.role}
           onChange={handleChanges}
         >
-          <option value="backend">Backend Engineer</option>
-          <option value="frontend">Frontend Engineer</option>
-          <option value="ux">UX Designer</option>
-          <option value="fullstack">Full Stack Engineer</option>
+          <option value="Backend Engineer">Backend Engineer</option>
+          <option value="Frontend Engineer">Frontend Engineer</option>
+          <option value="UX Designer">UX Designer</option>
+          <option value="Fullstack Engineer">Full Stack Engineer</option>
         </select>
         <br />
         <label htmlFor="addMember">Add Your Team Member</label>
