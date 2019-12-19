@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 // import ReactDOM from "react-dom";
-import Form from './components/form';
+import Form from './components/form.js';
 import Usrs from './components/usrs';
 import './App.css';
 
@@ -16,9 +16,9 @@ function App() {
 const adNwInf = usr => {
   const nwUsr = {
     id: Date.now(),
-    username: user.username,
-    email: user.email,
-    role: user.role
+    username: usr.username,
+    email: usr.email,
+    role: usr.role
   }
   setInf([...nfo, nwUsr]);
     }
