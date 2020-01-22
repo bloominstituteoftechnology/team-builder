@@ -13,14 +13,14 @@ const App = () => {
         }
     ]);
 
-    const addNewMemeber = member => {
+    const addNewMember = member => {
         const newMember = setMembers([...members, member]);
     };
 
     return(
         <div className="App">
             <h1>Team Builder</h1>
-            <Form addNewMemeber={addNewMemeber} />
+            <Form addNewMember={addNewMember} />
             <Members members={members} />
         </div>
     );

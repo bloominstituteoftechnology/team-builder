@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 const Form = props => {
-    const [members, setMembers] = useState([
+    const [member, setMember] = useState([
         {
             name: "",
             email: "",
@@ -11,18 +11,18 @@ const Form = props => {
     ]);
 
     const handleChanges = event => {
-        setMembers({...members, [event.target.name]: event.target.value });
+        setMember({...member, [event.target.name]: event.target.value });
     };
 
     const submitHandler = event => {
         event.preventDefault();
         const newMember = {
-            ...members,
+            ...member,
             id: Date.now()
         };
         props.addNewMember(newMember);
-        console.assert(newMember);
-        setMembers({name: "", email: "", role: ""});
+        console.log(newMember);
+        setMember({name: "", email: "", role: ""});
         };
 
         return(
@@ -33,7 +33,7 @@ const Form = props => {
                         onChange= {handleChanges}
                         id="name"
                         name="name"
-                        value={members.name}
+                        value={member.name}
                     />
 
                     <label htmlFor="email">Email: </label>
@@ -41,7 +41,7 @@ const Form = props => {
                         onChange= {handleChanges}
                         id= "email"
                         name= "email"
-                        value= {members.email} 
+                        value= {member.email} 
                     />
 
                     <label htmlFor="role">Role: </label>
@@ -49,7 +49,7 @@ const Form = props => {
                         onChange= {handleChanges}
                         id="role"
                         name="role"
-                        value={members.role}
+                        value={member.role}
                     />
                     <button type="submit">Add New Member</button>
                 </form>
