@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 
-import Path from './Path';
 import styled from "styled-components";
 
 const FormDiv = styled.div`
@@ -93,7 +92,7 @@ export default function Form(props) {
                      <br />
                     <button type='submit' className="button" >  Submit    </button>
             </form>
-            <Path />
+            
         </FormDiv>
     )
 };
