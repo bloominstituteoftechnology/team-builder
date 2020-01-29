@@ -4,16 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-function App () {
-    const [members, setMembers] = useState([
 
-    ]);
-
-    return (
-        <>
-        </>
-    )
-}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
