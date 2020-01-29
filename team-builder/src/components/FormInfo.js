@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FormInfo = props => {
-     console.log(props.members.map);
+    
     return (
         <div>
             {props.members.map(member => (
