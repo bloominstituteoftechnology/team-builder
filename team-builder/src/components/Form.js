@@ -20,12 +20,17 @@ const Form = props => {
 
 return (
     <form onSubmit={submitForm}>
+    <div>
         <label htmlFor='name'>Full Name</label>
         <input id='name' type='text' name='name' placeholder='Full Name' onChange={handleChanges} />
+    </div>
 
+    <div>
         <label htmlFor='email'>Email</label>
         <input id='email' type='email' name='email' placeholder='email address' onChange={handleChanges} />
+    </div>
 
+    <div>
         <label htmlFor='select'>Role</label>
          <select onChange = {handleChanges} 
             id='role'>
@@ -34,8 +39,8 @@ return (
                 <option>Frontend Engineer</option>
                 <option>Backend Engineer</option>
                 <option>Data Scientist</option>
-
             </select>
+    </div>
         
 
         <button type='submit'>Add Member</button>
