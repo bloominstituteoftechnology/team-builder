@@ -4,6 +4,7 @@ const Form = props => {
     const [member, setMember] = useState({
         Name: '',
         Email: '',
+        Role: ''
     });
     
 
@@ -22,7 +23,7 @@ return (
         <label htmlFor='name'>Full Name</label>
         <input id='name' type='text' name='name' placeholder='Full Name' onChange={handleChanges} />
 
-        <label htmlFor='Email'>Full Name</label>
+        <label htmlFor='email'>Email</label>
         <input id='email' type='email' name='email' placeholder='email address' onChange={handleChanges} />
 
         <label htmlFor='select'>Role</label>

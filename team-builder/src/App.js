@@ -2,11 +2,27 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Form from './components/Form';
+import FormInfo from './components/FormInfo';
 
 function App() {
   const [members, setMembers] = useState([
-
+    {
+    id: 1,
+    Name: 'Alexis Villaraza',
+    Email: 'alexis.borja@gmail.com',
+    Role: 'Frontend Engineer'
+    }
   ]);
+
+  const addNewMember = member => {
+    const newMember = {
+      id: Date.now(),
+      Name: member.name,
+      Email: member.email,
+      Role: member.role
+    };
+    setMembers([...members, newMember])
+  }
 
 
   return (
