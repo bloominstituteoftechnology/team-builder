@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
+
 import Form from './components/Form';
 import FormInfo from './components/FormInfo';
 
@@ -8,18 +10,18 @@ function App() {
   const [members, setMembers] = useState([
     {
     id: 1,
-    Name: 'Alexis Villaraza',
-    Email: 'alexis.borja@gmail.com',
-    Role: 'Frontend Engineer'
+    name: 'Alexis Villaraza',
+    email: 'alexis.borja@gmail.com',
+    role: 'Frontend Engineer'
     }
   ]);
 
   const addNewMember = member => {
     const newMember = {
       id: Date.now(),
-      Name: member.name,
-      Email: member.email,
-      Role: member.role
+      name: member.name,
+      email: member.email,
+      role: member.role
     };
     setMembers([...members, newMember])
   }
@@ -29,10 +31,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <Form />
+        
+          <Form addNewMember={addNewMember}/>
           <FormInfo members={members}/>
-        </p>
+        
         <a
           className="App-link"
           href="https://reactjs.org"

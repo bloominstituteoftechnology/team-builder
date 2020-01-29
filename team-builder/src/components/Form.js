@@ -2,19 +2,21 @@ import React, {useState} from 'react';
 
 const Form = props => {
     const [member, setMember] = useState({
-        Name: '',
-        Email: '',
-        Role: ''
+        name: '',
+        email: '',
+        role: ''
     });
     
 
     const handleChanges = e => {
-        setMember({...member, [e.target.name]: e.target.value})
+        setMember({...member, [e.target.name]: e.target.value});
     };
+
+    
     const submitForm = e => {
         e.preventDefault();
         props.addNewMember(member);
-        setMember({Name: '', Email: '', Role: ''})  
+        setMember({name: '', email: '', role: ''});  
     };
 
 
@@ -22,18 +24,17 @@ return (
     <form onSubmit={submitForm}>
     <div>
         <label htmlFor='name'>Full Name</label>
-        <input id='name' type='text' name='name' placeholder='Full Name' onChange={handleChanges} />
+        <input id='name' type='text' name='name' placeholder='Full Name' onChange={handleChanges} value={member.name} />
     </div>
 
     <div>
         <label htmlFor='email'>Email</label>
-        <input id='email' type='email' name='email' placeholder='email address' onChange={handleChanges} />
+        <input id='email' type='email' name='email' placeholder='email address' onChange={handleChanges} value={member.email} />
     </div>
 
     <div>
         <label htmlFor='select'>Role</label>
-         <select onChange = {handleChanges} 
-            id='role'>
+         <select id='role' name='role' placeholder='select role' onChange = {handleChanges} value={member.role}>
                 <option/>
                 <option>UI Designer</option>
                 <option>Frontend Engineer</option>
