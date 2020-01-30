@@ -46,7 +46,7 @@ const Form = props =>{
             onChange={teamChange}
             value={team.role}
             />
-            <button type="submit">Add Member</button>
+            <button type="submit">Add</button>
         </form>
     )
 
