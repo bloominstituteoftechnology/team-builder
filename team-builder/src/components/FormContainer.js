@@ -8,6 +8,8 @@ const Team = props => {
       {props.team.map(team => (
         <div key={team.id}>
           <h2>{team.name}</h2>
+          <h2>{team.email}</h2>
+          <h2>{team.job}</h2>
         </div>
       ))}
     </div>

@@ -4,6 +4,8 @@ const Form = props => {
   console.log("props", props);
   const [team, setTeam] = useState({
     name: "",
+    email: "",
+    job: ""
   });
 
   const handleChanges = e => {
@@ -25,12 +27,12 @@ const Form = props => {
   const submitForm = e => {
     e.preventDefault();
     props.addNewTeam(team);
-    setTeam({ name: ""});
+    setTeam({ name: "", email: "", job: ""});
   };
 
   return (
     <form onSubmit={submitForm}>
-      <label htmlFor="name">Name</label>
+      <label htmlFor="name">Name: </label>
       <input
         id="name"
         type="text"
@@ -38,6 +40,24 @@ const Form = props => {
         onChange={handleChanges}
         placeholder="Name..."
         value={team.name}
+      />
+      <label htmlFor="email">Email: </label>
+      <input
+        id="email"
+        type="text"
+        name="email"
+        onChange={handleChanges}
+        placeholder="Email"
+        value={team.email}
+      />
+      <label htmlFor="job">Job: </label>
+      <input
+        id="job"
+        type="text"
+        name="job"
+        onChange={handleChanges}
+        placeholder="Job"
+        value={team.job}
       />
       <button type="submit">Add Member</button>
     </form>

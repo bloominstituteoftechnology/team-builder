@@ -7,14 +7,18 @@ import Team from "./components/FormContainer.js";
 function App() {
   const [team, setTeam] = useState([
     {
-      name: ""
+      name: "",
+      email: "",
+      job: ""
     }
   ]);
 
   const addNewTeam = param => {
     const newTeam = {
       id: Date.now(),
-      name: param.name
+      name: param.name,
+      email: param.email,
+      job: param.job
     };
     setTeam([...team, newTeam]);
   };
