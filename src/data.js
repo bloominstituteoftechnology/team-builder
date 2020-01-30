@@ -18,4 +18,4 @@ export default[
         role: "omnipotent potato",
         email: "fried@potato.com"
     }
-] 
+]

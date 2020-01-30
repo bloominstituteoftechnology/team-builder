@@ -1,25 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
-const TeamMembers = props => {
+
+const Form = props => {
+    const [note, setNote] =useState({
+        name: "",
+        email: "",
+        role: ""
+    });
+    const changeHandler = event => {
+        setNote({...note, [event.target.name] : event.target.value})
+    
+    }
+    
+    const submitForm = event =>{
+        event.preventDefault();
+        props.addNewNote(note);
+        setNote({name: "", email: "", role: "", })
+    };
+
     return(
+        <form onSubmit={submitForm}>
+            <label htmlFor="name">Name</label>
+            <input name="name" id="name" type="text" placeholder="name" onChange={changeHandler} value={note.name}/>
 
-        <div className="teammembers">
-            {props.team.map((note,index) =>{
-                return(
-                    <div className = "note" key={index}>
-                        <h1>{note.name}</h1>
-                        <p>{note.email}</p>
-                        <p>{note.role}</p>
-                    </div>
-                )
-            })}
+            <label htmlFor="email">Email</label>
+            <input name="email" id="email" type="text" placeholder="email" onChange={changeHandler} value={note.email}/>
 
+            <label htmlFor="role">Role</label>
+            <input name="role" id="role" type="text" placeholder="role" onChange={changeHandler} value={note.role}/>
 
-        </div>
+            <button type="submit">Submit</button>
+        </form>
+    );
+};
 
-
-    )
-}
-
-export default TeamMembers; 
+export default Form;
