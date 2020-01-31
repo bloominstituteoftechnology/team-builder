@@ -1,54 +1,38 @@
 import React, { useState } from "react";
 import "./App.css";
+import Form from './Form';
+import Members from './Members'
 
 function App() {
-  const [state, setState] = useState({
-    member: "",
-    email: "",
-    role: ""
-  });
-  const stateFormChange = e => {
-    setState({
-      ...state,
-      [e.target.member]: e.target.value
+
+  const [teamList, setTeamList] = useState([]);
+
+  function addNewMember (prop) {
+
+    const member = {
+
+      id: Date.now(),
+      name: prop["name"],
+      email: prop["email"],
+      role: prop["role"],
+    };
+
+    setTeamList([...teamList, member]);
+  }
+
+  function deleteMember (id) {
+
+    const memberFilter = teamList.filter(member =>{
+      return member.id !== id;
     });
-  };
-  const handleSubmit = e => {
-    e.preventDefault();
-  };
+
+    setTeamList(memberFilter);
+  }
+
   return (
     <div className="App">
-      <header>Welcome to Work</header>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Members:
-          <input
-            type="text"
-            name="member"
-            placeholder="Enter Member Name "
-            onChange={stateFormChange}
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="text"
-            name="email"
-            placeholder="Enter Email"
-            onChange={stateFormChange}
-          />
-        </label>
-        <label>
-          Role:
-          <input
-            type="text"
-            name="role"
-            placeholder="Enter Role"
-            onChange={stateFormChange}
-          />
-        </label>
-        <input type="submit" />
-      </form>
+      <Form team={addNewMember} />
+      <Members memberList={teamList} deleteMember={deleteMember} />
     </div>
   );
 }
