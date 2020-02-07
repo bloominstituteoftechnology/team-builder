@@ -77,20 +77,20 @@ function App() {
 
 export default App;
 
-const [state, setState] = useState({
-  name: "Braden",
-  email: "email@lostMail.never",
-  role: "Full-Stack-Web-Developer"
-});
+// const [state, setState] = useState({
+//   name: "Braden",
+//   email: "email@lostMail.never",
+//   role: "Full-Stack-Web-Developer"
+// });
 
-setState(data)
+// setState(data)
 
-const state = {
-  name: "Braden",
-  email: "email@lostMail.never",
-  role: "Full-Stack-Web-Developer"
-};
+// const state = {
+//   name: "Braden",
+//   email: "email@lostMail.never",
+//   role: "Full-Stack-Web-Developer"
+// };
 
-function setState(data){
-state = data
-}
+// function setState(data){
+// state = data
+// }

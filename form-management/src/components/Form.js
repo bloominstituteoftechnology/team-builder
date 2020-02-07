@@ -1,45 +1,13 @@
 import React, { useState, useEffect } from "react";
-const props = {
-  team: {
-    name: "Braden",
-    email: "email@lostMail.never",
-    role: "Full-Stack-Web-Developer"
-  },
-  setTeam: setTeam(),
-  edit: {
-    index: null,
-    name: "",
-    email: "",
-    role: ""
-  },
-  setEdit: setMemberToEdit(),
-  sort: function sort(arr) {
-    console.log(arr);
-    let nameArray = [];
-    let newTeam = [];
-    // sorts names
-    for (let i = 0; i < arr.length; i++) {
-      nameArray.push(arr[i].name);
-    }
-    nameArray.sort();
-
-    for (let j = 0; j < nameArray.length; j++) {
-      newTeam.push(arr.find(e => e.name === nameArray[j]));
-    }
-    setTeam(newTeam);
-  }
-};
 
 const Form = props => {
   const { team, setTeam, edit, setEdit, sort } = props;
 
-
   const [newMember, setNewMember] = useState({
-    name: "Fred",
+    name: "",
     email: "",
-    role: "kitchen"
+    role: ""
   });
-
 
   const [input, setInput] = useState({
     name: "",
@@ -80,6 +48,7 @@ const Form = props => {
 
     if (edit.name == "") {
       setTeam([...team, newMember]);
+      // setTeam([])
       console.log(team);
       // setTempTeam([...tempTeam, newMember]);
     } else {
