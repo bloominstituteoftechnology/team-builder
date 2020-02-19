@@ -1,15 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-import TeamList from "./components/TeamList";
+import TeamContainer from "./components/TeamContainer";
 import Form from "./components/Form";
 import teamData from "./data/teamData";
 
 function App() {
+  const [teamList, setTeamList] = useState(teamData);
   return (
     <div>
-      <TeamList />
-      <Form />
+      <TeamContainer teamList={teamList}/>
+      <Form teamList={teamList} setTeamList={setTeamList}/>
     </div>
   );
 }
