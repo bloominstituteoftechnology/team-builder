@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 
 
 
-function AddPeople() {
+function AddPeople(props) {
     const [newPerson, setNewPerson] = useState({
         name: '',
         email: '',
         role: '',
-        home: '',
+        home_town: '',
     });
 
     const onChange = e => {
-        setNewPerson({ ...newPerson, [e.target.name]: e.target.value })
+        setNewPerson({ ...newPerson, [e.target.name]: e.target.value });
+    }
+
+    function SavePerson(e) {
+        e.preventDefault();
+        props.saveNewPeople(newPerson);
+        setNewPerson({ name: '', email: '', role: '', home_town: '' });
     }
     return (
         <>
-            <form>
+            <form onSubmit={SavePerson}>
                 <label htmlFor='name'>
                     Name:
                     <input
@@ -54,11 +60,12 @@ function AddPeople() {
                     <input
                         type='text'
                         id='home'
-                        name='home'
-                        value={newPerson.home}
+                        name='home_town'
+                        value={newPerson.home_town}
                         placeholder='Home'
                         onChange={onChange}
                     />
+                    <button type='submit'>Add New Person</button>
                 </label>
 
             </form>

@@ -20,18 +20,23 @@ function App() {
       email: 'IloveLauren@gmail.com',
       role: "Proffessional Pearl Diver Warrior",
       home_town: "Carson City, MI"
-    },
-    {
-      id: Date.now(),
-      name: "Jordan Devaney",
-      email: 'jordandevaney28@gmail.com',
-      role: "Computer Ninja and better than Luke and pearl diving",
-      home_town: "Whitmore Lake, MI"
     }
-  ])
+  ]);
+
+  const saveNewPeople = newPerson => {
+    const people = {
+      id: Date.now(),
+      name: newPerson.name,
+      email: newPerson.email,
+      role: newPerson.role,
+      home_town: newPerson.home_town,
+    };
+    setPerson([...person, people]); //Had this one backwords
+  };
+
   return (
     <div className="App">
-      <AddPeople />
+      <AddPeople saveNewPeople={saveNewPeople} />
       <ShowTeam people={person} />
     </div>
   );
