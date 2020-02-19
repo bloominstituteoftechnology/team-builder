@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 export default function Form(props) {
-    const [member, updateMember]=useState({
+    const initalMemberState = {
         name: "",
         email: "",
         role: "UX Designer"
-    });
+    };
+    const [member, updateMember]=useState(initalMemberState);
    function handleChange(event){
        updateMember({...member, [event.target.name]:event.target.value});
    }
 
+   function handleSubmission(event){
+       props.setTeamList([...props.teamList, member]);
+       updateMember(initalMemberState);
+       event.preventDefault();
+   }
     return (
         <div className="form">
             <label htmlFor="add-team-member">Add a team member:</label>
-            <form id="add-team-member">
+            <form id="add-team-member" onSubmit={handleSubmission}>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter name" value={member.name} onChange={handleChange}></input>
                 <label htmlFor="email">Email:</label>
