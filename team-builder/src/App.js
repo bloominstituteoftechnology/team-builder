@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ShowTeam from './ShowTeam';
+import AddPeople from './AddPeople';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   ])
   return (
     <div className="App">
+      <AddPeople />
       <ShowTeam people={person} />
     </div>
   );
