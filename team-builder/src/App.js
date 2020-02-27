@@ -9,7 +9,7 @@ function App() {
     {
     name: 'Henry',
     email: 'Henrybsms@outlook.com',
-    role: 'Frontend Engineer'
+    role: 'Web Developer'
     },
 
   ]);
@@ -24,7 +24,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>Team Builder
+        
+      </h1>
       <PeopleForm addNewPerson={addNewPerson} />
       <People person={person} />
     </div>
