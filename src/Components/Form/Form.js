@@ -1,30 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Form = (props) => {
-  console.log(props.user);
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(user);
-  }
 
-  const handleChange = event => {
-    setUser({ ...user, [event.target.name]: event.target.value })
-  }
-
-  const [user, setUser] = useState("");
   return (
-    <form onSubmit={event => { handleSubmit(event) }}>
+    <form onSubmit={props.handleSubmit}>
       <label>
         Name:
-        <input type="text" name="name" value={user.name} onChange={event => handleChange(event)} />
+        <input type="text" name="name" value={props.user.name} onChange={props.handleChange} />
       </label>
       <label>
         Email:
-        <input type="email" name="email" value={user.email} onChange={event => handleChange(event)} />
+        <input type="text" name="email" value={props.user.email} onChange={props.handleChange} />
       </label>
       <label>
         Role:
-        <input type="text" name="role" value={user.role} onChange={event => handleChange(event)} />
+        <input type="text" name="role" value={props.user.role} onChange={props.handleChange} />
       </label>
       <button>Submit!</button>
     </form>
