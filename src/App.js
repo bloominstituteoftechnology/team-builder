@@ -20,6 +20,7 @@ function App() {
 
   const memberToEdit = () => {
     console.log("data from memberToEdit", data);
+    console.log(this);
   };
 
   return (
@@ -31,7 +32,7 @@ function App() {
         memberToEdit={memberToEdit}
       />
 
-      <List user={user} data={data} memberToEdit={memberToEdit} />
+      <List user={user} data={data} memberToEdit={e => memberToEdit(e)} />
     </div>
   );
 }
