@@ -1,8 +1,9 @@
 import React from "react";
 
-const List = props => {
+const List = (props) => {
+  let id = -1;
   return (
-    <div key={props.id} className="listContainer">
+    <div key={id++} className="listContainer">
       {props.data.map(user => {
         return (
           <div className="listCard">
@@ -10,9 +11,8 @@ const List = props => {
               <h1>{user.name}</h1>
               <h2>{user.email}</h2>
               <h3>{user.role}</h3>
-              <h4>Hi</h4>
             </div>
-            <button id={props.id} onClick={(event) => props.memberToEdit(event)}>
+            <button id={id++} onClick={(event) => props.memberToEdit(event)}>
               Edit
             </button>
           </div>
