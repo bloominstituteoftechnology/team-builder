@@ -1,8 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const List = (props) => {
-  console.log(props.data);
-  console.log('name', props.data.name);
+const List = props => {
   let id = -1;
   return (
     <div key={id++} className="listContainer">
@@ -15,14 +13,14 @@ const List = (props) => {
               <h3>{user.role}</h3>
               <h4>Hi</h4>
             </div>
-            <button id={id++} onClick={props.memberToEdit}>Edit</button>
+            <button id={id++} onClick={props.memberToEdit}>
+              Edit
+            </button>
           </div>
-        )
-
-      })
-      }
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
 export default List;
