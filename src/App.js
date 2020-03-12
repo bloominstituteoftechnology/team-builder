@@ -8,12 +8,11 @@ function App() {
   const [user, setUser] = useState("");
   const [data, setData] = useState([]);
   const [active, setActive] = useState(false);
-  const [id, setId] = useState();
+  const [id, setId] = useState(0);
 
   const handleSubmit = event => {
-    console.log(id);
     event.preventDefault();
-    !active ? setData([...data, user]) : setData([...data, user]);
+    !active ? setData([...data, user]) : editMember(id, user, data);
     setUser({ name: '', email: '', role: '' });
   }
 
@@ -24,8 +23,13 @@ function App() {
   const memberToEdit = event => {
     setActive(true);
     setId(event.target.id);
-    const change = data[event.target.id]
-    setUser({ ...user, name: change.name, email: change.email, role: change.role })
+    setUser({ ...user, name: data[id].name, email: data[id].email, role: data[id].role })
+  }
+
+  const editMember = (id, user, data) => {
+    data[id] = {
+      name: user.name, email: user.email, role: user.role
+    };
   }
 
   return (
