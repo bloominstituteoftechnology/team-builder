@@ -1,6 +1,6 @@
 import React from "react";
 
-const List = props => {
+const List = (props) => {
   let id = -1;
   return (
     <div key={id++} className="listContainer">
