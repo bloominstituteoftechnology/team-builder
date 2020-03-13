@@ -7,12 +7,11 @@ import "./css/index.css";
 function App() {
   const [user, setUser] = useState("");
   const [data, setData] = useState([]);
-  const [active, setActive] = useState(false);
   const [id, setId] = useState(0);
 
   const handleSubmit = event => {
     event.preventDefault();
-    !active ? setData([...data, user]) : editMember(id, user, data);
+    setData([...data, { ...user, id: data.length }])
     setUser({ name: '', email: '', role: '' });
   }
 
@@ -20,16 +19,9 @@ function App() {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
-  const memberToEdit = event => {
-    setActive(true);
-    setId(event.target.id);
-    setUser({ ...user, name: data[id].name, email: data[id].email, role: data[id].role })
-  }
-
-  const editMember = (id, user, data) => {
-    data[id] = {
-      name: user.name, email: user.email, role: user.role
-    };
+  const memberToEdit = (event) => {
+    console.log(event.currentTarget);
+    console.log("hi");
   }
 
   return (
@@ -40,7 +32,7 @@ function App() {
 
       <List user={user}
         data={data}
-        memberToEdit={event => memberToEdit(event)}
+        memberToEdit={(event) => memberToEdit(event)}
       />
 
     </div>
