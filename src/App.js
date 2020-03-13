@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Form from "./Components/Form/Form";
 import List from "./Components/List/List";
 import "./App.css";
@@ -7,7 +7,6 @@ import "./css/index.css";
 function App() {
   const [user, setUser] = useState("");
   const [data, setData] = useState([]);
-  const [id, setId] = useState(0);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -19,20 +18,21 @@ function App() {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
-  const memberToEdit = (event) => {
-    console.log(event.currentTarget);
-    console.log("hi");
+  const memberToEdit = (e) => {
+    const id = e.target.id;
+    setUser({ name: data[id].name, email: data[id].email, role: data[id].role })
   }
+
 
   return (
     <div className="App">
       <Form user={user}
-        handleSubmit={event => handleSubmit(event)} handleChange={event => handleChange(event)}
-        memberToEdit={event => memberToEdit(event)} />
-
+        handleSubmit={event => handleSubmit(event)}
+        handleChange={event => handleChange(event)}
+      />
       <List user={user}
         data={data}
-        memberToEdit={(event) => memberToEdit(event)}
+        memberToEdit={memberToEdit}
       />
 
     </div>
