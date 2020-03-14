@@ -1,6 +1,7 @@
 import React from "react";
 
 const List = (props) => {
+  console.log(props);
   return (
     <div className="listContainer">
       {props.data.map(user => {
@@ -17,6 +18,7 @@ const List = (props) => {
           </div>
         );
       })}
+      {console.log("done")}
     </div>
   );
 };

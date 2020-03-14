@@ -25,11 +25,15 @@ function App() {
     setUser({ name: data[id].name, email: data[id].email, role: data[id].role })
     setActive(true);
   }
-  // useEffect(memberToEdit, [memberToEdit])
-  const editMember = (id) => {
-    console.log({ ...user });
-  }
 
+  const editMember = () => {
+    setData(prev => {
+      return prev.map((member, id) => {
+        return member.name === user.name ? { ...data.member = user } : null;
+      })
+    })
+  }
+  // prev.member = { name: user.name, email: user.email, role: user.role, id: id }
   return (
     <div className="App">
       <Form user={user}
