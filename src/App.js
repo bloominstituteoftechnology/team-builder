@@ -15,21 +15,20 @@ function App() {
     setActive(false);
     setUser({ name: '', email: '', role: '' });
   }
-  console.log("HI");
   const handleChange = event => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
   const memberToEdit = (e) => {
     const id = e.target.id;
-    setUser({ name: data[id].name, email: data[id].email, role: data[id].role })
+    setUser({ name: data[id].name, email: data[id].email, role: data[id].role, id: data[id].id })
     setActive(true);
   }
 
   const editMember = () => {
     setData(prev => {
-      return prev.map((member, id) => {
-        return member.name === user.name ? { ...data.member = user } : null;
+      return prev.map((member) => {
+        return member.id === user.id ? { ...data.member = user } : { ...data.member = member };
       })
     })
   }
