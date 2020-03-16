@@ -15,7 +15,7 @@ function App() {
     setActive(false);
     setUser({ name: '', email: '', role: '' });
   }
-
+  console.log("HI");
   const handleChange = event => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
