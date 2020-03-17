@@ -1,7 +1,6 @@
 import React from "react";
 
 const List = (props) => {
-  console.log(props);
   return (
     <div className="listContainer">
       {props.data.map(user => {
@@ -15,10 +14,13 @@ const List = (props) => {
             <button id={user.id} onClick={e => props.memberToEdit(e)}>
               Edit
             </button>
+            <button id={user.id} onClick={e => props.Del(e)}>
+              Delete
+            </button>
+
           </div>
         );
       })}
-      {console.log("done")}
     </div>
   );
 };

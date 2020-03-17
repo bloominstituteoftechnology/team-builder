@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Form from "./Components/Form/Form";
 import List from "./Components/List/List";
 import "./App.css";
@@ -11,7 +11,7 @@ function App() {
 
   const handleSubmit = (event, id) => {
     event.preventDefault();
-    active ? editMember() : setData([...data, { ...user, id: data.length }]);
+    active ? editMember() : setData([...data, { ...user, id: Date.now() }]);
     setActive(false);
     setUser({ name: '', email: '', role: '' });
   }
@@ -20,11 +20,21 @@ function App() {
   };
 
   const memberToEdit = (e) => {
-    const id = e.target.id;
-    setUser({ name: data[id].name, email: data[id].email, role: data[id].role, id: data[id].id })
+    data.filter(toEdit => {
+      return Number(toEdit.id) === Number(e.target.id) ? setUser({ name: toEdit.name, email: toEdit.email, role: toEdit.role, id: toEdit.id }) : null;
+    })
     setActive(true);
   }
 
+  console.log(data);
+  const Del = (e) => {
+    data.filter(del => {
+      return Number(del.id) !== Number(e.target.id) ?
+        setData(prev => {
+          return { ...data.member }
+        }) : null;
+    })
+  }
   const editMember = () => {
     setData(prev => {
       return prev.map((member) => {
@@ -32,7 +42,6 @@ function App() {
       })
     })
   }
-  // prev.member = { name: user.name, email: user.email, role: user.role, id: id }
   return (
     <div className="App">
       <Form user={user}
@@ -43,6 +52,7 @@ function App() {
       <List user={user}
         data={data}
         memberToEdit={memberToEdit}
+        Del={Del}
       />
 
     </div>
