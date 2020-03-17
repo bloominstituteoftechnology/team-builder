@@ -27,14 +27,12 @@ function App() {
   }
 
   console.log(data);
-  const Del = (e) => {
-    data.filter(del => {
-      return Number(del.id) !== Number(e.target.id) ?
-        setData(prev => {
-          return { ...data.member }
-        }) : null;
-    })
+  const removeMember = (e) => {
+    setData(data.filter((del) => {
+      return Number(del.id) !== Number(e.target.id);
+    }))
   }
+
   const editMember = () => {
     setData(prev => {
       return prev.map((member) => {
@@ -52,7 +50,7 @@ function App() {
       <List user={user}
         data={data}
         memberToEdit={memberToEdit}
-        Del={Del}
+        removeMember={removeMember}
       />
 
     </div>

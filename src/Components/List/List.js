@@ -14,7 +14,7 @@ const List = (props) => {
             <button id={user.id} onClick={e => props.memberToEdit(e)}>
               Edit
             </button>
-            <button id={user.id} onClick={e => props.Del(e)}>
+            <button id={user.id} onClick={e => props.removeMember(e)}>
               Delete
             </button>
 
