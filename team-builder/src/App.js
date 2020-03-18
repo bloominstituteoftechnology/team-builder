@@ -2,35 +2,41 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [name, setName] = useState("");
+  const [user, setUser] = useState({username:"", password:""});
 
-  const[password,setPassword]=useState("");
+  
 
-  const handleNameChange = event => {
-    setName(event.target.value);
+  const handleChange = event => {
+    setUser({...user, {event.target.name}: event.target.value});
   };
-  const handlePasswordChange = event => {
-    setPassword(event.target.value);
-  };
+
+  
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(name);
-    console.log(password);
+    console.log(user.name);
+    console.log(user.password);
   };
 
   return (
     <div className="App">
-      {console.log({name})}
-      {console.log({password})}
+      {console.log(user)}
+      
 
       <form onSubmit={event =>handleSubmit(event)}>
         <label>
           Username:
-          <input type="text" onChange={event => handleNameChange(event)} />
+          <input
+           type="text"
+           name= "username"
+           value= {user.username}
+            onChange={event => handleChange(event)} />
         </label>
         <label>
           Password:
-          <input type=="text" onChange={event=> handlePasswordChange(event)}/>
+          <input type="text"
+          name="password"
+          value= {user.password}
+           onChange={event=> handleChange(event)}/>
         </label>
         <button>Submit</button>
       </form>
