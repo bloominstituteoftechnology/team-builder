@@ -23,9 +23,13 @@ function App() {
     };
     setTeamMembers([...teamMembers, newCard]);
   };
+  const formStyle = {
+    textAlign: "center"
+  };
 
   return (
-    <div className="App">
+    <div style={formStyle}>
+      <h1>Build your team!</h1>
       <Form addMember={addMember} />
       <Card teamMembers={teamMembers} />
     </div>
