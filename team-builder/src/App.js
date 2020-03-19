@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Card from "./components/Card";
+import Form from "./components/Form";
 
 function App() {
+  //Initial value
+  const [teamMembers, setTeamMembers] = useState([
+    {
+      id: 1,
+      name: "Jose Sustaita",
+      email: "josesustaita70@gmail.com",
+      role: "Full Stack"
+    }
+  ]);
+
+  // Applying card to new member
+  const addMember = card => {
+    const newCard = {
+      id: Date.now(),
+      name: card.name,
+      email: card.email,
+      role: card.role
+    };
+    setTeamMembers([...teamMembers, newCard]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form addMember={addMember} />
+      <Card teamMembers={teamMembers} />
     </div>
   );
 }
