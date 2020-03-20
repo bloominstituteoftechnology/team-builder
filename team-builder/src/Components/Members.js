@@ -1,19 +1,18 @@
-import React from 'react-dom';
+import React from 'react';
 
-const Members = props => {
-    console.log(props);
+
+
+const Members = (props) => {
     return (
-        <div>
-        {/* <div className='member-list'>
+        <div className='member-list'>
             {props.members.map(members => (
                 <div className='member' key={members.id}>
                     <h2>{members.name}</h2>
                     <p>{members.email}</p>
                 </div>
             ))}
-        </div> */}
         </div>
-    );
+    )
 };
 
 export default Members;

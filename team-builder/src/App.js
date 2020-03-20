@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactDom from 'react-dom';
 import Members from './Components/Members';
 import MemberForm from './Components/MemberForm';
 import './App.css';
@@ -21,7 +20,7 @@ function App() {
   return (
     <div className="Members">
           <h1>Members List</h1>
-          <MemberForm addMemberHandler />
+          <MemberForm addMember={addMemberHandler} />
           <Members members={membersState} />
     </div>
   );
