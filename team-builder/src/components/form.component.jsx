@@ -33,7 +33,7 @@ const Form =(props) =>{
     console.log("form:",teamNames)
     return (
         <div>
-        {/* {console.log(teamNames)} */}
+     
         <form onSubmit={handleSubmit}>
             <label>Full Name</label>
                 <input 

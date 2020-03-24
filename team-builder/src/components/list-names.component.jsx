@@ -8,7 +8,7 @@ const ListNames =(props) =>{
         <div>
             {
                 props.teamNames.map(name =>(
-                    <div>
+                    <div key={name.id}>
                         <h2>{name.name}</h2>
                         <p>{name.email}</p>
                         <p>{name.role}</p>
