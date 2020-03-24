@@ -1,47 +1,64 @@
 import React, {useState} from 'react'
 
 
-const Form =() =>{
-    const [teamNames, setTeamNames] = useState({
-        firstName: "",
-        lastName: ""
-    });
+const Form =(props) =>{
+    console.log("formprops",props)
+    const [teamNames, setTeamNames] = useState([{
+        name: "",
+        email: "",
+        role: ""
+    }]);
+    
+       
 
     const handleChange = event => {
-        setTeamNames({ ...teamNames, [event.target.name]: event.target.value });
+        setTeamNames({ 
+            ...teamNames, 
+            [event.target.name]: event.target.value });
       };
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(teamNames.firstName);
-        console.log(teamNames.lastName)
-        setTeamNames({firstName: '',lastName: ''});
-    }
+        // console.log(teamNames.name);
+        // console.log(teamNames.email)
+        // console.log(teamNames.role)
 
+        props.addNewName(teamNames);
+        setTeamNames({
+            name:"", 
+            email: "",
+            role:''
+        });
+    }
+    console.log("form:",teamNames)
     return (
         <div>
-        {console.log(teamNames)}
-        <form onSubmit={event => handleSubmit(event)}>
-            <label>
-                First Name:
+        {/* {console.log(teamNames)} */}
+        <form onSubmit={handleSubmit}>
+            <label>Full Name</label>
                 <input 
                     type="text"
-                    name="firstName"
-                    onChange={event => handleChange(event)}
-
-                />
-            </label>
-            <label>
-                Last Name:
+                    name="name"
+                    value={teamNames.name}
+                    onChange={handleChange}
+                    
+                />            
+            <label>Email</label>   
                 <input 
                     type="text"
-                    name="lastName"
-                    onChange={event => handleChange(event)}
+                    name="email"
+                    value={teamNames.email}
+                    onChange={handleChange}
                 />
-                <button>Submit!</button>
-            </label>
+            <label>Role</label>
+                <input 
+                    type="text"
+                    name="role"
+                    value={teamNames.role}
+                    onChange={handleChange}
+                />
+            <button>Submit!</button>
         </form>
-        
         </div>
     )
 }
