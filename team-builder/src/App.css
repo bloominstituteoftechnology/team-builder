@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* MemberForm.js */
+
+.formdiv {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  margin: 0 1%;
+  border-radius: 4px;
+}
+
+
+.member {
+  display: flex;
+  flex-direction: row;
+  padding: 0 1%;
+  margin: 0 1%;
+}
+
+.member input {
+  margin: 0 1%;
+  border-radius: 4px;
+}
+
+/*member.js*/
+
+.noteclass {
+  margin: 2%;
+  padding: 1%;
+  background-color: #61dafb;
+  border-radius: 10px;
+  color: #282c34;
+}

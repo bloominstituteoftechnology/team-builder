@@ -29,13 +29,13 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Add New Member</h1>
+
+        <MemberForm addNewMember={addNewMember} />
+
+        <div className="form">
+          <Member memberValues={memberValues} />
+        </div>
       </header>
-
-      <MemberForm addNewMember={addNewMember} />
-
-      <div className="form">
-        <Member memberValues={memberValues} />
-      </div>
     </div>
   );
 }
