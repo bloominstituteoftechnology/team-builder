@@ -13,6 +13,8 @@ function App() {
     }
   ])
 
+  // const [editMember, setEditMember] = useState(memberToEdit)
+
   const addNewMember = member => {
     const newMember = {
       name: member.name,
@@ -21,6 +23,15 @@ function App() {
     }
     setMemberValues([...memberValues, newMember]);
   };
+
+  // const memberToEdit = edit => {
+  //   const updatedPerson = {
+  //     name: edit.name,
+  //     email: edit.email,
+  //     role: edit.role
+  //   }
+  //   setEditMember([...editMember, updatedPerson])
+  // }
 
 
 

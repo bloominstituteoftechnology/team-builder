@@ -72,3 +72,8 @@ button {
   border-radius: 10px;
   color: #282c34;
 }
+
+.noteclass button {
+  border: 1px #282c34 solid;
+  /* background-color: darkblue; */
+}

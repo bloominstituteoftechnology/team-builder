@@ -8,6 +8,7 @@ const Member = props => {
                     <h2>Name: {note.name}</h2>
                     <h3>Email: {note.email}</h3>
                     <h4>Role: {note.role}</h4>
+                    <button>Edit Member</button>
                 </div>
             ))}
         </div>
