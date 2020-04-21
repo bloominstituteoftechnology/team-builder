@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import styled from 'styled-components';
 import TeamList from './coponents/TeamList'
 import TeamForm from './coponents/TeamForm'
 import './App.css';
@@ -18,7 +19,13 @@ const initialValues = {
   fname: '',
   lname: '',
   position:'',
-  status: ''
+  status: 'Inactive',
+  tang: {
+    injury:false,
+    stable:false,
+    ready:false,
+
+  }
 }
 
 
@@ -32,8 +39,11 @@ const [members,setMembers]=useState(initialMembers)
 const [newMember,setNewMember]=useState(initialValues)
 
 
-const addMembers = ()=>{
-  setMembers([...members,newMember])}
+const addMembers = e=>{
+  e.preventDefault()
+  setMembers([...members,newMember])
+  setNewMember(initialValues)
+}
 
 const changeHandle = evt=>{
   const name = evt.target.name
@@ -41,19 +51,44 @@ const changeHandle = evt=>{
   setNewMember({...newMember,
     [name]:value}
     )
+  
 }
+
+const ifChecked = evt=>{
+  const name = evt.target.name;
+  const value = evt.target.checked;
+  setNewMember({...newMember,
+  tang:{...newMember.tang,
+  [name]:value,}
+})
+
+}
+
+const Div = styled.div `
+  display:flex;
+  
+  background:orange;
+  width:60%;
+  margin:4% auto;
+
+
+`
 
 
 
   return (
     <div className="App">
+      <TeamForm newMember={newMember} addMember={addMembers} changeHandle={changeHandle} checked={ifChecked}  />
+
       
-        {members.map(member=>{
-         return <TeamList key={member.id} member={member} />
-        })} 
+        <Div>
+          {members.map(member=>{
+           return <TeamList key={member.id} member={member} />
+          })} 
+        </Div>
       
       
-      <TeamForm addMember={addMembers} changeHandle={changeHandle}  />
+      
 
 
 
