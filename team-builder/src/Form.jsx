@@ -3,26 +3,31 @@ import { useState } from 'react'
 
 
 
-const Form = () => {
+const Form = ({addNewMember}) => {
     
-    const [teamMembers, setTeamMembers] = useState({
+    const [formData, setFormData] = useState({
         name: "",
         email: "",
         role: "",
       })
     
       const inputChange = (event => {
-        setTeamMembers({
-          ...teamMembers,
+        setFormData({
+          ...formData,
           [event.target.name]: event.target.value
         })
       })
     
-      const [submitted, setSubmitted] = useState(false)
+   
       
       const submit = (event) => {
         event.preventDefault()
-        setSubmitted(true)
+        addNewMember(formData)
+        setFormData({
+          name: "",
+          email: "",
+          role: "",
+        })
     } 
     
     
@@ -30,11 +35,11 @@ const Form = () => {
         <div>
            <form onSubmit={submit}> 
                <label htmlFor="nameBox">Name:</label> 
-                <input onChange={inputChange} type="text" placeholder="name" name="name" id="nameBox" value={teamMembers.name}/>
+                <input onChange={inputChange} type="text" placeholder="name" name="name" id="nameBox" value={formData.name}/>
                 <label htmlFor="emailBox">Email:</label>
-                <input onChange={inputChange} type="email" placeholder="email" name="email" id="emailBox" value={teamMembers.email} />
+                <input onChange={inputChange} type="email" placeholder="email" name="email" id="emailBox" value={formData.email} />
                 <label htmlFor="roleBox">Role:</label>
-                <select onChange={inputChange} placeholder="role" name="role" id="roleBox" value={teamMembers.role} >
+                <select onChange={inputChange} placeholder="role" name="role" id="roleBox" value={formData.role} >
                     <option>Front End</option>
                     <option>Back End</option>
                     <option>Data Scientist</option>
@@ -42,7 +47,6 @@ const Form = () => {
                 </select>
                 <button type="submit">Submit:</button>
            </form>
-    {submitted ?<> <div>{teamMembers.name}</div><div>{teamMembers.email}</div> <div>{teamMembers.role}</div> </>: <div>Please fill out form</div>}
         </div>
     )
 }
