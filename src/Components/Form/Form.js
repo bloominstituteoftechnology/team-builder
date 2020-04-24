@@ -22,10 +22,6 @@ const Form = (props) => {
           Role:
         <input type="text" name="role" value={props.user.role} onChange={props.handleChange} required />
         </label>
-        <label>
-          Team Number:
-        <input type="number" name="teamNumber" value={props.user.teamNumber} onChange={props.handleChange} required />
-        </label>
         <button>Submit!</button>
       </form>
     </div>
