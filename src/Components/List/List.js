@@ -8,8 +8,9 @@ const List = (props) => {
           <div key={user.id} className="listCard" >
             <div className="userInfo">
               <h1>{user.name}</h1>
-              <h2>{user.email}</h2>
-              <h3>{user.role}</h3>
+              <h3>Email: {user.email}</h3>
+              <h3>Role: {user.role}</h3>
+              <h3>Team: {user.teamNumber}</h3>
             </div>
             <button id={user.id} onClick={e => props.memberToEdit(e)}>
               Edit

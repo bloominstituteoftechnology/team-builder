@@ -1,12 +1,18 @@
 import React from "react";
 
 const Form = (props) => {
+
+  const setCustomValidity = (e) => {
+    console.log(e);
+  }
+
+
   return (
     <div>
       <form onSubmit={props.handleSubmit}>
         <label>
           Name:
-        <input type="text" name="name" value={props.user.name} onChange={props.handleChange} required />
+        <input type="text" name="name" value={props.user.name} onChange={props.handleChange} required pattern='^[A-Za-z]+$' title="No numeric characters allowed" />
         </label>
         <label>
           Email:
@@ -15,6 +21,10 @@ const Form = (props) => {
         <label>
           Role:
         <input type="text" name="role" value={props.user.role} onChange={props.handleChange} required />
+        </label>
+        <label>
+          Team Number:
+        <input type="number" name="teamNumber" value={props.user.teamNumber} onChange={props.handleChange} required />
         </label>
         <button>Submit!</button>
       </form>
