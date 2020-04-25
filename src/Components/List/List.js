@@ -30,9 +30,9 @@ const List = (props) => {
         return (
           <StyledCard key={user.id}  >
             <div className="userInfo">
-              <h3>{user.name}</h3>
+              <h3>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</h3>
               <p>Email: {user.email}</p>
-              <p>Role: {user.role}</p>
+              <p>Role: {user.role.charAt(0).toUpperCase() + user.role.slice(1)}</p>
               <p>Team: {user.teamNumber}</p>
             </div>
             <Button color="info" style={styleButton} id={user.id} onClick={e => props.memberToEdit(e)}>

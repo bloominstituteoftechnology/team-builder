@@ -3,11 +3,13 @@ import { Form as ReactForm, Input, Button } from 'reactstrap'
 import styled from 'styled-components'
 
 const StyledForm = styled.div`
-  width: 40%;
   padding: 3% 2%;
 `
 const styleInputs = {
-  marginBottom: '3%'
+  marginBottom: '1%',
+  border: 'none',
+  borderRadius: '0',
+  borderBottom: '1px solid #eee',
 }
 
 // pattern = '^[A-Za-z]+$'
