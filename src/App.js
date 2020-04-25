@@ -26,9 +26,14 @@ function App() {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
+  const handleClear = () => {
+    setUser({ name: '', email: '', role: '', teamNumber: '', id: '' });
+    setActive(false)
+  }
+
   const memberToEdit = (e) => {
     data.filter(toEdit => {
-      return Number(toEdit.id) === Number(e.target.id) ? setUser({ name: toEdit.name, email: toEdit.email, role: toEdit.role, id: toEdit.id }) : null;
+      return Number(toEdit.id) === Number(e.target.id) ? setUser({ name: toEdit.name, email: toEdit.email, role: toEdit.role, id: toEdit.id, teamNumber: toEdit.teamNumber }) : null;
     })
     setActive(true);
     setCollapse(true)
@@ -60,8 +65,9 @@ function App() {
         <Button onClick={() => handleCollapse()} color="primary">Form</Button>
         <Collapse isOpen={collapse}>
           <Form user={user}
-            handleSubmit={event => handleSubmit(event)}
-            handleChange={event => handleChange(event)}
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            handleClear={handleClear}
             memberToEdit={memberToEdit}
           />
         </Collapse>

@@ -12,6 +12,11 @@ const styleInputs = {
   borderBottom: '1px solid #eee',
 }
 
+const styleButton = {
+  margin: '6px',
+  width: '130px'
+}
+
 // pattern = '^[A-Za-z]+$'
 
 const Form = (props) => {
@@ -22,7 +27,8 @@ const Form = (props) => {
         <Input style={styleInputs} type="email" name="email" value={props.user.email} onChange={props.handleChange} required placeholder="Email" />
         <Input style={styleInputs} type="text" name="role" value={props.user.role} onChange={props.handleChange} required placeholder="Role" />
         <Input style={styleInputs} type="text" name="teamNumber" value={props.user.teamNumber} onChange={props.handleChange} required placeholder="Team" />
-        <Button>Submit!</Button>
+        <Button style={styleButton} color="primary">Submit!</Button>
+        <Button style={styleButton} color="secondary" type="button" onClick={() => props.handleClear()}>Clear</Button>
       </ReactForm>
     </StyledForm>
   );
