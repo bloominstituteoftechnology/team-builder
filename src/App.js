@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import Form from "./Components/Form/Form";
 import List from "./Components/List/List";
-import "./App.css";
-import "./css/index.css";
+import userData from './data'
+import styled from 'styled-components'
+import { Collapse, Button } from 'reactstrap'
+
+const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 function App() {
   const [user, setUser] = useState("");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(userData);
   const [active, setActive] = useState(false);
+  const [collapse, setCollapse] = useState(false);
 
-  const handleSubmit = (event, id) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     active ? editMember() : setData([...data, { ...user, id: Date.now() }]);
     setActive(false);
@@ -26,7 +33,6 @@ function App() {
     setActive(true);
   }
 
-  console.log(data);
   const removeMember = (e) => {
     setData(data.filter((del) => {
       return Number(del.id) !== Number(e.target.id);
@@ -40,20 +46,30 @@ function App() {
       })
     })
   }
-  return (
-    <div className="App">
-      <Form user={user}
-        handleSubmit={event => handleSubmit(event)}
-        handleChange={event => handleChange(event)}
-        memberToEdit={memberToEdit}
-      />
-      <List user={user}
-        data={data}
-        memberToEdit={memberToEdit}
-        removeMember={removeMember}
-      />
 
-    </div>
+  const handleCollapse = () => {
+    setCollapse(!collapse);
+  }
+
+  return (
+    <>
+      <Button onClick={() => handleCollapse()}>Form</Button>
+      <StyledApp>
+        <Collapse isOpen={collapse}>
+          <Form user={user}
+            handleSubmit={event => handleSubmit(event)}
+            handleChange={event => handleChange(event)}
+            memberToEdit={memberToEdit}
+          />
+        </Collapse>
+
+        <List user={user}
+          data={data}
+          memberToEdit={memberToEdit}
+          removeMember={removeMember}
+        />
+      </StyledApp>
+    </>
   );
 }
 
