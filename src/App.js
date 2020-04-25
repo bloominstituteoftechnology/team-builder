@@ -12,7 +12,7 @@ const StyledApp = styled.div`
 
 function App() {
   const [user, setUser] = useState("");
-  const [data, setData] = useState(userData);
+  const [data, setData] = useState([]);
   const [active, setActive] = useState(false);
   const [collapse, setCollapse] = useState(false);
 
@@ -31,6 +31,7 @@ function App() {
       return Number(toEdit.id) === Number(e.target.id) ? setUser({ name: toEdit.name, email: toEdit.email, role: toEdit.role, id: toEdit.id }) : null;
     })
     setActive(true);
+    setCollapse(true)
   }
 
   const removeMember = (e) => {
@@ -53,8 +54,8 @@ function App() {
 
   return (
     <>
-      <Button onClick={() => handleCollapse()}>Form</Button>
       <StyledApp>
+        <Button onClick={() => handleCollapse()} color="primary">Form</Button>
         <Collapse isOpen={collapse}>
           <Form user={user}
             handleSubmit={event => handleSubmit(event)}
