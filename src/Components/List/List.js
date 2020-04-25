@@ -23,6 +23,10 @@ const styleButton = {
   margin: '6px'
 }
 
+const StyledName = styled.h3`
+  text-transform: capitalize
+`
+
 const List = (props) => {
   return (
     <StyledList>
@@ -30,7 +34,7 @@ const List = (props) => {
         return (
           <StyledCard key={user.id}  >
             <div className="userInfo">
-              <h3>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</h3>
+              <StyledName>{user.name}</StyledName>
               <p>Email: {user.email}</p>
               <p>Role: {user.role.charAt(0).toUpperCase() + user.role.slice(1)}</p>
               <p>Team: {user.teamNumber}</p>
