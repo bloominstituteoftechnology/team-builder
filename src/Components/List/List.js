@@ -15,7 +15,13 @@ const StyledCard = styled.div`
   border-radius: 12px;
   width: 31%;
   margin: 10px;
+  text-align: center;
 `
+
+const styleButton = {
+  width: '100px',
+  margin: '6px'
+}
 
 const List = (props) => {
   return (
@@ -24,18 +30,17 @@ const List = (props) => {
         return (
           <StyledCard key={user.id}  >
             <div className="userInfo">
-              <h1>{user.name}</h1>
-              <h3>Email: {user.email}</h3>
-              <h3>Role: {user.role}</h3>
-              <h3>Team: {user.teamNumber}</h3>
+              <h3>{user.name}</h3>
+              <p>Email: {user.email}</p>
+              <p>Role: {user.role}</p>
+              <p>Team: {user.teamNumber}</p>
             </div>
-            <Button id={user.id} onClick={e => props.memberToEdit(e)}>
+            <Button color="info" style={styleButton} id={user.id} onClick={e => props.memberToEdit(e)}>
               Edit
             </Button>
-            <Button id={user.id} onClick={e => props.removeMember(e)}>
+            <Button color="danger" style={styleButton} id={user.id} onClick={e => props.removeMember(e)}>
               Delete
             </Button>
-
           </StyledCard>
         );
       })}

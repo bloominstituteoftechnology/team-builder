@@ -12,7 +12,7 @@ const StyledApp = styled.div`
 
 function App() {
   const [user, setUser] = useState("");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(userData);
   const [active, setActive] = useState(false);
   const [collapse, setCollapse] = useState(false);
 
@@ -20,7 +20,7 @@ function App() {
     event.preventDefault();
     active ? editMember() : setData([...data, { ...user, id: Date.now() }]);
     setActive(false);
-    setUser({ name: '', email: '', role: '' });
+    setUser({ name: '', email: '', role: '', teamNumber: '' });
   }
   const handleChange = event => {
     setUser({ ...user, [event.target.name]: event.target.value });
@@ -38,6 +38,8 @@ function App() {
     setData(data.filter((del) => {
       return Number(del.id) !== Number(e.target.id);
     }))
+    setUser({ name: '', email: '', role: '', teamNumber: '' });
+    setCollapse(false)
   }
 
   const editMember = () => {
