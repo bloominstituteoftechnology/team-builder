@@ -27,7 +27,6 @@ const Form = (props) => {
         <Input style={styleInputs} type="text" name="name" value={props.user.name} onChange={props.handleChange} required title="No numeric characters allowed" placeholder="Name" />
         <Input style={styleInputs} type="email" name="email" value={props.user.email} onChange={props.handleChange} required placeholder="Email" />
         <Input style={styleInputs} type="text" name="role" value={props.user.role} onChange={props.handleChange} required placeholder="Role" />
-        {/* <Input style={styleInputs} type="text" name="teamNumber" value={props.user.teamNumber} onChange={props.handleChange} required placeholder="Team" /> */}
         <Input style={styleInputs} type="select" name="teamNumber" value={props.user.teamNumber} onChange={props.handleChange} required placeholder="Team" >
           <option value="" disabled selected hidden>Choose a Team</option>
           <option value="1">1</option>
@@ -35,7 +34,8 @@ const Form = (props) => {
         </Input>
         <Button style={styleButton} color="primary">Submit!</Button>
         <Button style={styleButton} color="secondary" type="button" onClick={() => props.handleClear()}>Clear</Button>
-        <Input type="select" name="select" onChange={e => props.handleFilter(e)}>
+        <Input type="select" style={{ width: '200px', display: 'inline', float: 'right' }} name="select" onChange={e => props.handleFilter(e)}>
+          <option value="" selected disabled hidden>Filter by Team</option>
           <option value="all">All</option>
           <option value="1">1</option>
           <option value="2">2</option>
