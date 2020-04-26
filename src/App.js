@@ -15,7 +15,8 @@ function App() {
   const [user, setUser] = useState("");
   const [data, setData] = useState(userData);
   const [active, setActive] = useState(false);
-  const [collapse, setCollapse] = useState(false);
+  const [formCollapse, setFormCollapse] = useState(false);
+  const [cardCollapse, setCardCollapse] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,7 +38,7 @@ function App() {
       return Number(toEdit.id) === Number(e.target.id) ? setUser({ name: toEdit.name, email: toEdit.email, role: toEdit.role, id: toEdit.id, teamNumber: toEdit.teamNumber }) : null;
     })
     setActive(true);
-    setCollapse(true)
+    setFormCollapse(true)
   }
 
   const removeMember = (e) => {
@@ -45,7 +46,7 @@ function App() {
       return Number(del.id) !== Number(e.target.id);
     }))
     setUser({ name: '', email: '', role: '', teamNumber: '' });
-    setCollapse(false)
+    setFormCollapse(false)
   }
 
   const editMember = () => {
@@ -54,10 +55,6 @@ function App() {
         return member.id === user.id ? { ...data.member = user } : { ...data.member = member };
       })
     })
-  }
-
-  const handleCollapse = () => {
-    setCollapse(!collapse);
   }
 
   const handleFilter = (e) => {
@@ -72,9 +69,9 @@ function App() {
   return (
     <div className="App">
       <StyledApp>
-        <Button onClick={() => handleCollapse()} color="primary">Form</Button>
+        <Button onClick={() => setFormCollapse(!formCollapse)} color="primary">Form</Button>
 
-        <Collapse isOpen={collapse}>
+        <Collapse isOpen={formCollapse}>
           <Form user={user}
             handleSubmit={handleSubmit}
             handleChange={handleChange}
@@ -93,8 +90,8 @@ function App() {
         <List user={user}
           data={data}
           removeMember={removeMember}
-          setCollapse={setCollapse}
-          collapse={collapse}
+          setCardCollapse={setCardCollapse}
+          cardCollapse={cardCollapse}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           handleClear={handleClear}

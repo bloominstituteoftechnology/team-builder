@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
-import { Button, Form as ReactForm } from 'reactstrap'
+import { Button, Collapse } from 'reactstrap'
 import Form from '../Form/Form'
 
 const StyledList = styled.div`
@@ -29,6 +29,15 @@ const StyledName = styled.h3`
   text-transform: capitalize
 `
 
+const StyledCardForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  width: 400px;
+  margin: 8px;
+  text-align: center;
+`
+
 const List = (props) => {
   return (
     <StyledList >
@@ -50,15 +59,21 @@ const List = (props) => {
           </StyledCard>
         );
       })}
-      {/* <Button color="success" style={{ margin: '10px', width: '50px' }} onClick={() => props.setCollapse(!props.collapse)}>+</Button> */}
-      <Form
-        user={props.user}
-        handleSubmit={props.handleSubmit}
-        handleChange={props.handleChange}
-        handleClear={props.handleClear}
-        memberToEdit={props.memberToEdit}
-
-      />
+      <StyledCardForm>
+        {!props.cardCollapse ?
+          <Button color="success" style={{ margin: '4px 10px' }} onClick={() => props.setCardCollapse(!props.cardCollapse)}>+</Button>
+          : <Button color="warning" style={{ margin: '4px 10px' }} onClick={() => props.setCardCollapse(!props.cardCollapse)}>-</Button>}
+        {/* 
+        <Button color="success" style={{ margin: '10px', width: '50px' }} onClick={() => props.setCardCollapse(!props.cardCollapse)}>+</Button> */}
+        <Collapse isOpen={props.cardCollapse}>
+          <Form
+            user={props.user}
+            handleSubmit={props.handleSubmit}
+            handleChange={props.handleChange}
+            handleClear={props.handleClear}
+          />
+        </Collapse>
+      </StyledCardForm>
     </StyledList>
   );
 };
