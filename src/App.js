@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./Components/Form/Form";
 import List from "./Components/List/List";
 import userData from './data'
@@ -9,18 +9,22 @@ const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
 `
-
-
 function App() {
   const [user, setUser] = useState("");
-  const [data, setData] = useState(userData);
+  const [server, setServer] = useState(JSON.parse(window.localStorage.getItem('data')))
+  const [data, setData] = useState(server);
   const [active, setActive] = useState(false);
   const [formCollapse, setFormCollapse] = useState(false);
   const [cardCollapse, setCardCollapse] = useState(false);
 
+  useEffect(() => {
+    window.localStorage.setItem('data', JSON.stringify(server));
+    setData(server)
+  }, [server])
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    active ? editMember() : setData([...data, { ...user, id: Date.now() }]);
+    active ? editMember() : setServer([...server, { ...user, id: Date.now() }]);
     setActive(false);
     setUser({ name: '', email: '', role: '', teamNumber: '' });
   }
@@ -43,7 +47,7 @@ function App() {
   }
 
   const removeMember = (e) => {
-    setData(data.filter((del) => {
+    setServer(server.filter((del) => {
       return Number(del.id) !== Number(e.target.id);
     }))
     setUser({ name: '', email: '', role: '', teamNumber: '' });
@@ -51,7 +55,7 @@ function App() {
   }
 
   const editMember = () => {
-    setData(prev => {
+    setServer(prev => {
       return prev.map((member) => {
         return member.id === user.id ? { ...data.member = user } : { ...data.member = member };
       })
@@ -61,9 +65,9 @@ function App() {
   const handleFilter = (e) => {
     console.log(e.target.value);
     const id = e.target.value
-    setData(userData)
+    setData(server)
     if (id !== 'all') {
-      setData(userData.filter((user) => { return user.teamNumber === id }))
+      setData(server.filter((user) => { return user.teamNumber === id }))
     }
   }
 
