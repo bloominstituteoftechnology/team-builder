@@ -6,14 +6,15 @@ const StyledList = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 2%;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: end;
 `
 
 const StyledCard = styled.div`
   border: 1px solid #eee;
   padding: 2%;
   border-radius: 12px;
-  width: 31%;
+  width: 400px;
   margin: 10px;
   text-align: center;
 `
@@ -29,10 +30,10 @@ const StyledName = styled.h3`
 
 const List = (props) => {
   return (
-    <StyledList>
+    <StyledList >
       {props.data.map(user => {
         return (
-          <StyledCard key={user.id}  >
+          <StyledCard key={user.id}>
             <div className="userInfo">
               <StyledName>{user.name}</StyledName>
               <p>Email: {user.email}</p>
@@ -48,6 +49,7 @@ const List = (props) => {
           </StyledCard>
         );
       })}
+      <Button color="success" style={{ margin: '10px', width: '50px' }} onClick={() => props.setCollapse(!props.collapse)}>+</Button>
     </StyledList>
   );
 };

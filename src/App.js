@@ -10,6 +10,7 @@ const StyledApp = styled.div`
   flex-direction: column;
 `
 
+
 function App() {
   const [user, setUser] = useState("");
   const [data, setData] = useState(userData);
@@ -59,8 +60,17 @@ function App() {
     setCollapse(!collapse);
   }
 
+  const handleFilter = (e) => {
+    console.log(e.target.value);
+    const id = e.target.value
+    setData(userData)
+    if (id != 'all') {
+      setData(userData.filter((user) => { return user.teamNumber == id }))
+    }
+  }
+
   return (
-    <>
+    <div className="App">
       <StyledApp>
         <Button onClick={() => handleCollapse()} color="primary">Form</Button>
         <Collapse isOpen={collapse}>
@@ -69,6 +79,7 @@ function App() {
             handleChange={handleChange}
             handleClear={handleClear}
             memberToEdit={memberToEdit}
+            handleFilter={handleFilter}
           />
         </Collapse>
 
@@ -76,9 +87,11 @@ function App() {
           data={data}
           memberToEdit={memberToEdit}
           removeMember={removeMember}
+          setCollapse={setCollapse}
+          collapse={collapse}
         />
       </StyledApp>
-    </>
+    </div>
   );
 }
 

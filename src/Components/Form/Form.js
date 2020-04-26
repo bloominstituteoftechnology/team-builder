@@ -1,5 +1,5 @@
 import React from "react";
-import { Form as ReactForm, Input, Button } from 'reactstrap'
+import { Form as ReactForm, Input, Button, Dropdown } from 'reactstrap'
 import styled from 'styled-components'
 
 const StyledForm = styled.div`
@@ -20,15 +20,26 @@ const styleButton = {
 // pattern = '^[A-Za-z]+$'
 
 const Form = (props) => {
+
   return (
-    <StyledForm>
+    <StyledForm >
       <ReactForm onSubmit={props.handleSubmit}>
         <Input style={styleInputs} type="text" name="name" value={props.user.name} onChange={props.handleChange} required title="No numeric characters allowed" placeholder="Name" />
         <Input style={styleInputs} type="email" name="email" value={props.user.email} onChange={props.handleChange} required placeholder="Email" />
         <Input style={styleInputs} type="text" name="role" value={props.user.role} onChange={props.handleChange} required placeholder="Role" />
-        <Input style={styleInputs} type="text" name="teamNumber" value={props.user.teamNumber} onChange={props.handleChange} required placeholder="Team" />
+        {/* <Input style={styleInputs} type="text" name="teamNumber" value={props.user.teamNumber} onChange={props.handleChange} required placeholder="Team" /> */}
+        <Input style={styleInputs} type="select" name="teamNumber" value={props.user.teamNumber} onChange={props.handleChange} required placeholder="Team" >
+          <option value="" disabled selected hidden>Choose a Team</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </Input>
         <Button style={styleButton} color="primary">Submit!</Button>
         <Button style={styleButton} color="secondary" type="button" onClick={() => props.handleClear()}>Clear</Button>
+        <Input type="select" name="select" onChange={e => props.handleFilter(e)}>
+          <option value="all">All</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </Input>
       </ReactForm>
     </StyledForm>
   );

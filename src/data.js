@@ -40,6 +40,13 @@ const userData = [
     role: 'Frontend',
     teamNumber: '2',
     id: 5
+  },
+  {
+    name: 'Paul Tough',
+    email: 'p_tough@email.com',
+    role: 'Frontend',
+    teamNumber: '2',
+    id: 7
   }
 ]
 
