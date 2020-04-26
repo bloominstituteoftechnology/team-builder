@@ -3,7 +3,7 @@ import { Form as ReactForm, Input, Button, Dropdown } from 'reactstrap'
 import styled from 'styled-components'
 
 const StyledForm = styled.div`
-  padding: 3% 2%;
+   padding: 2% 3.5%
 `
 const styleInputs = {
   marginBottom: '1%',

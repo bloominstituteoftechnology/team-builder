@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
-import { Button } from 'reactstrap'
+import { Button, Form as ReactForm } from 'reactstrap'
+import Form from '../Form/Form'
 
 const StyledList = styled.div`
   display: flex;
@@ -49,7 +50,15 @@ const List = (props) => {
           </StyledCard>
         );
       })}
-      <Button color="success" style={{ margin: '10px', width: '50px' }} onClick={() => props.setCollapse(!props.collapse)}>+</Button>
+      {/* <Button color="success" style={{ margin: '10px', width: '50px' }} onClick={() => props.setCollapse(!props.collapse)}>+</Button> */}
+      <Form
+        user={props.user}
+        handleSubmit={props.handleSubmit}
+        handleChange={props.handleChange}
+        handleClear={props.handleClear}
+        memberToEdit={props.memberToEdit}
+
+      />
     </StyledList>
   );
 };

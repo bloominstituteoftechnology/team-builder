@@ -64,8 +64,8 @@ function App() {
     console.log(e.target.value);
     const id = e.target.value
     setData(userData)
-    if (id != 'all') {
-      setData(userData.filter((user) => { return user.teamNumber == id }))
+    if (id !== 'all') {
+      setData(userData.filter((user) => { return user.teamNumber === id }))
     }
   }
 
@@ -73,6 +73,7 @@ function App() {
     <div className="App">
       <StyledApp>
         <Button onClick={() => handleCollapse()} color="primary">Form</Button>
+
         <Collapse isOpen={collapse}>
           <Form user={user}
             handleSubmit={handleSubmit}
@@ -81,19 +82,25 @@ function App() {
             memberToEdit={memberToEdit}
           />
         </Collapse>
+
         <Input type="select" style={{ width: '150px', alignSelf: 'flex-end', margin: '20px 100px' }} name="select" onChange={e => handleFilter(e)}>
           <option value="" selected disabled hidden>Filter by Team</option>
           <option value="all">All</option>
           <option value="1">1</option>
           <option value="2">2</option>
         </Input>
+
         <List user={user}
           data={data}
-          memberToEdit={memberToEdit}
           removeMember={removeMember}
           setCollapse={setCollapse}
           collapse={collapse}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          handleClear={handleClear}
+          memberToEdit={memberToEdit}
         />
+
       </StyledApp>
     </div>
   );
