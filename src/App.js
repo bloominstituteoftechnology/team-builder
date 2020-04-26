@@ -11,7 +11,7 @@ const StyledApp = styled.div`
 `
 function App() {
   const [user, setUser] = useState("");
-  const [server, setServer] = useState(JSON.parse(window.localStorage.getItem('data')))
+  const [server, setServer] = useState(userData)
   const [data, setData] = useState(server);
   const [active, setActive] = useState(false);
   const [formCollapse, setFormCollapse] = useState(false);
@@ -47,8 +47,11 @@ function App() {
   }
 
   const removeMember = (e) => {
-    setServer(server.filter((del) => {
-      return Number(del.id) !== Number(e.target.id);
+    // setServer(server.filter((del) => {
+    //   return Number(del.id) !== Number(e.target.id);
+    // }))
+    setServer(server.filter(s => {
+      return s.teamNumber == e.target.id
     }))
     setUser({ name: '', email: '', role: '', teamNumber: '' });
     setFormCollapse(false)
