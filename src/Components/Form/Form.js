@@ -34,12 +34,6 @@ const Form = (props) => {
         </Input>
         <Button style={styleButton} color="primary">Submit!</Button>
         <Button style={styleButton} color="secondary" type="button" onClick={() => props.handleClear()}>Clear</Button>
-        <Input type="select" style={{ width: '200px', display: 'inline', float: 'right' }} name="select" onChange={e => props.handleFilter(e)}>
-          <option value="" selected disabled hidden>Filter by Team</option>
-          <option value="all">All</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </Input>
       </ReactForm>
     </StyledForm>
   );

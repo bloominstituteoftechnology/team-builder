@@ -3,7 +3,7 @@ import Form from "./Components/Form/Form";
 import List from "./Components/List/List";
 import userData from './data'
 import styled from 'styled-components'
-import { Collapse, Button } from 'reactstrap'
+import { Collapse, Button, Input } from 'reactstrap'
 
 const StyledApp = styled.div`
   display: flex;
@@ -79,10 +79,14 @@ function App() {
             handleChange={handleChange}
             handleClear={handleClear}
             memberToEdit={memberToEdit}
-            handleFilter={handleFilter}
           />
         </Collapse>
-
+        <Input type="select" style={{ width: '150px', alignSelf: 'flex-end', margin: '20px 100px' }} name="select" onChange={e => handleFilter(e)}>
+          <option value="" selected disabled hidden>Filter by Team</option>
+          <option value="all">All</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </Input>
         <List user={user}
           data={data}
           memberToEdit={memberToEdit}
