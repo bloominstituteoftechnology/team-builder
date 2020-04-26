@@ -25,9 +25,9 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     active ? editMember() : setServer([...server, { ...user, id: Date.now() }]);
-    setActive(false);
-    setUser({ name: '', email: '', role: '', teamNumber: '' });
+    handleClear();
   }
+
   const handleChange = event => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
@@ -47,13 +47,10 @@ function App() {
   }
 
   const removeMember = (e) => {
-    // setServer(server.filter((del) => {
-    //   return Number(del.id) !== Number(e.target.id);
-    // }))
-    setServer(server.filter(s => {
-      return s.teamNumber == e.target.id
+    setData(data.filter(s => {
+      return s.id != e.target.id
     }))
-    setUser({ name: '', email: '', role: '', teamNumber: '' });
+    handleClear();
     setFormCollapse(false)
   }
 
@@ -66,7 +63,6 @@ function App() {
   }
 
   const handleFilter = (e) => {
-    console.log(e.target.value);
     const id = e.target.value
     setData(server)
     if (id !== 'all') {
@@ -90,8 +86,8 @@ function App() {
 
         <Input type="select" style={{ width: '150px', alignSelf: 'flex-end', margin: '20px 100px' }} name="select" onChange={e => handleFilter(e)}>
           <option value="" selected disabled hidden>Filter by Team</option>
-          <option value="all">All</option>
-          <option value="1">1</option>
+          <option value="all" >All</option>
+          <option value="1" >1</option>
           <option value="2">2</option>
         </Input>
 
