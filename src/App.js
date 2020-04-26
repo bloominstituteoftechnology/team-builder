@@ -39,6 +39,7 @@ function App() {
     })
     setActive(true);
     setFormCollapse(true)
+    setCardCollapse(false)
   }
 
   const removeMember = (e) => {
