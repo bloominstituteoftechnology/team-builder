@@ -10,7 +10,7 @@ const StyledApp = styled.div`
   flex-direction: column;
 `
 function App() {
-  const [user, setUser] = useState("");
+  const [input, setInput] = useState("");
   const [server, setServer] = useState(!window.localStorage.getItem('data') ? userData : JSON.parse(window.localStorage.getItem('data')))
   const [data, setData] = useState(server);
   const [active, setActive] = useState(false);
@@ -24,22 +24,22 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    active ? editMember() : setServer([...server, { ...user, id: Date.now() }]);
+    active ? editMember() : setServer([...server, { ...input, id: Date.now() }]);
     handleClear();
   }
 
   const handleChange = event => {
-    setUser({ ...user, [event.target.name]: event.target.value });
+    setInput({ ...input, [event.target.name]: event.target.value });
   };
 
   const handleClear = () => {
-    setUser({ name: '', email: '', role: '', teamNumber: '', id: '' });
+    setInput({ name: '', email: '', role: '', teamNumber: '', id: '' });
     setActive(false)
   }
 
   const memberToEdit = (e) => {
     data.filter(toEdit => {
-      return Number(toEdit.id) === Number(e.target.id) ? setUser({ name: toEdit.name, email: toEdit.email, role: toEdit.role, id: toEdit.id, teamNumber: toEdit.teamNumber }) : null;
+      return Number(toEdit.id) === Number(e.target.id) ? setInput({ name: toEdit.name, email: toEdit.email, role: toEdit.role, id: toEdit.id, teamNumber: toEdit.teamNumber }) : null;
     })
     setActive(true);
     setFormCollapse(true)
@@ -57,7 +57,7 @@ function App() {
   const editMember = () => {
     setServer(prev => {
       return prev.map((member) => {
-        return member.id === user.id ? { ...data.member = user } : { ...data.member = member };
+        return member.id === input.id ? { ...data.member = input } : { ...data.member = member };
       })
     })
   }
@@ -76,7 +76,7 @@ function App() {
         <Button onClick={() => setFormCollapse(!formCollapse)} color="primary">Form</Button>
 
         <Collapse isOpen={formCollapse}>
-          <Form user={user}
+          <Form user={input}
             handleSubmit={handleSubmit}
             handleChange={handleChange}
             handleClear={handleClear}
@@ -91,7 +91,7 @@ function App() {
           <option value="2">2</option>
         </Input>
 
-        <List user={user}
+        <List user={input}
           data={data}
           removeMember={removeMember}
           setCardCollapse={setCardCollapse}
