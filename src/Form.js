@@ -44,7 +44,7 @@ function OurTeam() {
   
   
     return (
-      <div>
+      <div className="container">
         <form onSubmit={formSubmit}>
             <label>Employee Name
                 <input 
@@ -61,6 +61,7 @@ function OurTeam() {
                     placeholder="Email"
                     value={value.email}
                     onChange={inputChange}
+                    type="email"
                 />
             </label>
 
@@ -73,13 +74,15 @@ function OurTeam() {
                 />
             </label>
 
-            <input type='submit'/>
+            <input className="button" type='submit'/>
           </form>
+          <div className="list">
             <h2>Employee List</h2>
-            
-            {
-            members.map(fr => <div key={fr.id}>{fr.name} {fr.email} {fr.role}</div>)
-            }
+            <ul>
+                {members.map(fr => <li key={fr.id}>{fr.name} {fr.email} {fr.role}</li>)
+                } 
+            </ul>
+           </div>
         </div>
     )
   }

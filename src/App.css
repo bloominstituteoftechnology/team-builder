@@ -36,3 +36,60 @@
     transform: rotate(360deg);
   }
 }
+
+li {
+  list-style-type: none;
+  color: #8A2BE2;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  
+}
+
+input {
+  width: 168px;
+  padding: 5px 17px;
+  margin: 10px 17px;
+  box-sizing: border-box;  
+  border: 1px solid #61dafb;
+  border-radius: 4px;
+}
+
+label {
+  text-align: left;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+input, ::placeholder{
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 125px;
+}
+
+.list {
+  padding-top: 50px;
+}
+
+h3 {
+  text-align: center;
+}
+
+label {
+  color: #EE82EE;
+}
+
+.button {
+  background-color: #FF1493;
+  color: #A9A9A9;
+}

@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://image.freepik.com/free-photo/blue-border-leaves-pink-background-with-copyspace_24972-573.jpg");
+  background-size: cover;
 }
 
 code {
