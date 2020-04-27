@@ -16,6 +16,7 @@ function App() {
   const [active, setActive] = useState(false);
   const [formCollapse, setFormCollapse] = useState(false);
   const [cardCollapse, setCardCollapse] = useState(false);
+  const [change, setChange] = useState(false)
 
   useEffect(() => {
     window.localStorage.setItem('data', JSON.stringify(server));
@@ -48,10 +49,12 @@ function App() {
 
   const removeMember = (e) => {
     setServer(server.filter(s => {
-      return s.id != e.target.id
+      return s.id !== Number(e.target.id)
     }))
     handleClear();
     setFormCollapse(false)
+    setData(data)
+    setChange(!change)
   }
 
   const editMember = () => {
@@ -85,7 +88,7 @@ function App() {
         </Collapse>
 
         <Input type="select" style={{ width: '150px', alignSelf: 'flex-end', margin: '20px 100px' }} name="select" onChange={e => handleFilter(e)}>
-          <option value="" selected disabled hidden>Filter by Team</option>
+          <option value="" selected={!change ? "true" : "false"} disabled hidden>Filter by Team</option>
           <option value="all" >All</option>
           <option value="1" >1</option>
           <option value="2">2</option>
