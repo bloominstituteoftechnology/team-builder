@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Input, Label, Button } from "./Styles"
+import { Input, Label, Button, Type } from "./Styles"
 
 const Form = ({addNewName}) => {
     const [teamMembers, setTeamMembers] = useState({
@@ -23,11 +23,11 @@ const Form = ({addNewName}) => {
         <Input>
             <form onSubmit={submit}>
                 <Label>Name:</Label>
-                <input onChange={changeHandler} type="text" name="name" value={teamMembers.name} />
+                <Type onChange={changeHandler} type="text" name="name" value={teamMembers.name} />
                 <Label>Email Address:</Label>
-                <input onChange={changeHandler} type="email" name="email" value={teamMembers.email} />
+                <Type onChange={changeHandler} type="email" name="email" value={teamMembers.email} />
                 <Label>Role:</Label>
-                <input onChange={changeHandler} type="text" name="role" value={teamMembers.role} />
+                <Type onChange={changeHandler} type="text" name="role" value={teamMembers.role} />
                 <Button type="submit">Submit</Button>
             </form> 
         </Input>

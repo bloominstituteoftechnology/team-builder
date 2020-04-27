@@ -24,7 +24,8 @@ export const Card = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: gray;
+    background-color: #2a6592;
+    color: white;
     margin-bottom: 8px;
 `
 export const Input = styled.div `
@@ -34,7 +35,9 @@ export const Input = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: gray;
+    background-color: #2a6592;
+    color: white;
+    justify-content: space-between;
     margin-bottom: 8px;
 `
 
@@ -45,9 +48,18 @@ export const Label = styled.label `
 
 export const Button = styled.button `
     font-weight: bold;
+    :hover {
+        background-color: #db9833;
+    }
 `
 export const Page = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
+`
+
+export const Type = styled.input `
+    &:focus {
+        background-color: #db9833;
+    }
 `
