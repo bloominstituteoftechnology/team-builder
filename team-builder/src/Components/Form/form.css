@@ -1,0 +1,73 @@
+.member-form {
+    text-align: center;
+    padding-bottom: 2.5rem;
+    box-shadow: 2px 5px 9px 4px #b8af89;
+    background: #3c3c40;
+    height:70vh;
+    display:flex;
+    align-items: center;
+}
+
+form {
+    background: #fff;
+    width: 90%;
+    max-width: 40rem;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+select {
+    color: #fff;
+    background:skyblue;;
+    font-size: 18px;
+}
+
+#gender-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section {
+    border: 1px solid grey;
+    margin: 8px 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    text-transform: uppercase;
+    color: #1b6575;
+    font-weight: bold;
+
+}
+
+input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    margin-top: 7px;
+    font-size: 16px;
+    color: black;
+}
+
+
+
+#submit-btn {
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    margin: 10px 0;
+    background: skyblue;
+    color: #fff;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background: rgb(136, 134, 134);
+    color: black
+}

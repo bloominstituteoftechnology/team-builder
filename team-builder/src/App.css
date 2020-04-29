@@ -1,0 +1,9 @@
+/* .App {
+  background-color: #323236;
+} */
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+}
