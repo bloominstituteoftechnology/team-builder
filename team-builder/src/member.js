@@ -1,9 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 
 const Member = props => {
-    const handleChanges = e => {
-        
-    }
+    
     return (
         <div className="team-list">
             {props.member.map(member => (
