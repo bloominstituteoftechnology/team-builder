@@ -1,18 +1,18 @@
 import React from "react"
 
-const Member = props => {
+const MemberCard = props => {
     
     return (
         <div className="team-list">
-            {props.member.map(member => (
-                <div className="member" key={member.id}>
-                    <h2>{member.name}</h2>
-                    <p>{member.email}</p>
-                    <p>{member.role}</p>
+            {props.members.map(member => (
+            <div className="member" key={member.id}>
+                    <h1>{member.name}</h1>
+                    <h2>{member.email}</h2>
+                    <h3>{member.role}</h3>
                 </div>
             ))}
         </div>
     )
 }
 
-export default Member
+export default MemberCard
