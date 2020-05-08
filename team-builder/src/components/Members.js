@@ -2,9 +2,9 @@ import React from 'react';
 
 const Members = props => {
     return(
-        <div className="note-list">
+        <div className="member-list">
     {props.engineer.map(member => (
-      <div className="note" key={member.id}>
+      <div className="member" key={member.id}>
         <h2>{member.name}</h2>
         <p>{member.title}</p>
       </div>
