@@ -27,7 +27,7 @@ const Form = props => {
 
     return(
         <form onSubmit={handleSubmit}>
-        <lable htmlFor="name">Team Members Name: </lable>
+        <label htmlFor="name">Team Members Name: </label>
         <input
             id="name"
             name="name"
@@ -36,7 +36,7 @@ const Form = props => {
             value={members.name}
             onChange={handleChange}
         />
-        <lable htmlFor="title">Team Members title: </lable>
+        <label htmlFor="title">Team Members title: </label>
         <input
             id="title"
             name="title"

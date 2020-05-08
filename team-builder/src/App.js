@@ -14,7 +14,7 @@ function App() {
   ]);
 
   const submit = (member) =>{
-    setEngineer({...engineer, member});
+    setEngineer([...engineer, member]);
   }
 
   return (
