@@ -19,6 +19,7 @@ const EmployeeForm = (props) => {
     };
 
     return(
+        <div style={{margin: "3%", marginBottom: "5%"}}>
         <form onSubmit={submitCard}>
             <label htmlFor="name">First and Last Name:</label>
             <input 
@@ -28,8 +29,11 @@ const EmployeeForm = (props) => {
             name="name"
             placeholder="Enter Name"
             value={card.name}
+            required
             />
+            
             <label htmlFor="email">Email:</label>
+            
             <input 
             onChange={handleChanges}
             id="email"
@@ -37,8 +41,11 @@ const EmployeeForm = (props) => {
             name="email"
             placeholder="Enter Email Address"
             value={card.email}
+            required
             />
+            
             <label htmlFor="role">Role:</label>
+            
             <input 
             onChange={handleChanges}
             id="role"
@@ -46,9 +53,12 @@ const EmployeeForm = (props) => {
             name="role"
             placeholder="Enter Role"
             value={card.role}
+            required
             />
+            
             <button type="submit">Add Employee</button>
         </form>
+        </div>
     )
 }
 

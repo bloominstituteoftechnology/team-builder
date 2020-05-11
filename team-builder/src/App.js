@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
+import Grid from '@material-ui/core/Grid';
 
 import EmployeeForm from './components/EmployeeForm';
-import EmployeeCard from './components/EmployeeCard'
+import EmployeeCard from './components/EmployeeCard';
+import TopNavBar from './components/TopNavBar';
 
 function App() {
 
@@ -27,8 +29,14 @@ function App() {
 
   return (
     <div>
+      <TopNavBar />
+      <Grid container display="flex" direction="column" align="center">
+        
       <EmployeeForm addEmployee={addEmployee} />
+      
       <EmployeeCard employee={employee} />
+      
+      </Grid>
     </div>
   );
 }

@@ -7,11 +7,14 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles({
   root: {
+    minWidth: 340,
     maxWidth: 340,
+    flexGrow: 1,
   },
   media: {
     height: 140,
@@ -25,8 +28,17 @@ export default function EmployeeCard(props) {
 
   return (
     <div>
+      <Grid
+  container
+  spacing={3}
+  direction="row"
+  justify="space-around"
+  alignItems="center"
+>
       {props.employee.map(x => (
+        <Grid item xs>
     <Card className={classes.root} key={x.id}>
+      
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -53,8 +65,11 @@ export default function EmployeeCard(props) {
           Remove
         </Button>
       </CardActions>
+     
     </Card>
+    </Grid>
     ))}
+    </Grid>
     </div>
   );
 }
