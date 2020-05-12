@@ -4,40 +4,55 @@ import Form from "./Components/Form";
 import Team from "./Components/Team";
 
 function App() {
-  const [team, setTeam] = useState([//holding user data(teammate) each is a seperate object in the array
+  const [team, setTeam] = useState([
+    //holding user data(teammate) each is a seperate object in the array
     {
       id: Date.now(),
       username: "Wesley",
       email: "wgm3190@gmail.com",
-      role: "The new guy"
-    }
+      role: "The new guy",
+    },
+    {
+      id: Date.now(),
+      username: "Braden",
+      email: "Braden@gmail.com",
+      role: "Full stack wiz kid",
+    },
+    {
+      id: Date.now(),
+      username: "Jose",
+      email: "jose@gmail.com",
+      role: "The new guy",
+    },
   ]);
 
-  // const addNewTeammate = Teammate => {
-  //   const newTeammate = {
-  //     id: Date.now(),
-  //     name: Teammate.username,
-  //     email: Teammate.email,
-  //     role: Teammate.role
-  //   };
-  //   setTeam([...team, newTeammate]);
-  // };
-
   return (
-    <div className='App'>      
+    <div className='App'>
       <h1>Purple Parrots</h1>
-      <form>
+      <form>     
         <input type='search' value={team.filterValue} />
       </form>
+      
       <Form setTeam={setTeam} team={team} />
 
-      <div className="team">
-        <Team team={team} />        
+      <div className='team'>
+        <Team team={team} />
       </div>
-
-      
     </div>
   );
 }
 
 export default App;
+
+// const favFoods = ['apple', 'm&ms', 'grapes', 'snickers']
+// function munchies()
+
+// const addNewTeammate = Teammate => {
+//   const newTeammate = {
+//     id: Date.now(),
+//     name: Teammate.username,
+//     email: Teammate.email,
+//     role: Teammate.role
+//   };
+//   setTeam([...team, newTeammate]);
+// };
