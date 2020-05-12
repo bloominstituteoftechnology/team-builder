@@ -4,7 +4,7 @@ const Form = (props) => {
   const [newTeam, setNewTeam] = useState({
     id: Date.now(),
     username: "",
-    email: "",
+    email: "",  
     role: "",
   });
   const handleChanges = (e) => {
