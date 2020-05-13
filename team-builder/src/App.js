@@ -15,8 +15,8 @@ function App() {
       <h2>These are our team members</h2>
       {team.map(member => (
         <div key={member.email}>
-          <p>{member.name}</p>
-        </div>
+          <p>{member.name}, {member.email}, {member.role}</p>
+         </div>
       ))}
       <Form addMember={addMember} />
     </div>

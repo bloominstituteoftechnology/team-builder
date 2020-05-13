@@ -27,16 +27,16 @@ function Form(props) {
             />
                 <input
                 type="text"
-                name="name"
-                placeholder="Name"
-                value={value.name}
+                name="email"
+                placeholder="Email"
+                value={value.email}
                 onChange={handleChange}
             />
                 <input
                 type="text"
-                name="name"
-                placeholder="Name"
-                value={value.name}
+                name="role"
+                placeholder="Role"
+                value={value.role}
                 onChange={handleChange}
             />
             <button type="submit">Submit</button>
