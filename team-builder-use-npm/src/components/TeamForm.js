@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '@material-ui/core/Button';
 import '../App.css'
 
 function TeamForm(props) {
@@ -18,7 +19,7 @@ function TeamForm(props) {
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
-        // console.log('In the form submit handler');
+      
         props.addMember({
             ...formState,
             id: Date.now()
@@ -63,7 +64,7 @@ function TeamForm(props) {
                     placeholder='Enter role here'
                     required
                 />
-                <button type='submit'>Add Member</button>
+                <Button variant="contained" color="primary" type="submit">Add Member</Button>
             </form>
         </div>
     )
