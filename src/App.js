@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 
-import Form from './Form';
-import TeamList from './TeamList.js';
+import {useLocalStorage} from './hooks/useLocalStorage';
+import Form from './components/Form';
+import TeamList from './components/TeamList.js';
 // import AddTeamMember from './AddTeamMember';
 import './App.css';
 // import { waitForElementToBeRemoved } from '@testing-library/react';
