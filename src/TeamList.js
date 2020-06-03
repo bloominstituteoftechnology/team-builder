@@ -6,7 +6,7 @@ const TeamList = () => {
 
 return (
     <div>
-        <p>I'm the Teamlist Component!!</p>
+        <p>Current List of team Members</p>
     </div>
 );
 

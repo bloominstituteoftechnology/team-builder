@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 
 import Form from './Form';
 import TeamList from './TeamList.js';
-import AddTeamMember from './AddTeamMember';
+// import AddTeamMember from './AddTeamMember';
 import './App.css';
-
-import { waitForElementToBeRemoved } from '@testing-library/react';
+// import { waitForElementToBeRemoved } from '@testing-library/react';
 
 const teamData = [
   {
@@ -18,19 +17,22 @@ const teamData = [
 console.log("const team->", teamData);
 
 function App() {
-
   const [team, setTeam] = useState(teamData);
+  console.log("team from app->",team);
   const addTeamMember = newTeamMember => {
-    setTeam([...team,newTeamMember]);
+    // console.log("From App->newTeamMember",newTeamMember);
+    setTeam([...team, newTeamMember]);
+    // console.log("From APP, Team is->",team);
   };
-console.log("Team is->",team);
+
   return (
     <div className="App">
       <header className="App-header">
-        <Form addTeamMember={addTeamMember} />
-        <AddTeamMember />
-        <TeamList />
-          The Core App of the Team Builder App....
+      The Core App of the Team Builder App....
+        <Form addMember={addTeamMember} />
+        {/* <AddTeamMember /> */}
+        <TeamList team={team}/>
+
         
       </header>
     </div>
