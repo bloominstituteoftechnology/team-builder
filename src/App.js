@@ -8,22 +8,21 @@ import './App.css';
 
 import { waitForElementToBeRemoved } from '@testing-library/react';
 
-const team = [
+const teamData = [
   {
     id: 1,
     name: "tom",
     email: "dev@developer.com",
     role: "Full Stack Developer"
-
   }
-
-]
+];
+console.log("const team->", teamData);
 
 
 function App() {
 
-  const [team, setTeam] = useState("team");
-
+  const [team, setTeam] = useState(teamData);
+console.log("Team is->",team);
   return (
     <div className="App">
       <header className="App-header">
