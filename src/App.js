@@ -5,7 +5,6 @@ import TeamList from './TeamList.js';
 import AddTeamMember from './AddTeamMember';
 import './App.css';
 
-
 import { waitForElementToBeRemoved } from '@testing-library/react';
 
 const teamData = [
@@ -18,15 +17,17 @@ const teamData = [
 ];
 console.log("const team->", teamData);
 
-
 function App() {
 
   const [team, setTeam] = useState(teamData);
+  const addTeamMember = newTeamMember => {
+    setTeam([...team,newTeamMember]);
+  };
 console.log("Team is->",team);
   return (
     <div className="App">
       <header className="App-header">
-        <Form />
+        <Form addTeamMember={addTeamMember} />
         <AddTeamMember />
         <TeamList />
           The Core App of the Team Builder App....
