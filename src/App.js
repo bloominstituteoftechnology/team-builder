@@ -19,10 +19,15 @@ console.log("const team->", teamData);
 
 function App() {
   const [team, setTeam] = useState(teamData);
+  const [storedTeam, setStoredTeam, handleStoredTeam] =useLocalStorage("team");
   console.log("team from app->",team);
+  // setStoredTeam(teamData);
   const addTeamMember = newTeamMember => {
     // console.log("From App->newTeamMember",newTeamMember);
     setTeam([...team, newTeamMember]);
+    // handleStoredTeam(team);
+    // console.log("storedTeam->",storedTeam);
+
     // console.log("From APP, Team is->",team);
   };
 
