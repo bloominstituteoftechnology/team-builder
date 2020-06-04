@@ -24,6 +24,7 @@ const teamData = [
 
 function App() {
   const [team, setTeam] = useState(teamData);
+  
   // console.log("team from app->",team);
   // const [storedTeam, setStoredTeam, handleStoredTeam] =useLocalStorage("team");
   const [storedTeam, setStoredTeam] =useLocalStorage("team");
@@ -42,14 +43,27 @@ function App() {
 
     // console.log("From APP, Team is->",team);
   };
+  const [memberToEdit, setMemberToEdit] = useState();
+  const editMember = () => {
+
+  };
+
+  const isEditClicked = event => {
+    // event.preventDefault();
+    // console.log("App.js isEditClicked->",event);
+  };
 
   return (
     <div className="App">
       <header className="App-header">
       The Core App of the Team Builder App....
-        <Form addMember={addTeamMember} />
+        <Form addMember={addTeamMember} memberToEdit={memberToEdit}/>
         {/* <AddTeamMember /> */}
-        <TeamList team={storedTeam}/>
+        <TeamList 
+        team={storedTeam} 
+        isEditClicked={isEditClicked} 
+        setMemberToEdit={setMemberToEdit}
+        />
 
         
       </header>
