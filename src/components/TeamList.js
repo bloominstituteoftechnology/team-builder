@@ -16,6 +16,7 @@ return (
         <p>Current List of team Members</p>
         {props.team.map( teamMember => (
             <div>
+                {/* {console.log(teamMember)} */}
                 <h2>Name: {teamMember.name}</h2>
                 <p>Email: {teamMember.email}</p>
                 <p>Role: {teamMember.role}</p>

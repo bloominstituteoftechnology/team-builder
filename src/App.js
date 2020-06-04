@@ -40,24 +40,39 @@ function App() {
     setStoredTeam([...storedTeam, newTeamMember]);
     // handleStoredTeam(team);
     // console.log("storedTeam->",storedTeam);
-
     // console.log("From APP, Team is->",team);
   };
-  const [memberToEdit, setMemberToEdit] = useState();
+  const [memberToEdit, setMemberToEdit] = useState(null);
   const editMember = () => {
 
   };
 
   const isEditClicked = event => {
+    console.log("App.js isEditClicked->",
+    storedTeam.find(element => 
+      element.id === Number(event)));
+      const memberObj = storedTeam.find(element => element.id === Number(event)); 
+      console.log("memberObj->", memberObj);
+      setMemberToEdit(memberObj);
+    console.log("app.js memberToEdit is->",memberToEdit);
+    return (storedTeam.find(element => 
+      element.id === Number(event)).name);
+    // return storedTeam.find(element => element.id === Number(event));
     // event.preventDefault();
-    // console.log("App.js isEditClicked->",event);
-  };
+    // console.log("team from isEditClicked->",storedTeam);
+    // console.log("event from isEditClicked->",typeof(event));
+    // console.log("App.js isEditClicked->",
+    // storedTeam.find(element => 
+    //   element.id === Number(event)));
 
+  };
+  // const memberObj = storedTeam.find(element => element.id === Number(isEditClicked)); 
+  // console.log("General App.js memberObj->",memberObj);
   return (
     <div className="App">
       <header className="App-header">
       The Core App of the Team Builder App....
-        <Form addMember={addTeamMember} memberToEdit={memberToEdit}/>
+        <Form addMember={addTeamMember} memberToEdit={editMember}/>
         {/* <AddTeamMember /> */}
         <TeamList 
         team={storedTeam} 

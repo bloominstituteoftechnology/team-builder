@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 
 const Form = props => {
-// console.log("props, form.js->",props.addMember);
+console.log("props, memberToEdit form.js->",props.memberToEdit);
 const [teamMember, setTeamMember] = useState({
     id:Date.now(),
     name:"",
@@ -10,6 +10,15 @@ const [teamMember, setTeamMember] = useState({
     role:""
 });
 // console.log(teamMember);
+
+useEffect(() =>{
+    // const memberObj = storedTeam.find(element => element.id === Number(props.memberToEdic)); 
+    console.log("Form.js memberToEdit->",props.memberToEdit);
+    if(props.memberToEdit) {
+        setTeamMember(props.memberToEdit);
+    }
+},[props.memberToEdit])
+
 const changeHandler = event => {
     setTeamMember({
         ...teamMember,
@@ -34,7 +43,8 @@ return(
         <input 
         id="name" 
         name="name"
-        label="name" 
+        label="name"
+        type="text"
         placeholder="Enter Name"
         value={teamMember.name}
         onChange={changeHandler}
@@ -44,17 +54,19 @@ return(
         <input 
         id="email" 
         name="email"
-        label="email" 
+        label="email"
+        type="text" 
         placeholder="Enter Email"
         value={teamMember.email}
         onChange={changeHandler}
         />
         <p />
-        <label htmlFor="Role">Role: </label>
+        <label htmlFor="role">Role: </label>
         <input 
         id="role" 
         name="role"
-        label="role" 
+        label="role"
+        type="text" 
         placeholder="Enter Role"
         value={teamMember.role}
         onChange={changeHandler}
