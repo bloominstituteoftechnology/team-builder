@@ -6,7 +6,7 @@ import TeamList from './components/TeamList.js';
 // import AddTeamMember from './AddTeamMember';
 import './App.css';
 // import { waitForElementToBeRemoved } from '@testing-library/react';
-
+//Setup initial data->
 const teamData = [
   {
     id: 1,
@@ -15,16 +15,28 @@ const teamData = [
     role: "Full Stack Developer"
   }
 ];
-console.log("const team->", teamData);
+//one off establishment of stored value in local storage.
+//This should be handled by the useLocalStorage hook, but
+//for some reason using the hook creates an infinete loop.
+//Need to investigate...
+// ->window.localStorage.setItem("team", JSON.stringify(teamData));
+// console.log("const team->", teamData);
 
 function App() {
   const [team, setTeam] = useState(teamData);
-  const [storedTeam, setStoredTeam, handleStoredTeam] =useLocalStorage("team");
-  console.log("team from app->",team);
-  // setStoredTeam(teamData);
+  // console.log("team from app->",team);
+  // const [storedTeam, setStoredTeam, handleStoredTeam] =useLocalStorage("team");
+  const [storedTeam, setStoredTeam] =useLocalStorage("team");
+  console.log(storedTeam);
+  // console.log("Before settting storedTeam value->",storedTeam);
+  // setStoredTeam(team);
+
+  // console.log("storedTeam value->",storedTeam);
+  
   const addTeamMember = newTeamMember => {
     // console.log("From App->newTeamMember",newTeamMember);
     setTeam([...team, newTeamMember]);
+    setStoredTeam([...storedTeam, newTeamMember]);
     // handleStoredTeam(team);
     // console.log("storedTeam->",storedTeam);
 
@@ -37,7 +49,7 @@ function App() {
       The Core App of the Team Builder App....
         <Form addMember={addTeamMember} />
         {/* <AddTeamMember /> */}
-        <TeamList team={team}/>
+        <TeamList team={storedTeam}/>
 
         
       </header>

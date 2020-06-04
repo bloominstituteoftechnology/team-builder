@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 
 
 const Form = props => {
-console.log("props, form.js->",props.addMember);
+// console.log("props, form.js->",props.addMember);
 const [teamMember, setTeamMember] = useState({
     id:Date.now(),
     name:"",
     email:"",
     role:""
 });
-console.log(teamMember);
+// console.log(teamMember);
 const changeHandler = event => {
     setTeamMember({
         ...teamMember,
@@ -18,10 +18,10 @@ const changeHandler = event => {
 };
 const submitHandler = event => {
     event.preventDefault();
-    console.log("From props->",props);
-    console.log("teamMember is ->", teamMember);
+    // console.log("From props->",props);
+    // console.log("teamMember is ->", teamMember);
     props.addMember(teamMember);
-    setTeamMember({ name: "", email: "", role: ""});
+    setTeamMember({ name: "", email: "", role: "", id:Date.now()});
 };
 
 return(
