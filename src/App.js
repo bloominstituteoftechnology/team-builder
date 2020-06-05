@@ -21,11 +21,12 @@ function App() {
   const [team, setTeam] = useState(members);
   return (
     <AppDiv>
+      <h1>Team Peanuts</h1>
       <img src={peanutsBG} />
       <Form />
       {members.map(member => {
         return <FormDiv>
-          <h1>{member.name}</h1>
+          <h2>{member.name}</h2>
           <p>Contact: {member.email}</p>
           <p>Title Role: {member.role}</p>
         </FormDiv>;
