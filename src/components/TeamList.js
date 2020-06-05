@@ -4,12 +4,8 @@ import React from 'react';
 
 const TeamList = props => {
 console.log("teamlist props->",props);
-const changeHandler = event => {
-    // event.preventDefault();
-    props.isEditClicked(event.target.value);
-    // console.log("From TeamList, isEditClicked->",props.isEditClicked);
-    // console.log("event.target.value->",event.target.value);
-    props.setMemberToEdit(event.target.value);
+const changeHandler = teamMember => {
+    props.handleEditMember(teamMember);
 }
 return (
     <div>
@@ -21,8 +17,9 @@ return (
                 <p>Email: {teamMember.email}</p>
                 <p>Role: {teamMember.role}</p>
                 <button 
-                onClick={changeHandler}
+                onClick={()=> props.handleEditMember(teamMember)}
                 value={teamMember.id}
+
                 >
                 Edit Details
                 </button>

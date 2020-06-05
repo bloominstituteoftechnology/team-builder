@@ -42,9 +42,9 @@ function App() {
     // console.log("storedTeam->",storedTeam);
     // console.log("From APP, Team is->",team);
   };
-  const [memberToEdit, setMemberToEdit] = useState(null);
-  const editMember = () => {
-
+  const [memberToEdit, setMemberToEdit] = useState(undefined);
+  const handleEditMember = teamMember => {
+    setMemberToEdit(teamMember);
   };
 
   const isEditClicked = event => {
@@ -57,14 +57,6 @@ function App() {
     console.log("app.js memberToEdit is->",memberToEdit);
     return (storedTeam.find(element => 
       element.id === Number(event)).name);
-    // return storedTeam.find(element => element.id === Number(event));
-    // event.preventDefault();
-    // console.log("team from isEditClicked->",storedTeam);
-    // console.log("event from isEditClicked->",typeof(event));
-    // console.log("App.js isEditClicked->",
-    // storedTeam.find(element => 
-    //   element.id === Number(event)));
-
   };
   // const memberObj = storedTeam.find(element => element.id === Number(isEditClicked)); 
   // console.log("General App.js memberObj->",memberObj);
@@ -72,12 +64,12 @@ function App() {
     <div className="App">
       <header className="App-header">
       The Core App of the Team Builder App....
-        <Form addMember={addTeamMember} memberToEdit={editMember}/>
+        <Form addMember={addTeamMember} memberToEdit={memberToEdit}/>
         {/* <AddTeamMember /> */}
         <TeamList 
         team={storedTeam} 
         isEditClicked={isEditClicked} 
-        setMemberToEdit={setMemberToEdit}
+        handleEditMember={handleEditMember}
         />
 
         
