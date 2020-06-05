@@ -40,7 +40,7 @@ const TeamData = [
         id: '7',
         name: 'Schroeder',
         email: 'Smusical@gmail.com',
-        role: 'Video researcher',
+        role: 'researcher',
     },
     {
         id: '8',
