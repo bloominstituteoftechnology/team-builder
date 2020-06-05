@@ -3,6 +3,7 @@ import TeamData from './TeamData';
 import Form from './Form';
 // import './App.css';
 import styled from 'styled-components';
+import peanutsBG from './peanutsBG.jpg';
 
 const AppDiv = styled.div`
   text-align: center;
@@ -20,6 +21,7 @@ function App() {
   const [team, setTeam] = useState(members);
   return (
     <AppDiv>
+      <img src={peanutsBG} />
       <Form />
       {members.map(member => {
         return <FormDiv>
@@ -29,7 +31,7 @@ function App() {
         </FormDiv>;
       })}
 
-    </AppDiv>
+    </AppDiv >
   );
 }
 

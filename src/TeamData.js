@@ -38,21 +38,9 @@ const TeamData = [
     },
     {
         id: '7',
-        name: 'Schroeder',
-        email: 'Smusical@gmail.com',
-        role: 'researcher',
-    },
-    {
-        id: '8',
         name: 'Peppermint Patty',
         email: 'Patcat@gmail.com',
         role: 'team lead',
-    },
-    {
-        id: '9',
-        name: 'Marcie',
-        email: 'Marzwoman@gmail.com',
-        role: 'section lead',
     },
 ];
 
