@@ -24,52 +24,51 @@ const teamData = [
 
 function App() {
   const [team, setTeam] = useState(teamData);
-  
-  // console.log("team from app->",team);
-  // const [storedTeam, setStoredTeam, handleStoredTeam] =useLocalStorage("team");
   const [storedTeam, setStoredTeam] =useLocalStorage("team");
   console.log(storedTeam);
-  // console.log("Before settting storedTeam value->",storedTeam);
-  // setStoredTeam(team);
-
-  // console.log("storedTeam value->",storedTeam);
   
   const addTeamMember = newTeamMember => {
     // console.log("From App->newTeamMember",newTeamMember);
     setTeam([...team, newTeamMember]);
     setStoredTeam([...storedTeam, newTeamMember]);
-    // handleStoredTeam(team);
-    // console.log("storedTeam->",storedTeam);
-    // console.log("From APP, Team is->",team);
+    
   };
   const [memberToEdit, setMemberToEdit] = useState(undefined);
   const handleEditMember = teamMember => {
     setMemberToEdit(teamMember);
+    console.log("teamlist Member being edited is->",teamMember);
   };
-
-  const isEditClicked = event => {
-    console.log("App.js isEditClicked->",
-    storedTeam.find(element => 
-      element.id === Number(event)));
-      const memberObj = storedTeam.find(element => element.id === Number(event)); 
-      console.log("memberObj->", memberObj);
-      setMemberToEdit(memberObj);
-    console.log("app.js memberToEdit is->",memberToEdit);
-    return (storedTeam.find(element => 
-      element.id === Number(event)).name);
-  };
-  // const memberObj = storedTeam.find(element => element.id === Number(isEditClicked)); 
-  // console.log("General App.js memberObj->",memberObj);
+  const [isEditing, setIsEditing] = useState(false);
+  const editMember = teamMember => {
+      const newTeam = storedTeam.slice();
+        // const changeMember = teamMember =>{
+            newTeam.map(member => {
+              console.log("member from map",member);
+              if (member.id === teamMember.id) {
+                member.name = teamMember.name;
+                member.email = teamMember.email;
+                member.role = teamMember.role;
+              };
+              return newTeam;
+            });
+            setStoredTeam(newTeam);
+        };
   return (
     <div className="App">
       <header className="App-header">
       The Core App of the Team Builder App....
-        <Form addMember={addTeamMember} memberToEdit={memberToEdit}/>
+        <Form 
+        addMember={addTeamMember} 
+        memberToEdit={memberToEdit}
+        isEditing={isEditing}
+        editMember={editMember}
+        />
         {/* <AddTeamMember /> */}
         <TeamList 
         team={storedTeam} 
-        isEditClicked={isEditClicked} 
         handleEditMember={handleEditMember}
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
         />
 
         

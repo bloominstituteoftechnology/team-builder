@@ -6,6 +6,7 @@ const TeamList = props => {
 console.log("teamlist props->",props);
 const changeHandler = teamMember => {
     props.handleEditMember(teamMember);
+    
 }
 return (
     <div>
@@ -17,7 +18,11 @@ return (
                 <p>Email: {teamMember.email}</p>
                 <p>Role: {teamMember.role}</p>
                 <button 
-                onClick={()=> props.handleEditMember(teamMember)}
+                onClick={()=> {
+                    props.handleEditMember(teamMember);
+                    props.setIsEditing(true);
+                    console.log("teamlist isEditing has value->",props.isEditing);
+                }}
                 value={teamMember.id}
 
                 >

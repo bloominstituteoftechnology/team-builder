@@ -2,21 +2,21 @@ import React, {useState, useEffect} from 'react';
 
 
 const Form = props => {
-console.log("props, memberToEdit form.js->",props.memberToEdit);
+// console.log("props, memberToEdit form.js->",props.memberToEdit);
 let startMember = {
     id:Date.now(),
     name:"",
     email:"",
     role:""
 };
-if(props.memberToEdit !== undefined){
-    startMember = props.membeToEdit;
-}
+// if(props.memberToEdit !== undefined){
+//     startMember = props.membeToEdit;
+// };
 const [teamMember, setTeamMember] = useState(startMember);
 
 useEffect(() =>{
     // const memberObj = storedTeam.find(element => element.id === Number(props.memberToEdic)); 
-    console.log("Form.js memberToEdit->",props.memberToEdit);
+    // console.log("Form.js memberToEdit->",props.memberToEdit);
     if(props.memberToEdit!==undefined) {
         setTeamMember(props.memberToEdit);
     }
@@ -28,6 +28,12 @@ const changeHandler = event => {
 };
 const submitHandler = event => {
     event.preventDefault();
+    if(props.isEditing) {
+        setTeamMember(props.memberToEdit);
+        props.editMember(teamMember);
+        alert("Yes we're editing a Member!");
+        return
+    }
     props.addMember(teamMember);
     setTeamMember({ name: "", email: "", role: "", id:Date.now()});
 };
