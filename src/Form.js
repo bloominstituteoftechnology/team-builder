@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
-import TeamData from './TeamData';
+import styled from 'styled-components';
+
+const Formstyling = styled.form`
+    width: 50%;
+    margin: 0 auto;
+    font-weight: bolder;
+    box-shadow: 1px 1px darkgray;
+    background-color: lightblue;
+`;
+const ButtonStyling = styled.input`
+    background-color: rgb(157, 81, 0);
+    font-weight: bold;
+    color: lightblue;
+`;
+
 
 const Form = () => {
     // const addNewMember = member => {
@@ -23,7 +37,7 @@ const Form = () => {
     };
 
     return (
-        <form onSubmit={event => {
+        <Formstyling onSubmit={event => {
             event.preventDefault();
             // onInputChange();
         }}>
@@ -38,8 +52,8 @@ const Form = () => {
             <input type='text'
                 onChange={onInputChange}
                 placeholder='role' name='role' id='role' />
-            <input type='submit' id='submit' />
-        </form>
+            <ButtonStyling type='submit' id='submit' />
+        </Formstyling>
     )
 };
 
