@@ -9,7 +9,10 @@ const AppDiv = styled.div`
 `;
 
 const FormDiv = styled.div`
+  width: 80%; 
   background-color: lightblue;
+  box-shadow: 2px 2px darkgrey;
+  margin: 0 auto;
 `;
 
 function App() {
