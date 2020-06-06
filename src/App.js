@@ -17,6 +17,7 @@ const FormDiv = styled.div`
 
 function App() {
   const [members, setMembers] = useState(TeamData);
+  const [memberToEdit, setMemberToEdit] = useState(TeamData);
   return (
     <AppDiv>
       <h1>Team Peanuts</h1>
@@ -27,6 +28,9 @@ function App() {
           <h2>{member.name}</h2>
           <p>Contact: {member.email}</p>
           <p>Title Role: {member.role}</p>
+          <button onClick={() => {
+            setMemberToEdit(member)
+          }}>Edit</button>
         </FormDiv>;
       })}
 
