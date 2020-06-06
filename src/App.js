@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TeamData from './TeamData';
 import Form from './Form';
 // import './App.css';
@@ -17,14 +17,14 @@ const FormDiv = styled.div`
 `;
 
 function App() {
-  const members = TeamData;
+  const [members, setMembers] = useState(TeamData);
   return (
     <AppDiv>
       <h1>Team Peanuts</h1>
       <img src={peanutsBG} alt='7 members of the Charles Schulz Peanuts baseball team posed for a group photo wearing ball caps and gloves on a clear summer day' />
-      <Form />
+      <Form members={members} setMembers={setMembers} />
       {members.map(member => {
-        return <FormDiv>
+        return <FormDiv >
           <h2>{member.name}</h2>
           <p>Contact: {member.email}</p>
           <p>Title Role: {member.role}</p>

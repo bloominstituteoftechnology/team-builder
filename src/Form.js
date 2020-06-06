@@ -15,14 +15,10 @@ const ButtonStyling = styled.input`
 `;
 
 
-const Form = () => {
-    // const addNewMember = member => {
-    //     const newMember = {
-    //         id: Date.now(),
-    //         name: formData.name
-    //     };
-    //     setFormData(...formData, newMember)
-    // } 
+const Form = (props) => {
+    const addNewMember = member => {
+        props.setMembers([member, ...props.members])
+    }
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -39,7 +35,7 @@ const Form = () => {
     return (
         <Formstyling onSubmit={event => {
             event.preventDefault();
-            // onInputChange();
+            addNewMember(formData)
         }}>
             <label>Name</label>
             <input type='text'
