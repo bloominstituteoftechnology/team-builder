@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TeamData from './TeamData';
 import Form from './Form';
-// import './App.css';
 import styled from 'styled-components';
 import peanutsBG from './peanutsBG.jpg';
 
