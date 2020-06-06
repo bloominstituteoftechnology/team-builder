@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MemberEditForm(props) => {
+const MemberEditForm = (props) => {
 
     return (
         <form>
@@ -16,7 +16,7 @@ const MemberEditForm(props) => {
                 <option>Lead</option>
             </select>
             </label>
-
+            <input type='submit'>Submit</input>
         </form>
     )
 };
