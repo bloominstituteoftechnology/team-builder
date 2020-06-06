@@ -35,7 +35,9 @@ const Form = (props) => {
     return (
         <Formstyling onSubmit={event => {
             event.preventDefault();
-            addNewMember(formData)
+            return (formData.name != '' && formData.email != '' && formData.role != '' ? addNewMember(formData) : null)
+
+
         }}>
             <label>Name</label>
             <input type='text'
