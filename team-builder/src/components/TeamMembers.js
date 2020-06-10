@@ -4,16 +4,16 @@ import React from 'react';
 
 
 
-function TeamMembers(names) {
-    console.log(names)
+const TeamMembers = props => {
+    console.log(props)
     
     return (
-      
-      <h1>
-          "Lydia"
-      </h1>
+      <div>
         
-       
+         
+      
+      </div>
+      
     );
   }
 export default TeamMembers;
