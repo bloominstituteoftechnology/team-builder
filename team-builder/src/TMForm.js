@@ -41,3 +41,16 @@ const TMForm = props => {
 }
 
 export default TMForm;
+
+
+
+
+
+
+
+const states = ['alabama', 'florida', 'new york', 'olkahoma'];
+
+const newStates = states.map(state => {
+    return <option value = {state}/>
+})
+console.log(newStates)
