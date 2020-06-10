@@ -7,6 +7,7 @@ function App() {
     const [members, setMember] = useState([{name: "", email: "", role: ""}])
     const setNewMember = (member) => {
       setMember([...members, member])
+      console.log("App member:" , member);
     }
     return (
     <div className="App">

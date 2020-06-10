@@ -1,28 +1,33 @@
 import React, { useState } from 'react';
 
 const Form = props => {
+    console.log("props:", props);
     const initialState = {  name: "",  email: "",  role: "",};
     const [teamMember, setTeamMember] = useState(initialState);
 
 const handleChange = event => {
   setTeamMember({ ...teamMember, [event.target.name]: event.target.value});
+  console.log("Forms team member:", teamMember);
 };
 
 const handleSubmit = event => {
     event.preventDefault();
-debugger
+    console.log("submitting", event);
+    console.log("event", event.target.value);
+    console.log("event", event.target.name);
+
     if(!teamMember.name || !teamMember.email) {
     alert("Please fill out both fields!");
 } else {
-    props.setTeamMember( teamMember );
-    setTeamMember({ name: "", email: "", role: ""  })
-}
+    props.setNewMember( teamMember );
+    setTeamMember({ name: "", email: "", role: ""})
+    }
   };
   
 
-const resetForm = () => {
-    setTeamMember(initialState);
-};
+// const resetForm = () => {
+//     setTeamMember(initialState);
+// };
 
 return (
     <form onSubmit={event => handleSubmit(event)}>
