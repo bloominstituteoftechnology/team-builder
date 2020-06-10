@@ -4,20 +4,23 @@ import styled from 'styled-components';
 const MemberEditForm = (props) => {
 
     return (
-        <form>
-            <label>Name</label>
-            <input type='text' placeholder='name' id='name' />
-            <label>Email</label>
-            <input type='email' placeholder='email' id='email' />
-            <label>Title Role <select id='role'>
-                <option>Frontend Engineer</option>
-                <option>Backend Engineer</option>
-                <option>Designer</option>
-                <option>Lead</option>
-            </select>
-            </label>
-            <input type='submit'>Submit</input>
-        </form>
+        <div>
+            <h1>This is my edit form</h1>
+            <form>
+                <label>Name
+                <input type='text' placeholder='name' id='name' /></label>
+                <label>Email
+                <input type='email' placeholder='email' id='email' /></label>
+                <label>Title Role <select id='role'>
+                    <option>Frontend Engineer</option>
+                    <option>Backend Engineer</option>
+                    <option>Designer</option>
+                    <option>Lead</option>
+                </select>
+                </label>
+                <button type='submit'>Submit</button>
+            </form>
+        </div>
     )
 };
 

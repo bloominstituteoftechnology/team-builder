@@ -29,21 +29,21 @@ function App() {
           <img src={peanutsBG} alt='7 members of the Charles Schulz Peanuts baseball team posed for a group photo wearing ball caps and gloves on a clear summer day' />
           <Form members={members} setMembers={setMembers} />
           {members.map(member => {
-            return <FormDiv >
+            return (<FormDiv >
               <h2>{member.name}</h2>
               <p>Contact: {member.email}</p>
               <p>Title Role: {member.role}</p>
-              <Link to='/editForm'>
+              <Link to='/editform'>
                 <button>Edit</button>
               </Link>
-
-              <Route path='/editForm' component={MemberEditForm} />
             </FormDiv>
+            )
           })}
 
 
         </AppDiv >
       </Route>
+      <Route path='/editform' component={MemberEditForm} />
     </Router >
   );
 }
