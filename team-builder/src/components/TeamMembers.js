@@ -10,10 +10,7 @@ const TeamMembers = props => {
     return (
       <div>
         
-         
-      
       </div>
-      
     );
-  }
+    }
 export default TeamMembers;

@@ -22,16 +22,38 @@ const Form = props =>{
         setTeamMember({ name: '', email: '', role: '' });
     }
  return (
-        <form onSubmit={submitForm}>
-            
-
-
-
-
-
-        </form>
+    <form onSubmit={submitForm}>
+        <label htmlFor="name">name</label>
+        <input
+            id="name"
+            type="text"
+            placeholder="Enter Full Name"
+            onChange={handleChanges}
+            value={teamMember.name}
+            name="name"
+        />
+        <label htmlFor="email" />
+        <input
+            id="email"
+            type="text"
+            placeholder="Enter Email Address"
+            onChange={handleChanges}
+            value={teamMember.email}
+            name="email"
+        />
+        <label htmlFor="role" />
+        <input
+            id="role"
+            type="text"
+            placeholder="Enter Role"
+            onChange={handleChanges}
+            value={teamMember.role}
+            name="role"
+        />
+        <button type="submit">Submit Form</button>
+    </form>
 
     );
 }
 
-export default Form();
+export default Form;
