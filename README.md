@@ -16,15 +16,15 @@ In this project you'll build an app that will keep track of memebers of a team. 
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
-- [ ] CD into your `team-builder` directory
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your team lead as collaborator on Github.
+- [x] Clone your OWN version of the repository in your terminal
+- [x] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
+- [x] CD into your `team-builder` directory
+- [x] Start up the app using `npm start`
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
@@ -35,14 +35,14 @@ Follow these steps for completing your project.
 
 ## Minimum Viable Product
 
-- [ ] Render a list of team members from state.
-- [ ] Build a form to add a new member to the list of members.
+- [x] Render a list of team members from state.
+- [x] Build a form to add a new member to the list of members.
 
 ### STEP 1 - Setup your state
 
-- [ ] Import the `useState` hook and set up state to keep your team members list.
-- [ ] Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
-- [ ] Render your list of team members.
+- [x] Import the `useState` hook and set up state to keep your team members list.
+- [x] Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs assciated with them.
+- [x] Render your list of team members.
 
 ### STEP 2 - Build your form
 
