@@ -38,7 +38,7 @@ export default function Form(props){
                 <label>Role
                     <select
                         name="role"
-                        value="values.role"
+                        value={values.role}
                         onChange={onInputChange}
                     >
                         <option value=''>-- Select a Role --</option>
