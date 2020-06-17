@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react'; // Importing useState hook
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  // setting useState to an initial object
+const [teamMembers, setTeamMembers] = useState(initialTeamMembersList);
+
   return (
     <div className="App">
       <header className="App-header">
