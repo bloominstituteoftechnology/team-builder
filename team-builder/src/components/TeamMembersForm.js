@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Container, Row } from 'reactstrap';
 
 export default function TeamMembersForm(props) {
     const {
@@ -10,7 +10,7 @@ export default function TeamMembersForm(props) {
     return (
         <Container>
         <Form onSubmit={onSubmit}>
-            <div className="row">
+            <Row>
             <FormGroup className="col-6 col-sm-4">
                 <Label for="fullname">Full Name:</Label>
                 <Input id='fullname' type='text' name='fullname' value={values.fullname} onChange={onInputChange} placeholder="Full Name" />
@@ -30,7 +30,7 @@ export default function TeamMembersForm(props) {
                     <option value="Team Lead">Team Lead</option>
                 </Input>
             </FormGroup>
-            </div>
+            </Row>
             <FormGroup>
                 <Button>Add Team Member</Button>
             </FormGroup>
