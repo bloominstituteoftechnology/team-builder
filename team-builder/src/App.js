@@ -1,28 +1,61 @@
-import React, { useState } from 'react'; // Importing useState hook
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+
+import TeamMembersForm from './components/TeamMembersForm.js';
+import TeamMembers from './components/TeamMembers.js';
+
+const initialTeamMembersFormValues = {
+  fullname: '',
+  email: '',
+  role: '',
+};
+
+const initialTeamMembersList = [
+  {
+    fullname: 'Donald Faulknor',
+    email: 'donald-faulknor@lambdastudents.com',
+    role: 'Student',
+  },
+];
 
 function App() {
 
-  // setting useState to an initial object
-const [teamMembers, setTeamMembers] = useState(initialTeamMembersList);
+  const [teamMembersList, setTeamMembersList] = useState(initialTeamMembersList)
+  const [teamMembersFormValues, setTeamMembersFormValues] = useState(initialTeamMembersFormValues);
+
+  const onInputChange = event => {
+    const { name, value } = event.target
+    setTeamMembersFormValues({
+      ...teamMembersFormValues,
+      [name]: value,
+    })
+  }
+
+  const onSubmit = event => {
+    event.preventDefault()
+    if (!teamMembersFormValues.fullname || !teamMembersFormValues.email || !teamMembersFormValues.role) {
+      return ('You must fill in all fields. Thank You!')
+    }
+    const newTeamMembers = { ...teamMembersFormValues };
+    setTeamMembersList([...teamMembersList, newTeamMembers])
+    setTeamMembersFormValues(initialTeamMembersFormValues)
+  }
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header><h1>Team Members</h1></header>
+      <TeamMembersForm
+        values={teamMembersFormValues}
+        onInputChange={onInputChange}
+        onSubmit={onSubmit}
+      />
+      {
+        teamMembersList.map(teamMember => {
+          return (
+            <TeamMembers teamMember={teamMember} key={teamMember.id} />
+          )
+        })
+      }
     </div>
   );
 }
