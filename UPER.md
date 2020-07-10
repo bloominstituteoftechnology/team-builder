@@ -27,15 +27,35 @@ What might success look like?
     - A functional SPA that provides a pleasant UI experience.
 What are your questions?
     - Study New Concepts:
-        - Controlled inputs
-        - Spread Operators (already familiar, but go in depth)
+        √ Controlled input - React is controlling the UI on the screen.
+        √ Spread Operators (already familiar, but go in depth). You can utilize spread in an object OR an array. The spread operator takes the old object and copies all of its values. This is done because we cannot assign values to our state in React. State is immutable, it cannot be changed, only set.
         - Computer Properties
         - Synthetic Events
-        - Form element for:
+        - Use Form element for:
             √ Default behavior
             √ Semantic
             √ Accessibility
                 √ Collects User Input fields
+        * All state is a single object in a class component
+        
+        -  Input form element
+            Default = text
+            - For project:
+                - Name
+                - Email
+                - Role
+
+        - Label: important for accessibility 
+        - Button: if it's in a form, default is Submit, if attribute not specified. Submit will reload the page. Form has automatic submit when you click enter. So the button is not really needed.
+
+        -Gives us back a query string: http://localhost:3000/?email=myEmail%40gmail.com
+
+        - onSubmit - takes a callback function, 
+        - event.preventDefault() - makes sure we don't reload the page
+
+        - Getting data out of the input:
+
+
 
 
 Plan:
