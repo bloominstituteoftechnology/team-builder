@@ -20,7 +20,7 @@ const Form = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.setNotes([...props.notes, newForm]);
+    props.setMembers([...props.members, newForm]);
     setNewForm(defaultState);
     console.log("form submitted!");
   };
@@ -32,7 +32,7 @@ const Form = props => {
         type="text"
         name="name"
         value={newForm.name}
-        placeholder="name"
+        placeholder="Name"
       />
       <input
         onChange={handleChange}
