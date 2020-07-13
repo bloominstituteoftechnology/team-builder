@@ -1,0 +1,12 @@
+/* What was that fancier thing we were doing with CSS earlier and how does it interact with REACT and REACT styling? */
+
+
+.peopleList {
+    
+    text-align: left;
+    border: solid 5px black;
+}
+.personCard {
+    border-top: solid 3px gray;
+    width: auto;
+}
