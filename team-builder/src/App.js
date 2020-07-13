@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import logo from './logo.svg';
+
 import './App.css';
-import './Form.js';
+import Form from './Form.js';
 import PeopleList from "./PeopleList";
 
 
 function App() {
   const [teamList, setTeamList] = useState(testData);
+  const [formValue, setFormValue] = useState({username: "", email: "", role: ""});
   
   
   
   return (
     <div className="App">
-      
+      <Form/>
      <PeopleList list={teamList}/>
     </div>
   );
