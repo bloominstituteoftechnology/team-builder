@@ -7,13 +7,25 @@ import PeopleList from "./PeopleList";
 
 function App() {
   const [teamList, setTeamList] = useState(testData);
-  const [formValue, setFormValue] = useState({username: "", email: "", role: ""});
+  const [formValue, setFormValue] = useState({name: "", email: "", role: ""});
   
+  const handleSubmit = event => {
+    event.preventDefault();
+    if (formValue.name) {
+      setTeamList([...teamList, {name: formValue.name, email: formValue.email, role: formValue.role}]);
+    }
+    resetState();
+    
+  };
+
+  const resetState = () => {
+    setFormValue({name: "", email: "", role: ""});
+  };
   
   
   return (
     <div className="App">
-      <Form/>
+      <Form values ={formValue} setFunction={setFormValue} submit={handleSubmit}/>
      <PeopleList list={teamList}/>
     </div>
   );
@@ -28,7 +40,7 @@ const testData = [
 },
 {
   name: "Jane Doe",
-  email: "JohnDoe@gmail.com",
+  email: "JaneDoe@gmail.com",
   role: "Fake Role 2",
 }
 

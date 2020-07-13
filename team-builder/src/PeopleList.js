@@ -3,9 +3,14 @@ import React from 'react';
 
 const PeopleList = props => {
 
+  
+
+
+  
+
 
     return (
-        console.log("list", props.list),
+       
         
         //For this, why does props.list.map work, but not props.list.forEach?
         <div className="peopleList">
