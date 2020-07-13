@@ -7,8 +7,8 @@ import TeamMember from './TeamMember';
 function App() {
   const initialMembersList = [
     {
-      name: 'Virginia',
-      email: 'virginialdport@gmail.com',
+      name: 'Noah',
+      email: 'noahbibb90@gmail.com',
       role: 'Server',
     },
   ]
