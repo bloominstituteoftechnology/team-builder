@@ -1,31 +1,31 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Form from './Form'
+import Form from './Form';
+// import Added from './Added';
 
 function App() {
-  // const [teamMember, setTeamMember]=useState({name:"",email:""});
+  const [addedMember, setAddedMember]=useState([]);
   
-
+// const logInfo=event=>{setAddedMember({...addedMember,event.target.name})}
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+
       <body>
         <h1>Team Member List!</h1>
-        <Form/>
+        <Form 
+        addedMember={addedMember} setAddedMember={setAddedMember}
+        />
+        <h4>Members</h4>
+        <div>
+            {addedMember.map(member=>(
+                <div key={member.id}>
+                    <p>Name: {member.name}</p>
+                    <p>Email: {member.email}</p>
+                    <p>Role: {member.role}</p>
+                </div>
+            ))}
+        </div>
       </body>
     </div>
   );

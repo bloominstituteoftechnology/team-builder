@@ -1,27 +1,30 @@
 import React,{useState} from 'react';
 
-function Form(){
-    const [teamMember, setTeamMember]=useState({name:"",email:""});
+const Form=(props=>{
+    const defaultState={name:'',email:'',role:''};
+
+    const [teamMember, setTeamMember]=useState(defaultState);
+
     const handleChange=event=>{
         setTeamMember({...teamMember,[event.target.name]: event.target.value});
       }
     
       const handleSubmit=event=>{
         event.preventDefault();
-        setTeamMember({name:'',email:''});
+        props.setAddedMember([...props.addedMember,teamMember]);
+        setTeamMember(defaultState);
       }
     return(
-    <form onSubmit={event=>handleSubmit(event)}>
+    <form onSubmit={handleSubmit}>
         <label>
             Name 
             <input 
                 type='text' 
                 placeHolder='Full Name' 
-                name='name' id='nameInput' 
+                name='name' 
+                id='nameInput' 
                 value={teamMember.name} 
-                onChange={
-                    event=>handleChange(event)
-                    }>
+                onChange={handleChange}>
             </input>
         </label><br></br>
         <label>
@@ -32,9 +35,7 @@ function Form(){
                 name='email' 
                 id='emailInput' 
                 value={teamMember.email} 
-                onChange={
-                    event=>handleChange(event)
-                    }>
+                onChange={handleChange}>
             </input>
         </label><br></br>
         <label htmlFor='selectRole'>
@@ -42,20 +43,18 @@ function Form(){
             <select 
                 id='selectRole' 
                 name='role' 
-                onChange={
-                    event=>handleChange(event)
-                    }>>
+                onChange={handleChange}>>
                 <option ></option>    
-                <option value='1'>Computer Programmer</option>
-                <option value='2'>Web Developer</option>
-                <option value='3'>DataBase Administrator</option>
-                <option value='4'>Software Developer</option>
-                <option value='5'>Other</option>
+                <option value='Computer Programmer'>Computer Programmer</option>
+                <option value='Web Developer'>Web Developer</option>
+                <option value='DataBase Administrator<'>DataBase Administrator</option>
+                <option value='Software Developer'>Software Developer</option>
+                <option value='Other'>Other</option>
             </select>
         </label><br></br>
-        <button>Add Team Member</button>
+        <button type='submit' >Add Team Member</button>
     </form>
     )
-} 
+})
 
 export default Form;
