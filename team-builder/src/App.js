@@ -1,69 +1,36 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
-import Form from  './Form';
+import Form from './Form';
 import TeamMember from './TeamMember';
 
-function App() {
-  const initialMembersList = [
+function App (){
+  const initialMemberList = [
     {
-      name: 'Noah',
-      email: 'noahbibb90@gmail.com',
-      role: 'Server',
-    },
+    name: 'Noah',
+    id: 1,
+    email: 'Noahbibb90@gmail.com',
+    role: 'Full Stack Engineer'
+    }
   ]
-  
-  const initialFormValues = {
-    name: '',
-    email: '',
-    role: '',
+  const [member, setMembers] = useState(initialMemberList)
+  const changeHandler = (newMember) => {
+    setMembers([...member, newMember])
   }
-  
-  
-  function App() {
-    const [members, setMembers] = useState(initialMembersList)
-    const [formValues, setFormValues] = useState(initialFormValues)
-  
-    const onInputChange = event => {
-      const {name} = event.target
-      const {value} = event.target
-  
-      setFormValues({...formValues, [name]:value})
-    }
-  
-    const onSubmit = event => {
-      event.preventDefault()
-  
-      if (
-        !formValues.name.trim() ||
-        !formValues.email.trim() ||
-        !formValues.role.trim()
-      ){
-        return
-      }
-        const newMember = { ...formValues}
-        setMembers([newMember, ...members])
-        setFormValues(initialFormValues)
-    }
-  
-    return (
-      <div className='App'>
-        <header className='App-header'>
-          <h1>Team Members!</h1>
-        </header>
-        <Form values={formValues} onInputChange={onInputChange} onSubmit={onSubmit}/>
-   
-        {
-          members.map(member => {
-            return(
-             <TeamMember key={member.id} details={member}/>
-     
-            )
-          })
-        }
-      </div>
-     );
-   }
-  }
-   
-   export default App;
+  return (
+    <div className = 'App'>
+      <header className = 'App-header'>
+        <h1>Team  Member!</h1>
+      </header>
+      <Form newMember = {changeHandler} />
+      {member.map(member => {
+        return(
+          <TeamMember key = {member.id} details = {member}/>
+        
+        )
+      })}
+    </div>
+  );
+}
+
+export default App;
