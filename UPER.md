@@ -27,7 +27,7 @@ What might success look like?
     - A functional SPA that provides a pleasant UI experience.
 What are your questions?
     - Study New Concepts:
-        √ Controlled input - React is controlling the UI on the screen.
+        √ Controlled input - React is controlling the UI on the screen. Controlled by the React Component State. Must have 2 things to be controlled: onChange and value.
         √ Spread Operators (already familiar, but go in depth). You can utilize spread in an object OR an array. The spread operator takes the old object and copies all of its values. This is done because we cannot assign values to our state in React. State is immutable, it cannot be changed, only set.
         - Computer Properties
         - Synthetic Events
