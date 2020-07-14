@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 
 export class FormUserDetails extends Component {
     continue = e => {
@@ -14,24 +9,23 @@ export class FormUserDetails extends Component {
     render() {
         const { values, handleChange } = this.props;
         return (
-            <MuiThemeProvider>
-                <Dialog>
-                <AppBar title = 'Enter User Details' />  
-                <TextField
+                <form>
+                <label title = 'Enter User Details' />  
+                <input
                     hintText='Enter Your First Name'
                     floatingLabelText='First Name' 
                     onChange={handleChange('firstName')}
                     defaultValue={values.firstName}
                 />  
                 <br />
-                <TextField
+                <input
                     hintText='Enter Your Last Name'
                     floatingLabelText='Last Name' 
                     onChange={handleChange('lastName')}
                     defaultValue={values.lastName}
                 />  
                 <br />
-                <TextField
+                <input
                     hintText='Enter Your Email'
                     floatingLabelText='Email' 
                     onChange={handleChange('email')}
@@ -39,15 +33,14 @@ export class FormUserDetails extends Component {
                 />  
                 <br />
                 
-                <Button
+                <button
                 label='Continue'
                 color='primary'
                 primary={true}
                 style={styles.button}
                 onClick={this.continue}
-                >Continue</Button>
-             </Dialog>
-            </MuiThemeProvider>
+                >Continue</button>
+            </form>
         );
     }
 }

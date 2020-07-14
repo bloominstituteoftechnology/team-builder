@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+
 
 export class FormProfessionalDetails extends Component {
     continue = e => {
@@ -19,37 +15,35 @@ export class FormProfessionalDetails extends Component {
     render() {
         const { values, handleChange } = this.props;
         return (
-            <MuiThemeProvider>
-                <Dialog>
-                <AppBar title = 'Enter Professional Details' />  
-                <TextField
+                <form>
+                <label title = 'Enter Professional Details' />  
+                <input
                     hintText='Enter Your Team Role'
                     floatingLabelText='Role' 
                     onChange={handleChange('role')}
                     defaultValue={values.role}
-                />  
+                 />
                 <br />
-                <TextField
+                <label
                     hintText='Enter Your Github Handle'
                     floatingLabelText='Github Handle' 
                     onChange={handleChange('gitHubHandle')}
                     defaultValue={values.gitHubHandle}
                 />  
                 <br />
-                <Button
+                <button
                 label="Continue"
                 primary={true}
                 style={styles.button}
                 onClick={this.continue}
                 />
-                <Button
+                <button
                 label="Back"
                 primary={false}
                 style={styles.button}
                 onClick={this.back}
                 />
-             </Dialog>
-            </MuiThemeProvider>
+             </form>
         )
     }
 }
