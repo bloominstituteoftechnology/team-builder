@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Form, Message } from 'semantic-ui-react'
 
 const Success = () => (
-  <Form success>
+  <Form>
     <Message
       success
       header='Form Completed'

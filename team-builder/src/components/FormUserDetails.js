@@ -11,28 +11,29 @@ export class FormUserDetails extends Component {
         return (
                 <form>
                 <label title = 'Enter User Details' />  
-                <input
+                <input type="text"
                     hintText='Enter Your First Name'
                     floatingLabelText='First Name' 
                     onChange={handleChange('firstName')}
                     defaultValue={values.firstName}
                 />  
                 <br />
-                <input
+                <label title = 'Enter Your Last Name' />  
+                <input type="text"
                     hintText='Enter Your Last Name'
                     floatingLabelText='Last Name' 
                     onChange={handleChange('lastName')}
                     defaultValue={values.lastName}
                 />  
                 <br />
-                <input
+                <label title = 'Enter Your Email' />  
+                <input type="email"
                     hintText='Enter Your Email'
                     floatingLabelText='Email' 
                     onChange={handleChange('email')}
                     defaultValue={values.email}
                 />  
                 <br />
-                
                 <button
                 label='Continue'
                 color='primary'

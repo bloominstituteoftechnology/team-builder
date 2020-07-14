@@ -16,15 +16,16 @@ export class FormProfessionalDetails extends Component {
         const { values, handleChange } = this.props;
         return (
                 <form>
-                <label title = 'Enter Professional Details' />  
-                <input
+                <label title = 'Enter Team Role' />  
+                <input type="text"
                     hintText='Enter Your Team Role'
                     floatingLabelText='Role' 
                     onChange={handleChange('role')}
                     defaultValue={values.role}
                  />
                 <br />
-                <label
+                <label title = 'Enter Github Handle' />  
+                <input type="text"
                     hintText='Enter Your Github Handle'
                     floatingLabelText='Github Handle' 
                     onChange={handleChange('gitHubHandle')}
