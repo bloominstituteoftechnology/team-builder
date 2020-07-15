@@ -1,53 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const EmployeeForm = props => {
-    const [FirstName, setFirstName] = React.useState('');
-    const [LastName, setLastName] = React.useState('');
-    const [Email, setEmail] = React.useState('');
-    const [Role, setRole] = React.useState('');
+    const [employee, setEmployee] = useState({
+       First:'',
+       Last:'',
+       email:'',
+       role:'' 
+    })
 
-    const handleFirstName = event => setFirstName(event.target.value);
-    const handleLastName = event => setLastName(event.target.value);
-    const handleEmail = event => setEmail(event.target.value);
-    const handleRole = event => setRole(event.target.value);
+    const changeHandler = (event) => {
+        setEmployee({
+            ...employee,
+            [event.target.name]: event.target.value
+        })
+    }
 
-    const handleSubmit = event => {
+    const SubmitForm = event => {
         event.preventDefault();
+        props.addNewMember(employee)
+        setEmployee({First:'', Last:'', email:'', role:''})
     }
 
 
 return(
-    <form onSubmit={handleSubmit}>
+    <form 
+        onSubmit={SubmitForm}
+    >   
+    <div> 
         <input
-        onChange={handleFirstName}
+        id='First'
         type='text'
-        name='FirstName'
-        value={FirstName}
+        name='First'
+        value={employee.First}
         plaeholder='First Name' 
+        onChange={changeHandler}
         />
+    </div>  
+    <div>
         <input
-        onChange={handleLastName}
+        id='Last'
         type='text'
-        name='LastName'
-        value={LastName}
+        name='Last'
+        value={employee.Last}
         plaeholder='Last Name'
+        onChange={changeHandler}
         />
+    </div>
+    <div>
         <input
-        onChange={handleEmail}
+        id='email'
         type='text'
-        name='Email'
-        value={Email}
+        name='email'
+        value={employee.email}
         plaeholder='Email'
+        onChange={changeHandler}
         />
+    </div>    
+    <div>
         <input 
-        onChange={handleRole}
+        id='role'
         type='text'
-        name='Role'
-        value={Role}
+        name='role'
+        value={employee.role}
         plaeholder="Role"
+        onChange={changeHandler}
         />
-
+    </div>
+        <button type="submit">Submit</button>
     </form>
     );
 };
