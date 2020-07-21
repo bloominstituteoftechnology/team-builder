@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'; 
 import { v4 as uuid } from 'uuid'; // univerally unique identifier installed and used as the team member id generator below 
 import './App.css';
 
@@ -12,9 +12,10 @@ import './App.css';
     role: 'Style Guru',
   }]; 
 
-  console.log(initialTeamList)
+  // // DELETE COMMENTS HERE FOR TESTING
+  // console.log(initialTeamList);
 
-  // step 2: visualize how the form will appear, and put it into state! This will drive the form. There will be only one form, so we only need to instantiate one object and its key:value pairs. This is usually done with the help of the back-end members.
+  // step 2: visualize how the form will appear, and put it into state! This will drive the form. There will be only one form, so we only need to instantiate one object and its key:value pairs. This is usually done with the help of the back-end members. Remember to pull in useState and useEffect from the React package now, since we know we will be needing them. We will be setting up the form's state in this level of the hierarchy - it can be done lower, in the form component itself. That's up to you to decide. 
 
   const initialFormValues = {
     // Text Inputs below // 
@@ -38,6 +39,8 @@ import './App.css';
 
 
 function App() {
+
+  // step 4: take a look at the components folder: the very base of the components we think we'll need have been built. We want a form: 
 
   return (
     <div className="App">
