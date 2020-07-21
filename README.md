@@ -2,19 +2,13 @@
 
 This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored Form management in React. You learned about controled inputs, semantic HTML, some ES6 tools like the spread operator and computer properties, and synthetic events. In your project you will demonstrate proficiency of these subjects and principles by creating an application using each of these.
 
-## Instructions
-
-**Read these instructions carefully. Understand exactly what is expected _before_ starting this project.**
-
-### Commits
-
-Commit your code regularly and meaningfully. This helps both you and your team lead in case you ever need to return to old code for any number of reasons.
-
-### Description
+## Introduction
 
 In this project you'll build an app that will keep track of memebers of a team. You'll be able to add members to this team as well as edit their details.
 
-## Project Set Up
+## Instructions
+
+### Task 1: Project Set Up
 
 - [ ] Create a forked copy of this project.
 - [ ] Add your team lead as collaborator on Github.
@@ -26,25 +20,18 @@ In this project you'll build an app that will keep track of memebers of a team. 
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
-Follow these steps for completing your project.
-
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete by merging the branch back into `main` branch.
-- [ ] Do your magic!
-
-## Minimum Viable Product
+### Task 2a: Minimum Viable Product
 
 - [ ] Render a list of team members from state.
 - [ ] Build a form to add a new member to the list of members.
 
-### STEP 1 - Setup your state
+#### Setup your state
 
 - [ ] Import the `useState` hook and set up state to keep your team members list.
 - [ ] Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
 - [ ] Render your list of team members.
 
-### STEP 2 - Build your form
+#### Build your form
 
 - [ ] In `Form.js` build out your markup.
 - [ ] Build inputs for `name`, `email` and `role` (backend engineer, frontend engineer, designer, etc. Use your imagination).
@@ -53,7 +40,14 @@ Follow these steps for completing your project.
 
 Now you are finished with MVP! Move on to the stretch goals at the bottom. The first is to add the functionality to edit members. As this is a very complicated process, steps have been included here to help you through that.
 
-### STEP 3 - Add the edit functionality (STRETCH)
+### Task 2b: Exit Ticket
+
+Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/sWqBFjaYTdNm4wbjZ/qSjimc6Js9MnbZ).
+
+The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
+
+
+### Task 3: Add the edit functionality (STRETCH)
 
 Next we're going to reuse the `Form` component to edit team members. You can try to accomplish this goal completely on your own, or you can follow the steps below. These steps assume your `Form` maintains its own state.
 
@@ -74,7 +68,7 @@ The flow for editing is hard to conceptualize. It should go something like this:
 1. The user updates the member info
 1. Uh... now what do we do with this new data? If we submit the form, it will just add a new member 😫. Never fear! We will fix this in the next section!
 
-### STEP 4 - Form submit (STRETCH CONT.)
+#### Form submit (STRETCH CONT.)
 
 This is an interesting bit of architecture we've done so far. We have built a reusable form that can be used to add a team member, or edit a team member. The last piece of the puzzle is this - when we submit the form, do we run an `addMember` function, or an `editMember` function? And how will the form know? Well, our form knows if we are editing a team member by whether or not there is the prop `memberToEdit`. (P.S. This can also be done with a boolean - something like `isEditing`...)
 
@@ -85,7 +79,7 @@ Okay, now that we understand how `Form.js` knows if we are editing or creating m
 
 Observe the power of reusability!
 
-## Stretch Problems
+#### More Stretch Problems
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
@@ -93,3 +87,8 @@ After finishing your required elements, you can push your work further. These go
 - [ ] Build another layer of your App so that you can keep track of multiple teams, each with their own encapsulated list of team members.
 - [ ] Look into the various strategies around form validation. What happens if you try to enter a number as a team-members name? Does your App allow for that? Should it? What happens if you try and enter a function as the value to one of your fields? How could this be dangerous? How might you prevent it?
 - [ ] Style the forms. There are some subtle browser defaults for input tags that might need to be overwritten based on their state (active, focus, hover, etc.); Keep those CSS skill sharp.
+
+## Submission Format
+
+* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+* [ ] Fill out your module retrospective form [here](https://forms.lambdaschool.com/module-retrospective) with a link to your PR
