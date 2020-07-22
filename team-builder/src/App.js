@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid'; // univerally unique identifier installed and used as the team member id generator below 
 import './App.css';
 import MemberForm from './MemberForm';
+import TeamMember from './TeamMember';
 
   // step 1: we don't have a real api to get data from, so we'll establish the shape of our build-a-team list. In this case set up an array to hold a series of team members. 
 
@@ -40,7 +41,7 @@ import MemberForm from './MemberForm';
 
 
 function App() {
-  // step 4: take a look at the components folder: the very base of the components we think we'll need have been built. We know we want a form: MemberForm, and an individual team member card to reflect our choices: TeamMember. Now we will instantiate the team state: 
+  // step 4: take a look in the src folder: the very base of the components we think we'll need have been built. We know we want a form: MemberForm, and an individual team member card to reflect our choices: TeamMember. Now we will instantiate the team state: 
   const [team, setTeam] = useState([]); 
   // step 5: setup the needed form state, to hold the values of the form. The state on render will reflect the skeleton we built above, in initialFormValues
   const [formValues, setFormValues] = useState(initialFormValues); 
@@ -94,6 +95,14 @@ function App() {
         update={updateForm}
         submit={submitForm}
       />
+      {/* Below we are mapping through the team array and rendering the TeamMember component information for each team member */}
+      {team.map(tm => {
+        return(
+          <TeamMember key={tm.id} details={tm} />
+        )
+      })
+    }
+
     </div>
   );
 }
