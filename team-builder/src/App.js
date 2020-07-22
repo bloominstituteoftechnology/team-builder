@@ -10,7 +10,7 @@ const initialFormValues = {
 }
 
 function App() {
-  const [member, setMember] = useState([]);
+  const [member, setMember] = useState([])
   const [formValues, setFormValues] =useState(initialFormValues);
 
   const updateForm = (inputName, inputValue) => {
@@ -24,7 +24,8 @@ function App() {
       email: formValues.email.trim(),
       role: formValues.role,
     }
-    if (!newMember.name || !newMember.email || !newMember.role) return
+    console.log(newMember)
+    setMember([...member, newMember]);
   }
 
   return (

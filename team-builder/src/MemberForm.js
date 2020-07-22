@@ -17,7 +17,6 @@ export default function MemberForm (props) {
         <form className='form-container' onSubmit={onSubmit}>
             <div>
                 <h2>Add a Team Member</h2>
-                <button enabled={!values.username || !values.email || !values.role}>Submit</button>
             </div>
             <div className='form-group inputs'>
                 <label htmlFor='usernameInput'>Name:&nbsp;
@@ -46,11 +45,12 @@ export default function MemberForm (props) {
                     <select name='role' value={values.role} onChange={onChange}>
                         <option value=''>Select a role</option>
                         <option value='student'>Backend</option>
-                        <option value='instructor'>FrontEnd</option>
+                        <option value='FrontEnd'>FrontEnd</option>
                         <option value='tl'>Full Sack Web</option>
                         <option value='tl'>Developer</option>
                     </select>
                 </label>
+                <button className='button' enabled={!values.username || !values.email || !values.role}>Submit</button>
             </div>
         </form>
 
