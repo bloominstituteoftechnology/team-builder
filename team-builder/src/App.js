@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid'; // univerally unique identifier installed and
 import './App.css';
 import MemberForm from './MemberForm';
 import TeamMember from './TeamMember';
-
+  
   // step 1: we don't have a real api to get data from, so we'll establish the shape of our build-a-team list. In this case set up an array to hold a series of team members. 
 
   const initialTeamList = [{
@@ -86,8 +86,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Build-A-Team</h1>
+      <p className='welcome-msg'>Build your perfect team, where the style guru puts on too many patches, the unseen and unappreciated fabric heart is the back-end guy, and those front-enders are all the stuffing.</p>
       </header>
-      <p>Build your perfect team, where the style guru puts on too many patches, the unseen and unappreciated fabric heart is the back-end guy, and those front-enders are all the stuffing.</p>
       {/*step 8b: Render the MemberForm to the DOM - MAKE SURE IT IS IMPORTED */}
       {/*step 8c: pass props to the MemberForm component*/}
       <MemberForm 

@@ -1,38 +1,193 @@
-/* .App {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ^ Reset */
+
+body {
+  background-color: #00ABE7;
+}
+
+/* App styling */
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Staatliches', cursive;
+  font-size: 5.0rem;
   text-align: center;
+  padding: 2%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  font-family: 'Archive Narrow', sans-serif;
+  line-height: 2.0rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App {
+  display: flex;
+  flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-header, p {
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.welcome-msg {
+  width: 40%;
+  line-height: 125%;
+  padding: 3%;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+
+/* MemberForm styling */
+
+.form-wrapper {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5%;
+  width: 100%;
+}
+
+.form-group h5 {
+  text-shadow: 2px 2px whitesmoke;
+}
+
+.input {
+  justify-content: space-evenly;
+}
+
+label, input, select, option {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: flex-start;
+  align-self: center;
+}
+
+option {
+  color: #337bc4;
+}
+
+.form-box {
+  background-color: whitesmoke;
+  opacity: 90%;
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Staatliches', cursive;
+  font-size: 1.5rem;
+}
+
+.banner {
+  background-image: url(https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-position: center;
+}
+
+.banner h3 {
   color: white;
+  font-size: 4.0rem;
+  text-shadow: 2px 3px #E94F37;
+  align-self: center;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  box-shadow: 3px 4px 0px 0px #1564ad;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:5px;
+	border:1px solid #337bc4;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* TeamMember styling */
+
+.team-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.member-wrapper {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.member-wrapper h2 {
+  width: 80%;
+  padding: 2%;
+  text-align: center;
+  font-size: 2.0rem;
+  text-shadow: 2px 2px whitesmoke;
+}
+
+.member-wrapper p {
+  padding: 1%;
+}

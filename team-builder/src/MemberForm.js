@@ -23,13 +23,13 @@ export default function MemberForm(props) {
         // step 10: add the onChange and onSubmit functionality to the form and pass props - remember that values is formValues from the top of the App.js function
         // optional step: disable the button until the form is properly filled out by using the disabled key word, with a conditional stating that if the input is not filled out the button is inoperable
         <form className='form-wrapper' onSubmit={onSubmit}>
-            <div className='form-group submit'>
-                <h3>Add a Team Member!</h3>
-                <button disabled={!values.username || !values.email || !values.coderType || !values.role}>join</button>
+            <div className='form-group banner'>
+                <h3>Become a Team Member!</h3>
             </div>
 
             <div className='form-group input'>
                 <h5>Enter Your Information:</h5>
+                <div className='form-box'>
                 <label htmlFor='usernameInput'>
                     Username:
                     <input
@@ -59,8 +59,8 @@ export default function MemberForm(props) {
                     <select name='coderType' value={values.coderType} onChange={onChange}>
                         <option value='quirky'>Quirky</option>
                         <option value='sensible'>Sensible</option>
-                        <option value='overachiever'>Overachieving</option>
-                        <option value='show-off'>Flashy</option>
+                        <option value='overachieving'>Overachieving</option>
+                        <option value='show-offy'>Flashy</option>
                         <option value='study-buddy'>Learned</option>
                         <option value='geek'>Nerdy</option>
                     </select>
@@ -70,11 +70,15 @@ export default function MemberForm(props) {
                     What's your role?
                     <select name='role' value={values.role} onChange={onChange}>
                         <option value='style-guru'>Style Guru</option>
-                        <option value='backend'>Backend Aficiando</option>
-                        <option value='frontend'>Frontender</option>
+                        <option value='backender'>Backend Aficiando</option>
+                        <option value='frontender'>Frontender</option>
                         <option value='show-off'>Know-it-All</option>
                     </select>
                 </label>
+                </div>
+                <div className='button-wrapper'>
+                <button disabled={!values.username || !values.email || !values.coderType || !values.role}>join</button>
+                </div>
             </div>
         </form>
     );
