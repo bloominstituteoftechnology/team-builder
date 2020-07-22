@@ -22,6 +22,7 @@ export default function form(props){
 
     return(
         <div className='form-container'>
+            <h2>Enter or edit a team member</h2>
             <form onSubmit={onSubmit}>
                 <label htmlFor='name'>Name:&nbsp;
                      <input
@@ -34,8 +35,8 @@ export default function form(props){
                      value={member.name}
                      ></input>   
                 </label>
-               
-                <label htmlFor='email'>Email:&nbsp;
+
+                <label htmlFor='email'> Email:&nbsp;
                     <input
                     type='email'
                     placeholder='Enter email'
@@ -46,7 +47,7 @@ export default function form(props){
                     ></input>
                 </label>
 
-                <label htmlFor='role'>Role:&nbsp;
+                <label htmlFor='role'> Role:&nbsp;
                     <select
                     id='role'
                     name='role'

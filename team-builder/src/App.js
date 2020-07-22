@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { v4 as uuid } from 'uuid'
 import Form from './components/form'
 import Team from './components/team'
-
 
 
 const initialFormValue = {
@@ -27,7 +27,7 @@ const submitForm = () => {
     name: form.name.trim(),
     email: form.email.trim(),
     role: form.role,
-    id: Date.now()
+    id: uuid()
   }
   setTeam([...team, newMember])
   setForm(initialFormValue)
@@ -35,11 +35,11 @@ const submitForm = () => {
 
 const editMember = editedMember => {
   const newTeamMembers = team.map(member => 
-    member.key === editedMember.key ? editedMember : member )
+    member.id === editedMember.id ? editedMember : member )
     setTeam(newTeamMembers)
-    setMemberToEdit()
-  
+    setMemberToEdit(initialFormValue)
 }
+
 
 useEffect(() => {
   setForm(memberToEdit || initialFormValue)
@@ -48,8 +48,8 @@ useEffect(() => {
 
   return (
     <div>
-      <h1>React app working</h1>
-      <Form update={updateForm} member={form} submit={submitForm} editMember={editMember} memberToEdit={memberToEdit} form={form} setForm={setForm}/>
+      <h1>Welcom to team Kev</h1>
+      <Form update={updateForm} member={form} submit={submitForm} editMember={editMember} memberToEdit={memberToEdit}/>
 
     {
       team.map(member => {
