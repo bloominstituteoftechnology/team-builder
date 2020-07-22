@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export default function form(props){
-    const {update, values, submit} = props
+    const {update, member, submit} = props
 
     const onChange = evt => {
         const { name, value } = evt.target
@@ -11,8 +11,14 @@ export default function form(props){
 
     const onSubmit = evt => {
         evt.preventDefault()
-        submit()
+        if(props.memberToEdit){
+            props.editMember(member)
+        } else {
+            submit()
+
+        }
     }
+
 
     return(
         <div className='form-container'>
@@ -25,7 +31,7 @@ export default function form(props){
                      name='name'
                      maxLength='20'
                      onChange={onChange}
-                     value={values.name}
+                     value={member.name}
                      ></input>   
                 </label>
                
@@ -36,7 +42,7 @@ export default function form(props){
                     id='email'
                     name='email'
                     onChange={onChange}
-                    value={values.email}
+                    value={member.email}
                     ></input>
                 </label>
 
@@ -45,7 +51,7 @@ export default function form(props){
                     id='role'
                     name='role'
                     onChange={onChange} 
-                    value={values.role}
+                    value={member.role}
                     >
                      <option value=''>Select a role</option> 
                      <option value='backend'>Backend</option> 
@@ -53,7 +59,9 @@ export default function form(props){
                      <option value='ios'>IOS</option>   
                     </select>
                 </label>
-                <button>Submit</button>
+                <button
+                disabled={ !member.name || !member.email || !member.role}
+                >Submit</button>
             </form>
 
         </div>
