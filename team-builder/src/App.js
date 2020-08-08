@@ -1,43 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import Team from '/.components/team'
-
-const initialFormValue = {
-  name: '',
-  email: '',
-  role: 'frontend',
-}
+import Form from './Form';
 
 function App() {
-  const [team, setTeam] = useState([])
-  const [ form, setForm] = useState(initialFormValue)
-
-  const updateForm = (inputName, inputValue) => {
-    setForm({...form, [inputName]: inputValue})
-  }
-
-  const submitForm = () => {
-    const newMember = {
-      name: form.name.trim(),
-      email: form.email.trim(),
-      role: form.role
-    }
-    setTeam([...team, newMember])
-  }
+  const [addedMember, setAddedMember] = useState([])
 
   return (
-    <div>
-      <Form update={updateForm} values={form} submit={submitForm}/>
+    <div className="App">
+        <body>
+        <h1>Team Member List</h1>
+        <Form
+        addedMember={addedMember} setAddedMember={setAddedMember}
+        />
+        <h4>Members</h4>
+        <div>
+          {addedMember.map(member=>(
+            <div key={member.id}>
+              <p>Name: {member.Namey}</p>
+              <p>Email: {member.Email}</p>
+              <p>Role: {member.Role}</p>
+            </div>
+          ))}
+        </div>
+        </body>
+        </div>
+  );
+}
 
-{
-  team.map(member => {
-    return (
-      <Team details={member}/>
-    )
-  })
-}
-</div>
-)
-}
 export default App;
