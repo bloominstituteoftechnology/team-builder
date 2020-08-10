@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import ReactDom from "react-dom";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [members, setMembers] = useState({ name: "" });
+  const [members, setMembers] = useState({
+    name: "",
+    email: "",
+    role: "",
+  });
 
   const handleChanges = (event) => {
     console.log(event.target.value, "event!");
