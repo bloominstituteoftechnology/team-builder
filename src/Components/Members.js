@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Members = (props) => {
   const [members] = props;
-  console.log(members);
+  console.log(props);
   return (
     <div key={members.id}>
       <h2>{members.name}</h2>
