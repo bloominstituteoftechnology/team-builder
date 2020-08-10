@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ReactDom from "react-dom";
 import logo from "./logo.svg";
 import "./App.css";
+import MemberForm from "./Components/MemberForm";
+import Members from "./Components/Members";
 
 function App() {
   const [members, setMembers] = useState({
@@ -10,54 +12,39 @@ function App() {
     role: "",
   });
 
-  const handleChanges = (event) => {
-    console.log(event.target.value, "event!");
-    setMembers({ name: event.target.value });
-  };
   console.log(members);
   const addName = (member) => {
-    const newMember = {
-      id: Date.now(),
-      title: member.name,
-      email: member.email,
-      role: member.role,
-    };
-    setMembers([...members, newMember]);
+    setMembers([...members, { ...member, id: Date.now() }]);
+  };
+  const handleChanges = (event) => {
+    console.log(event.target.value, "event!");
+    setMembers({
+      name: event.target.value,
+      emaile: event.target.value,
+      role: event.target.value,
+    });
+  };
+  const submitForm = (event) => {
+    event.preventDefault();
+    props.addNewMember(members);
+    setMembers({
+      title: members.title,
+      email: members.email,
+      role: members.roll,
+    });
   };
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <form>
-          <label htmlFor="name">Name</label>
-        </form>
-        <input
-          id="name"
-          type="text"
-          placeholder="Enter Name"
-          onChange={handleChanges}
-        ></input>
-        <form>
-          <label htmlFor="email">Email</label>
-        </form>
-        <input id="email" type="text" placeholder="Enter Email"></input>
-        <form>
-          <label htmlFor="role">Role</label>
-        </form>
-        <input
-          id="role"
-          type="text"
-          placeholder="Enter Role"
-          onChange={handleChanges}
-        ></input>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <a>Learn React</a>
+        <MemberForm
+          nameFunction={addName}
+          members={members}
+          submitForm={submitForm}
+          handleChanges={handleChanges}
+        />
+        <Members members={members} />
       </header>
     </div>
   );

@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 
 function MemberForm(props) {
-  const [member, setMember] = useState({
-    title: props.title,
-    email: props.email,
-    role: props.roll,
-  });
+  const [nameFunction, members, submitForm, handleChanges] = props;
+  //   const [members, setMembers] = useState({
+  //     title: props.title,
+  //     email: props.email,
+  //     role: props.roll,
+  //   });
 
-  const handleChanges = (event) => {
-    console.log(event.target.value, "event!");
-    setMembers({
-      name: event.target.value,
-      emaile: event.target.value,
-      role: event.target.value,
-    });
-  };
-  const submitForm = (event) => {
-    event.preventDefault();
-    props.addNewMember(member);
-    setMember({ title: props.title, email: props.email, role: props.roll });
-  };
+  //   const handleChanges = (event) => {
+  //     console.log(event.target.value, "event!");
+  //     setMembers({
+  //       name: event.target.value,
+  //       emaile: event.target.value,
+  //       role: event.target.value,
+  //     });
+  //   };
+  //   const submitForm = (event) => {
+  //     event.preventDefault();
+  //     props.addNewMember(members);
+  //     setMembers({ title: props.title, email: props.email, role: props.roll });
+  //   };
   return (
     <form onSubmit={submitForm}>
       <label htmlFor="name">Name</label>
@@ -27,7 +28,7 @@ function MemberForm(props) {
         id="name"
         type="text"
         placeholder="Enter Name"
-        value={member.name}
+        value={members.name}
         onChange={handleChanges}
       />
 
@@ -36,7 +37,7 @@ function MemberForm(props) {
         id="email"
         type="text"
         placeholder="Enter Email"
-        value={member.email}
+        value={members.email}
         onChange={handleChanges}
       />
 
@@ -45,9 +46,11 @@ function MemberForm(props) {
         id="role"
         type="text"
         placeholder="Enter Role"
-        value={member.role}
+        value={members.role}
         onChange={handleChanges}
       />
     </form>
   );
 }
+
+export default MemberForm;
