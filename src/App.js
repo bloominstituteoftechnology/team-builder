@@ -2,14 +2,27 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import MemberForm from "./Components/MemberForm";
+import Members from "./Components/Members";
 
 function App() {
   const [members, setMembers] = useState([
-    { name: "Ryan", email: "rbclark", role: "dev" },
+    {
+      name: "Ryan Clark",
+      email: "rbclark244@gmail.com",
+      role: "Developer",
+    },
   ]);
-  const addNewMember = (member) => {
-    setMembers([...members, { ...member, id: Date.now() }]);
+
+  const addNewMembers = (member) => {
+    const newMember = {
+      id: Date.now(),
+      name: member.name,
+      email: member.email,
+      role: member.role,
+    };
+    setMembers([...members, newMember]);
   };
+
   // const handleChanges = (event) => {
   //   console.log(event.target.value, "event!");
   //   setMembers({
@@ -31,14 +44,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <a>Learn React</a>
         <MemberForm
-          addNewMember={addNewMember}
+          addNewMembers={addNewMembers}
+          // member={member}
+          // setMembers={setMembers}
           // nameFunction={addName}
           // members={members}
           // submitForm={submitForm}
           // handleChanges={handleChanges}
         />
+        <Members members={members} />
       </header>
     </div>
   );
