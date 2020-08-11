@@ -18,18 +18,18 @@ const Form = (props) => {
   
     const submitForm = (event) => {
     event.preventDefault(); 
-   
-    props.newCrew(crew); 
+    // Firing the addNewMember function/event listener? when we submit the form.
+    props.addNewMember(crew); 
     // Clearing the form once we have submitted a form.
     setCrew({ name: "", email: "", role: "" }); 
   };
 
-  console.log("Crew", crew);
+  console.log("member", crew);
 
   return (
     <form onSubmit={submitForm} className="form">
 
-
+        {/* The name used for htmlFor and id must be the same? */}
   
       <label htmlFor="name">Name</label>
       <input
@@ -58,7 +58,7 @@ const Form = (props) => {
         value={crew.role}
         onChange={changes}
       />
-
+    <br></br>
       <button type="submit">Add Member</button>
 
     </form>
@@ -66,6 +66,5 @@ const Form = (props) => {
 };
 
 export default Form;
-
 
 

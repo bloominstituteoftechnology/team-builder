@@ -1,19 +1,19 @@
 import React from "react";
 
-// The MembersList component maps through the 'members' data to display it as a list on the screen.
+ // The MembersList component maps through the 'crewMembers' data to display it as a list on the screen.
 
-const crewList = props => {
+const CrewList = props => {
   return (
     <div>
-      {props.crew.map(crew => (
-        <div key={crew.id}>
-          <h2>Name: {crew.name}</h2>
-          <p>Email: {crew.email}</p>
-          <p>Role: {crew.role}</p>
+      {props.crewMembers.map(member => (
+        <div key={member.id}>
+          <h2>Name: {member.name}</h2>
+          <p>Email: {member.email}</p>
+          <p>Role: {member.role}</p>
         </div>
       ))}
     </div>
   );
 };
 
-export default crewList;
+export default CrewList;

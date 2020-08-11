@@ -1,8 +1,8 @@
 export default [
     {
       id: 1,
-      name: "Malcolm Reynols",
-      email: "Captain@serwentiy.org",
+      name: "Malcolm Reynolds",
+      email: "Captain@serentiy.org",
       role:
         "Captain"
     },
@@ -16,7 +16,7 @@ export default [
     {
         id: 3,
         name: "Hoban Washburn",
-        email: "leaf-in-the-wind@serenity.orf",
+        email: "leaf-in-the-wind@serenity.org",
         role:
           "Pilot"
     },
