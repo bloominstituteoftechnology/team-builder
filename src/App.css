@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  font-weight: 700;
+  font-family: "Alien League";  
+
+
+
+}
+h1{
+color:white;
+font-size:300%;
+margin-top:.5%;
+font-family:"we are alien!!";
+
+}
+input {
+  font: 1.5rem 'Fira Sans', sans-serif;
+  background-color:  black;  
+  color:white;
+ 
+}
+
+select {
+  font: 1.5rem 'Fira Sans', sans-serif;
+  background-color: black;
+  color:white;
+ 
+}
+label{
+  font-size:3rem;
+}
+button{
+  background-color: black;
+  color:white;
+  font: 1.5rem 'Fira Sans', sans-serif;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(25px + 2vmin);
+  font-weight: 800;
+  color:white;
+  font-variant: small-caps;
+  background-color: #080111;
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/17/23/29/programming-1832991_960_720.png");
+
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
