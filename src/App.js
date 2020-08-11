@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import ReactDOM from "react-dom";
+import data from "./data";
+import crewList from "./CrewList";
+import Form from "./Form";
 import './App.css';
 
 function App() {
+
+  const [crew, setCrew] = useState(data);
+
+// Create a function to add new member using the form. Use the spread operator to keep everything the same, and add the new id using the date.now method.
+
+  const newCrew = (crew) => {
+    setCrew([...crew, {...crew, id: Date.now() }])
+
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+       <h1>Crew Roster</h1>
+       <Form newCrew={newCrew} />
+      <crewList crew={crew} />
       </header>
     </div>
   );
 }
 
 export default App;
+  
+
+
+// refactor
