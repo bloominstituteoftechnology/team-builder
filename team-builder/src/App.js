@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Form from './Form'
-
-import Form from './Form.js'
+import FormMembrer from './FormMember.js'
 
 function App() {
 
@@ -15,11 +13,10 @@ function App() {
   const newMember = (member) => {
     setMembers ([...members, {...member, id: Date.now()}]);
   }
-
-
+  
   return (
     <div className="App">
-      <Form newMember = {newMember}/>
+      <FormMembrer newMember = {newMember}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
