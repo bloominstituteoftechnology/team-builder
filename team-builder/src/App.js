@@ -1,24 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Form from './components/form'
+import Team from './components/team.js'
+
+const initialFormValue = {
+  name: '',
+  email: '',
+  role: 'frontend',
+}
 
 function App() {
+  const [team, setTeam] = useState([])
+  const [form, setForm] = useState(initialFormValue)
+
+  const updateForm = (inputName, inputValue) => {
+    setForm({...form, [inputName]: inputValue})
+  }
+
+  const submitForm = () => {
+    const newMember = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      role: form.role
+    }
+    setTeam([...team, newMember])
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>FILL IN THE INFORMATION</h1>
+      <Form update = {updateForm} values = {form} submit = {submitForm}/>
+
+      {team.map(member => {
+        return (
+          <Team details = {member}/>
+        )
+      })
+      }
     </div>
   );
 }
