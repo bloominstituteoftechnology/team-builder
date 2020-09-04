@@ -25,9 +25,6 @@ const Form = props => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h3>Employee Name is {user.name}</h3>
-            <h3>The Employee Email is{user.email}</h3>
-            <h3>The Role is {user.role}</h3>
 
             <div className="employee-name">
                 <label htmlFor= 'nameInput'>Name: </label>
@@ -53,33 +50,39 @@ const Form = props => {
                     />
             </div>
 
-            <div className="employee-role">
-                <label htmlFor = 'roleSelections'>Roles: </label>
-                    <select 
-                        value={user.roles}
+            <div className="employee-roles">
+                <label htmlFor='roleSelections'>Roles: </label>
+                    <select
                         onChange={handlerUpdate}
-                        id='roleSelections' 
-                        name= 'roles'>
-                        <option value='Software'>Software Developer
-                        </option>
-                        
-                        <option value='Claymation Animator'>Claymation Animator
-                        </option>
+                        id='roleSelections'
+                        name='roles'
+                        value={user.roles}>
+                            
+                            <option value='Software'>Software Developer
+                            </option>
 
-                        <option value='Ux Designer'>UX Designer
-                        </option>
+                            <option value='Claymation Animator'>Claymation Animator
+                            </option>
 
-                        <option value='Plaster Mold Caster'>Plaster Mold Caster
-                        </option>
+                            <option value='UX Designer'>UX Designer
+                            </option>
 
-                        <option value='Cat Cafe Associate'>Cat Cafe Associate
-                        </option>
+                            <option value='Frontend Developer'>Frontend Developer
+                            </option>
 
-                        <option value='Matcha Tea Expert'>Matcha Tea Expert Barista
-                        </option>
+                            <option value='Special Effects Artist'>Special Effects Artist
+                            </option>
+
+                            <option value='Cat Cafe Associate'>Cat Cafe Associate
+                            </option>
+
+                            <option value='Matcha Tea Expert'>Matcha team Expert
+                            </option>
                     </select>
             </div>
-                <button>Add Employee</button>
+
+          
+                <button type='submit'>Add Employee</button>
         </form>
     )
 }
