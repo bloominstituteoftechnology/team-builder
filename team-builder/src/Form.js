@@ -19,6 +19,8 @@ const Form = props => {
     };
     const handleSubmit = event => {
         event.preventDefault();
+        props.addNewEmployee(user);
+        setUser({ name: '', email: ''})
         console.log('form submitted')
     };
 
@@ -57,6 +59,8 @@ const Form = props => {
                         id='roleSelections'
                         name='roles'
                         value={user.roles}>
+
+                           
                             
                             <option value='Software'>Software Developer
                             </option>
