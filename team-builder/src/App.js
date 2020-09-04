@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Form from "./Form"
 
 import './App.css';
 
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1>Team Member List</h1>
+      <Form teamMembers={teamMembers} setTeamMembers={setTeamMembers} />
       
     </div>
   );
