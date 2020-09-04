@@ -24,7 +24,7 @@ const Form = props => {
 
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <h3>Employee Name is {user.name}</h3>
             <h3>The Employee Email is{user.email}</h3>
             <h3>The Role is {user.role}</h3>
@@ -79,6 +79,7 @@ const Form = props => {
                         </option>
                     </select>
             </div>
+                <button>Add Employee</button>
         </form>
     )
 }
