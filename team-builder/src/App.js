@@ -1,7 +1,6 @@
-import React , {useState, useEffect}from 'react';
-import logo from './logo.svg';
+import React , {useState} from 'react';
 import './App.css';
-import Form from './Form';
+
 
 const App = () => {
 
@@ -12,28 +11,55 @@ const App = () => {
         Email:"",
         Role:""
     });
+
+    const changeHandler = (e) => {
+      console.log (e.target.value);
+      console.log("member" , member);
+      setMember({
+        ...member,
+        [e.target.name]: e.target.value
+      });
+    };
+
+    const submitForm = (e) => {
+      e.preventDefault();
+      props.addNewMember(member);
+      setMember({
+        Name:"",
+        Email:"",
+        Role:""
+      });
+    };
 }
   
 
  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form onSubmit = {submitForm}>
+      <label htmlFor ="name">Name</label>
+      <input 
+      type = "text"
+      name = "title"
+      value = {member.title}
+      onChange = {changeHandler}
+    />
+  <label htmlFor = "email">Email</label>
+  <input
+  type = "email"
+  name = "email"
+  value = {member.email}
+  onChange = {changeHandler}
+  />
+<label htmlFor = "role">Role</label>
+<input 
+type = "textarea"
+name = "role"
+value = {member.role}
+/>
+
+<button type ="submit">Add New Member</button>
+</form>
   );
-}
+};
 
 export default App;
