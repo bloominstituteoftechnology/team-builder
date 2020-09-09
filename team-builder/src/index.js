@@ -19,7 +19,24 @@ function Form () {
     Email:"kendra939@gmail.com",
     Role:"react web developer"
   
+  },
+  {
+    id:2,
+    Name:"Lexie J",
+    Email:"jiang123@gmail.com",
+    Role:"Lambda TL"
+  
+  },
+  {
+    id:3,
+    Name:"Brandon",
+    Email:"brandon4273@gmail.com",
+    Role:"Lambda TL "
+  
   }
+
+
+
 ]);
 const addNewMember = (formData) => {
   const newMember = {
