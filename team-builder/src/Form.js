@@ -1,20 +1,61 @@
-import React from 'react';
+import React , {useState} from 'react';
+
+
 
 const MemberForm = (props) => {
     console.log("MemberForm props:" , props);
+    const [member , setMember] = useState ({
+        Name:"",
+        Email:"",
+        Role:""
+    });
 
-    return (
-        <div className = "member-list">
-            {props.member.map((member) =>{
-                <div className = "member" key = {member.id}>
-                    <h2>{member.name}</h2>
-                    <p>{member.email}</p>
-                    <p>{member.role}</p>
-                </div>
+    const changeHandler = (e) => {
+      console.log (e.target.value);
+      console.log("member" , member);
+      setMember({
+        ...member,
+        [e.target.name]: e.target.value
+      });
+    };
 
-            })}
-        </div>
-    )
+    const submitForm = (e) => {
+      e.preventDefault();
+      props.addNewMember(member);
+      setMember({
+        Name:"",
+        Email:"",
+        Role:""
+      });
+    
 };
+ 
+  return (
+    <form onSubmit = {submitForm}>
+      <label htmlFor ="name">Name</label>
+      <input 
+      type = "text"
+      name = "title"
+      value = {member.title}
+      onChange = {changeHandler}
+    />
+  <label htmlFor = "email">Email</label>
+  <input
+  type = "email"
+  name = "email"
+  value = {member.email}
+  onChange = {changeHandler}
+  />
+<label htmlFor = "role">Role</label>
+<input 
+type = "textarea"
+name = "role"
+value = {member.role}
+/>
+
+<button type ="submit">Add New Member</button>
+</form>
+  )
+  };
 
 export default MemberForm;
