@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from "./Form"
 
+
 import './App.css';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Team Member List</h1>
+      <h1 style={{color: "white"}}>Team Member List</h1>
       <Form teamMembers={teamMembers} addNewEmployee={addNewEmployee}  />
       
     </div>

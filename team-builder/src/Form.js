@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 const Form = props => {
     //States
     const [user, setUser] = useState({
@@ -26,10 +27,10 @@ const Form = props => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{display: "flex", flexFlow: "column", backgroundColor: "white"}}>
 
-            <div className="employee-name">
-                <label htmlFor= 'nameInput'>Name: </label>
+            <div className="employee-name" style={{marginTop: "5%"}}>
+                <label htmlFor= 'nameInput'style={{padding: "1%"}}>Name: </label>
                     <input
                         onChange={handlerUpdate}
                         placeholder= 'Name'
@@ -40,8 +41,8 @@ const Form = props => {
                     />
             </div>
 
-            <div className="employee-email">
-                <label hrmlFor='emailInput'>Email: </label>
+            <div className="employee-email" style={{marginTop: "2%"}}>
+                <label htmlFor='emailInput' style={{padding: "1%"}}>Email: </label>
                     <input 
                         onChange={handlerUpdate}
                         placeholder= 'Email'
@@ -52,8 +53,8 @@ const Form = props => {
                     />
             </div>
 
-            <div className="employee-roles">
-                <label htmlFor='roleSelections'>Roles: </label>
+            <div className="employee-roles" style={{marginRight: "1%", marginTop: "2%" }}> 
+                <label htmlFor='roleSelections'style={{padding:"1%"}}>Roles:</label>
                     <select
                         onChange={handlerUpdate}
                         id='roleSelections'
@@ -62,31 +63,31 @@ const Form = props => {
 
                            
                             
-                            <option value='Software'>Software Developer
+                            <option value="Software Developer">Software Developer
                             </option>
 
-                            <option value='Claymation Animator'>Claymation Animator
+                            <option value="Claymation Animator">Claymation Animator
                             </option>
 
-                            <option value='UX Designer'>UX Designer
+                            <option value="Ux Designer">UX Designer
                             </option>
 
-                            <option value='Frontend Developer'>Frontend Developer
+                            <option value="Frontend Developer">Frontend Developer
                             </option>
 
-                            <option value='Special Effects Artist'>Special Effects Artist
+                            <option value="Special Effects Artist">Special Effects Artist
                             </option>
 
-                            <option value='Cat Cafe Associate'>Cat Cafe Associate
+                            <option value="Cat Cafe Associate">Cat Cafe Associate
                             </option>
 
-                            <option value='Matcha Tea Expert'>Matcha team Expert
+                            <option value="Matcha Team Expert">Matcha Team Expert
                             </option>
                     </select>
             </div>
 
           
-                <button type='submit'>Add Employee</button>
+                <button type="submit" onSubmit={handleSubmit} style={{backgroundColor: "#e63946", color: "white", width: "125px", padding: "1%", marginLeft: "40%", marginTop: "5%"}}>Add Employee</button>
         </form>
     )
 }
