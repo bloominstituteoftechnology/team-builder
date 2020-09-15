@@ -8,14 +8,14 @@ const Data = [
         email: 'thats_what_she_said@dundermifflin.com'
     },
     {
-        name: 'Dwight Shrut',
+        name: 'Dwight k. Shrute',
         role: 'Assistant to the regional manager',
         email: 'beetsbearsbattlestargalactica@beets.org'
     },
     {
         name: 'Skeletor',
         role: 'Overlord of Evil',
-        email: 'notnice@castlegreyskull.com'
+        email: 'notnice@castlegreyskull.org'
     },
     {
         name: 'Battle Cat',

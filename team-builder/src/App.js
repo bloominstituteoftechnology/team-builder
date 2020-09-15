@@ -10,7 +10,7 @@ function App() {
 
     const [teamMembers, setTeamMembers] = useState(Data)
 
-    const newTeam = (teams) => {
+    const ourTeam = (teams) => {
 
       const newMember = {
 
@@ -34,12 +34,12 @@ function App() {
         </div>
 
         <div className="Forms">
-        <h1> Want to join our rad team?</h1>
-        <Forms newTeam ={newTeam}/>
+        <h2> Want to be a part of our rad team?</h2>
+        <Forms newTeam ={ourTeam}/>
         </div>
 
     </div>
-    
+
   );
 }
 

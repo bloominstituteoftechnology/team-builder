@@ -1,5 +1,4 @@
 import React from 'react';
-// import Data from "./Data"
 
 
 const Team = props => {
@@ -11,7 +10,7 @@ const Team = props => {
 
                 <div>
 
-                    <h2> Name: {person.name} </h2>
+                    <h3> Name: {person.name} </h3>
 
                     <ul>
 
