@@ -17,7 +17,7 @@ const initialFormValues = {
 };
 
 function SimpleForm() {
-  const [team, setTeam] = useState([]);
+  const [team, setTeam] = useState(teamList);
 
   const [formValues, setFormValues] = useState(initialFormValues);
 
@@ -39,6 +39,29 @@ function SimpleForm() {
   return (
     <div className="App">
       <h2>Hello World</h2>
+      {team.map((member, idx) => {
+        return (
+          <div key={idx}>
+            {member.name} is a {member.role}
+          </div>
+        );
+      })}
+
+      <form onSubmit={submit}>
+        <input
+          name="name"
+          type="text"
+          value={formValues.name}
+          onChange={change}
+        />
+        <input
+          name="role"
+          type="text"
+          value={formValues.role}
+          onChange={change}
+        />
+        <button>submit</button>
+      </form>
     </div>
   );
 }
