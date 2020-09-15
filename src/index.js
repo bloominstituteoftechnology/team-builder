@@ -32,13 +32,21 @@ function SimpleForm() {
       email: formValues.email.trim(),
       role: formValues.role,
     };
+    // if (
+    //   !newTeamMember.username ||
+    //   !newTeamMember.email ||
+    //   !newTeamMember.role
+    // ) {
+    //   return;
+    // }
+    evt.preventDefault();
     setTeam([...team, newTeamMember]);
     setFormValues(initialFormValues);
   };
 
   return (
     <div className="App">
-      <h2>Hello World</h2>
+      <h2>Awesome Team Members</h2>
       {team.map((member, idx) => {
         return (
           <div key={idx}>
@@ -48,19 +56,49 @@ function SimpleForm() {
       })}
 
       <form onSubmit={submit}>
-        <input
-          name="name"
-          type="text"
-          value={formValues.name}
-          onChange={change}
-        />
-        <input
-          name="role"
-          type="text"
-          value={formValues.role}
-          onChange={change}
-        />
-        <button>submit</button>
+        <label>
+          Name
+          <input
+            name="name"
+            type="text"
+            value={formValues.name}
+            placeholder="enter a name"
+            onChange={change}
+          />
+        </label>
+
+        <label>
+          Role
+          <select name="role" value={formValues.role} onChange={change}>
+            <option value="">select Role</option>
+            <option value="instructor">Instructor</option>
+            <option value="student">Student</option>
+            <option value="tl">Team Lead </option>
+            <option value="be">Back End </option>
+            <option value="fe">Front End </option>
+            <option value="pm">Project manager </option>
+          </select>
+        </label>
+        <label>
+          Email
+          <input
+            type="email"
+            name="email"
+            onChange={change}
+            value={formValues.email}
+            placeholder="type an email"
+            maxLength="30"
+          />
+        </label>
+        <div className="submit">
+          <button
+          // disabled={
+          //   !formValues.email || !formValues.username || !formValues.role
+          // }
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
@@ -68,7 +106,7 @@ function SimpleForm() {
 
 ReactDOM.render(
   <>
-    <SimpleForm />{" "}
+    <SimpleForm />
   </>,
   document.getElementById("root")
 );
