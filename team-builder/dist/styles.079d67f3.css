@@ -24,7 +24,7 @@ h3,
 h4 {
   display: flex;
   justify-content: center;
-  color: white;
+  color: #39FF14;
 }
 h1 {
   font-size: 1.5rem;
@@ -48,12 +48,13 @@ select {
   border-radius: 5px;
 }
 button {
-  color: crimson;
-  background-color: white;
-  border: 1px solid crimson;
+  color: #39FF14;
+  background-color: #171B1C;
+  border: 1px solid #39FF14;
   height: 1.5rem;
   width: 150px;
   margin: 8px 8px 8px 0;
+  border-radius: 5px;
 }
 button:disabled {
   cursor: not-allowed;
