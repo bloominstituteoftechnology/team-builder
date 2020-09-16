@@ -9,6 +9,7 @@ const initialFormValues = {
   email: "",
   role: ""
 };
+const [formValues, setFormValues] = useState(initialFormValues)
 
 export default function App() {
   const [members, setMembers] = useState([]);
