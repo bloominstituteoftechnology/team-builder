@@ -5,10 +5,8 @@ import axios from "../axios";
 import './App.css';
 
 const initialFormValues = {
-  ///// TEXT INPUTS /////
   name: "",
   email: "",
-  ///// DROPDOWN /////
   role: ""
 };
 
