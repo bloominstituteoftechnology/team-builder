@@ -20,7 +20,7 @@ In this project you'll build an app that will keep track of memebers of a team. 
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
-### Task 2a: Minimum Viable Product
+### Task 2: Minimum Viable Product
 
 - [ ] Render a list of team members from state.
 - [ ] Build a form to add a new member to the list of members.
@@ -39,12 +39,6 @@ In this project you'll build an app that will keep track of memebers of a team. 
 - [ ] Render your `Form` component in `App`. The `App` component should hand down through props any callback(s) needed for `Form` to do its job (adding new members to your team members state on submit).
 
 Now you are finished with MVP! Move on to the stretch goals at the bottom. The first is to add the functionality to edit members. As this is a very complicated process, steps have been included here to help you through that.
-
-### Task 2b: Exit Ticket
-
-Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/sWqBFjaYTdNm4wbjZ/qSjimc6Js9MnbZ).
-
-The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
 
 ### Task 3: Add the edit functionality (STRETCH)
 
@@ -90,4 +84,3 @@ After finishing your required elements, you can push your work further. These go
 ## Submission Format
 
 - [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
-- [ ] Fill out your module retrospective form [here](https://forms.lambdaschool.com/module-retrospective) with a link to your PR
