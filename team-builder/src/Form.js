@@ -17,7 +17,7 @@ const Form = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label htmlFor="name">
         Name
         <input
           type="text"
@@ -26,10 +26,10 @@ const Form = (props) => {
           id="nameInput"
           value={teamMember.name}
           onChange={handleChange}
-        ></input>
+        />
       </label>
       <br></br>
-      <label>
+      <label htmlFor="email">
         Email
         <input
           type="text"
@@ -41,12 +41,13 @@ const Form = (props) => {
         ></input>
       </label>
       <br></br>
-      <label htmlFor="selectRole">
+      <label htmlFor="role">
         Role
         <select id="selectRole" name="Role" onChange={handleChange}>
           <option></option>
           <option value="Front-End Developer">Front-End Developer</option>
           <option value="Mobile Developer">Mobile Developer</option>
+          <option value="DataBase Administrator">DataBase Administrator</option>
           <option value="DataBase Administrator">DataBase Administrator</option>
           <option value="Software Developer">Software Developer</option>
           <option value="Data Science">Data Science</option>

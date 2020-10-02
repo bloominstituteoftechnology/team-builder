@@ -16,7 +16,7 @@ function App() {
         <div>
           {addedMember.map(member=>(
             <div key={member.id}>
-              <p>Name: {member.Namey}</p>
+              <p>Name: {member.Name}</p>
               <p>Email: {member.Email}</p>
               <p>Role: {member.Role}</p>
             </div>
