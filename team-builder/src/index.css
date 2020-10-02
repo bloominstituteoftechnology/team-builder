@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  /* TODO Row for smaller media breakpoints*/
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content: space-evenly;
 }
 
 code {
