@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+// import { Keyboard, TextInput, StyleSheet } from "react-native";
 // import logo from '../logo.svg';
 import '../App.css';
 import '../index.css';
@@ -16,6 +17,7 @@ import './body.css';
 
 const Body = (props) => {
   const [editing,setEditing] = useState(false);
+  const [changing,setChanging] = useState('');
   const handleDelete = (index) => {
     props.deleteNote(index);
   };
@@ -29,17 +31,22 @@ const Body = (props) => {
 
   };
   const handleEditing = (event,index) =>{
+
+    const news = event.target.value;    
     if(editing === true){
-     setEditing(false);
-     const news = event.target.value;
+    //  setEditing(false);
      console.log(news);
      console.log(props.notes[index].name);
-    props.editNote(index,news);
+    
+     props.editNote(index,news);
     //  props.editNote(index);
-    }else
-       setEditing(true);
- 
+    }
+      //  setEditing(true);
    };
+
+   useEffect(() =>{
+    
+   },[editing])
   return (
     <div className="note-list">
       {props.notes.map((note, index) => (
