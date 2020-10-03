@@ -27,13 +27,15 @@ function App() {
         "The amazing Homerun baron"
     }
   ]);
-  const editNote = (index) => {
+  const editNote = (index,newname) => {
     console.log(notes[index].id);
     const editNote = {
       id: Date.now(),
       number: '313131',
-      name: 'fudgregts',
+      name: newname,
     }
+
+    // Add the edited player
     const theclan = [...notes];
     theclan.splice(index,1);
     theclan[index] = editNote;
