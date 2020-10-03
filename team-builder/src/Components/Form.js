@@ -9,6 +9,7 @@ function Form(props) {
     const handleSubmit = event => {
         event.preventDefault();
         props.newData(data);
+        setData({name: '', email: '', role: ''});
       };
 
     const handleChange = event => {
@@ -33,7 +34,7 @@ function Form(props) {
           <input
             type="text"
             name="email"
-            alue={data.email}
+            value={data.email}
             onChange={event => handleChange(event)}
           />
         </label>
@@ -42,7 +43,7 @@ function Form(props) {
           <input
             type="text"
             name="role"
-            alue={data.role}
+            value={data.role}
             onChange={event => handleChange(event)}
           />
         </label>
