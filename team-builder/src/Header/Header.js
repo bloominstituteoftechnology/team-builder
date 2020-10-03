@@ -17,10 +17,10 @@ function Header() {
   return (
     <div className="App">
       <header className="App-header">
-        <img class='backgrdImg' src ={cardinalsjpg} />
-        <img class='backgrdImg' src ={cardinalsjpg2} />
+        <img className='backgrdImg' src ={cardinalsjpg} />
+        <img className='backgrdImg' src ={cardinalsjpg2} />
         <i  className="App-logo" alt="logo" >{coffe}{flap}</i>
-        <i class="fas fa-coffee">{shoeprint}{cof}</i>
+        <i className="fas fa-coffee">{shoeprint}{cof}</i>
         <p>
           Add <code>++ your Team Mates</code> to the list!
         

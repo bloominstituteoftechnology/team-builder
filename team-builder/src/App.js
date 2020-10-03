@@ -27,6 +27,18 @@ function App() {
         "The amazing Homerun baron"
     }
   ]);
+  const editNote = (index) => {
+    console.log(notes[index].id);
+    const editNote = {
+      id: Date.now(),
+      number: '313131',
+      name: 'fudgregts',
+    }
+    const theclan = [...notes];
+    theclan.splice(index,1);
+    theclan[index] = editNote;
+    setNotes(theclan);
+  }
 
   const deleteNote = (index) => {
     const originalNotes = [...notes];
@@ -37,8 +49,8 @@ function App() {
   const addNewNote = (note) => {
     const newNote = {
       id: Date.now(),
+      number: note.number,
       name: note.name,
-      number: note.number
     };
 
     setNotes([...notes, newNote]);
@@ -49,7 +61,7 @@ function App() {
       <Header />
       <h1>Cardinals Team</h1>
       <Form addNewNote={addNewNote} />
-      <Body notes={notes} deleteNote={deleteNote} />
+      <Body notes={notes} editNote={editNote} deleteNote={deleteNote} />
     </div>
   );
 }
