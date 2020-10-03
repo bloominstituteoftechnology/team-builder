@@ -13,11 +13,19 @@ import './body.css';
 // const coffe = <FontAwesomeIcon icon={faCoins} />;
 // const flap = <FontAwesomeIcon icon={faFlag} />;
 // const cof = <FontAwesomeIcon icon={faCoffee} />;
-
+import Sharedtextarea from '../Textarea/Sharedtextarea';
 
 const Body = (props) => {
   const [editing,setEditing] = useState(false);
   const [changing,setChanging] = useState('');
+  const [changes,setChanges] = useState({id:'',number:'',name:''});
+
+// Passed up prop from textarea child
+const editChange = (data) => {
+
+}
+
+
   const handleDelete = (index) => {
     props.deleteNote(index);
   };
@@ -31,34 +39,40 @@ const Body = (props) => {
 
   };
   const handleEditing = (event,index) =>{
-
+    const curChan = props.notes[index].name+changing;
     const news = event.target.value;    
-    if(editing === true){
+    setChanging(event.target.value);
+
+    const editNote = {
+      id: Date.now(),
+      number: props.notes[index].number,
+      name: curChan,
+    }
+    setChanges(editNote);
     //  setEditing(false);
-     console.log(news);
+     console.log(changing);
      console.log(props.notes[index].name);
     
-     props.editNote(index,news);
+     props.editNote(index,changes);
     //  props.editNote(index);
-    }
+    
       //  setEditing(true);
    };
 
-   useEffect(() =>{
-    
-   },[editing])
+ 
   return (
     <div className="note-list">
       {props.notes.map((note, index) => (
-        editing ? <div className="note" key={note.id}>
-        <h2>{note.number}</h2>
-        <p>{note.name}</p>
-        <textarea type="text" onChange={ event => {
+        editing ? 
+          <div className="note" key={note.id}>
+        <input value={note.number} contentEditable={true} />
+        <textarea contentEditable={true} type="text" onChange={ event => {
           handleEditing(event,index);
         }}value={note.name} />
         <button onClick={(e) => handleEdit(index)}>Edit</button>
         <button onClick={(event) => handleDelete(index)}>Delete</button>
-      </div> :<div className="note" key={note.id}>
+      </div> 
+        :<div className="note" key={note.id}>
           <h2>{note.number}</h2>
           <p>{note.name}</p>
           <button onClick={(e) => handleEdit(index)}>Edit</button>

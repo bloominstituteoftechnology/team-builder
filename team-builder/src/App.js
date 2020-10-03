@@ -29,16 +29,12 @@ function App() {
   ]);
   const editNote = (index,newname) => {
     console.log(notes[index].id);
-    const editNote = {
-      id: Date.now(),
-      number: '313131',
-      name: newname,
-    }
+    
 
     // Add the edited player
     const theclan = [...notes];
     theclan.splice(index,1);
-    theclan[index] = editNote;
+    theclan[index] = newname;
     setNotes(theclan);
   }
 
