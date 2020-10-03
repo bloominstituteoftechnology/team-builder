@@ -13,12 +13,25 @@ import './body.css';
 // const flap = <FontAwesomeIcon icon={faFlag} />;
 // const cof = <FontAwesomeIcon icon={faCoffee} />;
 
-function Body() {
+
+const Body = (props) => {
+  const handleDelete = (index) => {
+    props.deleteNote(index);
+  };
   return (
-    <div className=" App TeamMates">
-      box and others
+    <div className="note-list">
+      {props.notes.map((note, index) => (
+        <div className="note" key={note.id}>
+          <h2>{note.number}</h2>
+          <p>{note.name}</p>
+          <button onClick={(event) => handleDelete(index)}>Delete</button>
+        </div>
+      ))}
     </div>
   );
-}
+};
+
+
+
 
 export default Body;
