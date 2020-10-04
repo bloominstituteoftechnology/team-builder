@@ -28,12 +28,12 @@ function App() {
     }
   ]);
   const editNote = (index,newname) => {
-    console.log(notes[index].id);
+    // console.log(notes[index].id);
     
 
     // Add the edited player
     const theclan = [...notes];
-    theclan.splice(index,1);
+    // theclan.splice(index,1);
     theclan[index] = newname;
     setNotes(theclan);
   }

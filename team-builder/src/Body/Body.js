@@ -38,39 +38,58 @@ const editChange = (data) => {
       setEditing(false);
 
   };
+  const handleChanges = (event) => {
+    
+  };
+
+
   const handleEditing = (event,index) =>{
-    const curChan = props.notes[index].name+changing;
+    // const curChan = props.notes[index].name+changing;
     const news = event.target.value;    
     setChanging(event.target.value);
 
-    const editNote = {
-      id: Date.now(),
-      number: props.notes[index].number,
-      name: curChan,
-    }
-    setChanges(editNote);
-    //  setEditing(false);
-     console.log(changing);
-     console.log(props.notes[index].name);
-    
+    // const editNote = {
+    //   id: props.notes[index].id,
+    //   number: props.notes[index].number,
+    //   name: changing,
+    // }
+    // setChanges(editNote);
+    // //  setEditing(false);
+    //  console.log(changing);
+    //  console.log(changes[index].name);
+     setChanges({ ...changes, [event.target.name]: event.target.value });
      props.editNote(index,changes);
     //  props.editNote(index);
     
       //  setEditing(true);
    };
 
+   const editNewNote = (note) => {
+    const newNote = {
+      id: Date.now(),
+      number: note.number,
+      name: note.name,
+    };
+
+    setChanges([...changes, newNote]);
+  };
+
  
   return (
     <div className="note-list">
       {props.notes.map((note, index) => (
         editing ? 
-          <div className="note" key={note.id}>
-        <input value={note.number} contentEditable={true} />
+          <div className="note" key={changes.id}>
+        {/* <input value={changes.number} contentEditable={true} />
         <textarea contentEditable={true} type="text" onChange={ event => {
           handleEditing(event,index);
-        }}value={note.name} />
-        <button onClick={(e) => handleEdit(index)}>Edit</button>
-        <button onClick={(event) => handleDelete(index)}>Delete</button>
+        }}value={changes.name} />
+        <button onClick={e => handleEdit(index)}>Edit</button>
+        <button onClick={(event) => handleDelete(index)}>Delete</button> */
+        
+        
+        }
+        <Sharedtextarea  editNewNote={editNewNote} handleEditing={handleEditing}/>
       </div> 
         :<div className="note" key={note.id}>
           <h2>{note.number}</h2>
