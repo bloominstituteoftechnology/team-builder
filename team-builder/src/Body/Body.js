@@ -16,6 +16,7 @@ import './body.css';
 import Sharedtextarea from '../Textarea/Sharedtextarea';
 
 const Body = (props) => {
+  const [indx,setIndx] = useState(0);
   const [editing,setEditing] = useState(false);
   const [changing,setChanging] = useState('');
   const [changes,setChanges] = useState({
@@ -91,9 +92,10 @@ const editChange = (data) => {
         }}value={changes.name} />
         <button onClick={e => handleEdit(index)}>Edit</button>
         <button onClick={(event) => handleDelete(index)}>Delete</button> */
-        
+        // setIndx(index)
         
         }
+        
         <Sharedtextarea  editNewNote={editNewNote} handleEditing={handleEditing}/>
       </div> 
         :<div className="note" key={note.id}>
