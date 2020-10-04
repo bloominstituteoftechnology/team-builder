@@ -23,9 +23,11 @@ import '../Body/body.css';
 //   }
 // }
 const Sharedtextarea = (props,index) => {
-  const [note, setNote] = useState({id:"", number: "", name: "" });
-  const [indx,setIndx] = useState(index);
+  const [note, setNote] = useState({id:props.id, number: props.number, name: props.name });
+  const [indx,setIndx] = useState(0);
   const handleChanges = (event) => {
+    console.log(props);
+    setIndx(index);
     setNote({ ...note, [event.target.name]: event.target.value });
     props.handleEditing(event,indx);
   };
@@ -38,25 +40,33 @@ const Sharedtextarea = (props,index) => {
   };
 
   return (
-    <form onSubmit={submitForm}>
+    <div key={props.id}>
+      <form onSubmit={submitForm}>
       <label htmlFor="note">Player's Team Number</label>
+      {/*
+Warning: A component is changing an uncontrolled input of type text to be 
+controlled. Input elements should not switch from uncontrolled to controlled
+ (or vice versa). Decide between using a controlled or uncontrolled input 
+ element for the lifetime of the component. 
+ More info: https://fb.me/react-controlled-components
+      */}
       <input
         id="number"
         type="text"
-        placeholder="Enter Team Number"
+        placeholder={props.number}
         onChange={handleChanges}
         value={note.number}
-        name="number"
+         name="number"
       />
       <label htmlFor="note">Player's Name</label>
       <textarea
-      contentEditable={true}
+      // contentEditable={true}
        type="text"
         id="note"
         placeholder={props.name}
         value={note.name}
         onChange={handleChanges}
-        name="name"
+         name="name"
       />
       <button type="submit">Edit Player</button>
       <button onClick={(event) => props.handleDelete(indx)}>
@@ -64,6 +74,7 @@ const Sharedtextarea = (props,index) => {
       </button>
     
     </form>
+    </div>
   );
 };
 

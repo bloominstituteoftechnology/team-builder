@@ -18,7 +18,8 @@ import Sharedtextarea from '../Textarea/Sharedtextarea';
 const Body = (props) => {
   const [editing,setEditing] = useState(false);
   const [changing,setChanging] = useState('');
-  const [changes,setChanges] = useState({id:'',number:'',name:''});
+  const [changes,setChanges] = useState({
+    id: props.id,number: props.number, name:props.name});
 
 // Passed up prop from textarea child
 const editChange = (data) => {
@@ -45,7 +46,8 @@ const editChange = (data) => {
 
   const handleEditing = (event,index) =>{
     // const curChan = props.notes[index].name+changing;
-    const news = event.target.value;    
+    const news = event.target.value;
+    console.log(event.target.value) ;   
     setChanging(event.target.value);
 
     // const editNote = {
@@ -71,7 +73,10 @@ const editChange = (data) => {
       name: note.name,
     };
 
-    setChanges([...changes, newNote]);
+    
+      setChanges(newNote);
+      
+    
   };
 
  
@@ -79,7 +84,7 @@ const editChange = (data) => {
     <div className="note-list">
       {props.notes.map((note, index) => (
         editing ? 
-          <div className="note" key={changes.id}>
+          <div className="note" key={index}>
         {/* <input value={changes.number} contentEditable={true} />
         <textarea contentEditable={true} type="text" onChange={ event => {
           handleEditing(event,index);
