@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import {team}  from './Team';
+import People from './Components/People';
 import './App.css';
 
 function App() {
@@ -9,7 +10,7 @@ console.log(data);
 
   return (
     <div>
-      {/* <div>{data}</div> */}
+      <People people={data}/>
     </div>
   );
 }

@@ -1,19 +1,19 @@
 
 
  export const team = [{
-      Name: "Joe",
-      Birthday: "01/01/01",
-      Job:"Plumber"
+      name: "Joe",
+      email: "fakeemail@yahoo.com",
+      role:"Plumber"
     },
     {
-        Name: "Cam",
-        Birthday: "07/27/94",
-        Job:"Manager"
+        name: "Cam",
+        email: "fakeemail@gmail.com",
+        role:"Manager"
       },
       {
-        Name: "Austin",
-        Birthday: "12/07/95",
-        Job:"Estimator"
+        name: "Austin",
+        email: "fakeemail@hotmail.com",
+        role:"Estimator"
       }];
 
 
