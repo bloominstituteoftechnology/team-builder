@@ -7,7 +7,7 @@ const People = (props) =>{
     return(
         <div>
             {props.people.map(person=>{
-            return <Card>
+            return <Card key={Math.random()}>
                 <CardBody>
                 <CardText>Name: {person.name}</CardText>
                 <CardText>Email: {person.email}</CardText>
