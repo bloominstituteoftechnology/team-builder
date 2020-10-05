@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+
 
 const Form = (props) => {
     const [person,setPerson] = useState({name:'',email:'',role:''})
@@ -14,6 +15,7 @@ const Form = (props) => {
     } 
 
     return(
+        <div className="center">
         <form onSubmit={submitForm}>
             <label htmlFor="name">Name</label>
             <input 
@@ -43,8 +45,9 @@ const Form = (props) => {
                 value={person.role}
                 name="role"
             /><br/>
-            <button type="submit">Add Team Member</button>    
+            <button type="submit">Add New Person</button>    
         </form>
+        </div>
     )
 }
 

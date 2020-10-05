@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.card{
+  border: solid 2px black;
+  border-radius: 25px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 2%;
+  width: 75%;
+  background-color: slategray;
+
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2%;
+
+}
+form{
+  border: solid 2px black;
+  width: 30%;
+}
+
+label{
+  margin: 2%;
+  text-align: left;
+}
+
+input{
+  padding: 1%;
+  width: 40%;
+  margin: 0 auto;
+
+}
+button{
+  margin: 0 auto;
+
+}

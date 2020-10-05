@@ -1,5 +1,7 @@
 import React from 'react';
-import {Card,CardBody,CardText} from 'reactstrap'
+import {Card,CardBody,CardText} from 'reactstrap';
+
+
 
 
 const People = (props) =>{
