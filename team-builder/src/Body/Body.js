@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // import { Keyboard, TextInput, StyleSheet } from "react-native";
 // import logo from '../logo.svg';
+import axios from 'axios';
+import { useParams } from "react-router-dom";
 import '../App.css';
 import '../index.css';
 import './body.css';
@@ -14,13 +16,36 @@ import './body.css';
 // const flap = <FontAwesomeIcon icon={faFlag} />;
 // const cof = <FontAwesomeIcon icon={faCoffee} />;
 import Sharedtextarea from '../Textarea/Sharedtextarea';
-
+const {pEdit} = useParams();
 const Body = (props) => {
+ 
   const [indx,setIndx] = useState(0);
   const [editing,setEditing] = useState(false);
   const [changing,setChanging] = useState('');
+  if(indx == undefined){
+    setIndx(0);
+  }
   const [changes,setChanges] = useState({
-    id: props.id,number: props.number, name:props.name});
+    id: props.notes.id,number:
+     props.notes.number, name:props.notes.name});
+
+
+     useEffect(() => {
+
+      const eId = pEdit;
+        console.log(eId);
+        axios
+          .get(`http://localhost:3000/edit/${eId}`) // Study this endpoint with Postman
+          .then(response => {
+            console.log(response);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+        // This effect should run every time time
+        // the `id` changes... How could we do this?
+      }, [pEdit]);
+
 
 // Passed up prop from textarea child
 const editChange = (data) => {
@@ -48,6 +73,7 @@ const editChange = (data) => {
   const handleEditing = (event,index) =>{
     // const curChan = props.notes[index].name+changing;
     const news = event.target.value;
+    console.log(index);
     console.log(event.target.value) ;   
     setChanging(event.target.value);
 
@@ -67,11 +93,13 @@ const editChange = (data) => {
       //  setEditing(true);
    };
 
-   const editNewNote = (note) => {
+   const editNewNote = (changes,index) => {
+     console.log('num'+index);
+     setIndx(index);
     const newNote = {
       id: Date.now(),
-      number: note.number,
-      name: note.name,
+      number: changes.number,
+      name: changes.name,
     };
 
     
@@ -84,6 +112,7 @@ const editChange = (data) => {
   return (
     <div className="note-list">
       {props.notes.map((note, index) => (
+      
         editing ? 
           <div className="note" key={index}>
         {/* <input value={changes.number} contentEditable={true} />
@@ -96,9 +125,9 @@ const editChange = (data) => {
         
         }
         
-        <Sharedtextarea  editNewNote={editNewNote} handleEditing={handleEditing}/>
+        <Sharedtextarea moreNotes={props.notes} editNewNote={editNewNote} handleEditing={handleEditing}/>
       </div> 
-        :<div className="note" key={note.id}>
+        :<div className="note" key={note}>
           <h2>{note.number}</h2>
           <p>{note.name}</p>
           <button onClick={(e) => handleEdit(index)}>Edit</button>

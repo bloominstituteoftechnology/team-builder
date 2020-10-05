@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import '../App.css';
 import '../index.css';
 import '../Body/body.css';
@@ -25,8 +26,10 @@ import '../Body/body.css';
 const Sharedtextarea = (props,index) => {
   const [note, setNote] = useState({id:props.id, number: props.number, name: props.name });
   const [indx,setIndx] = useState(0);
+  const moreNotes = props;
+  // console.log('this'+index)
   const handleChanges = (event) => {
-    console.log(props);
+    console.log(index);
     setIndx(index);
     setNote({ ...note, [event.target.name]: event.target.value });
     props.handleEditing(event,indx);
@@ -51,11 +54,11 @@ controlled. Input elements should not switch from uncontrolled to controlled
  More info: https://fb.me/react-controlled-components
       */}
       <input
-        id="number"
+        id="note"
         type="text"
-        placeholder={props.number}
+        placeholder={moreNotes.number}
         onChange={handleChanges}
-        value={note.number}
+        value={moreNotes.number}
          name="number"
       />
       <label htmlFor="note">Player's Name</label>
@@ -63,12 +66,12 @@ controlled. Input elements should not switch from uncontrolled to controlled
       // contentEditable={true}
        type="text"
         id="note"
-        placeholder={props.name}
-        value={note.name}
+        placeholder={moreNotes.name}
+        value={moreNotes.name}
         onChange={handleChanges}
          name="name"
       />
-      <button type="submit">Edit Player</button>
+      <Link to="/edit"><button type="submit">Edit Player</button></Link>
       <button onClick={(event) => props.handleDelete(indx)}>
         Delete Player
       </button>

@@ -4,6 +4,7 @@ import './App.css';
 import './index.css';
 import  Header  from './Header/Header';
 import Body from './Body/Body';
+import {BrowserRouter as Router, Route, Link, Switch, useParams} from 'react-router-dom';
 
 import Form from './Form';
 // function App() {
@@ -55,12 +56,19 @@ function App() {
   };
 
   return (
-    <div className="App">
+   <Router>
+      <div className="App">
       <Header />
       <h1>Cardinals Team</h1>
+     <Switch>
+     <Route path="/edit/:pEdit">
       <Form addNewNote={addNewNote} />
       <Body notes={notes} editNote={editNote} deleteNote={deleteNote} />
+    
+      </Route>
+     </Switch>
     </div>
+   </Router>
   );
 }
 
