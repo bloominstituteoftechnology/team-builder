@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import MemberForm from "./MemberForm";
+import MemberForm from "./components/MemberForm";
+import Member from "./components/Member";
 
+// the shape of the state that drives the form
 const initialFormValues = {
   name: '',
   email: '',
@@ -9,9 +11,9 @@ const initialFormValues = {
 };
 
 export default function App() {
-  const [member, setMember] = useState([]);
+  // const [member, setMember] = useState([]);
 
-  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formValues, setFormValues] = useState(initialFormValues); 
 
   const updateForm = (inputName, inputValue) => {
     setFormValues({
@@ -25,16 +27,21 @@ export default function App() {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
       role: formValues.role.trim(),
-    }
-  }
+    };
+
+    if (!newMember.name || !newMember.email || !newMember.role) return;
+
+  };
 
   return (
-    <div className="App">
+    <div className="container">
      <MemberForm 
      values ={formValues}
      update = {updateForm}
      submit = {submitForm}
      />
+
+     <Member />
     </div>
   );
 }

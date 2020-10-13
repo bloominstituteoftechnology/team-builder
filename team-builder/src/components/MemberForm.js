@@ -14,7 +14,7 @@ export default function MemberForm(props){
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form className='form container' onSubmit={onSubmit}>
             <div>
             <label>Name
                 <input 
@@ -46,6 +46,10 @@ export default function MemberForm(props){
                     <option value="full stack web">Full Stack Web Enginieer</option>
                 </select>
             </label>
+
+            <div>
+                <button>Submit</button>
+            </div>
             </div>
         </form>
     )
