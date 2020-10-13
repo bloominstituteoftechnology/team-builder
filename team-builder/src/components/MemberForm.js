@@ -7,6 +7,7 @@ export default function MemberForm(props){
     const onChange = (evt) => {
         const { name, value } = evt.target;
         update(name, value);
+        console.log(name, value)
     };
 
     // don't allow browswer to reload on submit
@@ -25,7 +26,7 @@ export default function MemberForm(props){
                  type="text"
                  name="name"
                  onChange={onChange}
-                 value={values.username}
+                 value={values.name}
                  maxLength="30"
                 />
             </label>
@@ -43,10 +44,10 @@ export default function MemberForm(props){
             <label>Role
                 <select name="role" value={values.role} onChange={onChange}>
                     <option value="">---Select Role---</option>
-                    <option value="front end engineer">Frontend Engineer</option>
-                    <option value="back end engineer">Backend Engineer</option>
-                    <option value="full stack web">Full Stack Web Enginieer</option>
-                    <option value="graphic designer">Graphic Designer</option>
+                    <option value="Front-end Engineer">Front-end Engineer</option>
+                    <option value="Back-end Engineer">Back-end Engineer</option>
+                    <option value="Full Stack Web Developer">Full Stack Web Developer</option>
+                    <option value="Graphic Designer">Graphic Designer</option>
                 </select>
             </label>
 

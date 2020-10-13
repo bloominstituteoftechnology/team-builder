@@ -31,8 +31,10 @@ export default function App() {
 
     if (!newMember.name || !newMember.email || !newMember.role) return;
 
-    setMember(member.concat(newMember));
-
+    // setMember(member.concat(newMember));
+    setMember([...member, newMember]);
+    
+    setFormValues(initialFormValues);
   };
 
   return (
@@ -41,14 +43,14 @@ export default function App() {
       <h1>Memeber Form</h1>
       <div className="App">
       <MemberForm 
-      values ={formValues}
-      update = {updateForm}
-      submit = {submitForm}
+        values ={formValues}
+        update = {updateForm}
+        submit = {submitForm}
       />
 
       {member.map((member) => {
         return <Member key={member.id} details={member}/>
-      })};
+      })}
     </div>
     </div>
   );
