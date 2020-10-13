@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import MemberForm from "./components/MemberForm";
-import Member from "./components/Member";
+import MemberForm from './components/MemberForm';
+import Member from './components/Member';
 
 // the shape of the state that drives the form
 const initialFormValues = {
@@ -11,7 +11,7 @@ const initialFormValues = {
 };
 
 export default function App() {
-  // const [member, setMember] = useState([]);
+  const [member, setMember] = useState([]);
 
   const [formValues, setFormValues] = useState(initialFormValues); 
 
@@ -31,17 +31,25 @@ export default function App() {
 
     if (!newMember.name || !newMember.email || !newMember.role) return;
 
+    setMember(member.concat(newMember));
+
   };
 
   return (
-    <div className="container">
-     <MemberForm 
-     values ={formValues}
-     update = {updateForm}
-     submit = {submitForm}
-     />
+    // inject props into form component
+    <div>
+      <h1>Memeber Form</h1>
+      <div className="App">
+      <MemberForm 
+      values ={formValues}
+      update = {updateForm}
+      submit = {submitForm}
+      />
 
-     <Member />
+      {member.map((member) => {
+        return <Member key={member.id} details={member}/>
+      })};
+    </div>
     </div>
   );
 }

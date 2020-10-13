@@ -8,10 +8,10 @@ export default function Member(props) {
   }
 
   return (
-    <div className=''>
+    <div>
       <h2>{details.name}</h2>
       <p>Email: {details.email}</p>
       <p>Role: {details.role}</p>
     </div>
   )
-};
+}
