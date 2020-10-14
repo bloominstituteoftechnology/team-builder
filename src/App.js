@@ -1,61 +1,83 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, } from 'react';
+import { v4 as uuid } from 'uuid';
 import TeamMemberForm from './TeamMemberForm.js'
 import TeamMember from './TeamMember'
 import './App.css';
-import axios from 'axios';
+
+
+const initialTeamMemberList = [
+  {
+  id: uuid(),
+  username: "Samuel",
+  email: "sam@samuelOden.com",
+  role: "team leader",
+  }
+]
 
 const initialFormValues = {
-  username: "",
-  email: "",
-  role: "",
-};
+  name:"",
+  email:"",
+  role:"",
+}
+
+const fakeAxiosGet = () => {
+  return Promise.resolve({ status: 200, success: true, data: initialTeamMemberList})
+}
+
+const fakeAxiosPost = (url, { name, email, role }) => {
+  const newTeamMember = { id: uuid(), name, email, role }
+  return Promise.resolve({ status: 200, success: true, data: newTeamMember})
+}
 
 export default function App() {
   const [teamMembers, setTeamMembers] = useState([]);
 
   const [formValues, setFormValues] = useState(initialFormValues)
 
-  const updateForm = (inputName, inputValue) => {
-    setFormValues({
-      ...formValues,
-      [inputName]: inputValue,
-    })
+  const updateForm = (name, value) => {
+    setFormValues({...formValues,[name]: value,})
   }
 
   const submitForm = () => {
     let newTeamMember = {
-      username: formValues.username.trim(),
+      name: formValues.name.trim(),
       email: formValues.email.trim(),
       role: formValues.role,
     }
-    if(!newTeamMember.username || !newTeamMember.email || !newTeamMember.role)
+    if(!newTeamMember.name || !newTeamMember.email || !newTeamMember.role)
     return;
-    axios.post("http://localhost:3000", newTeamMember)
-    .then((res) => {
-      setTeamMembers([...teamMembers, res.data])
-      setFormValues(initialFormValues)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
+
+    fakeAxiosPost("fakeapi.com", newTeamMember)
+      .then((res) => {
+        setTeamMembers([...teamMembers, res.data]);
+
+      })
+      .catch((err) => {
+        // debugger;
+        console.log(err);
+      });
+
+        setFormValues(initialFormValues)
+
+    //  d) also on success clear the form
+  };
 
   useEffect(() => {
-    axios.get("http://localhost:3000").then((res) => setTeamMembers(res.data))
-  }, [])
+    fakeAxiosGet("fakeapi.com").then((res) => setTeamMembers(res.data));
+  }, []);
 
-  return (
+   return (
     <div className="container">
-      <h1>Team Member Creator</h1>
+      <h1>Team Member List</h1>
 
       <TeamMemberForm
       values={formValues}
-      udate={updateForm}
+      update={updateForm}
       submit={submitForm}
       />
 
     {teamMembers.map((teamMember) => {
-      return <TeamMember key={TeamMember.id} details={TeamMember}/>
+      return <TeamMember key={teamMember.id} details={teamMember}/>
     })}
     </div>
   );

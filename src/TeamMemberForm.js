@@ -4,11 +4,11 @@ export default function TeamMemberForm(props) {
     const { values, update, submit } = props
 
     const onChange = (evt) => {
-        const { name, value } = evt.target
-        update(name, value)
+        const { name, value } = evt.target;
+        update(name, value);
     }
 
-    const onSubmit = (evt) => {
+     const onSubmit = (evt) => {
         evt.preventDefault()
         submit()
     }
@@ -27,9 +27,9 @@ export default function TeamMemberForm(props) {
               At each keystroke, a change handler fires to change app state. */}
           <input
             type="text"
-            name="username"
+            name="name"
             onChange={onChange}
-            value={values.username}
+            value={values.name}
             placeholder="type a username"
             maxLength="30"
           />
@@ -56,10 +56,10 @@ export default function TeamMemberForm(props) {
           {/* 🔥 STEP 5 - Make dropdown for role. */}
           <select name="role" value={values.role} onChange={onChange}>
             <option value="">---select role---</option>
-            <option value="student">Team Member</option>
-            <option value="instructor">Team Leader</option>
-            <option value="tl">Consultant</option>
-            <option value="tl">Team Assistant Leader</option>
+            <option value="team member">Team Member</option>
+            <option value="team leader">Team Leader</option>
+            <option value="consultant">Consultant</option>
+            <option value="team assistant leader">Team Assistant Leader</option>
           </select>
         </label>
 
