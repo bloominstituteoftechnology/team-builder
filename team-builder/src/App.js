@@ -4,7 +4,7 @@ import Form from "./Form.js"
 
 function App() {
 
-  const [member, setMember] = useState([
+  const [members, setMembers] = useState([
     {
       id: 1,
       name: '',
@@ -16,15 +16,16 @@ function App() {
     const newMember = {
       id: Date.now(),
       name: note.name,
-      jobDescription: ,
+      jobDescription: note.jobDescription,
     }
+    setMembers([...members, newMember])
 
   }
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Form />
+        <Form addNewMember={addNewMember} />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
