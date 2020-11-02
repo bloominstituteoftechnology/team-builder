@@ -1,0 +1,35 @@
+.cardList {
+    padding: 2vh;
+}
+
+.cardList h2 {
+    padding: 0;
+    margin-top: 3vh;
+    font-size: 3.5rem;
+    font-variant: small-caps;
+}
+
+.cardList h3 {
+    margin-top: -3.5vh;
+    color: #f50057;
+    font-size: 2.5rem;
+}
+
+.cardList p {
+    margin-top: -2.5vh;
+    line-height: 170%;
+    font-weight: bold;
+}
+
+.image-div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+    /* background-color: #f50057 */
+    border-bottom: 3px solid #f50057;
+}
+
+#image {
+    margin: 12px;
+}
