@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	background: linear-gradient(90deg, rgba(46, 93, 242, 1) 8%, rgba(209, 0, 255, 1) 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App h1 {
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 4rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+form {
+	width: 50%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 2rem;
+	border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+input,
+textarea {
+	margin-bottom: 1rem;
+	padding: .5rem .5rem;
+	border-radius: 5px;
+	border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form button {
+	width: 30%;
+	margin: 0 auto;
+	color: #fff;
+	font-weight: bold;
+	padding: .5rem .7rem;
+	background: black;
+	border-radius: 5px;
+	border: none;
+}
+
+.card__container {
+	margin: 1rem 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	/* border: 3px solid red; */
+}
+
+.card {
+	width: 40%;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 2rem;
+	margin: 1rem;
+	border-radius: 10px;
 }
