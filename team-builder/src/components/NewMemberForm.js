@@ -50,7 +50,9 @@ const NewMemberForm = (props) => {
         value={member.role}
         onChange={handleChanges}
       />
-      <button type="submit">Add Member</button>
+      <button id="submitBtn" type="submit">
+        Add Member
+      </button>
     </form>
   );
 };
