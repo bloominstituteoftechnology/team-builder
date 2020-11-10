@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components'
 
 const NewForm = styled.div`
+    border: 1px solid black;
+    width: 40%;
+    border-radius: 5px;
     label{
         display: flex;
         flex-direction: row;
@@ -77,7 +80,7 @@ export default function TeamForm(props) {
                         onChange={onChange}>
                             <option value="">--Select Role--</option>
                             <option value="Backend Engineer">Backend Engineer</option>
-                            <option value="Frontend Engineer">Backend Engineer</option>
+                            <option value="Frontend Engineer">Frontend Engineer</option>
                             <option value="Ux/Ui Designer">UX/UI Designer</option>
                             <option value="SEO Specialist">SEO Specialist</option>
                             <option value="Project Manager">Project Manager</option>
