@@ -13,6 +13,7 @@ const initialFormValues = {
 
 function App() {
   const [team, setTeam] = useState([]);
+  console.log(team);
   // 🔥 STEP 1 - WE NEED STATE TO HOLD ALL VALUES OF THE FORM!
   // fix this using the state hook
   const [formValues, setFormValue] = useState(initialFormValues); //Setting the StateHook to hold the form
@@ -39,21 +40,22 @@ function App() {
 
     //  c) POST new friend to backend, and on success update the list of friends in state with the new friend from API
 
-    axios
-      .post("fakeapi.com", newTeamMember)
-      .then((res) => {
-        setTeam([newTeamMember, ...team]);
-        setFormValue(initialFormValues);
-      })
-      .catch((err) => {
-        console.log(err, "something broke");
-      });
+    // axios
+    //   .post("fakeapi.com", newTeamMember)
+    //   .then((res) => {
+    //     setTeam([newTeamMember, ...team]);
+    //     setFormValue(initialFormValues);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err, "something broke");
+    //   });
   };
   //  d) also on success clear the form
 
-  useEffect(() => {
-    axios.get("fakeapi.com").then((res) => setTeam(res.data));
-  }, []);
+  // useEffect(() => {
+  //   axios.get("fakeapi.com").then((res) => setTeam(res.data));
+  // }, []);
+
   return (
     <div className="App">
       <h1>Our Team</h1>

@@ -1,19 +1,15 @@
 import React from "react";
 
 function Form(props) {
-  //This is the team we are going to build
-  // const [team, setTeam] = useState([
-  //   {
-  //     id: 1,
-  //     name: "Aszalea",
-  //     email: "this@gmail.com",
-  //      role:"Software",
-  //   },
-  // ]);
   const { values, update, submit } = props;
 
   const onChange = (evt) => {
+    console.log("handle", evt);
+    // 🌹STEP 6 - IMPLEMENT the change handler for our inputs
+    // a) pull the name of the input from the event object
+    // b) pull the value of the input from the event object
     const { name, value } = evt.target;
+    // c) use the `update` callback coming in through props
     update(name, value);
   };
 
@@ -24,6 +20,10 @@ function Form(props) {
 
   return (
     <>
+      {/* 🔥 STEP 3 - Make an input of type `text` for username.
+    Controlled inputs need `value` and `onChange` props.
+    Inputs render what they're told - their current value comes from app state.
+    At each keystroke, a change handler fires to change app state. */}
       <form onSubmit={onSubmit}>
         <label htmlFor="name"> Name</label>
         <input
@@ -31,9 +31,9 @@ function Form(props) {
           type="text"
           placeholder="New Team Member"
           onChange={onChange}
-          value={values.username}
+          // value={values.username}
           maxLength="30"
-        />
+        ></input>
         <br></br>
         <label htmlFor="email"> Email</label>
         <input
@@ -41,7 +41,7 @@ function Form(props) {
           type="email"
           placeholder="New Email"
           onChange={onChange}
-          value={values.email}
+          // value={values.email}
           maxLength="30"
         />
         <br></br>
@@ -51,11 +51,11 @@ function Form(props) {
           type="text"
           placeholder="New Role"
           onChange={onChange}
-          value={values.role}
+          // value={values.role}
           maxLength="30"
         />
         <br></br>
-        <input type="submit"></input>
+        <input type="submit" name="button" />
       </form>
     </>
   );
