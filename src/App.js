@@ -1,23 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import Form from './Components/Form';
+import Team from './Components/TeamMember';
+import axios from './Axios';
+
+
+const initialValues ={
+  username: '',
+  email: '',
+  role: '',
+};
 
 function App() {
+  const [friends, setFriends] = useState([]);
+
+  const [createValue, setCreateValue] = useState(initialValues);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form
+      values={createValue}
+      />
+
+      {friends.map((friend) => {
+        return <Team key={friend.id} details={friend} />;
+      })}
     </div>
   );
 }
