@@ -15,7 +15,7 @@ function App() {
   const [member, setMember] = useState([
     {
       Name: 'Remington the Great',
-      Email: 'josephvila123@gmail.com',
+      Email: 'nunyabiznass@yomomma.com',
       Role: "Daydreamer"
     }
   ])
@@ -26,16 +26,31 @@ function App() {
       [inputName]: inputValue,
     })
   }
+
+  let newMember = {};
   const submitForm = () => {
-    let newMember = {
+      newMember = {
       Name: formValues.Name.trim(),
       Email: formValues.Email.trim(),
       Role: formValues.Role.trim(),
     }
+
+
+    // const exists = member.Name.find(name => name.Name === member.Name);
+    // if(exists === true) return;
     setMember(
       [...member, newMember]
     )
+
+    // const exists = null;
+    // for(let i = 0; i < member.length; i++){
+    //   exists = member[i].find(check => check.Name === member.Name);
+    //   if(exists === true) return;
+    // }
+
+    // console.log('member post setMember', member[0].Name);
   }
+
   return (
     <div className="App">
       <header className="App-header">
