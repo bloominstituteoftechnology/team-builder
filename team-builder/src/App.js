@@ -28,9 +28,9 @@ function App() {
   }
   const submitForm = () => {
     let newMember = {
-      name: formValues.Name.trim(),
-      gender: formValues.Email.trim(),
-      breed: formValues.Role.trim(),
+      Name: formValues.Name.trim(),
+      Email: formValues.Email.trim(),
+      Role: formValues.Role.trim(),
     }
     setMember(
       [...member, newMember]
