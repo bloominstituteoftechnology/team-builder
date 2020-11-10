@@ -1,10 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Form from './Components/Form';
 import Team from './Components/TeamMember';
-import axios from './Axios';
-
 
 const initialValues ={
   username: '',
@@ -13,18 +10,37 @@ const initialValues ={
 };
 
 function App() {
-  const [friends, setFriends] = useState([]);
+  const [team, setTeam] = useState([]);
 
   const [createValue, setCreateValue] = useState(initialValues);
+
+  const submitApplication = () =>{
+
+  
+    const newTeam ={
+      name: createValue.name.trim(),
+      email: createValue.email.trim(),
+      role: createValue.role,
+    }
+  
+  };
+
+  const updateValue = ( inputName, inputValue) =>{
+    setCreateValue({...createValue,[inputName]: inputValue,
+    })
+  };
+
 
   return (
     <div className="App">
       <Form
       values={createValue}
+      update={updateValue}
+      submit={submitApplication}
       />
 
-      {friends.map((friend) => {
-        return <Team key={friend.id} details={friend} />;
+      {team.map((team) => {
+        return <Team key={team.id} details={team} />;
       })}
     </div>
   );
