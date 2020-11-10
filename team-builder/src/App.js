@@ -2,46 +2,63 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import {Route, Link, Switch} from 'react-router-dom';
+import Form from './components/Form';
 
 
-function App(props) {
-  const [member, setMember] = useState([]);
-
-  // useEffect(() => {
-  //   fetchMember().then((resMember) => setMember(resMember.data));
-  // }, []);
-
+// test
+const initialFormValues = {
+  Name: "",
+  Email: "",
+  Role: ""
+}
+function App() {
+  const [member, setMember] = useState([
+    {
+      Name: 'Remington the Great',
+      Email: 'josephvila123@gmail.com',
+      Role: "Daydreamer"
+    }
+  ])
+  const [formValues, setFormValues] = useState(initialFormValues)
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({
+      ...formValues,
+      [inputName]: inputValue,
+    })
+  }
+  const submitForm = () => {
+    let newMember = {
+      name: formValues.Name.trim(),
+      gender: formValues.Email.trim(),
+      breed: formValues.Role.trim(),
+    }
+    setMember(
+      [...member, newMember]
+    )
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {/* <Switch>
-        <Route path={"/items-list/:itemID"}>
-          <Item items={stock} />
-        </Route>
-        <Route path="/items-list">
-          <ItemsList items={stock} />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch> */}
-
-        
+        <h1>Team Membros, LET'S GOOOOO!!</h1>
       </header>
+      <div className="section">
+        <Form update={updateForm} values={formValues} submit={submitForm}/>
+        {member.map(member => {
+          return (
+            <div>
+              <h2>{member.Name}</h2>
+              <p>{member.Email}</p>
+              <p>{member.Role}</p>
+            </div>
+          )
+        })}
+      </div>
     </div>
   );
 }
 
+
 export default App;
+
+
+
