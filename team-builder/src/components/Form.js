@@ -3,61 +3,46 @@ import React, {useState} from 'react'
 
 function Form(props) {
 
-    const {member , setMember} = props;
-
-    console.log(member , 'inside form')
-
-    // const [memeber, setMemeber] = useState({
-    //     memberName: '',
-    //     memberEmail: '',
-    //     memeberRole: ''
-    //   });
+    const { values, update, submit } = props
 
     
 
 
+    const handleChange = e => {
+        const {name, value} = e.target
+        update(name, value)
+    }
 
-    // const handleChange = e => {
-    //     setMemeber({
-    //         ...memeber,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-
-    // const handelSubmit = e => {
-    //     e.preventDefault();
-    //     console.log(memeber)
-    // }
+    const handelSubmit = e => {
+        e.preventDefault();
+        submit();
+    }
 
 
     return (
-        <div>
-            <h1>hello</h1>
-            
-        </div>
-    //     <form onSubmit={handelSubmit} >
-    //         <label>
-    //             Name: 
-    //             <input type='text' onChange={e => handleChange(e)} name='memberName'/>
-    //         </label>
+        <form onSubmit={handelSubmit} >
+            <label>
+                Name: 
+                <input type='text' onChange={handleChange} name='memberName' value={values.memberName}/>
+            </label>
 
-    //         <label>
-    //             Email:
-    //             <input type='email' onChange={e => handleChange(e)} name='memberEmail'/>
-    //         </label>
+            <label>
+                Email:
+                <input type='email' onChange={handleChange} name='memberEmail' value={values.memberEmail}/>
+            </label>
 
-    //         <label>
-    //             role:
-    //             <select name="memeberRole" onChange={e => handleChange(e)}>
-    //                 debugger
-    //                 <option value="front-end">Front-End</option>
-    //                 <option >Back-End</option>
-    //                 <option >Full-stack</option>
-    //             </select>
-    //         </label>
+            <label>
+                role:
+                <select name="memeberRole" onChange={handleChange} value={values.memeberRole}>
+                    
+                    <option value="front-end">Front-End</option>
+                    <option value='backend'>Back-End</option>
+                    <option value="fullstack">Full-stack</option>
+                </select>
+            </label>
 
-    //         <button>Submit</button>
-    //   </form>
+            <button>Submit</button>
+      </form>
 
     )
 }
