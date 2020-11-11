@@ -18,8 +18,8 @@ export default function Team (props) {
 const TeamContainer = styled.div`
 background-color: #EBF5FB;
 width: 80%;
-height: 80%;
+height: 100%;
 display: flex;
 flex-flow: column wrap;
-justify-content: space-evenly;
+justify-content: start;
 `

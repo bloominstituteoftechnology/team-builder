@@ -13,11 +13,12 @@ export default function TeamMember (props) {
 }
 
 const TeamMemberCard = styled.div`
-border: solid #fcfafa 1px;
+border: solid blue 1px;
 display: flex;
-flex-flow: row wrap;
+/* flex-flow: row wrap; */
 justify-content: left;
 padding-left: 20px;
+height: 24%;
     .member-text{
         color: #0b24e0;
     }

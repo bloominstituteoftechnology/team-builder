@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import Team from './Team';
+import Form from './Form';
 
 function App(props) {
   //---------------------------------------------------------
@@ -43,13 +44,7 @@ function App(props) {
       <div className='home-header'>
         <h1> Team Overview </h1>
       </div>
-      <form>
-        <label>
-          Name:
-          <input type="text" name="name" />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <Form />
       <Team team={team} />
     </div>
   );
