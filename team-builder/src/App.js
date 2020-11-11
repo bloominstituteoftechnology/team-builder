@@ -25,7 +25,7 @@ function App() {
       <div className='Form'>
         <Form newUser = { addNewUser } />
       </div>
-      <div className='App'>
+      <div>
         <Users users={ users } />
       </div>
     </div>

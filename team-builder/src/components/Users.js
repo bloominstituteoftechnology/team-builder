@@ -1,16 +1,32 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
+const StyledList = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+`
+
+const StyledCards = styled.div`
+    border: black 3px solid;
+    border-radius: 10px;
+    margin: 2%;
+    padding: 1%;
+    width: auto;
+`
 
 const Users = props => {
     return (
-        <div>
+        <StyledList>
             {props.users.map( (user, index) => (
-                <div key={index}>
-                    <h3>Name: {user.name}</h3>
+                <StyledCards key={index}>
+                    <p>Name: {user.name}</p>
                     <p>Email: {user.role}</p>
                     <p>Role: {user.email}</p>
-                </div>
+                </StyledCards>
             ))}
-        </div>
+        </StyledList>
     );
 }
 
