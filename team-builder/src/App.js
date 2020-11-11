@@ -1,12 +1,22 @@
-
-import './App.css';
+import React, {useState} from 'react'
+import Form from './components/Form'
+import Users from './components/User'
 
 function App() {
+
+  const [memeber, setMemeber] = useState({
+    memberName: '',
+    memberEmail: '',
+    memeberRole: ''
+  });
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Slow life</h1>
-      </header>
+      <h1>Slow life</h1>
+      <Form setMember={setMemeber} member={memeber}/>
+      <Users member={memeber}/>
     </div>
   );
 }
