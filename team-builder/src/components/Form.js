@@ -6,17 +6,17 @@ const StyledForm = styled.form`
     flex-direction: column;
     border: black 3px solid;
     border-radius: 10px;
-    margin: 2%;
-    padding: 1%;
+    margin: 1rem;
+    padding: 1rem;
     width: auto;
 
     .inputItem {
-        margin: 1%;
+        margin: .5rem;
     }
 
     .inputItem input {
         width: 100%;
-        margin-top: .5%;
+        margin-top: .5rem;
         box-sizing: border-box; // needed to make input box fit inside div
     }
 
