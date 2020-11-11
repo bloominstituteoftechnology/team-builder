@@ -1,6 +1,9 @@
-import './App.css';
-import {useState} from 'react-dom'
 
+import {useState} from 'react-dom'
+import './App.css';
+import CharacterForm from './Form';
+
+//this will be the form 'template'
 const initialFormValues = {
   name:"",
   type:"",
@@ -14,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-  
+      <CharacterForm></CharacterForm>
     </div>
   );
 }
