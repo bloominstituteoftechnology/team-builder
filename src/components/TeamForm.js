@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from '../axios';
 
 export default function TeamForm(props) { 
     // destructure props
@@ -12,6 +13,7 @@ export default function TeamForm(props) {
 
     const onSubmit = (e) => { 
         e.preventDefault(); 
+        // axios.post('sampleapi.com', values)
         submit();
     }
 

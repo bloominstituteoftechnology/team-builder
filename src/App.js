@@ -46,20 +46,16 @@ function App() {
     axios
       .post('sampleapi.com', newTeamMember)
       .then((res) => { 
-        setTeamMembers([...teamMembers, newTeamMember]);
+        console.log(newTeamMember);
+        setTeamMembers([newTeamMember,...teamMembers]);
         setFormValue(initialMemberValues);
       })
       .catch(err => { 
         console.error(err);
       })
-
-      // clear form
-      console.log(formValue.fname);
-      // formValue.fname.value('');
-      // formValue.lname.value('');
-      // formValue.email.value('');
-      // formValue.role.value('');
   }
+
+  console.log(teamMembers);
 
   useEffect(() => { 
     axios.get('sampleapi.com')
@@ -67,7 +63,7 @@ function App() {
       { 
         setTeamMembers(res.data);
       })
-  })
+  }, [])
 
   return (
     <div className="App">
@@ -81,6 +77,7 @@ function App() {
 
         {teamMembers.map((member) =>
         { 
+          console.log(member, "showing")
           return <TeamMember key={member.id} details={member} />;
         })}
     </div>
