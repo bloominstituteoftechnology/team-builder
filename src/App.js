@@ -18,7 +18,8 @@ function App() {
 
 
   const updateForm = (inputName, inputValue) =>{
-    setFormValues({...formValues, [inputName]: inputValue,})
+    setFormValues({...formValues, 
+      [inputName]: inputValue,})
   }
 
   const submitForm = () =>{
@@ -28,7 +29,15 @@ function App() {
       email: formValues.email.trim(),
       role: formValues.role,
     }
+
+  if (!newTeamMember.firstname || !newTeamMember.lastname ||  !newTeamMember.email || !newTeamMember.role) return;
+
+  setTeamMember([newTeamMember, ...teamMember]);
+
+  setFormValues(initialFormValues);
+
   }
+
 
 
 

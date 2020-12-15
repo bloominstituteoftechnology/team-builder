@@ -8,8 +8,8 @@ export default function Team({details}){
 
       return(
         <div className='team container'>
-        <p>{details.firstname}</p>
-        <span>{details.firstname}</span>
+        <span>{details.firstname} </span>
+        <span>{details.lastname}</span>
         <p>Email: {details.email}</p>
         <p>Role: {details.role}</p>
       </div>
