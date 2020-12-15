@@ -1,7 +1,7 @@
 import React from "react";
 
 const Input = (props) => {
-  console.log(props.addToState);
+  // console.log(props)
   return (
     <>
       <label htmlFor={props.id}>
@@ -11,7 +11,8 @@ const Input = (props) => {
           type={props.type}
           id={props.id}
           name={props.name}
-          onChange={props.addToState}
+          onChange={props.onChange}
+          value={props.show} 
         />
       </label>
       <br />

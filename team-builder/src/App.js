@@ -2,23 +2,16 @@ import "./App.css";
 import hardCodedData from "./data";
 import React, { useState } from "react";
 import Form from "./components/Form/Form";
+import Display from "./components/Display/Display";
 
 function App() {
   const [data, setData] = useState(hardCodedData);
-console.log(data);
-  const changeInputHandler = (e) => {
-    const inputValue = e.target.value;
-    const inputName = e.target.name;
-    const newPerson = 
-    console.log(inputValue);
-    console.log(inputName);
-    
-  }
+  console.log(data);
 
   return (
     <div className="App">
-      <Form addToState={changeInputHandler}/>
-      <div>Display</div>
+      <Form setter={setData} data={data}/>
+      <Display data={data} />
     </div>
   );
 }
