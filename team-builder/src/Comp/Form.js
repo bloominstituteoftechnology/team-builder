@@ -33,7 +33,7 @@ function Form(props) {
           type="text"
           placeholder="New Team Member"
           onChange={onChange}
-          // value={values.username}
+          value={values.username}
           maxLength="30"
         ></input>
         <br></br>
@@ -44,7 +44,7 @@ function Form(props) {
           type="email"
           placeholder="New Email"
           onChange={onChange}
-          // value={values.email}
+          value={values.email}
           maxLength="30"
         />
         <br></br>
@@ -55,7 +55,7 @@ function Form(props) {
           type="text"
           placeholder="New Role"
           onChange={onChange}
-          // value={values.role}
+          value={values.role}
           maxLength="30"
         />
         <br></br>

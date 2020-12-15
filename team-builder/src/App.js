@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "./Comp/Form.js";
 import Employee from "./Comp/Employee.js";
-//import axios from "axios";
+import axios from "axios";
 import "./App.css";
 
 //The shape of the state that drives the form
@@ -29,32 +29,31 @@ function App() {
   const submitForm = () => {
     // 🔥 STEP 9 - IMPLEMENT a submit function which will be used inside the form's own `onSubmit`
     //  a) make a new friend object, trimming whitespace from username and email
-    const newTeamMember = {
+
+    let newTeammate = {
       username: formValues.username.trim(),
       email: formValues.email.trim(),
-      role: formValues.role.trim(),
+      role: formValues.role,
     };
-    //  b) prevent further action if either username or email or role is empty string after trimming
-    //if (!newTeamMember.username || !newTeamMember.email || !newTeamMember.role)
-    //  return;
 
-    //  c) POST new friend to backend, and on success update the list of friends in state with the new friend from API
-    //setFormValue(newTeamMember);
-    // axios
-    //   .post("fakeapi.com")
-    //   .then((res) => {
-    //     setTeam([...team, res.data]);
-    //     setFormValue(initialFormValues);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err, "something broke");
-    //   });
+    if (!newTeammate.username || !newTeammate.email || !newTeammate.role)
+      return;
+    axios
+      .post("fakeapi.com", newTeammate)
+      .then((res) => {
+        setTeam([...team, res.data]);
+        setFormValue(initialFormValues);
+      })
+      .catch((err) => {
+        // debugger;
+        console.log(err);
+      });
   };
   //  d) also on success clear the form
 
-  // useEffect(() => {
-  //   axios.get("fakeapi.com").then((res) => setTeam(res.data));
-  // }, []);
+  useEffect(() => {
+    axios.get("fakeapi.com").then((res) => setTeam(res.data));
+  }, []);
 
   return (
     <div className="App">
