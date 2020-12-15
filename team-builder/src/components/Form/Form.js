@@ -6,27 +6,36 @@ const fields = {
   age: "number",
   role: "text",
 };
+const blankObj = {
+  name: "",
+  age: "",
+  role: "",
+};
 
 const Form = (props) => {
-  const blankObj = {
-    name: "",
-    age: '',
-    role: "",
-  };
   const [input, setInput] = useState(blankObj);
-  console.log(input);
+  // const [disabled, setDisabled] = useState(true);
 
   const onSubmit = (e) => {
     e.preventDefault(); //prevent refresh
-    //*add this person to data in App.js
-
-    props.setter({...props.data, input});
+    props.setter([...props.data, input]);
     setInput(blankObj); //reset state to blank
-    console.log(input);
+    // setDisabled(true);
   };
 
   const onChangeHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
+    let count = [];
+    for(let property in input){
+      if(input[property]){
+        count.push([]);
+      }
+    }
+    // console.log(count)
+    // //check input
+    // //if all keys have a value
+    // //set disabled to false
+    // setDisabled(false) //!CONDITIONALLY
   };
 
   return (
@@ -44,6 +53,7 @@ const Form = (props) => {
         );
       })}
       <button>Submit your Entry.</button>
+      {/* <button disabled={disabled}>Submit your Entry.</button> */}
     </form>
   );
 };

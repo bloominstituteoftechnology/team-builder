@@ -1,17 +1,17 @@
 const data = [
   {
     name: "Brian",
-    age: 30,
+    age: "30",
     role: "student",
   },
   {
     name: "Bill",
-    age: 72,
+    age: "72",
     role: "Janitor",
   },
   {
     name: "Beth",
-    age: 41,
+    age: "41",
     role: "Artistic Director",
   },
 ];
