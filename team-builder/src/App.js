@@ -1,25 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Form from "./components/Form";
 
+const initialValues = {
+  name: "",
+  email: "",
+  role: "",
+};
 function App() {
-  const { teamMemberList, setTeamMemberList } = useState([]);
-  const { formValues, setFormValues } = useState({
-    name: "",
-    email: "",
-    role: "",
-  });
-
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [formValues, setFormValues] = useState(initialValues);
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({
+      ...formValues,
+      [inputName]: inputValue,
+    });
+  };
   return (
     <div className="App">
-      <h1>Team Builder App!</h1>
-      <Form
-        TeamMemberList={teamMemberList}
-        SetTeamMemberList={setTeamMemberList}
-      />
+      <h1>Team Builder App</h1>
+      <Form values={formValues} update={updateForm} />
     </div>
   );
 }
-
 export default App;
