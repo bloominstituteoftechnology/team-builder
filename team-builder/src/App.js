@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "./Comp/Form.js";
 import Employee from "./Comp/Employee.js";
-import axios from "axios";
+//import axios from "axios";
 import "./App.css";
 
 //The shape of the state that drives the form
@@ -12,11 +12,11 @@ const initialFormValues = {
 };
 
 function App() {
-  const [team, setTeam] = useState([]);
+  const [team, setTeam] = useState([]); //This is empty as we are setting it to the user input
   console.log(team);
   // 🔥 STEP 1 - WE NEED STATE TO HOLD ALL VALUES OF THE FORM!
   // fix this using the state hook
-  const [formValues, setFormValue] = useState(initialFormValues); //Setting the StateHook to hold the form
+  const [formValues, setFormValue] = useState(initialFormValues); //Setting the StateHook to hold the form. Look to where the initialFormValues is coming from
 
   const updateForm = (inputName, inputValue) => {
     // 🔥 STEP 8 - IMPLEMENT a "form state updater" which will be used inside the inputs' `onChange` handler
@@ -35,15 +35,15 @@ function App() {
       role: formValues.role.trim(),
     };
     //  b) prevent further action if either username or email or role is empty string after trimming
-    if (!newTeamMember.username || !newTeamMember.email || !newTeamMember.role)
-      return;
+    //if (!newTeamMember.username || !newTeamMember.email || !newTeamMember.role)
+    //  return;
 
     //  c) POST new friend to backend, and on success update the list of friends in state with the new friend from API
-
+    //setFormValue(newTeamMember);
     // axios
-    //   .post("fakeapi.com", newTeamMember)
+    //   .post("fakeapi.com")
     //   .then((res) => {
-    //     setTeam([newTeamMember, ...team]);
+    //     setTeam([...team, res.data]);
     //     setFormValue(initialFormValues);
     //   })
     //   .catch((err) => {
@@ -79,4 +79,9 @@ export default App;
 //TODO- Remember to add your updateForm and submitForm
 /*Add  to return
   update={updateForm}
-  submit={submitForm}*/
+  submit={submitForm}
+  
+  
+  
+  
+  */

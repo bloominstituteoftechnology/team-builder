@@ -3,9 +3,9 @@ import React from "react";
 function Employee(props) {
   const { details } = props;
 
-  if (!details) {
-    return <p>Loading....</p>;
-  }
+  // if (!details) {
+  //   return <p>Loading....</p>;
+  // }
 
   return (
     <div>

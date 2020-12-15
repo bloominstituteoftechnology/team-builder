@@ -4,7 +4,7 @@ function Form(props) {
   const { values, update, submit } = props;
 
   const onChange = (evt) => {
-    console.log("handle", evt);
+    console.log("handle", evt.target.value);
     // 🌹STEP 6 - IMPLEMENT the change handler for our inputs
     // a) pull the name of the input from the event object
     // b) pull the value of the input from the event object
@@ -15,7 +15,8 @@ function Form(props) {
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    submit();
+    // props.addTeam(submit)
+    submit(); //i think this is the issue
   };
 
   return (
@@ -28,6 +29,7 @@ function Form(props) {
         <label htmlFor="name"> Name</label>
         <input
           id="name"
+          name="username"
           type="text"
           placeholder="New Team Member"
           onChange={onChange}
@@ -38,6 +40,7 @@ function Form(props) {
         <label htmlFor="email"> Email</label>
         <input
           id="email"
+          name="email"
           type="email"
           placeholder="New Email"
           onChange={onChange}
@@ -48,6 +51,7 @@ function Form(props) {
         <label htmlFor="role">Role</label>
         <input
           id="role"
+          name="role"
           type="text"
           placeholder="New Role"
           onChange={onChange}
