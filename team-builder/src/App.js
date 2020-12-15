@@ -25,28 +25,21 @@ function App() {
 
     <div>
 
-      <h1>Build Your Team!</h1>
+      <h1>Current Team</h1>
 
       {members.map((member) => {
         return (
           <div>
-            Hello {member.firstName} {member.lastName}!<br/>
-            Is {member.email} your correct email? <br/>
-            Are you still currently a {member.role}?
+            Name: {member.firstName} {member.lastName}<br/>
+            Email: {member.email}<br/>
+            Role: {member.role}
           </div>
         );
       })}
       
       <br/>
-        
-      <form>
 
-        <input
-          placeholder="Enter Team Name">
-
-        </input>
-
-      </form>
+      <h1>Add Team Member Below</h1>
 
       <form>
 
@@ -65,14 +58,17 @@ function App() {
 
         </input>
         
-        <input
-        placeholder="Enter Role">
+        <select>
+          <option>-----Select Role-----</option>
 
-        </input>
+          <option>Instructor</option>
 
-        <input placeholder="Enter Age">
+          <option>Student</option>
 
-        </input>
+          <option>Web Developer</option>
+          
+          <option>Faculty Member</option>
+        </select>
 
       </form>
       
