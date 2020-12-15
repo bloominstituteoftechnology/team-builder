@@ -10,15 +10,15 @@ In this project you'll build an app that will keep track of memebers of a team. 
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
-- [ ] CD into your `team-builder` directory
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [1] Create a forked copy of this project.
+- [1] Add your team lead as collaborator on Github.
+- [1] Clone your OWN version of the repository in your terminal
+- [1] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
+- [1] CD into your `team-builder` directory
+- [1] Start up the app using `npm start`
+- [1] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [1] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [1] Push commits: git push origin `<firstName-lastName>`.
 
 ### Task 2: Minimum Viable Product
 
