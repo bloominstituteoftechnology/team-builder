@@ -1,34 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {Button} from 'reactstrap';
+import Team from './Team';
 
 export default function Form (props) {
 
-    return (
-        <form className='join-form'>
-            <label htmlFor='fnameInput'> First Name 
-                <input id='fname' onChange={ evt => {
-                    debugger
-                }
+    const [formData, setFormData] = useState({
+        fname: '',
+        role: '',
+    })
 
-                }type="text" name="name" placeholder='First Name'/>
+    const onInputChange = event => {
+        // if(/^[a-zA-Z]+$/.test(event.target.value)){
+            setFormData({
+            ...formData,
+            [event.target.name]: event.target.value
+             })
+        // }
+    };
+
+    return (
+        <>
+        <form className='joinForm'>
+            <label> First Name 
+                <input name='fname' onChange={onInputChange} value={formData.fname} type="text"  placeholder='First Name'/>
             </label>
             
             <label>
-                Role: <select id='roleSelect'>
+                Role: <select name='role' onChange={onInputChange} >
                     <option > CEO </option>
-                    <option> CPO </option>
-                    <option> VP of Ops </option>
+                    <option> VP of Product </option>
+                    <option> VP of Operations </option>
                     <option> Director of Programs </option>
                 </select>
             </label>
-            ß
-            <label>
-                <input id='inputButton' type="submit" value="Join" />
-            </label>
 
-            <label>
-                Interested? <input id='interested' type='checkbox'></input>
-            </label>
-            
+            <Button color='primary' size='lg' block>
+                Join Us
+            </Button>
         </form>
+        </>
     )
 }
