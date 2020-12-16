@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       
       <h1> Team Builder</h1>
-      <FriendList />
+      <TeamMemberList />
       
     </div>
   );
