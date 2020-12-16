@@ -1,16 +1,17 @@
-import react from 'react'
+import React from 'react'
 
 export default function Form (props) {
-    const { name, email, role } = props
+    const { values, update, submit } = props
 
-    // const onChange = (evt) => {
-    //     const null
-    // }
+    const onChange = (evt) => {
+        const { name, value } = evt.target
+        update(name, value)
+    }
 
-    // const onSubmit = (evt) => {
-    //     evt.preventDefault()
-    //     Submit()
-    // }
+    const onSubmit = (evt) => {
+        evt.preventDefault()
+        submit()
+    }
 
     return (
         <form className="form containter" onSubmit={onSubmit}>
@@ -18,22 +19,22 @@ export default function Form (props) {
                 <label>
                     Name
                     <input
-                        name="Name"
+                        name="name"
                         type="text"
                         placeholder="Enter your Name"
                         maxLength="30"
-                        value={props.name}
+                        value={values.name}
                         onChange={onChange}
                     /> 
                 </label>
                 <label>
                     Email
                     <input
-                        name="Email"
+                        name="email"
                         type="text"
                         placeholder="Enter your email address"
                         maxLength="30"
-                        value={props.email}
+                        value={values.email}
                         onChange={onChange}
                     /> 
                 </label>
@@ -41,7 +42,7 @@ export default function Form (props) {
                     Role
                 <select 
                     name="role" 
-                    value={props.role}
+                    value={values.role}
                     onChange={onChange}
                 >
                     <option value="">----------Select Role----------</option>
@@ -53,7 +54,7 @@ export default function Form (props) {
                 </label>
                 
                 <div className="submit">
-                    <button>Submit</button>
+                    <button>submit</button>
                 </div>
             </div>
         </form>
