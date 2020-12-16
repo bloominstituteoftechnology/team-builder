@@ -1,11 +1,47 @@
-mport React from "react"
+import React , { useState } from "react"
 
 export default function Form (){
-  const {values,update,submit} = this.props
-  const onChange = (evt) => {
-    const { name, value } = evt.target;
-    update(name, value)
+ 
+//  const {addInfo} = this.props
+  // const {values,update,submit} = this.props
+  // const initialFormValues = {
+          
+  //   username: "",
+  //   email: "",
+  //   role: "",
+  // }
+   
 
+  const [forms , setForms]= useState([
+    {
+    username: "",
+    email: "",
+    role : ""
+
+  },
+]) 
+const [form, SetForm]= useState([{
+  username:"",
+  email: "",
+  role: ""
+
+},
+])
+  
+  const changeHandler = (event) =>{
+    const {name, value} =event.target
+      SetForm({
+      ...forms,
+      // event.target.name : event.target.value
+         [name ] : value
+        })}   
+
+       const  onSubmit = (event) =>{
+          event.preventDefault();
+          // setForms({username:"",email:"",role:""})
+          
+       }
+  
     return(
         <form onSubmit={onSubmit}>
         <div>
@@ -18,8 +54,8 @@ export default function Form (){
               type="text"
               placeholder="type a username..."
               maxLength="30"
-              value={values.username}
-              onChange={onChange}
+              value={form.username}
+              onChange={changeHandler}
             />
           </label>
   
@@ -31,8 +67,8 @@ export default function Form (){
               type="email"
               placeholder="type an email..."
               maxLength="30"
-              value={values.email}
-              onChange={onChange}
+              value={form.email}
+              onChange={changeHandler}
             />
           </label>
   
@@ -40,7 +76,7 @@ export default function Form (){
           <label>
             Role
         
-            <select name="role" value={values.role} onChange={onChange}>
+            <select  value={form.role} onChange={changeHandler}>
               <option value="">------select role------</option>
               <option value="Software Engineer">Software Engineer</option>
               <option value="Front End Web Developer">Front End Web Developer</option>
@@ -48,7 +84,7 @@ export default function Form (){
             </select>
           </label>
   
-          <div className="submit">
+          <div>
             <button>submit</button>
           </div>
         </div>
@@ -74,4 +110,3 @@ export default function Form (){
 
 
 
-}

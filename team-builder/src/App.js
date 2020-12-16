@@ -6,38 +6,32 @@ import Form from "./form"
 function App() {
 
   
-  export default function App() {
+
+    
+    // const addInfo = (info) =>{
+// SetForm([...form,info])
+    
    
-    const initialFormValues = {
-          
-      username: "",
-      email: "",
-      role: "",
-    }
-      const [form, SetForm]= useState(initialFormValues)
   
-      const submitForm = () => {
       
-        const newPerson= {
-          username: formValues.username.trim(),
-          email: formValues.email.trim(),
-          role: formValues.role,
-        };
-      }
-        const updateForm = (inputName, inputValue) => {
-        setForm({
-          ...formValues,
-          [inputName]: inputValue,
-        });
-      };
+      // const submitForm = () => {
+      
+      //   const newPerson= {
+      //     username: formValues.username.trim(),
+      //     email: formValues.email.trim(),
+      //     role: formValues.role,
+      //   };
+      // }
+      // orm({  // const updateForm = (inputName, inputValue) => {
+      //   setF
+      //     ...initialFormValues,
+      //     [inputName]: inputValue,
+      //   });
+      // };
     
     return (
       <div className="App">
-        <Form
-          values={form}
-           update={updateForm}
-           submit={submitForm}
-        />
+        <Form/>
       </div>
     );
   }
@@ -48,6 +42,6 @@ function App() {
 
 
   
-}
+
 
 export default App;
