@@ -4,7 +4,7 @@ This project allows you to practice the concepts and techniques learned in this 
 
 ## Introduction
 
-In this project you'll build an app that will keep track of memebers of a team. You'll be able to add members to this team as well as edit their details.
+In this project you'll build an app that will keep track of members of a team. You'll be able to add members to this team as well as edit their details.
 
 ## Instructions
 
