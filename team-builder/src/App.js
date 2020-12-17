@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import MembershipForm from './MembershipForm'
 import Member from './Member'
-
-
-import './App.css';
-
+import './styles.css'
 const initFormValue = {
 
   username: "",
@@ -29,12 +26,15 @@ export default function App() {
   const submitForm = () => {
     const newMember = {
 
-      username: formValues.usernam.trim(),
+      username: formValues.username.trim(),
       email: formValues.email.trim(),
       role: formValues.role,
     }
-    if (!newMember.username || !newMember.email || !newMember.role) return
+    if (!newMember.username || !newMember.email || !newMember.role) { return }
+    setteamMember([...teamMember, newMember])
+    setFormValues(initFormValue)
   }
+
 
 
   return (
