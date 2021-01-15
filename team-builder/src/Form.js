@@ -30,11 +30,20 @@ export default function TeamForm(props) {
                 <input
                     name='username'
                     type='text'
-                    placeholder='please enter username here'
+                    placeholder='please enter username'
                     maxLength='35'
                     value={values.username}
-                    onChange={onChange} />
+                    onChange={onChange}/>
             </label>
+            <label>Email
+                <input
+                type='email'
+                name='email'
+                onChange={onChange}
+                value={values.email}
+                placeholder='email address'>
+                </input>
+                </label>
             
             <label>Role
                 <select value={values.role} name='role' onChange={onChange}>
@@ -44,7 +53,7 @@ export default function TeamForm(props) {
                     <option value='Lead Web Developer'>Lead Developer</option>
                 </select>
             </label>
-
+            
             <div className='submit'>
                 <button>submit</button>
             </div>
