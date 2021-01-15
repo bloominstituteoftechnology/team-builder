@@ -9,10 +9,36 @@
   background-color:teal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.team-container {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 200px;
+  margin-top: 20px;
+  background-color: white;
+
 }
+
+label {
+  margin: 20px;
+  padding: 20px;
+
+}
+
+input {
+margin: 10px;
+
+}
+
+select {
+padding: 0px;
+margin: 20px;
+}
+
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
