@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.5rem;
   margin: 3rem 0;
   padding: 1rem;
-  width: 60%;
+  width: 70%;
   box-shadow: 0 0 1.5rem #000;
   flex-flow: column wrap;
 }
