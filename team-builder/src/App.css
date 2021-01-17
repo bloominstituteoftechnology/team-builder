@@ -1,0 +1,76 @@
+body {
+background-color:teal;
+}
+
+.App {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color:teal;
+  
+}
+
+.team-container {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 200px;
+  margin-top: 20px;
+  background-color: white;
+
+}
+
+label {
+  margin: 20px;
+  padding: 20px;
+
+}
+
+input {
+margin: 10px;
+
+}
+
+select {
+padding: 0px;
+margin: 20px;
+}
+
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
