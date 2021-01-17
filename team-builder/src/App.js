@@ -15,13 +15,12 @@ const initialFormValues = {
 
 
 export default function App() {
-  
-  const [currTeam, setCurrTeam] = useState([teamData]);
 
   const [teammate, setTeammate] = useState([])
 
   const [formValues, setFormValues] = useState(initialFormValues)
   
+
   
   const updateForm = (inputName, inputValue) => {
     
@@ -40,8 +39,11 @@ export default function App() {
 
     setTeammate([...teammate, newTeammate])
     setFormValues(initialFormValues)
-    setCurrTeam(currTeam)
+    
   }
+
+
+
 
   return (
     <div className='App'>

@@ -30,7 +30,7 @@ export default function TeamForm(props) {
                 <input
                     name='username'
                     type='text'
-                    placeholder='please enter username'
+                    placeholder='enter username'
                     maxLength='35'
                     value={values.username}
                     onChange={onChange}/>
@@ -41,7 +41,7 @@ export default function TeamForm(props) {
                 name='email'
                 onChange={onChange}
                 value={values.email}
-                placeholder='email address'>
+                placeholder='enter email address'>
                 </input>
                 </label>
             
