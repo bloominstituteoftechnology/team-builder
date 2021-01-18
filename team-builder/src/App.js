@@ -1,54 +1,31 @@
 import React, { useState } from 'react';
-import Form from './components/Form'
-import Member from './components/Member'
+import Form from './components/forms/Form'
+import Member from './components/members/Member'
 import './App.css';
 
-const intiialFormValues ={
-  name: '',
-  email: '',
-  role: '',
-  status: ''
-}
+const currentMembers =[
+  {name: "Thorin", email: 'AzogSux@chainmail.com', role: 'King'},
+  {name: 'Balin', email: 'LordofM0r14@chainmail.com', role: 'Advisor'},
+  {name: 'Gandalf', email: 'Tern0fthaTyde@mothmail.com', role: 'Wizard'},
+  {name: 'Bilbo', email: 'H8theSackvilles@footmail.com', role: 'Burglar'}
 
-
-
+]
 
 function App() {
-
+  const[member, setMember]= useState(currentMembers)
   
-  const [formValues, setFormValues] = useState(intiialFormValues)
-
-  const [members, setMembers]= useState([])
-
-  const updateForm = (inputName, inputValue) =>{
-    setFormValues({...formValues, [inputName]: inputValue});
-  }
-
-  const submitForm = () =>{
-    const newMember ={
-      name: formValues.name.trim(),
-      email: formValues.email.trim,
-      role: formValues.role,
-      status: formValues.status
-    }
-    if(!newMember.name || !newMember.email|| !newMember.role|| !newMember.status) return;
-
-    setMembers(members.concat(newMember))
-  }
 
   return (
     <div className="App">
       <h1>Welcome</h1>
-      <h4>Please Enter Your Information</h4>
+      <h4>Please Enter Member Information</h4>
       <Form 
-        values={formValues}
-        update={updateForm}
-        submit ={submitForm}
+        setMember={setMember}
       />
 
 
       <h3>Current Members</h3>
-          <Member details ={formValues} />
+          <Member member ={member} />
      
       
     </div>
