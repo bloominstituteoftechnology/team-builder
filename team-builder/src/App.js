@@ -31,17 +31,19 @@ export default function App() {
       }
     
       if (!newMember.name || !newMember.region) return;
+      setMembers([...members, newMember]) //not using a post request due to lack or permission to post to this  API
+      //the axios.post will work with my own API/have ownership of API
 
 
-      axios.post("https://www.anapioficeandfire.com/api/houses", newMember)
+     /* axios.post("https://www.anapioficeandfire.com/api/houses", newMember)
       .then((res) => {
         console.log(res)
-        setMembers([res.data, ...members])
+        setMembers([...members, newMember]) //spread operator - like unpackaging data, think zip files
         setFormValues(initialFormValues) //This is resetting the form to the initial empty values
       })
       .catch((err) => {
         console.log('Error:', err);
-      });
+      });*/
     }//End of submitForm bracket
 
     //API CALL// --*just* getting the data
@@ -73,9 +75,9 @@ export default function App() {
         />
 
         {
-        members.map(kingdom => {
+        members.map((kingdom, index) => {
           return(
-            <TeamMember key={kingdom.id} details={kingdom}/>
+            <TeamMember key={index} details={kingdom}/> //you must set the key to something individually unique in property, so that the .map doesn't throw an error, in this case, i'm using just the index
           )
         })
       }

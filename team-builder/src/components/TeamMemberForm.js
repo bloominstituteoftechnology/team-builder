@@ -49,26 +49,4 @@ export default function TeamMemberForm(props) {
 
 
 
-  /*  const TeamMemberForm = props => {
-        const { values, update, submit } = props;
-
-
-            const [house, setHouse] = useState({
-                name: '',
-                region: ''
-            });
-            const changeHandler = (evt) => {
-                setHouse({
-                    ...house,
-                    [evt.target.name]: evt.target.value
-                }) 
-            }
-
-            const addMember =(house) => {
-                setHouse([...notes, newNote])
-            }
-
-
-}
-export default TeamMemberForm; */
-//How would we go about setting the form state in the form component itself
+  
