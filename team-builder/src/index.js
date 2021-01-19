@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import React, {useState} from 'react'
 import {render} from 'react-dom'
 
 const teamList = [
@@ -13,12 +12,78 @@ const teamList = [
 
 ]
 
-const intialTeamValues = [
-  {teamName:'', teamOccupation:}
-]
+const intialTeamValues = 
+  {teamName:'', teamOccupation:''}
+
+  function SimpleForm(){
+    const [members, setMembers] =useState(teamList);
+    const [formValues, setFormValues] = useState(intialTeamValues);
+  
+  const change = (e) => {
+    console.log(e.target);
+    console.log(formValues);
+    const {name, value} = e.target;
+    setFormValues({...formValues, [name]: value});
+  }
+
+    const submit = (e) => {
+      e.preventDefault();
+
+      const newTeam = {
+        name: formValues.name,
+        job: formValues.job
+
+      }
+      console.log(newTeam)
+
+      setMembers(members.concat(newTeam))
+
+      setFormValues(intialTeamValues)
+      
+    }
+
+
+    return(
+      <div>
+        {
+          teamList.map((mem, i) =>{
+            <div key= {i}>
+              {mem.name} is in {mem.job}
+
+            </div>
+        
+          })
+
+        }
+
+        <form onSubmit={submit}>
+          <h1>name</h1>
+          <input
+          name='name'
+          value={formValues.name}
+          onChange={change}
+          placeholder=' name'
+          />
+          
+          <input
+          name='job'
+          value={formValues.job}
+          onChange={change}
+          placeholder=' job title'
+          />
+
+          <button>add new team member</button>
+
+
+        </form>
+
+      </div>
+    )
+}
 
 ReactDOM.render(
   <React.StrictMode>
+    <SimpleForm/>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

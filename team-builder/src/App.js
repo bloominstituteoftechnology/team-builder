@@ -1,25 +1,57 @@
-import logo from './logo.svg';
+
 import './App.css';
+import TeamForm from './components/TeamForm'
+import { useState } from 'react';
+
+const initalFormValues = {
+  username: '',
+  email: '',
+  role: '',
+
+}
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+ const [teamMates, setTeamMates] = useState([])
+
+ const [formValues, setFormValues] = useState(initalFormValues)
+
+ const updateForm = (inputName, inputValue) =>{
+   console.log(inputName, inputValue)
+
+   setFormValues({...formValues, [inputName]: inputValue})
+ }
+
+ const submitForm = () => {
+    const newMem ={
+      username: formValues.usrname.trim(),
+      email:formValues.email.trim(),
+      role: formValues.role,
+
+
+    }
+
+
+
+ }
+
+  
+
+ return (
+  <div className= 'container'>
+    <h1> Form App</h1>
+
+    <TeamForm
+      values={formValues}
+      update={updateForm}
+      submit={submitForm}
+    />
+
+
+  </div>
+
+ )
+
+};
 
 export default App;
