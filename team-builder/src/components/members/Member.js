@@ -1,36 +1,25 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components'
 
 
-
-
-const Member = (props) =>{
-
-      
-
-    return(
+const Members = props => {
+    return (
         <div>
-            {props.member.map(member =>(
-            <div>
-             <h2>Name: {member.name}</h2>
-            <p>Email: {member.email}</p>
-            <p>Role: {member.role}</p> 
-            </div>  
+            {props.members.map(member => (
+                <MemberContainer key={member.id}>
+                    <h2>{member.name}</h2>
+                    <p><strong>Role:</strong> {member.role}</p>
+                    <p><strong>Email:</strong> <em>{member.email}</em></p>
+                </MemberContainer>
             ))}
-            
         </div>
     )
 }
 
+export default Members
+
+const MemberContainer = styled.div`
+    border: solid 2px black;
 
 
-export default Member
-
-
-
-
-
-
-
-
-
-
+`;

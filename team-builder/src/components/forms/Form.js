@@ -1,67 +1,47 @@
 import React, { useState } from 'react';
+import styled from 'styled-components'
 
 
+const Form = props => {
+    const [members, setMember] = useState({
+        id: 1,
+        name: '',
+        role: '',
+        email: ''
+    })
 
-const Form = props =>{
-    const [newMember, setNewMember]= useState(
-        {
-            name: '',
-            email: '',
-            role: ''
-        }
-        )
-
-
-    const changeHandler = e =>{
-        setNewMember({...newMember, [e.target.name]: e.target.value})
+    const changeHandler = (event) => {
+        setMember({
+            ...members,
+            [event.target.name]: event.target.value
+        })
     }
 
-    const submitForm = e =>{
+    const submitForm =(e)=>{
         e.preventDefault();
-        props.setNewMember(newMember);
-        setNewMember({name: '', email: '', role: ''})
+        props.addMember(members);
+        setMember({name: "", role: "", email: ""})
     }
-    
-    return(
-        <div >
-            <form onSubmit={submitForm}>
-                <label htmlFor='name'> Name 
-                <input
-                    type='text'
-                    name='name'
-                    placeholder='Enter Name'
-                    value={newMember.name}
-                    onChange={changeHandler}
-            />
-                </label>
-        
-                <label htmlFor='email'> Email
-                <input 
-                    type='email'
-                    name='email'
-                    placeholder='Enter email'
-                    value={newMember.email}
-                    onChange={changeHandler}
-                />
-            </label>
-        
-            <label hmtlFor='role'> Role
-                <input 
-                    type='text'
-                    name='role'
-                    placeholder='Enter Role'
-                    value={newMember.role} 
-                    onChange={changeHandler}
-                />
-            </label>
-                <div>
-                    <button>Submit</button>
-                </div>
-            </form>
-        </div>
-    )
-
-}
 
 
-export default  Form;
+    return (
+    <div>
+        <form onSubmit={submitForm}> 
+            <label htmlFor="name">Name</label>
+            <input  id="name" type="text" name="name" value={members.name} onChange={changeHandler} />
+                <br></br>
+            <label htmlFor="role">Position</label>
+            <input  type="text" name="role"  value={members.role} onChange={changeHandler} />
+                <br></br>
+            <label htmlFor="email">Email</label>
+            <input  id="email" type="text" name="email" value={members.email} onChange={changeHandler}/>
+                <br></br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    );
+};
+
+export default Form
+
+
