@@ -4,7 +4,7 @@ This project allows you to practice the concepts and techniques learned in this 
 
 ## Introduction
 
-In this project you'll build an app that will keep track of memebers of a team. You'll be able to add members to this team as well as edit their details.
+In this project you'll build an app that will keep track of members of a team. You'll be able to add members to this team as well as edit their details.
 
 ## Instructions
 
@@ -25,7 +25,7 @@ In this project you'll build an app that will keep track of memebers of a team. 
 - [ ] Render a list of team members from state.
 - [ ] Build a form to add a new member to the list of members.
 
-#### Setup your state
+#### Set up your state
 
 - [ ] Import the `useState` hook and set up state to keep your team members list.
 - [ ] Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
