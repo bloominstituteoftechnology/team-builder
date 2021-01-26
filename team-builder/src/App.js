@@ -30,7 +30,8 @@ const submitForm = () => {
     email: memberList.email.trim(),
     role: memberList.role,
   }
-  
+  if(!newMember.name || !newMember.email || !newMember.role)
+    return;
   setMember([newMember, ...member])
   setMemberList(initialMemberList)
 }
@@ -43,6 +44,7 @@ const submitForm = () => {
         update={updateForm}
         submit={submitForm}
       />
+      <h1>Team List</h1>
       {
         member.map(mem => {
           return<Member details={mem}/>
