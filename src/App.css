@@ -1,0 +1,43 @@
+*{
+  margin: 0 auto;
+  padding:20px 100px;
+
+}
+
+.App {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+    background-color:rgb(114, 153, 224);
+    color:rgb(228, 228, 228);
+    text-shadow:black 3px 3px ;
+}
+
+
+label{
+  font-size:25px;
+  margin: 5px;
+  color: white;
+}
+
+input{
+  margin:20px;
+  border: 3px solid  black;
+  border-radius:9px;
+
+}
+
+select{
+  margin: 20px 30px;
+  border: 3px solid  black;
+  border-radius:9px;
+
+}
+
+
+button{
+  border: 3px solid black;
+  border-radius:9px;
+  color:black;
+  font-size: 25px;
+}
