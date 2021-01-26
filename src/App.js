@@ -11,7 +11,7 @@ const initialTeam = [
   }, {
     name: 'Elizabeth',
     email: 'liz@team.com',
-    role: 'backend developer'
+    role: 'back-end developer'
   }, {
     name: 'Alison',
     email: 'ali@team.com',
@@ -24,6 +24,7 @@ const initialFormValues = {name:'', email:'', role:''}
 function App() {
   const [teamMembers, setTeamMembers] = useState(initialTeam);
   const [formValues, setFormValues] = useState(initialFormValues);
+  const [memberToEdit, setMemberToEdit] = useState({name:'', email:'', role:''});
 
   const updateForm = (inputName,inputValue) => {
     setFormValues({...formValues, [inputName]: inputValue})
@@ -44,10 +45,18 @@ function App() {
     }
   }
 
+  const pickMemberToEdit = (email) => {
+    teamMembers.forEach(member => {
+      if (member.email === email) {
+        setMemberToEdit(member);
+      }
+    })
+  }
+
   return (
     <div className="App">
-      <Team team={teamMembers} />
-      <Form values={formValues} update={updateForm} submit={submitForm} />
+      <Team team={teamMembers} pickMemberToEdit={pickMemberToEdit} />
+      <Form values={formValues} update={updateForm} submit={submitForm} memberToEdit={memberToEdit} />
     </div>
   );
 }

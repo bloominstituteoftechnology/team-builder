@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Form (props) {
-	const { name, email, role } = props.values;
+	let { name, email, role } = props.values;
+	const { memberToEdit } = props;
 
 	const handleChange = (evt) => {
-		const { name, value } = evt.target
-		console.log('name',name,'value',value)
-		props.update(name, value)
+		const { name, value } = evt.target;
+		props.update(name, value);
 	}
 
 	const handleSubmit = (evt) => {
-		evt.preventDefault()
-		props.submit()
+		evt.preventDefault();
+		props.submit();
 	}
+
+	useEffect(()=>{
+		console.log('editing', memberToEdit.name)
+		name = memberToEdit.name;
+		email = memberToEdit.email;
+		role = memberToEdit.role;
+	},[memberToEdit])
 
 	return (
 		<div>
