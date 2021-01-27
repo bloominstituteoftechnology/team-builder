@@ -5,7 +5,7 @@ function App() {
 
   const [users, setUsers] = useState(
     [
-      {"name": "Harry", "role": "point"}, {"name": "Reza", "role": "strategy"}, {"name": "Mike", "role": "support"}, {"name": "Kenta", "role":"support"}
+      {"name": "Harry", "email": "argy@bargy.com", "role": "point"}, {"name": "Reza", "email": "argy@bargy.com", "role": "strategy"}, {"name": "Mike", "email": "argy@bargy.com", "role": "support"}, {"name": "Kenta", "email": "argy@bargy.com", "role":"support"}
     ])
 
   return (
@@ -15,8 +15,9 @@ function App() {
         {users.map((user) => {
           return (
             <div>
-              <h5>{user.name}</h5>
-              <h6>{user.role}</h6>
+              <h5>Name: {user.name}</h5>
+              <h6>Role: {user.role}</h6>
+              <h6>Email: {user.email}</h6>
             </div>
           )
         })}
