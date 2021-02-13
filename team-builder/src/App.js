@@ -23,16 +23,28 @@ function App() {
     }
   ]
 
+  const initialFormValue = {
+    name: '',
+    email: '',
+    age: '',
+    role: ''
+}
+
   const [teamList, setTeamList] = useState(initialTeamList)
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState(initialFormValue)
 
   const handleInputChange = (name, value) => {
     setForm( {...form, [name]: value} )
   }
 
+  const handleSubmitForm = () => {
+    setTeamList([...teamList, {...form, id: uuid()}])
+    setForm(initialFormValue)
+  }
+
   return (
     <AppStyled>
-      <Form input={handleInputChange} />
+      <Form input={handleInputChange} submit={handleSubmitForm} initial={form} />
       {
         teamList.map(e => <TeamMember key={e.id} member={e} />)
       }

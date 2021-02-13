@@ -18,30 +18,39 @@ const FormContainerStyled = styled.div`
     }
 `;
 
-const Form = ({ input }) => {
+const Form = ({ input, submit, initial }) => {
 
+    //This function capture the data that was writted in input and set it to a slice of state
     const handleInput = (event) => {
         input(event.target.name, event.target.value)
     }
 
+    //This function avoid default behavior of reload webpage when submited form
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        submit()
+    }
+ 
+
+
     return (
         <FormContainerStyled>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Name:
-                    <input type="text" name="name" placeholder="full name" onChange={handleInput} />
+                    <input type="text" name="name" placeholder="full name" value={initial.name} onChange={handleInput} />
                 </label>
                 <label>
                     E-mail:
-                    <input type="email" name="email" placeholder="name@server.com" onChange={handleInput} />
+                    <input type="email" name="email" placeholder="name@server.com" value={initial.email} onChange={handleInput} />
                 </label>
                 <label>
                     Age:
-                    <input type="number" min="1" max='111' name="age" onChange={handleInput} />
+                    <input type="number" min="1" max='111' name="age" value={initial.age} onChange={handleInput} />
                 </label>
                 <label>
                     Role:
-                    <select name="role" onChange={handleInput}>
+                    <select name="role" value={initial.role} onChange={handleInput}>
                         <option>-- Select a Role --</option>
                         <option value="Frontend">Frontend</option>
                         <option value="Backend">Backend</option>
