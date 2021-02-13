@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import TeamMember from './components/TeamMember';
 import Form from './components/Form';
 import styled from 'styled-components';
@@ -14,21 +15,26 @@ function App() {
 
   const initialTeamList = [
     {
+      id: uuid(),
       name: 'Mauricio',
       email: 'maurooren@gmail.com',
       age: 23,
-      role: 'Fron-end'
+      role: 'Frontend'
     }
   ]
 
   const [teamList, setTeamList] = useState(initialTeamList)
   const [form, setForm] = useState({})
 
+  const handleInputChange = (name, value) => {
+    setForm( {...form, [name]: value} )
+  }
+
   return (
     <AppStyled>
-      <Form />
+      <Form input={handleInputChange} />
       {
-        teamList.map(e => <TeamMember member={e} />)
+        teamList.map(e => <TeamMember key={e.id} member={e} />)
       }
     </AppStyled>
   );
