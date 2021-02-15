@@ -1,4 +1,5 @@
 import React from 'react';
+import './User.css';
 
 function User(props){
 
@@ -6,7 +7,7 @@ function User(props){
     console.log();
 
     return (
-       <div>
+       <div className='user-container'>
         <p>{name}</p>
         <p>{email}</p>
         <p>{role}</p>

@@ -19,6 +19,7 @@ function Form(){
     }
    
     return (
+    <div>
         <div className="form-container" >
             <form onSubmit={handleSubmit}>
                 <label>
@@ -33,22 +34,22 @@ function Form(){
                     Role:
                     <select name='role' onChange={handleChanges}>
                         <option>---Select A Role---</option>
-                        <option value="student">Student</option>
-                        <option value="instructor">Instructor</option>
-                        <option value="teamLead">Team Lead</option>
-                        <option value="guestSpeaker">Guest Speaker</option>
-                        <option value="alumni">Alumni</option>
+                        <option value="Student">Student</option>
+                        <option value="Instructor">Instructor</option>
+                        <option value="Team Lead">Team Lead</option>
+                        <option value="Guest Speaker">Guest Speaker</option>
+                        <option value="Alumni">Alumni</option>
                     </select><br/>
                 </label>
                 <button>
                     Submit
                 </button>
-                <User name={user.name} email={user.email} role={user.role}/>
-                
-               
                 
             </form>
+           
         </div>
+        <User name={user.name} email={user.email} role={user.role}/>
+    </div>
         
         
     );
