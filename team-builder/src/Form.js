@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import './Form.css';
+import User from './User.js';
 
 function Form(){
     const [form, setForm] = useState({})
-    
+    const [user, setUser] = useState([])
     
     const handleSubmit = event =>{
        event.preventDefault()
         console.log('Clicked!')
+        setUser(...user, form);
+        
     }
+    console.log(user);
 
     const handleChanges = event =>{
         setForm({...form, [event.target.name]: event.target.value});
@@ -39,6 +43,8 @@ function Form(){
                 <button>
                     Submit
                 </button>
+                <User name={user.name} email={user.email} role={user.role}/>
+                
                
                 
             </form>

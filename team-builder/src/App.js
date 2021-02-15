@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Form from './Form.js'
+import User from './User.js'
 function App() {
   return (
     <div className="App">
@@ -10,6 +11,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <Form/>
+        
         <a
           className="App-link"
           href="https://reactjs.org"
