@@ -38,8 +38,8 @@ function Form(props) {
 
   return (
     <form className='form container' onSubmit={onSubmit}>
+      <h2>Add New Team Member</h2>
       <div className='form-inputs'>
-        <h2>Add New Team Member</h2>
         <label>Name
           <input 
             name='name'

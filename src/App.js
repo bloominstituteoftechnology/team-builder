@@ -12,19 +12,24 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Team Members</h1>
-      {
-        teamMembers.map(person => {
-          return (
-            <div className='member container'>
-              <h3>{person.name}</h3>
-              <p>{person.email}</p>
-              <p>{person.role}</p>
-            </div>
-          );
-        })
-      }
-      <Form addNewMember={addNewMember}/>
+      <h1>Team Management</h1>
+      <div className='content container'>
+        <section className='team container'>
+          <h2>Team Members</h2>
+          {
+            teamMembers.map(person => {
+              return (
+                <div className='team-member-container'>
+                  <h3>{person.name}</h3>
+                  <p>{person.email}</p>
+                  <p>{person.role}</p>
+                </div>
+              );
+            })
+          }
+        </section>
+        <Form addNewMember={addNewMember}/>
+      </div>
     </div>
   );
 }
