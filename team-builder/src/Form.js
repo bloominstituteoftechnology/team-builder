@@ -19,7 +19,7 @@ export default function Form(props) {
             <input 
                 name='name' 
                 type='text' 
-                value={values.name} 
+                value={values.username} 
                 onChange={onChange} 
                 placeholder='type a name...'
                 maxLength='30'
@@ -28,7 +28,7 @@ export default function Form(props) {
 
         <label>Email
             <input
-            name='email' 
+            username='email' 
             type='email' 
             value={values.email} 
             onChange={onChange} 
@@ -49,7 +49,7 @@ export default function Form(props) {
         </label>
 
         <div className='submit'>
-            <button disabled={!values.name || !values.email || !values.role}>submit</button>
+            <button disabled={!values.username || !values.email || !values.role}>submit</button>
         </div>
         </div>
     </form>

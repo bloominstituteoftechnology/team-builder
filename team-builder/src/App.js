@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Team from './Team'
 import Form from './Form'
-import axios from './axios/index'
-
+import axios from './axios'
 
 const initialFormValues = {
   username: '',
