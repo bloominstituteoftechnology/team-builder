@@ -35,21 +35,15 @@ function App() {
   };
 
   const handleEdit = (employee) => {
-    employeeList.map((emp, idx) => {
-      setEmployeeList([]);
-      console.log(employeeList, idx);
-      if (emp.name === empToEdit.name) {
-        console.log("if", emp.name);
-        console.log(employee);
-        console.log(employeeList);
-        return setEmployeeList([employee]);
-      } else {
-        console.log("else", emp.name);
-        console.log(employeeList);
-        console.log(employee);
-        return setEmployeeList([...employeeList]);
-      }
-    });
+    setEmployeeList(
+      employeeList.map((elem) => {
+        if (elem.name === empToEdit.name) {
+          return employee;
+        } else {
+          return elem;
+        }
+      })
+    );
   };
 
   const handleEditor = (employee) => {
