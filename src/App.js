@@ -44,8 +44,11 @@ function App() {
       Email: formValues.Email.trim(),
       Role: formValues.Role.trim(),
     }
-
-    // check web guided lesson app.js starting line 39 to finish this
+    if (!newTeamMember.Name || !newTeamMember.Email || !newTeamMember.Role) {
+      return;
+    }
+    setTeamMembers([...teamMembers, newTeamMember])
+    setFormValues(initialFormValues)
   }
 
   return (
