@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import sampleData from './data/sampleData';
 import './App.css';
 
 function App() {
+  const [teamMembers, setTeamMembers] = useState(sampleData);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Team Members</h1>
+      {
+        teamMembers.map(person => {
+          return (
+            <div className='member container'>
+              <h3>{person.name}</h3>
+              <p>{person.email}</p>
+              <p>{person.role}</p>
+            </div>
+          );
+        })
+      }
     </div>
   );
 }
