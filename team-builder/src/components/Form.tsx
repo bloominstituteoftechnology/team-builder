@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Form as FormComponent, FormGroup, Label, Input, Button, Container } from 'reactstrap'
-import { CreateTeamMemberModel, TeamRoles } from '../models/TeamMember'
+import { CreateTeamMemberModel, TeamMemberModel, TeamRoles } from '../models/TeamMember'
 
 interface FormProps {
-    onSubmit: (data: CreateTeamMemberModel) => void
+    addMember(data: CreateTeamMemberModel): void
+    editMember(data: TeamMemberModel): void
+    memberToEdit: TeamMemberModel | null
 }
 
 const InitialFormValues: CreateTeamMemberModel = {
@@ -12,11 +14,15 @@ const InitialFormValues: CreateTeamMemberModel = {
     role: TeamRoles.FrontEnd
 }
 
-const Form: React.FC<FormProps> = ({ onSubmit }) => {
+const Form: React.FC<FormProps> = ({ addMember, editMember,  memberToEdit }) => {
     const [formValues, setFormValues] = useState<CreateTeamMemberModel>(InitialFormValues)
+    useEffect(() => {
+        if (memberToEdit) {
+            setFormValues(memberToEdit)
+        }
+    }, [memberToEdit])
 
     const handleChange = (evt: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        console.log(evt.target.value)
         const { id, value } = evt.target
         if (id in formValues) {
             setFormValues({ 
@@ -28,7 +34,14 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
 
     const handleSubmit = (evt: React.FormEvent) => {
         evt.preventDefault()
-        onSubmit(formValues)
+        if (memberToEdit) {
+            editMember({
+                id: memberToEdit.id,
+                ...formValues
+            })
+        } else {
+            addMember(formValues)
+        }
         setFormValues(InitialFormValues)
     }
 
@@ -56,7 +69,7 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
                         </select>
                     </Label>
                 </FormGroup>
-                <Button type="submit">Add Team Member</Button>
+                <Button type="submit">{memberToEdit ? 'Edit' : 'Add'} Team Member</Button>
             </FormComponent>
         </Container>
     )
