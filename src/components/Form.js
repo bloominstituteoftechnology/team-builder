@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
 const initialFormValues = {
   name: '',
@@ -21,6 +22,7 @@ function Form(props) {
   const onSubmit = evt => {
     evt.preventDefault();
     const newMember = {
+      id: uuid(),
       name: formValues.name.trim(),
       email: formValues.email.trim(),
       role: formValues.role,
