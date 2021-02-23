@@ -25,12 +25,12 @@ function Form(props) {
       email: formValues.email.trim(),
       role: formValues.role,
     }
-    if (newMember.name && newMember.email && newMember.role) {
+    if (newMember.name) {
       addNewMember(newMember);
       setFormValues(initialFormValues);
     }
     else {
-      console.log(`newMember missing field: ${newMember.name} ${newMember.email} ${newMember.role}`);
+      alert(`Name must be filled out`);
     }
   }
 
