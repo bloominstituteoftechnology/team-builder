@@ -1,25 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+
+import { CreateTeamMemberModel, TeamMemberModel, TeamRoles } from './models/TeamMember'
+
+import { Container } from 'reactstrap'
+
+import Team from './components/Team'
+import Form from './components/Form'
+
+const InitialTeamData: TeamMemberModel[] = [
+  {
+    id: 'user1',
+    name: 'Lindell Carter',
+    email: 'email@email.com',
+    role: TeamRoles.ProjectManager
+  }
+]
 
 function App() {
+  const [team, setTeam] = useState<TeamMemberModel[]>(InitialTeamData)
+
+  const addTeamMember = (data: CreateTeamMemberModel) => {
+    const id = new Date().toString()
+    const newTeamMember: TeamMemberModel = {
+      ...data,
+      id
+    }
+    setTeam([...team, newTeamMember])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{
+      marginTop: 50
+    }}>
+      <h1>Team Members</h1>
+      <Form onSubmit={addTeamMember} />
+      <Team team={team} />
+    </Container>
   );
 }
 
