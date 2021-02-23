@@ -2,6 +2,8 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import Form from './Form'
+import FriendCard from './FriendCard'
+import { v4 as uuid } from 'uuid'
 
 const initialFormValue =  {
   name: '',
@@ -11,7 +13,7 @@ const initialFormValue =  {
 
 function App() {
 
-  const [friend, setFriend] = useState([]);
+  const [friends, setFriend] = useState([]);
   const [formValues, setFormValues] = useState(initialFormValue)
   const updateForm = (inputName , inputValue) => {
     setFormValues({
@@ -22,23 +24,33 @@ function App() {
 
   const submitForm = () =>{
     const newFriend ={
+      id: uuid(),
       friendName: formValues.friendName.trim(),
       email: formValues.email.trim(),
       roll: formValues.roll.trim(),
     }
-    setFriend([...friend, newFriend])
+    setFriend([...friends, newFriend])
+
+    setFormValues(initialFormValue)
   }
     
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello World!</h1>
+        <h1>Will you be my friend?!</h1>
       </header>
       <Form 
         values={formValues}
         update={updateForm}
         submit={submitForm}
       />
+      {
+        friends.map(friend => {
+          return (
+            <FriendCard key={friend.id} details={friend} />
+          )
+        })
+      }
     </div>
   );
 }
