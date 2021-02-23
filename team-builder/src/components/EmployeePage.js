@@ -1,7 +1,6 @@
 import React from "react";
 import Employee from "./Employee";
 import { useParams } from "react-router-dom";
-import EmployeeList from "./EmployeeList";
 
 const EmployeePage = (props) => {
   let { name } = useParams();
