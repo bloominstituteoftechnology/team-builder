@@ -1,7 +1,5 @@
 import React from 'react'
-
-
-
+import styled from 'styled-components'
 
 export default function Form(props) {
 
@@ -17,11 +15,19 @@ export default function Form(props) {
           submit()
       }
 
+      const InputDiv=styled.div`
+      display:flex;
+      flex-direction: column;
+      padding: 20px;
+      width:80%;
+      align-items:center;
+      align-content: space-around;
+      `
 
 return(
     <div className='formContainer'>
         <form onSubmit={onSubmit}>
-            <div className='Inputs'>
+            <div>
                 <label>Friend name
                     <input 
                         name='friendName'

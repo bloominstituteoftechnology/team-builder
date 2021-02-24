@@ -29,9 +29,18 @@ function App() {
       email: formValues.email.trim(),
       roll: formValues.roll.trim(),
     }
+
+    if (!newFriend.friendName || !newFriend.email || !newFriend.roll){
+      return;
+    }
+
     setFriend([...friends, newFriend])
 
     setFormValues(initialFormValue)
+  }
+
+  const memberToEdit = (e) => {
+    
   }
     
   return (
@@ -47,7 +56,7 @@ function App() {
       {
         friends.map(friend => {
           return (
-            <FriendCard key={friend.id} details={friend} />
+            <FriendCard key={friend.id} details={friend} update={memberToEdit}/>
           )
         })
       }
