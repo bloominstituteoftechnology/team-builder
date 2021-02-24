@@ -6,7 +6,7 @@ function App() {
     const [members, setMembers] = useState([
         {
           id: 1,
-          name: "Ryan Ishimari",
+          name: "Ryan Ishimaru",
           email:"rishimaru23@gmail.com",
           role:"Jr Front-end Engineer"
         },
@@ -26,4 +26,13 @@ function App() {
       };
       setMembers([...members, newBox]);
     };
-}
+};
+return (
+    <div className = "App">
+         <h1>Team List</h1>
+    <Form addNewBox={addNewBox} />
+    <Members members={members}/>
+    </div>
+);
+
+export default App;
