@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
 
 function App() {
   return (
@@ -20,6 +22,16 @@ function App() {
       </header>
     </div>
   );
+}
+
+const initialFormValue = {
+  teamMemberName: '',
+  teamMemberEmail: '',
+  teamMemberRole: '',
+}
+
+function Form() {
+  const [teamMembers, setTeamMembers] = useState([])
 }
 
 export default App;
