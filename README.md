@@ -21,7 +21,7 @@ In this project you'll build an app that will keep track of memebers of a team. 
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
 ### Task 2: Minimum Viable Product
-
+ 
 - [ ] Render a list of team members from state.
 - [ ] Build a form to add a new member to the list of members.
 
