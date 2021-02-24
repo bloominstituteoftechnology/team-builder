@@ -1,64 +1,105 @@
 import { useState } from 'react'
-
+import { Switch, Route } from 'react-router-dom'
+import { v4 as uuid } from 'uuid'
 import { CreateTeamMemberModel, TeamMemberModel, TeamRoles } from './models/TeamMember'
+import { TeamModel } from './models/team.model'
 
-import { Container } from 'reactstrap'
+import Home from './components/Home'
+import Teams from './components/Team/Teams'
 
-import Team from './components/Team'
-import Form from './components/Form'
-
-const InitialTeamData: TeamMemberModel[] = [
+const INITAL_TEAMS: TeamModel[] = [
   {
-    id: 'user1',
-    name: 'Lindell Carter',
-    email: 'email@email.com',
-    role: TeamRoles.ProjectManager
+    id: uuid(),
+    name: 'Team 1',
+    teamMembers: [{
+      id: uuid(),
+      name: 'Lindell Carter',
+      email: 'email@email.com',
+      role: TeamRoles.ProjectManager
+    }]
+  },
+  {
+    id: uuid(),
+    name: 'Team 2',
+    teamMembers: [{
+      id: uuid(),
+      name: 'SpongeBob',
+      email: 'bob@squarepants.com',
+      role: TeamRoles.BackEnd
+    }, {
+      id: uuid(),
+      name: 'Superman',
+      email: 'clark_kent@yahoo.com',
+      role: TeamRoles.UIDesign
+    }]
   }
 ]
 
 function App() {
-  const [team, setTeam] = useState<TeamMemberModel[]>(InitialTeamData)
+  const [teams, setTeams] = useState<TeamModel[]>(INITAL_TEAMS)
   const [memberToEdit, setMemberToEdit] = useState<TeamMemberModel | null>(null)
 
-  const addMember = (data: CreateTeamMemberModel) => {
+  const addMember = (teamId: string) => (data: CreateTeamMemberModel) => {
     const id = new Date().toString()
     const newTeamMember: TeamMemberModel = {
       ...data,
       id
     }
-    setTeam([...team, newTeamMember])
+    
+    setTeams(teams.map(team => {
+      if (teamId === team.id) {
+        return {
+          ...team,
+          teamMembers: team.teamMembers.concat(newTeamMember)
+        }
+      } else {
+        return team
+      }
+    }))
   }
 
-  const editMember = (data: TeamMemberModel) => {
-    setTeam(team.map(teamMember => {
-      if (teamMember.id === data.id) {
-        return data
+  const editMember = (teamId: string) => (data: TeamMemberModel) => {
+    setTeams(teams.map(team => {
+      if (team.id === teamId) {
+        return {
+          ...team,
+          teamMembers: team.teamMembers.map(teamMember => {
+            if (teamMember.id === data.id) {
+              return data
+            }
+            return teamMember
+          })
+        }
       }
-      return teamMember
+      return team
     }))
     setMemberToEdit(null)
   }
 
-  const onClickEdit = (id: string) => {
-    const teamMember = team.find(tm => tm.id === id)
+  const onClickEdit = (teamId: string) => (id: string) => {
+    const team = teams.find(team => team.id === teamId)
+    if (!team) return
+    const teamMember = team.teamMembers.find(teamMember => teamMember.id === id)
     if (teamMember) {
       setMemberToEdit(teamMember)
     }
   }
 
   return (
-    <Container style={{
-      marginTop: 50
-    }}>
-      <h1>Team Members</h1>
-      <Form 
-        addMember={addMember}
-        editMember={editMember}
-        memberToEdit={memberToEdit}
-      />
-      <Team team={team} editTeamMember={onClickEdit} />
-    </Container>
-  );
+    <Switch>
+      <Route path="/teams/:teamID">
+        <Teams teams={teams} 
+          memberToEdit={memberToEdit}
+          addMember={addMember}
+          editMember={editMember}
+          onClickEdit={onClickEdit}
+        />
+      </Route>
+      <Route path="/" exact>
+        <Home teams={teams} />
+      </Route>
+    </Switch>
+  )
 }
 
 export default App;
