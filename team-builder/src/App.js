@@ -39,12 +39,14 @@ function App() {
     <div className = 'container'>
       
       <h1>Team Builder</h1>
+      <div className = 'form'>
       <form  onSubmit={submit}>
         <input name='name' type='text' onChange={change} value={formValues.name} placeholder='name'/>
         <input name='email' type='text' onChange={change} value={formValues.email} placeholder='email'/>
         <input name='role' type='text' onChange={change} value={formValues.role} placeholder='role'/>
         <button>Submit</button>
       </form>
+      </div>
         <div className = 'nameContainer'>
           {teamMember.map((member, idx) =>{
             return (
@@ -65,6 +67,7 @@ function App() {
         </div>
      
     </div>
+    
   )}
 
 export default App;

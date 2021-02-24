@@ -43,24 +43,29 @@
   justify-content: center;
   text-align: center;
   padding: 30px;
-  margin: 10px 30%;
+  margin: 10px 150px;
   border-radius: 2%;
  
 }
 .nameContainer{
   color: white;
   border-radius: 7%;
-  background-image: url('./images/team_building4.jpg');
-  background-size: cover;
+  background-image: url('./images/ondeck-blog-team-building-small-business-1.jpg');
+  padding-top: 30px;
+  
 
 }
 .listContainer{
-  padding: 10px;
-  margin: 10px 20%;
+  padding: 12px;
+  margin: 10px 100px;
   background:limegreen;
   display: flex;
   justify-content: space-between;
   border-radius: 0%;
+}
+.form{
+  padding: 10px;
+  
 }
 /* .name, .email, .role{
   
