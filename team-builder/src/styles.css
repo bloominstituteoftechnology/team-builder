@@ -28,6 +28,8 @@ h1 {
 h2 {
   font-size: 1.2rem;
   margin-bottom: 1.2rem;
+  text-align: center;
+  color:rgb(60, 160, 218)
 }
 label {
   display: flex;

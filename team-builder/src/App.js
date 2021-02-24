@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import Team from './Team'
 import Form from './Form'
-import Teams from './Teams'
 import axios from './axios'
 
 const initialFormValues = {
@@ -9,16 +9,20 @@ const initialFormValues = {
   role: '',
 }
 
-export default function App(props) {
+export default function App(prop) {
   const [team, setTeam] = useState([]) 
   const [ formValues, setFormValues ] = useState(initialFormValues)
-  const [member, setMember] = useState({});
+
   const updateForm = (inputName, inputValue) => {
   setFormValues({
       ...formValues,
       [inputName]: inputValue
     })
   }
+
+  // const memberToEdit = () => {
+
+  // }
 
   const submitForm = () => {
    const newTeam = {
@@ -43,24 +47,20 @@ export default function App(props) {
     axios.get('fakeapi.com').then(res => setTeam(res.data))
   }, []);
 
-  useEffect(()=> {
-    setMember(props.memberToEdit || {username: '', email: '', role: ''})
-  }, [props.memberToEdit]);
-
   return (
     <div className='container'>
       <h1>Team Builder App</h1>
 
-      <Teams
+      <Form
         values={formValues}
         update={updateForm}
         submit={submitForm}
       />
-
+    <h2>Team Member List</h2>
       {
         team.map(teammate => {
           return (
-            <Form key={teammate.id} details={teammate} />
+            <Team key={teammate.id} details={teammate} />
           )
         })
       }
