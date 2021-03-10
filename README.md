@@ -11,7 +11,6 @@ In this project you'll build an app that will keep track of memebers of a team. 
 ### Task 1: Project Set Up
 
 - [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
 - [ ] Clone your OWN version of the repository in your terminal
 - [ ] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
 - [ ] CD into your `team-builder` directory
