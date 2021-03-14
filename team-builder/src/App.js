@@ -1,5 +1,4 @@
 import './App.css';
-import TeamList from './components/TeamList.js';
 import TeamForm from './components/TeamForm.js';
 
 
