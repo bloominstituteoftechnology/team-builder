@@ -3,8 +3,15 @@ import TeamList from './TeamList.js';
 
 function TeamForm(props) {
   const [name, setName] = useState();
-  const teamMembers = props.teamMembers;
+  const [profession, setProfession] = useState()
+  const { teamMembers } = props;
+
+
   const [list, setList] = useState(teamMembers);
+
+
+
+
 
   return (
     <div>
@@ -21,13 +28,24 @@ function TeamForm(props) {
           type='text'
           placeholder='New Team Member Name'
         />
+
+        Profession: <input
+          onChange={event => {
+            setProfession(event.target.value);
+          }}
+
+          id='profession'
+          type='text'
+          placeholder='Profession'
+        />
+
         <input
           onClick={event => {
-            setList([...list, name]);
-            event.preventDefault(e => {
-              event.document.querySelector('#name').value = '';
-
-            });
+            event.preventDefault();
+            document.querySelector('#name').value = '';
+            document.querySelector('#profession').value = '';
+            setList([...list, { name, profession }]);
+            list.push({ name, profession });
           }}
           id='submit'
           type='submit'
@@ -35,9 +53,9 @@ function TeamForm(props) {
         />
 
       </form>
-      <TeamList teamMembers={list} name={name} />
+      <TeamList teamMembers={list} />
     </div>
   );
-}
+};
 
 export default TeamForm;

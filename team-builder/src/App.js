@@ -3,9 +3,14 @@ import TeamForm from './components/TeamForm.js';
 
 
 const teamMembers = [
-  'Hank',
-  'Beth',
-  'Lydia',
+  {
+    name: 'mary',
+    profession: 'hilarious',
+  },
+  {
+    name: 'samantha',
+    profession: 'hilarious',
+  },
 ];
 
 function App() {
