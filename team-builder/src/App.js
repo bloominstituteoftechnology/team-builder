@@ -1,18 +1,24 @@
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
+import MemberForm from './components/MemberForm'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          
-        </p>
-        
-      </header>
-    </div>
-  );
+
+const initialFormValues={
+  username: "",
+  email: "",
+  role: "",
 }
+
+export function App() {
+  // const[members, setMembers] = useState([]);
+  // const {formValues, setForms} = useState(initialFormValues);
+
+  return (
+    <div className="container"> 
+    <MemberForm/>
+    
+    </div>
+  )
+ };
 
 export default App;
