@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemberCard } from './StyledComponents.js';
 
 const TeamList = (props) => {
   const {teamMembers} = props;
@@ -9,10 +10,12 @@ const TeamList = (props) => {
       {teamMembers.map((e, i) => {
         return (
           <React.Fragment>
-            <h1 key={i}>
-              Name: {e.name}
-              <br />
-              Profession: {e.profession}</h1>
+            <MemberCard>
+              <h1 key={i}>
+                Name: {e.name}
+                <br />
+                Profession: {e.profession}</h1>
+              </MemberCard>
             </React.Fragment>
           )
         })}

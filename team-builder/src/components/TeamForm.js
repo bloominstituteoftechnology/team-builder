@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import TeamList from './TeamList.js';
+import { Headline, NewName, NewProfession } from './StyledComponents.js';
 
 function TeamForm(props) {
-  const [name, setName] = useState();
-  const [profession, setProfession] = useState()
+  const [name, setName] = useState('carrot');
+  const [profession, setProfession] = useState('vegetable')
   const { teamMembers } = props;
 
 
@@ -15,8 +16,12 @@ function TeamForm(props) {
 
   return (
     <div>
-      <h1>The member you're adding to the list is {name}</h1>      
+      <Headline>The member you're adding to the list is
+        <NewName> {name}</NewName> and they are a professional
+        <NewProfession> {profession}</NewProfession>
+      </Headline>
       <form>
+
         <label>
           New Member Name:
           <input
@@ -51,6 +56,7 @@ function TeamForm(props) {
             setList([...list, { name, profession }]);
             list.push({ name, profession });
           }}
+
           id='submit'
           type='submit'
           value='Add New Member'
