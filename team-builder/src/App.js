@@ -4,10 +4,12 @@ import TeamForm from './components/TeamForm.js';
 
 const teamMembers = [
   {
+    key: Math.random(),
     name: 'mary',
     profession: 'hilarious',
   },
   {
+    key: Math.random(),
     name: 'samantha',
     profession: 'hilarious',
   },

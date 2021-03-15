@@ -15,22 +15,24 @@ function TeamForm(props) {
 
   return (
     <div>
+      <h1>The member you're adding to the list is {name}</h1>      
       <form>
+        <label>
+          New Member Name:
+          <input
+            onChange={event => {
+              setName(event.target.value);
+            }}
 
-        <h1>The you're adding to the list is <span defaultValue='not known'>{name}</span></h1>
+            id='name'
+            type='text'
+            placeholder='New Team Member Name'
+          />
+        </label>
 
-        New Member Name: <input
-          onChange={event => {
-            setName(event.target.value);
-          }}
-
-          id='name'
-          type='text'
-          placeholder='New Team Member Name'
-        />
-
-        Profession: <input
-          onChange={event => {
+        <label>
+          Profession:
+          <input onChange={event => {
             setProfession(event.target.value);
           }}
 
@@ -38,7 +40,9 @@ function TeamForm(props) {
           type='text'
           placeholder='Profession'
         />
+      </label>
 
+      <label>
         <input
           onClick={event => {
             event.preventDefault();
@@ -51,11 +55,12 @@ function TeamForm(props) {
           type='submit'
           value='Add New Member'
         />
+      </label>
 
-      </form>
-      <TeamList teamMembers={list} />
-    </div>
-  );
+    </form>
+    <TeamList teamMembers={list} />
+  </div>
+);
 };
 
 export default TeamForm;
