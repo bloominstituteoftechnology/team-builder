@@ -1,37 +1,36 @@
 import React,{useState} from "react";
-import axios from "axios";
 
 export function App() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [role, setRole] = useState('');
-  const [status, setStatus] = useState(false)
-  const onSubmit = event => {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    role: '',
+    status: false,
+  })
+  
+  const handleSubmit = event => {
     event.preventDefault();
-    axios.post('/', {username, email, role, status});
   }
 
-  const onUsernameChange = event => setUsername(event.target.value)
-  const onEmailChange = event => setEmail(event.target.value)
-  const onRollChange = event=> setRole(event.target.value)
-  const onStatusChange = event => setStatus(event.target.checked)
+  const onInputChange = event => {
+      setFormData({
+        ...formData,
+        [event.target.name] : event.target.value,
+      });
+  };
   
-
-  
-  
-
     return (
       <div className="container"> 
       <h1>Form App</h1>
-      <h2>The name is {username || ' '}</h2>
-      <h2>Email: {email || ''}</h2>
-      <h2>Role: {role || ''}</h2>
-      <h2>Status: {status ? 'active' : 'inactive'}</h2>
+      <h2>The name is {''}</h2>
+      <h2>Email: {''}</h2>
+      <h2>Role: {''}</h2>
+      <h2>Status: {false}</h2>
 
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
 
         <label htmlFor='usernameInput'>Username: </label> 
-        <input onChange={onUsernameChange}
+        <input name='username' onChange={onInputChange}
               type="text"
               id="usernameInput"
               name="username"
@@ -41,7 +40,7 @@ export function App() {
         /><br/>
 
         <label htmlFor='emailInput'>Email: </label>
-        <input onChange={onEmailChange}
+        <input name='email' onChange={onInputChange}
              type="text"
              id="emailInput"
              name="email"
@@ -51,9 +50,8 @@ export function App() {
           /><br/>
   
         <label htmlFor="roleSelect">Role:</label> 
-          <select onChange={onRollChange}
-          id="roleSelect" 
-          name="role">
+          <select name='role' onChange={onInputChange}
+          id="roleSelect">
             <option value='Student'>Student</option>
             <option value='TA'>TA</option>
             <option value='Instructor'>Instructor</option>
@@ -61,7 +59,7 @@ export function App() {
           </select><br/>
           
         <label htmlFor="status">Active member?</label>
-          <input onChange={onStatusChange}
+          <input name='status' onChange={onInputChange}
           type="checkbox"
           id="status"
           value="yes"
