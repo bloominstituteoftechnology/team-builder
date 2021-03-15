@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 
-export function App() {
+function MemberForm(props) {
+  console.log(props)
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -10,6 +11,7 @@ export function App() {
   
   const handleSubmit = event => {
     event.preventDefault();
+    props.addMember(formData)
   }
 
   const onInputChange = event => {
@@ -22,20 +24,15 @@ export function App() {
     return (
       <div className="container"> 
       <h1>Form App</h1>
-      <h2>The name is {''}</h2>
-      <h2>Email: {''}</h2>
-      <h2>Role: {''}</h2>
-      <h2>Status: {false}</h2>
-
       <form onSubmit={handleSubmit}>
 
         <label htmlFor='usernameInput'>Username: </label> 
         <input name='username' onChange={onInputChange}
               type="text"
               id="usernameInput"
-              name="username"
               placeholder="enter username"
               maxLength="30" 
+              value={formData.username}
               required
         /><br/>
 
@@ -43,26 +40,28 @@ export function App() {
         <input name='email' onChange={onInputChange}
              type="text"
              id="emailInput"
-             name="email"
-             placeholder="enter email"
              maxLength="30"
+             value={formData.email}
              required
           /><br/>
   
         <label htmlFor="roleSelect">Role:</label> 
-          <select name='role' onChange={onInputChange}
-          id="roleSelect">
-            <option value='Student'>Student</option>
-            <option value='TA'>TA</option>
-            <option value='Instructor'>Instructor</option>
-            <option value='Admin'>Admin</option>
+          <select 
+          name='role' 
+          onChange={onInputChange}
+          id="roleSelect"
+          >
+            <option value={formData.role}>Student</option>
+            <option value={formData.role}>TA</option>
+            <option value={formData.role}>Instructor</option>
+            <option value={formData.role}>Admin</option>
           </select><br/>
           
         <label htmlFor="status">Active member?</label>
           <input name='status' onChange={onInputChange}
           type="checkbox"
           id="status"
-          value="yes"
+          value={formData.status || true}
           /><br/>
 
           <input
@@ -75,6 +74,6 @@ export function App() {
     )
    };
   
-  export default App;
+  export default MemberForm;
 
   
