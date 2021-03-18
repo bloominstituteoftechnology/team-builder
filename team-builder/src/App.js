@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import MemberForm from './components/Form'
+import Team from './components/Team'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const squad = [
+  {
+    name: 'Niko',
+    email: 'niko@niko.com',
+    role: 'Artist'
+  },
+  {
+    name: 'Niles',
+    email: 'niles@niles.com',
+    role: 'Engineer'
+  },
+  {
+    name: 'Taylor',
+    email: 'taylor@taylor.com',
+    role: 'Producer'
+  }   
+]
+
+const initialFormValues = {
+  name: '',
+  email: '',
+  role: '',
 }
 
-export default App;
+export default function App() {
+  const [members, setMembers] = useState(squad)
+
+  const [formValues, setForms] = useState(initialFormValues)
+
+  const updateForm = (inputName, inputValue) => {
+    setForms({...formValues, [inputName]: inputValue})
+  }
+
+  const submitForm = () => {
+    const newMember = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role
+    }
+    setMembers([...members, newMember])
+    setForms(initialFormValues)
+  }
+
+  return (
+    <div className="container">
+      <h1>Studio Team</h1>
+      
+      <MemberForm
+        values={formValues}
+        update={updateForm}
+        submit={submitForm}
+      />
+
+      {
+        members.map(member => {
+          return (
+            <Team key={member.id} details={member} />
+          )
+        })
+      }
+    </div>
+  )
+}
