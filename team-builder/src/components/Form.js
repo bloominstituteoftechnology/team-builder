@@ -4,6 +4,7 @@ function Form(props) {
     const {list, update, submit} = props;
 
     const onChange = evt => {
+        console.log(evt.target)
         const {name, value} = evt.target;
         update(name, value);
     }

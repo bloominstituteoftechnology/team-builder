@@ -25,7 +25,7 @@ const defaultFriend = {
 
 function App() {
 
-// Hard coded friends
+
 const [friend, setNewFriend] = useState([]);
 
 // make new friends
