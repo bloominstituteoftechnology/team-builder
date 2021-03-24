@@ -37,8 +37,11 @@ const initialFormValue = {
         const newTeamMember = {
             teamMemberName: formValues.teamMemberName.trim(),
             teamMemberEmail: formValues.teamMemberEmail.trim(),
-            teamMemberRole: formValues.teamMemberName.trim(),
+            teamMemberRole: formValues.teamMemberRole.trim(),
         }
+        setTeamMembers(teamMembers.concat(newTeamMember))
+        setFormValues(initialFormValue)
+        console.log(newTeamMember)
     }
 
     return (
@@ -47,17 +50,17 @@ const initialFormValue = {
         <form onSubmit={submit}>
           <label>
             New Member Name:
-            <input name='memberName' type='text' onChange={change} value={formValues.teamMemberName}/>
+            <input name='teamMemberName' type='text' onChange={change} value={formValues.teamMemberName}/>
           </label>
           <br></br>
           <label>
             New Member Email:
-            <input name='memberEmail' type='text' onChange={change} value={formValues.teamMemberEmail}/>
+            <input name='teamMemberEmail' type='text' onChange={change} value={formValues.teamMemberEmail}/>
           </label>
           <br></br>
           <label>
             New Member Role:
-            <input name='memberRole' type='text' onChange={change} value={formValues.teamMemberRole} />
+            <input name='teamMemberRole' type='text' onChange={change} value={formValues.teamMemberRole} />
           </label>
           <br></br>
           <br></br>
