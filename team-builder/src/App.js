@@ -26,7 +26,7 @@ const defaultFriend = {
 function App() {
 
 
-const [friend, setNewFriend] = useState([]);
+const [employee, setEmployee] = useState([]);
 
 // make new friends
 const [list, setList] = useState(defaultFriend);
@@ -48,7 +48,7 @@ const submitForm = () =>{
   if (!newFriend.name || !newFriend.email || !newFriend.role) {
     return;
   }
-  setNewFriend([newFriend, ...friend])
+  setEmployee([newFriend, ...employee])
   setList(defaultFriend)
 };
 
@@ -62,7 +62,7 @@ const submitForm = () =>{
       submit={submitForm}
       />
 
-      {friend.map((friend) => {
+      {employee.map((friend) => {
         return <Employee key = {friend.id} details={friend} />
       })}
     </div>
