@@ -29,6 +29,7 @@ return (
     onChange={onChange}
     value={values.email}
     placeholder='email'></input></label>
+
 <label>
     Role
     <select name='role' value={values.role} onChange={onChange}>
@@ -36,9 +37,10 @@ return (
     <option value="Frontend Web Dev">Frontend Web Dev</option>
     <option value="Backend Web Dev">Backend Web Dev</option>
     <option value="Full Stack Web Dev">Full Stack Web Dev</option>
-            </select>
-        </label>
-     </div>
+ </select>
+</label>
+</div>
+
  <div className="submit">
     <button>Submit</button>
 </div>
