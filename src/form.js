@@ -6,7 +6,7 @@ export default function TeamForm(props) {
 
   const onChange = evt => {
     
-    const { name, value } = evt.target
+  const { name, value } = evt.target
     
     update(name, value)
   }
@@ -21,20 +21,22 @@ export default function TeamForm(props) {
   return (
     <form className='form container' onSubmit={onSubmit}>
       <div className='form-group inputs'>
-        
-        <label>Team Membername
+      <div>  
+        <label>Team Member Name
           
               <input 
-                type="text"
+                type="text" name="username"
                 value={values.username}
-                placeholder="type a Membername"
+                placeholder="Type a Member Name"
                 onChange={onChange}
-                name="username"
+                
               />
         </label>
 
+        </div>
+        <div>
         <label>Email
-          {/* 🔥 STEP 4 - Make an input of type `email` or `text` for email. */}
+         
           <input 
             type="email"
             name="email"
@@ -43,15 +45,20 @@ export default function TeamForm(props) {
             onChange={onChange}
           />
         </label>
-
+    </div>    
+    <div>
         <label>Role
-          {/* 🔥 STEP 5 - Make dropdown for role. */}
+          
           <select name="role"  value={values.role} onChange={onChange}>
             <option value="">select role!</option>
-            <option value="student">Student</option>
-            <option value="graduate">Graduate</option>
+            <option value="Backend engineer">Backend engineer</option>
+            <option value="Front engineer">Front engineer</option>
+            <option value="Data Analyst">Data Engineer</option>
+            <option value="Full Stack">Full Stack</option>
           </select>
+          
         </label>
+    </div>
 
         <div className='submit'>
           <button>submit</button>

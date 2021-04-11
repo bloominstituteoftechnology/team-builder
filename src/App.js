@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import React, {useState, useEffect} from 'react';
+//import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-import form from './form'
+import TeamForm from './form'
 
 
 // 👉 the shape of the state that drives the form
@@ -20,8 +20,8 @@ function Member({details}) {
 
   return (
     <div className='member container'>
-      <h2>{details.username}</h2>
-      <p>Email: {details.email}</p>
+      <h2>{details.username}</h2> 
+      <p> Email: {details.email}</p> 
       <p>Role: {details.role}</p>
     </div>
   )
@@ -30,7 +30,7 @@ function Member({details}) {
 
 
 
-function App() {
+ function App() {
 
 
   const [members, setMembers] = useState([]);
@@ -58,8 +58,10 @@ function App() {
 
   return (
     <div className="App">
-        <Teamform
-        values={formValues}
+
+      <h1>Team Form App</h1>
+        <TeamForm
+       values={formValues} 
         update={updateForm}
         submit={submitForm}
       />
