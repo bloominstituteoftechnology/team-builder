@@ -5,9 +5,9 @@ import teamMembers from './data/data';
 function App() {
   const [team, setTeam] = useState([]);
 
-  useEffect(() => setTimeout(setTeam(teamMembers), 3000), [])
+  useEffect(() => setTeam(teamMembers), [])
 
-  return (team ?
+  return (team.length > 0 ?
     (<div className="App">
       <h1>Team Members</h1>
       {team.map((member, index) =>
