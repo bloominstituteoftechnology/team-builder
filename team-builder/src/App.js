@@ -1,27 +1,29 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import teamMembers from './data/data';
+import { useState, useEffect } from "react";
+import "./App.css";
+import teamMembers from "./data/data";
+import TeamMember from "./Components/TeamMember";
+import LoadScreen from "./Components/LoadScreen";
 
 function App() {
   const [team, setTeam] = useState([]);
 
-  useEffect(() => setTeam(teamMembers), [])
+  useEffect(() => setTeam(teamMembers), []);
 
-  return (team.length > 0 ?
-    (<div className="App">
+  return team.length > 0 ? (
+    <div className="App">
       <h1>Team Members</h1>
-      {team.map((member, index) =>
-        <div className="team_member" key={index} >
-          <h2>{member.name}</h2>
-          <p>Email: {member.email}</p>
-          <p>Role: {member.role}</p>
-        </div>
-      )}
-    </div>)
-    : (<div className="App">
-      <h1>Team Members</h1>
-      <p>Fetching Team Members...</p>
-    </div>));
-};
+      {team.map((member, index) => (
+        <TeamMember
+          key={index}
+          name={member.name}
+          email={member.email}
+          role={member.role}
+        />
+      ))}
+    </div>
+  ) : (
+    <LoadScreen />
+  );
+}
 
 export default App;

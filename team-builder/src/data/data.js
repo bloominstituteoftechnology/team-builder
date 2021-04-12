@@ -11,7 +11,7 @@ const teamMembers = [
     },
     {
         name: "Jimmy Beans",
-        email: "jimmy@mybeans.com",
+        email: "jimmy@heythosearemybeans.com",
         role: "Front End Engineer"
     }
 ]
