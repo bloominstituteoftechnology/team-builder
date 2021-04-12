@@ -1,0 +1,27 @@
+.App {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.team_member, #add_member_form {
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 3px 2px #222;
+    padding: 8px;
+}
+.team_member + .team_member, #add_member_form {
+    margin-top: 1em;
+}
+#add_member_form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+input, select {
+    border-radius: 5px;
+    padding: 2px;
+    margin: .5em 0 0 .5em;
+}
+button {
+    margin: .75em 0 0 0;
+}
