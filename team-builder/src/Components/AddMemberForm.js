@@ -32,7 +32,9 @@ const AddMemberForm = (props) => {
 
   return (
     <form id="add_member_form" action="submit" onSubmit={submitForm} >
-      <label htmlFor="name">
+          <h3>Add New Team Member</h3>
+          <span>
+          <label htmlFor="name">Name</label>
         <input
           type="text"
           id="name"
@@ -41,6 +43,9 @@ const AddMemberForm = (props) => {
           value={formValue.name}
           placeholder='enter name'
         />
+          </span>
+        <span>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
@@ -49,6 +54,8 @@ const AddMemberForm = (props) => {
           value={formValue.email}
           placeholder='enter email'
         />
+        </span>
+        <span><label htmlFor="role">Role</label>
         <select name="role" id="role" onChange={change}>
             <option value="">Please choose a role</option>
           {roles.map((role, index) => (
@@ -56,8 +63,7 @@ const AddMemberForm = (props) => {
               {role}
             </option>
           ))}
-        </select>
-      </label>
+        </select></span>
       <button type="submit" >Submit</button>
     </form>
   );

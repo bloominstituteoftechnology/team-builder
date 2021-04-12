@@ -14,8 +14,14 @@
 }
 #add_member_form {
     display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 input, select {
-    margin: 3px;
     border-radius: 5px;
+    padding: 2px;
+    margin: .5em 0 0 .5em;
+}
+button {
+    margin: .75em 0 0 0;
 }
