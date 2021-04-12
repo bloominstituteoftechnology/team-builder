@@ -31,7 +31,7 @@ const AddMemberForm = (props) => {
   ];
 
   return (
-    <form action="submit" onSubmit={submitForm} >
+    <form id="add_member_form" action="submit" onSubmit={submitForm} >
       <label htmlFor="name">
         <input
           type="text"
