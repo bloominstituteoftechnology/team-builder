@@ -1,22 +1,26 @@
 import './App.css';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import TeamMembers from './components/TeamMembers';
+
+const defaultMember = [
+  {
+      id: 0,
+      name: '',
+      email: '',
+      role: ''
+  }
+]
 
 function App() {
 
-  const [teamMembers, setTeamMembers] = useState([
-    {
-      id: 0,
-      name: '',
-      role: '',
-      email: ''
-    }
-  ]);
+  const [teamMembers, setTeamMembers] = useState(defaultMember);
 
   console.log(teamMembers);
   
   return (
-    <div className="App">
+    <div>
+      <h1>THE TEAM</h1>
+      <TeamMembers teamMembers={teamMembers}/>
     </div>
   );
 }
