@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import TeamMembers from './components/TeamMembers';
+import TeamMembersForm from './components/TeamMembersForm';
 
 const defaultMember = [
   {
@@ -18,8 +19,9 @@ function App() {
   console.log(teamMembers);
   
   return (
-    <div>
+    <div className="App">
       <h1>THE TEAM</h1>
+      <TeamMembersForm />
       <TeamMembers teamMembers={teamMembers}/>
     </div>
   );
