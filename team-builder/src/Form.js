@@ -1,23 +1,5 @@
-import React, { useState } from 'react'
-
-const initialFormValues = {
-    fName: '',
-    lName: '',
-    email:'',
-    role:'',
-}
-const team = [
-    {fName: 'Ricky', lName: 'Pena', email:'ricky@ricky.com',role:'Backend Engineer'},
-    {fName: 'Mike', lName: 'Simmons', email:'mike@mike.com',role:'Frontend Engineer'},
-
-]
-
-
-
 export default function Form (props){
     const {values,update,submit} = props
-    // const [members,setMembers] = useState(team);
-    // const[formValues,setFormValues] = useState(initialFormValues);
 console.log("HERE",values)
     const onChange = evt =>{
         const {name, value} = evt.target;
@@ -68,9 +50,6 @@ console.log("HERE",values)
                         <option value="Designer">Designer</option>
                     </select>
                 </label>
-                
-
-                
                 <div className ="submit">
                 <button>Submit</button>
                 </div>
