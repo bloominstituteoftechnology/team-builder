@@ -1,30 +1,37 @@
 import React, { useState } from 'react';
 
-const TeamMembersForm = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [role, setRole] = useState('');
+const TeamMembersForm = (props) => {
+    const [member, setMember] = useState({
+        name: '',
+        email: '',
+        role: ''
+    });
+
+    const changeHandler = (event) => {
+        setMember({
+            ...member, [event.target.name]: event.target.value
+        })
+        
+    }
 
     return (
         <form onSubmit={event => {
             event.preventDefault();
+            setMember({name: '', email: '', role: ''})
+            props.addMember(member)
         }}>
             <label>Name <input type="text" 
             placeholder="Name" 
             name="name" 
-            value={name}
-            onChange={event => {
-                setName(event.target.value)
-            }}/>
+            value={member.name}
+            onChange={changeHandler}/>
             </label>
             
             <label>Email <input type="email" 
             placeholder="Email" 
             name="email" 
-            value={email}
-            onChange={event => {
-                setEmail(event.target.value)
-            }}/>
+            value={member.email}
+            onChange={changeHandler}/>
             </label>
 
             <br />
@@ -32,10 +39,8 @@ const TeamMembersForm = () => {
             <label> Role
                 <select 
                 name='role'
-                value={role}
-                onChange={event => {
-                   setRole(event.target.value)
-                }}>
+                value={member.role}
+                onChange={changeHandler}>
                     <option>--Select--</option>
                     <option>Frontend Engineer</option>
                     <option>Backend Engineer</option>
