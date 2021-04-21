@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState }  from 'react';
 import ReactDOM from 'react-dom';
+import TeamMember from './components/Form';
 
 const defaultMember = [
   {
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className='app'>
       <h1>Members of Team</h1>
+      < TeamMember teamMember={teamMember}/>
     </div>
   );
 }
