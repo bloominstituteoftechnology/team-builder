@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import TeamForm from './TeamForm'
 import Teammate from './Teammate'
-import axios from 'axios'
 
 // initial state
 const initialFormValues = {
@@ -14,6 +13,9 @@ const initialFormValues = {
 function App() {
   const[teammates, setTeammates] = useState([])
   const [formValues, setFormValues] = useState(initialFormValues)
+
+  console.log(teammates)
+
 
   // form state updater function
   const updateForm = (inputName, inputValue) => {
@@ -28,20 +30,10 @@ function App() {
       email: formValues.email.trim(),
       role: formValues.role,
     }
-    if (!newTeammate.username || !newTeammate.email || !newTeammate.role) return
-    axios.post('fakeapi.com', newTeammate)
-      .then(res => {
-        const teammateFromBackend = res.data
-        setTeammates([teammateFromBackend, ...teammates])
-        setFormValues(initialFormValues)
-      })
-  }
 
-  useEffect(() => {
-    axios
-    .get('fakeapi.com')
-    .then(res => setTeammates(res.data))
-  }, [])
+    setTeammates([newTeammate, ...teammates]);
+    setFormValues(initialFormValues);
+  }
 
   return (
     <div className="App">
@@ -57,16 +49,17 @@ function App() {
         values={formValues}
       />
 
-      {
+      {/* {
 
         teammates.map(teammate => {
           return (
             <Teammate key={teammate.id} details={teammate} />
           )
         })
-      }
+      } */}
     </div>
   )
 }
+
 
 export default App;
