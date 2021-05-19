@@ -1,4 +1,5 @@
   import React, {useState, useEffect} from 'react'
+  import axios from 'axios'
 
 const Form = props => {
 
@@ -15,23 +16,54 @@ const Form = props => {
         })
     }
 
+    const onSubmit = event => {
+        event.preventDefault()
+        submit()
+    }
+
+    
+    const submitForm = () => {
+
+        const newTeammate = {
+            name: form.name.trim(),
+            role: form.role,
+            email: form.email.trim()
+        }
+
+        if(!newTeammate.name  || !newTeammate.role || !newTeammate.email ) {
+            return;
+        }
+
+        axios.post("www.whatever.com", newTeammate)
+        .then(res => {
+            setTeammates(teammates.concat(res.data))  
+            setForm(initial)
+        })
+        .catch(err => {
+            console.log(err)
+        });
+    }
+
+
     return (
         <div>
-           <form>
+           <form onSubmit={onSubmit}>
             <label>
                 Name
                 <input name='name' onChange={onInputChange} />
             </label>
             <br></br>
             <label>
-                Roll
-                <input name='roll' onChange={onInputChange}/>
+                Role
+                <input name='role' onChange={onInputChange}/>
             </label>
             <br></br>
             <label>
                 Email
                 <input name='email' onChange={onInputChange}/>
             </label>
+            <br></br>
+            <button>submit</button>
            </form>
         </div>
     )
