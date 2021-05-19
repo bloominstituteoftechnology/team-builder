@@ -1,5 +1,6 @@
   import React, {useState, useEffect} from 'react'
   import axios from 'axios'
+  import CurrentTeam from './CurrentTeam'
 
 const Form = props => {
 
@@ -60,6 +61,7 @@ const [teammates, setTeammates] = useState([])
 
     return (
         <div>
+        <CurrentTeam team={teammates}/>
            <form onSubmit={onSubmit}>
             <label>
                 Name
