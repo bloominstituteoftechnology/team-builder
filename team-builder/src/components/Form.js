@@ -8,6 +8,7 @@ const Form = props => {
         role: '',
         email: '',
     })
+const [teammates, setTeammates] = useState([])
 
     const onInputChange = event => {
         setFormData({
@@ -16,18 +17,13 @@ const Form = props => {
         })
     }
 
-    const onSubmit = event => {
-        event.preventDefault()
-        submit()
-    }
-
     
     const submitForm = () => {
 
         const newTeammate = {
-            name: form.name.trim(),
-            role: form.role,
-            email: form.email.trim()
+            name: formData.name.trim(),
+            role: formData.role,
+            email: formData.email.trim()
         }
 
         if(!newTeammate.name  || !newTeammate.role || !newTeammate.email ) {
@@ -37,7 +33,7 @@ const Form = props => {
         axios.post("www.whatever.com", newTeammate)
         .then(res => {
             setTeammates(teammates.concat(res.data))  
-            setForm(initial)
+            setFormData()
         })
         .catch(err => {
             console.log(err)
@@ -47,7 +43,7 @@ const Form = props => {
 
     return (
         <div>
-           <form onSubmit={onSubmit}>
+           <form>
             <label>
                 Name
                 <input name='name' onChange={onInputChange} />
