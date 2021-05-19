@@ -40,10 +40,27 @@ const [teammates, setTeammates] = useState([])
         });
     }
 
+    useEffect(() => {
+        axios.get("www.whatever.com")
+        .then(res => {
+            setTeammates(res.data)
+            setFormData()
+        })
+        .catch(err => {
+            console.log(err)
+        })
+        },[])
+
+        const onSubmit = event => {
+            event.preventDefault()
+            submitForm()
+            
+        }
+
 
     return (
         <div>
-           <form>
+           <form onSubmit={onSubmit}>
             <label>
                 Name
                 <input name='name' onChange={onInputChange} />
