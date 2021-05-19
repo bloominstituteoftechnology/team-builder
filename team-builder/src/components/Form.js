@@ -1,14 +1,21 @@
 import React from "react";
 
 export default function Form(props) {
-  const { formValues } = props;
+  const { formValues, update, submit } = props;
+
   const onChange = (evt) => {
     const { name, value } = evt.target;
+    update(name, value);
+  };
+
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+    submit();
   };
 
   return (
-    <div className="formContainer">
-      {/* <p>this is the form</p>
+    <form className="formContainer" onSubmit={onSubmit}>
+      <p>this is the form</p>
       <label>
         Name:
         <input
@@ -17,8 +24,8 @@ export default function Form(props) {
           onChange={onChange}
           value={formValues.name}
         />
-      </label> */}
-      {/* <label>
+      </label>
+      <label>
         Email:
         <input
           type="email"
@@ -35,7 +42,14 @@ export default function Form(props) {
           <option value="Backend">-- Back-end Engineer --</option>
           <option value="Manager">-- Team Manager --</option>
         </select>
-      </label> */}
-    </div>
+      </label>
+      <div className="submit">
+        <button
+          disabled={!formValues.name || !formValues.email || !formValues.role}
+        >
+          submit
+        </button>
+      </div>
+    </form>
   );
 }

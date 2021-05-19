@@ -6,7 +6,11 @@ import Form from "./components/Form";
 
 function App() {
   const [teamMembers, setTeamMembers] = useState([]);
-  const [initialFormValue, setInitialFormValue] = useState("");
+  const [initialFormValue, setInitialFormValue] = useState({
+    name: "",
+    email: "",
+    role: "",
+  });
   const [formValues, setFormValues] = useState(initialFormValue);
 
   const updateForm = (inputName, inputValue) => {
@@ -22,8 +26,9 @@ function App() {
     };
     if (!newTeamMember.username || !newTeamMember.email || !newTeamMember.role)
       return;
+    console.log("this is newteammember", newTeamMember);
   };
-
+  // console.log(submitForm);
   return (
     <div className="container">
       <Form formValues={formValues} update={updateForm} submit={submitForm} />
