@@ -8,20 +8,29 @@ const Form = props => {
         email: '',
     })
 
+    const onInputChange = event => {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value,
+        })
+    }
+
     return (
         <div>
            <form>
             <label>
                 Name
-                <input />
+                <input name='name' onChange={onInputChange} />
             </label>
+            <br></br>
             <label>
                 Roll
-                <input />
+                <input name='roll' onChange={onInputChange}/>
             </label>
+            <br></br>
             <label>
                 Email
-                <input />
+                <input name='email' onChange={onInputChange}/>
             </label>
            </form>
         </div>
