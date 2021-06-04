@@ -5,8 +5,10 @@ import {
   CardActions,
   Typography,
   Button,
+  Tooltip,
 } from "@material-ui/core";
 import Send from "@material-ui/icons/Send";
+import Edit from '@material-ui/icons/Edit';
 
 const TeamMember = (props) => {
   const { name, email, role } = props;
@@ -15,16 +17,18 @@ const TeamMember = (props) => {
       <Card raised>
         <CardContent>
           <Typography variant="h4" component="h2">
-            {name}
+          {name} <Tooltip title="Edit Team Member" ><Edit/></Tooltip>
           </Typography>
           <Typography variant="subtitle1">{role}</Typography>
         </CardContent>
         <CardActions>
-          <Button variant="contained" color="primary" endIcon={<Send />}>
+          <Tooltip title={`Email ${name}`} >
+          <Button aria-label="email" variant="contained" color="primary" endIcon={<Send />}>
             <a style={{ textDecoration: "none", color: "inherit" }} href={`emailto:${email}`}>
               Email {name}
             </a>
           </Button>
+          </Tooltip>
         </CardActions>
       </Card>
     </div>
