@@ -8,22 +8,26 @@ import {
   Input,
   FormControl,
   FormLabel,
+  InputAdornment,
+  FormHelperText,
 } from "@material-ui/core";
 import Send from "@material-ui/icons/Send";
 import Edit from "@material-ui/icons/Edit";
 import Publish from "@material-ui/icons/Publish";
+import Email from "@material-ui/icons/Email";
+import AccountCircle from "@material-ui/icons/AccountCircle";
 
 const TeamMember = (props) => {
   const { name, email, role, update } = props;
 
   const [editing, setEditing] = useState(false);
-  const initialValue = {name, email, role}
+  const initialValue = { name, email, role };
   const [values, setValues] = useState(initialValue);
 
   const submitChanges = (e) => {
     e.preventDefault();
     update(name, values);
-    console.log(name, values)
+    console.log(name, values);
     toggleEdit();
   };
 
@@ -33,7 +37,7 @@ const TeamMember = (props) => {
 
   const onChange = (e) => {
     const { name, value } = e.target;
-    setValues({...values, [name]: value });
+    setValues({ ...values, [name]: value });
   };
 
   return (
@@ -42,8 +46,41 @@ const TeamMember = (props) => {
         <Card raised>
           <CardContent>
             <FormControl>
-              <FormLabel htmlFor="name_edit" >Edit Name</FormLabel>
-              <Input id="name_edit" name="name" type="text" value={values.name} onChange={onChange} />
+              <FormLabel htmlFor="name_edit">Edit Name</FormLabel>
+              <Input
+                id="name_edit"
+                name="name"
+                type="text"
+                value={values.name}
+                onChange={onChange}
+                startAdornment={
+                  <InputAdornment>
+                    <AccountCircle />
+                  </InputAdornment>
+                }
+                aria-describedby="name-helper-text_edit"
+              />
+              <FormHelperText id="name-helper-text_edit" >Edit member name</FormHelperText>
+            </FormControl>
+            <FormControl>
+              <FormLabel htmlFor="email_edit">Email</FormLabel>
+              <Input
+                type="email"
+                id="email_edit"
+                name="email"
+                value={values.email}
+                onChange={onChange}
+                placeholder={values.email}
+                aria-describedby="email-helper-text"
+                startAdornment={
+                  <InputAdornment>
+                    <Email />
+                  </InputAdornment>
+                }
+              />
+              <FormHelperText id="email-helper-text">
+                Edit member email address
+              </FormHelperText>
             </FormControl>
           </CardContent>
           <CardActions>
