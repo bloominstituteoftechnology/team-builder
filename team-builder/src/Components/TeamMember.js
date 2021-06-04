@@ -28,8 +28,10 @@ const TeamMember = (props) => {
 
   const submitChanges = (e) => {
     e.preventDefault();
-    update(name, values);
-    console.log(name, values);
+    if (values !== initialValue) {
+      update(name, values);
+      console.log(name, values);
+    }
     toggleEdit();
   };
 
