@@ -14,6 +14,20 @@ function App() {
     setTeam([...team, newMember]);
   };
 
+  //write function to edit team member record
+  const update = (memberName, newData) => {
+    const { name, email, role } = newData;
+    const updatedTeam = team.map((mbr) => {
+      if (mbr.name === memberName) {
+        mbr.name = name;
+        mbr.email = email;
+        mbr.role = role;
+      }
+      return mbr;
+    });
+    setTeam(updatedTeam);
+  };
+
   return team.length > 0 ? (
     <div className="App">
       <h1>Team Members</h1>
@@ -23,6 +37,7 @@ function App() {
           name={member.name}
           email={member.email}
           role={member.role}
+          update={update}
         />
       ))}
       <AddMemberForm submit={onSubmit} />

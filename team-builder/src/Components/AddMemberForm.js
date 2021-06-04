@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Button,
   Card,
-  CardContent,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -12,7 +11,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import Send from "@material-ui/icons/Send";
 import Email from "@material-ui/icons/Email";
 import Publish from "@material-ui/icons/Publish";
 
@@ -48,67 +46,67 @@ const AddMemberForm = (props) => {
 
   return (
     <Card raised>
-        <form id="add_member_form" action="submit" onSubmit={submitForm}>
-          <Typography variant="h6" component="h2">
-            Add New Team Member
-          </Typography>
-          <FormControl>
-            <FormLabel htmlFor="name">Name</FormLabel>
-            <Input
-              type="text"
-              id="name"
-              aria-describedby="name-helper-text"
-              name="name"
-              onChange={change}
-              value={formValue.name}
-              placeholder="2-20 characters"
-              startAdornment={
-                <InputAdornment>
-                  <AccountCircle />
-                </InputAdornment>
-              }
-            />
-            <FormHelperText id="name-helper-text">
-              Please enter your name
-            </FormHelperText>
-          </FormControl>
-          <FormControl>
-            <FormLabel htmlFor="email">Email</FormLabel>
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              value={formValue.email}
-              onChange={change}
-              placeholder="name@domain.com"
-              aria-describedby="email-helper-text"
-              startAdornment={
-                <InputAdornment>
-                  <Email />
-                </InputAdornment>
-              }
-            />
-            <FormHelperText id="email-helper-text">
-              Please enter your email
-            </FormHelperText>
-          </FormControl>
-          <FormControl>
-            <FormLabel htmlFor="role">Role</FormLabel>
-            <NativeSelect name="role" id="role" onChange={change}>
-              <option value={null} disabled>
-                Please select a role
+      <form id="add_member_form" action="submit" onSubmit={submitForm}>
+        <Typography variant="h6" component="h2">
+          Add New Team Member
+        </Typography>
+        <FormControl>
+          <FormLabel htmlFor="name">Name</FormLabel>
+          <Input
+            type="text"
+            id="name"
+            aria-describedby="name-helper-text"
+            name="name"
+            onChange={change}
+            value={formValue.name}
+            placeholder="2-20 characters"
+            startAdornment={
+              <InputAdornment>
+                <AccountCircle />
+              </InputAdornment>
+            }
+          />
+          <FormHelperText id="name-helper-text">
+            Please enter your name
+          </FormHelperText>
+        </FormControl>
+        <FormControl>
+          <FormLabel htmlFor="email">Email</FormLabel>
+          <Input
+            type="email"
+            id="email"
+            name="email"
+            value={formValue.email}
+            onChange={change}
+            placeholder="name@domain.com"
+            aria-describedby="email-helper-text"
+            startAdornment={
+              <InputAdornment>
+                <Email />
+              </InputAdornment>
+            }
+          />
+          <FormHelperText id="email-helper-text">
+            Please enter your email
+          </FormHelperText>
+        </FormControl>
+        <FormControl>
+          <FormLabel htmlFor="role">Role</FormLabel>
+          <NativeSelect name="role" id="role" onChange={change}>
+            <option value={null} disabled>
+              Please select a role
+            </option>
+            {roles.map((role, index) => (
+              <option value={`${role}`} key={index}>
+                {role}
               </option>
-              {roles.map((role, index) => (
-                <option value={`${role}`} key={index}>
-                  {role}
-                </option>
-              ))}
-            </NativeSelect>
-          </FormControl>
-          <Button variant="contained" type="submit" startIcon={<Publish />}>
-            Submit
-          </Button>
-        </form>
+            ))}
+          </NativeSelect>
+        </FormControl>
+        <Button variant="contained" type="submit" startIcon={<Publish />}>
+          Submit
+        </Button>
+      </form>
     </Card>
   );
 };
