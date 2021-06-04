@@ -17,14 +17,14 @@ const TeamMember = (props) => {
       <Card raised>
         <CardContent>
           <Typography variant="h4" component="h2">
-          {name} <Tooltip title="Edit Team Member" ><Edit/></Tooltip>
+          {name} <Tooltip title={`Edit ${name}`} ><Edit/></Tooltip>
           </Typography>
           <Typography variant="subtitle1">{role}</Typography>
         </CardContent>
         <CardActions>
           <Tooltip title={`Email ${name}`} >
           <Button aria-label="email" variant="contained" color="primary" endIcon={<Send />}>
-            <a style={{ textDecoration: "none", color: "inherit" }} href={`emailto:${email}`}>
+            <a style={{ textDecoration: "none", color: "inherit" }} href={`mailto:${email}`}>
               Email {name}
             </a>
           </Button>
