@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import roles from "../constants/roles";
 import {
   Card,
   CardContent,
@@ -10,6 +11,7 @@ import {
   FormLabel,
   InputAdornment,
   FormHelperText,
+  NativeSelect,
 } from "@material-ui/core";
 import Send from "@material-ui/icons/Send";
 import Edit from "@material-ui/icons/Edit";
@@ -60,7 +62,9 @@ const TeamMember = (props) => {
                 }
                 aria-describedby="name-helper-text_edit"
               />
-              <FormHelperText id="name-helper-text_edit" >Edit member name</FormHelperText>
+              <FormHelperText id="name-helper-text_edit">
+                Edit member name
+              </FormHelperText>
             </FormControl>
             <FormControl>
               <FormLabel htmlFor="email_edit">Email</FormLabel>
@@ -81,6 +85,19 @@ const TeamMember = (props) => {
               <FormHelperText id="email-helper-text">
                 Edit member email address
               </FormHelperText>
+            </FormControl>
+            <FormControl>
+              <FormLabel htmlFor="role">Role</FormLabel>
+              <NativeSelect name="role" id="role" onChange={onChange}>
+                <option value={null} disabled>
+                  Please select a role
+                </option>
+                {roles.map((role, index) => (
+                  <option value={`${role}`} key={index}>
+                    {role}
+                  </option>
+                ))}
+              </NativeSelect>
             </FormControl>
           </CardContent>
           <CardActions>

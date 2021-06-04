@@ -13,6 +13,7 @@ import {
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Email from "@material-ui/icons/Email";
 import Publish from "@material-ui/icons/Publish";
+import roles from '../constants/roles';
 
 const AddMemberForm = (props) => {
   const { submit } = props;
@@ -33,16 +34,6 @@ const AddMemberForm = (props) => {
     submit(formValue);
     setFormValue(initialFormValue);
   };
-
-  const roles = [
-    "Front End Engineer",
-    "Back End Engineer",
-    "Designer",
-    "Junior Front End Developer",
-    "Omnipotent Unicorn",
-    "Wise Old Dragon",
-    "Aspiring Sith Master",
-  ];
 
   return (
     <Card raised>
