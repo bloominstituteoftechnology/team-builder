@@ -5,8 +5,15 @@ const initialTeamMembersList = [
         id: uuid(), 
         name: 'Amber',
         email: 'amber@amber.com',
-        role: 'Student',
+        role: 'student'
     },
+    {
+        id: uuid(),
+        name: 'Joe ',
+        email: 'joe@joe.com',
+        role: 'student'
+
+    }
 ]
 
 export default {
