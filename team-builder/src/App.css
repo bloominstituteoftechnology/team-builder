@@ -1,4 +1,8 @@
 @import '@fontsource/roboto';
+ body {
+     background-color: orange;
+     padding: 40px 0 40px 0;
+ }
 
 .App {
     display: flex;
@@ -31,4 +35,22 @@ button {
 }
 #add_member_form > button {
     margin-top: 1rem;
+}
+#root > div > div.MuiPaper-root.MuiCard-root.MuiPaper-elevation8.MuiPaper-rounded {
+    margin-top: 1.5em;
+}
+.rainbow-text {
+    animation: rainbow-text 1s infinite;
+}
+
+@keyframes rainbow-text {
+    from {
+        color: rgb(0, 110, 255);
+    }
+    50% {
+        color: rgb(255, 0, 221)
+    }
+    to {
+        color: rgb(51, 170, 51);
+    }
 }

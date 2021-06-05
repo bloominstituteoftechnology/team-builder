@@ -4,6 +4,7 @@ import teamMembers from "./data/data";
 import TeamMember from "./Components/TeamMember";
 import LoadScreen from "./Components/LoadScreen";
 import AddMemberForm from "./Components/AddMemberForm";
+import { Typography } from "@material-ui/core";
 
 function App() {
   const [team, setTeam] = useState([]);
@@ -30,7 +31,9 @@ function App() {
 
   return team.length > 0 ? (
     <div className="App">
-      <h1>Team Members</h1>
+      <Typography variant="h4" component="h1" className="rainbow-text" >
+        Team Members
+      </Typography>
       {team.map((member, index) => (
         <TeamMember
           key={index}
