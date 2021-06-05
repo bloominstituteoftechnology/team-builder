@@ -13,7 +13,8 @@ import {
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Email from "@material-ui/icons/Email";
 import Publish from "@material-ui/icons/Publish";
-import roles from '../constants/roles';
+import roles from "../constants/roles";
+import Work from "@material-ui/icons/Work";
 
 const AddMemberForm = (props) => {
   const { submit } = props;
@@ -83,7 +84,16 @@ const AddMemberForm = (props) => {
         </FormControl>
         <FormControl>
           <FormLabel htmlFor="role">Role</FormLabel>
-          <NativeSelect name="role" id="role" onChange={change}>
+          <NativeSelect
+            name="role"
+            id="role"
+            onChange={change}
+            startAdornment={
+              <InputAdornment>
+                <Work />
+              </InputAdornment>
+            }
+          >
             <option value={null} disabled>
               Please select a role
             </option>

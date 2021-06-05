@@ -18,6 +18,7 @@ import Edit from "@material-ui/icons/Edit";
 import Publish from "@material-ui/icons/Publish";
 import Email from "@material-ui/icons/Email";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import Work from "@material-ui/icons/Work";
 
 const TeamMember = (props) => {
   const { name, email, role, update } = props;
@@ -90,8 +91,16 @@ const TeamMember = (props) => {
             </FormControl>
             <FormControl>
               <FormLabel htmlFor="role">Role</FormLabel>
-              <NativeSelect name="role" id="role" onChange={onChange}>
-                <option value={null} disabled>
+              <NativeSelect name="role" id="role" onChange={onChange}
+                  startAdornment={
+                    <InputAdornment>
+                      <Work />
+                    </InputAdornment>
+                  }>
+                <option
+                  value={null}
+                  disabled
+                >
                   Please select a role
                 </option>
                 {roles.map((role, index) => (
