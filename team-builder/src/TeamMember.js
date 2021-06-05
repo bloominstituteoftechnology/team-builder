@@ -10,8 +10,8 @@ export default function TeamMember(props) {
     return (
         <div className='team-member container'>
             <h2>{details.name}</h2>
-            <p>Email: {details.email}</p>
-            <p>Role: {details.role}</p>
+            <p>Email:  {details.email}</p>
+            <p>Role:  {details.role}</p>
         </div>
     )
 }

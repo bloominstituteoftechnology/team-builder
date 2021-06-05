@@ -17,11 +17,11 @@ const onSubmit = evt => {
 return (
 <form className='form container' onSubmit={onSubmit}>
     <div className='form-group inputs'>
-        <label>Name
+        <label>Name 
             <input type="text" name="name" value={values.name} onChange={onChange} placeholder="type a name" />
         </label>
 
-        <label>Email 
+        <label>Email  
             <input type="email" name="email" value={values.email} onChange={onChange} placeholder="your pro email" />
         </label>
 
@@ -38,5 +38,5 @@ return (
     </div>
     </div>
 </form>
- )
+)
 }
