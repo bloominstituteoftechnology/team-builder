@@ -104,7 +104,7 @@ const AddMemberForm = (props) => {
             ))}
           </NativeSelect>
         </FormControl>
-        <Button variant="contained" type="submit" startIcon={<Publish />}>
+        <Button color="primary" variant="contained" type="submit" startIcon={<Publish />}>
           Submit
         </Button>
       </form>

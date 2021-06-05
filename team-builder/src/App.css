@@ -21,9 +21,14 @@
 }
 input, select {
     border-radius: 5px;
-    padding: 2px;
     margin: .5em 0 0 .5em;
 }
 button {
     margin: .75em 0 0 0;
+}
+.MuiFormControl-root{
+    width: 300px;
+}
+#add_member_form > button {
+    margin-top: 1rem;
 }

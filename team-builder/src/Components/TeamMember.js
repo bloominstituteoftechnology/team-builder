@@ -128,9 +128,9 @@ const TeamMember = (props) => {
           <CardActions>
             <Button
               aria-label="email"
-              variant="contained"
-              color="primary"
+              variant="outlined"
               endIcon={<Send />}
+              color="primary"
             >
               <a
                 style={{ textDecoration: "none", color: "inherit" }}
