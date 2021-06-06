@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import './App.css';
 import TeamForm from './components/Form'
+import styled from 'styled-components';
 
-
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: left;
+  color: palevioletred;
+`;
 const initialTeamValues = {
  
   name: '',
@@ -57,7 +62,7 @@ function Member({details}) {
     return (
       <div className="App">
   
-        <h1>Team Form App</h1>
+        <Title>Team Form App</Title>
           <TeamForm
          values={formValues} 
           update={updateForm}
