@@ -1,0 +1,27 @@
+{
+  "name": "web-guided-project-form-management",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.20.6",
+    "less": "^3.12.2",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "uuid": "^8.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LambdaSchool/web-guided-project-form-management.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LambdaSchool/web-guided-project-form-management/issues"
+  },
+  "homepage": "https://github.com/LambdaSchool/web-guided-project-form-management#readme"
+}
