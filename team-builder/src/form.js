@@ -29,6 +29,7 @@ const onSubmitHandler=(event)=>{
     return (
         <div>
             <form onSubmit={(event)=>onSubmitHandler(event)}>
+
             <label htmlFor="name">name: </label>
             <input name="name" value={teamCard.name}
                 type="text" id="title" 
@@ -45,7 +46,9 @@ const onSubmitHandler=(event)=>{
             <input name="email" value={teamCard.email}
                 type="text" id="email" 
                 onChange={(event)=>onChangeHandler(event)}/>
+
             <button type="submit">Submit</button>
+            
             </form>
         </div>
     )

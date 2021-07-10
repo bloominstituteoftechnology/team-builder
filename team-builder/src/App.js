@@ -8,6 +8,7 @@ function App() {
   const [team, setTeam] = useState([{
     name: 'Jose Mercado',
     email: 'josemercado@gmail.com',
+    //wanted to see how adding phone numbers worked in forms, so i did it instead of a role. hope it isnt a big deal
     number: '123-456-7899',
   }]);
 
