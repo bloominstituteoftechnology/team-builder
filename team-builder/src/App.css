@@ -28,6 +28,36 @@
   color: #61dafb;
 }
 
+
+.formSection{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 2%;
+  margin-right: 2%
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+.teamListDiv{
+  margin-left: 2%;
+}
+.memberList{
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+}
+.memberList p{
+  margin-left: 3%;
+}
+.submitButton{
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
