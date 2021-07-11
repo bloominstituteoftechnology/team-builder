@@ -4,8 +4,8 @@ export default function Form(props) {
     const { values, update, submit } = props
 
     const onChange = evt => {
-        const name = evt.target.name
-        const value = evt.target.value
+        const {name} = evt.target
+        const {value} = evt.target
         update(name, value)
     }
 
@@ -18,20 +18,20 @@ export default function Form(props) {
         <form className='form container' onSubmit={onSubmit}>
           <div className='form-group inputs'>
         
-            <label>Username
-              <input type="text" onChange={onChange} name="username" value={values.username}/>
+            <label>Name
+              <input type="text" onChange={onChange} name="name" values={values.name}/>
             </label>
     
             <label>Email
-              <input type="email" onChange={onChange} name="email" value={values.email}/>
+              <input type="email" onChange={onChange} name="email" values={values.email}/>
             </label>
 
             <label>Hero
-              <input onChange={onChange} name="hero" value={values.hero}/>
+              <input onChange={onChange} name="hero" values={values.hero}/>
             </label>
     
             <div className='submit'>
-              <button>submit</button>
+              <button>Submit</button>
             </div>
           </div>
         </form>

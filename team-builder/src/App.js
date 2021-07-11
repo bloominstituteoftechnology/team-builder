@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import './App.css';
-// import './Member'
 import Form from './Form'
 
-
+const values = {
+  name: '',
+  hero: '',
+  email: '',
+}
 const team = [
   {
     name: 'Clark Kent',
@@ -33,7 +36,7 @@ export default function App() {
   const [value, setFormValue] = useState(values)
 
   const update = (newName, newValue) => {
-    setFormValue({...value, [newName] : newValue})
+    setFormValue({...value, [newName] : newValue})}
 
     const onSubmit = () => {
       const newbie = {
@@ -45,7 +48,7 @@ export default function App() {
       setFormValue(team)
     }
   
-    return (
+    return ( 
     <div className="App">
       <h1>The Justic League</h1>
       {members.map((member) => {
@@ -53,10 +56,11 @@ export default function App() {
           <div>
           {member.name} is {member.hero}. Reach him at {member.email}
           </div>
-        );
-       <Form value={value} submit={onSubmit} update={update} />
+        )
+       
       })}
+      <Form values={values} submit={onSubmit} update={update} />
     </div>
   );
 }
-}
+
