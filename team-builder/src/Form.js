@@ -1,25 +1,69 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 
 // this module holds the form and input that will display on screen.
+// all input should be held in state, dont forget
 
+function Form(props) {
 
-function Form() {
+	const [teamMember, setTeamMember] = useState([{
+    name: "",
+    email: "",
+    role: ""
+	}])
+	console.log(teamMember)
+	const handleChange = (e) => {
+		setTeamMember({...teamMember, [e.target.name]:e.target.value})
+	
+	}
+
 	return (
 		<form className="col">
 			<div className="row">
-				<label htmlFor="name" className="form-label">Name:</label>
-				<input type="text" className="form-control-lg" name="name" placeholder="enter your name" />
+				<label
+					htmlFor="name"
+					className="form-label">
+					Name:
+				</label>
+				<input
+					type="text"
+					className="form-control-lg"
+					name="name"
+					placeholder="enter your name"
+					onChange={handleChange}
+				/>
 			</div>
 			<div className="row">
-				<label htmlFor="email" className="form-label">Email:</label>
-				<input type="email" className="form-control-lg" name="email" placeholder="enter your email" />
+				<label
+					htmlFor="email"
+					className="form-label">
+					Email:
+				</label>
+				<input
+					type="email"
+					className="form-control-lg"
+					name="email"
+					placeholder="enter your email"
+					onChange={handleChange}
+				/>
 			</div>
 			<div className="row">
-				<label htmlFor="email" className="form-label">Role:</label>
-				<input type="text" className="form-control-lg" name="role" placeholder="what is your role?" />
+				<label
+					htmlFor="email"
+					className="form-label">
+					Role:
+				</label>
+				<input
+					type="text"
+					className="form-control-lg"
+					name="role"
+					placeholder="what is your role?"
+					onChange={handleChange}
+				/>
 			</div>
-			<button type="button" className="btn btn-sm btn-primary">Submit</button>
+			<div className="d-grid gap-2 d-md-flex justify-content-md-end">
+				<button type="submit" className="btn btn-sm btn-primary">Submit</button>
+			</div>
 			
 		</form>
 	)
