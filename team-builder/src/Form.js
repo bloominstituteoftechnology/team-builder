@@ -7,25 +7,26 @@ import React, {useState} from 'react'
 function Form(props) {
 
 	const [teamMember, setTeamMember] = useState([{
-    name: "",
-    email: "",
-    role: ""
+		name: "",
+		email: "",
+		role: ""
 	}])
 
 
-	const handleChange = (e) => {
-		console.log(e.target.value)
-		setTeamMember({ ...teamMember, })
-	
+	const handleChange = e => {
+		setTeamMember({
+			...teamMember,
+			[e.target.name]:e.target.value
+		})
 	}
 
-	const submitForm = e => {
+	const submitForm = (e) => {
 		e.preventDefault()
 		props.addTeamMember(teamMember)
-		setTeamMember({ 
-		name: '',
-		email: '',
-		phone: ''})
+		setTeamMember({
+			
+		});
+
 		
 	}
 
@@ -44,7 +45,7 @@ function Form(props) {
 					className="form-control-lg"
 					name="name"
 					placeholder="enter your name"
-					onChange={handleChange}
+					onChange={(e)=>handleChange(e)}
 				/>
 			</div>
 			<div className="row">
@@ -59,7 +60,7 @@ function Form(props) {
 					className="form-control-lg"
 					name="email"
 					placeholder="enter your email"
-					onChange={handleChange}
+					onChange={(e)=>handleChange(e)}
 				/>
 			</div>
 			<div className="row">

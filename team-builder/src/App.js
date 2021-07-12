@@ -14,14 +14,19 @@ function App() {
   ]);
 
   const addTeamMember = mate => {
-    setMember([...member, mate])
-  };
+    const newMember = {
+      name: mate.name,
+      email: mate.email,
+      role: mate.role
+    }
+    setMember([...member, newMember])
+  }
  
   return (
     <div className="App">
       <header className="App-header">
 
-        <Form addTeamMember={(mate)=>addTeamMember(mate)}/>
+        <Form addTeamMember={addTeamMember}/>
 
         <Member member={member} />
       </header>
