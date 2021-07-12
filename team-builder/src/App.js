@@ -7,26 +7,21 @@ function App() {
 
   const [member, setMember] = useState([
     {
-      name: "Steve",
+      name: "Steve Rivera",
       email: "purefallen11@gmail.com",
       role: "Software Developer"
     }
   ]);
 
-  const addTeamMember = (mate) => {
-    const newMate = {
-      name: "",
-      email: mate.email,
-      role: mate.role
-    }
-    setMember([...member, newMate])
+  const addTeamMember = mate => {
+    setMember([...member, mate])
   };
  
   return (
     <div className="App">
       <header className="App-header">
 
-        <Form addTeamMember={addTeamMember}/>
+        <Form addTeamMember={(mate)=>addTeamMember(mate)}/>
 
         <Member member={member} />
       </header>

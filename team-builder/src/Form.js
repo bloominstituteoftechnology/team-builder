@@ -14,14 +14,24 @@ function Form(props) {
 
 
 	const handleChange = (e) => {
-		setTeamMember({...teamMember, [e.target.name]:e.target.value})
+		console.log(e.target.value)
+		setTeamMember({ ...teamMember, })
 	
 	}
 
-	
+	const submitForm = e => {
+		e.preventDefault()
+		props.addTeamMember(teamMember)
+		setTeamMember({ 
+		name: '',
+		email: '',
+		phone: ''})
+		
+	}
+
 
 	return (
-		<form className="col">
+		<form className="col" onSubmit={submitForm}>
 			<div className="row">
 				<label
 					htmlFor="name"
@@ -68,7 +78,7 @@ function Form(props) {
 				/>
 			</div>
 			<div className="d-grid gap-2 d-md-flex justify-content-md-end">
-				<button type="submit" className="btn btn-sm btn-primary">Submit</button>
+				<button type="submit" className="btn btn-sm btn-primary">Add Team Member</button>
 			</div>
 			
 		</form>
