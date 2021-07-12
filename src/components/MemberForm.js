@@ -3,12 +3,14 @@ import React from 'react'
 export default function MemberForm(props)
 {
     const member = props;
-
+    console.log(member);
     //props expected for a member form entry
     const { values, update, submit} = member;
 
     const onChange = evt =>
     {
+        //console.log(evt);
+        //console.log(evt.target);
         const name = evt.target.name
 
         const value = evt.target.value
@@ -20,6 +22,7 @@ export default function MemberForm(props)
     const onSubmit = evt => 
     {
         evt.preventDefault()
+        console.log(evt);
 
         submit()
     }

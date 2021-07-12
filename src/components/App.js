@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import MemberForm from './MemberForm';
 import Member from './Member';
 
+
 const initialFormValues =
 {
   name: '',
   email: '',
   role: '',
-  
 }
 
 function App() {
@@ -24,7 +24,8 @@ function App() {
 
   const submitForm = () => {
     const {name, email, role} = formValues
-
+    if (name !== "" && email !== "" && role !== "")
+    {
     setMembers([
       ...members,
       {
@@ -33,6 +34,12 @@ function App() {
         role: role.trim()
       }
     ])
+  }
+
+  else 
+  {
+    alert("Please complete all fields");
+  }
 
     setFormValues(initialFormValues)
 
