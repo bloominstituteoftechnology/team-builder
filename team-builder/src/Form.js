@@ -11,11 +11,14 @@ function Form(props) {
     email: "",
     role: ""
 	}])
-	console.log(teamMember)
+
+
 	const handleChange = (e) => {
 		setTeamMember({...teamMember, [e.target.name]:e.target.value})
 	
 	}
+
+	
 
 	return (
 		<form className="col">
@@ -26,6 +29,7 @@ function Form(props) {
 					Name:
 				</label>
 				<input
+					id="name"
 					type="text"
 					className="form-control-lg"
 					name="name"
@@ -40,6 +44,7 @@ function Form(props) {
 					Email:
 				</label>
 				<input
+					id="email"
 					type="email"
 					className="form-control-lg"
 					name="email"
@@ -54,6 +59,7 @@ function Form(props) {
 					Role:
 				</label>
 				<input
+					id="role"
 					type="text"
 					className="form-control-lg"
 					name="role"
