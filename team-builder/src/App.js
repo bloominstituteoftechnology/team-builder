@@ -6,12 +6,12 @@ import Member from './Member'
 function App() {
 
   const [member, setMember] = useState([{
-    name:"Steve",
+    name: "Steve",
     email: "purefallen11@gmail.com",
     role: "Software Developer"
   }])
 
-  
+
  
   return (
     <div className="App">
