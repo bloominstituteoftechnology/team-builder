@@ -86,4 +86,4 @@ After finishing your required elements, you can push your work further. These go
 
 
 ## Rick's Pull Request
-- [Pull Request for convenience]()
+- [Pull Request for convenience](https://github.com/LambdaSchool/team-builder/pull/406)
