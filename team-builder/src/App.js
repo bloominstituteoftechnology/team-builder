@@ -14,8 +14,17 @@ function App() {
     { username: 'Brittany', email: 'BrittanyAndrews@gmail.com', role: 'Doctor' },
   ]
 
+  const initialFormValues = {
+//Information Input Boxes
+    username: '',
+    email: '',
+//Drop Down Menu
+    role: '',
+  }
+
+  const [members, setMembers] = useState(team)
+  const [formValues, setFormValues] = useState(initialFormValues)
 
 
 
-  
 export default App;
