@@ -2,7 +2,7 @@ import React, { useState, } from 'react'
 import Friend from './components/Friend'
 import FriendForm from './components/FriendForm'
 import './App.css';
-import { getByPlaceholderText } from '@testing-library/react';
+
 
 const initialFormValues = {
   username: '',
@@ -11,7 +11,9 @@ const initialFormValues = {
 }
 
 const starterFriends = [
-  {username: 'Bob', email: 'whatever@ya.co', role: 'Frnotend Engineer' }
+  {username: 'Rick Mansfield', 
+  email: 'RicksMyCodeGuy@gmail.com', 
+  role: 'Frnotend Engineer' }
 ]
 export default function App() {
   const [friends, setFriends] = useState(starterFriends) 
