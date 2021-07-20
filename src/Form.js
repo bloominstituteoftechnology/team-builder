@@ -10,7 +10,7 @@ export default function Form(props){
 
     const onSubmit = evt => {
       evt.preventDefault()
-      onSubmit()
+      submit()
     }
 
     return (
@@ -44,6 +44,9 @@ export default function Form(props){
                         <option value="me">Me</option>
                     </select>
                 </label>
+                <div className='submit'>
+                    <button>submit</button>
+                </div>
             </div>
         </form>
     

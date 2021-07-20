@@ -37,18 +37,40 @@ const initialFormValues = {
 }
 
 function App() {
-  const [team, setTeam] = useState([]);
+  const [team, setTeam] = useState([fakeTeam]);
+  
+  const [formValues, setFormValues] = useState(initialFormValues);
 
-  useEffect(() =>{
-    return setTeam(fakeTeam)
-  }, []);
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({ ...formValues, [inputName]: inputValue })
+  }
+
+  const submitForm = () => {
+    const newMember = {
+      username: formValues.name.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role,
+    }
+    if (!newMember.name || !newMember.email || !newMember.role) return
+
+    
+        setTeam([...team, newMember]);
+        setFormValues(initialFormValues);
+  }
+  // useEffect(() =>{
+  //   return setTeam(fakeTeam)
+  // }, []);
 
   console.log(team);
 
   return (
     <div>
       <h1>Team members</h1>
-      <Form/>
+      <Form 
+        values={formValues}
+        update={updateForm}
+        submit={submitForm}
+      />
       <h2>{team.name}</h2>
       <p>Email{team.email}</p>
       <p>Role{team.role}</p>
