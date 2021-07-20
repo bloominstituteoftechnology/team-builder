@@ -2,6 +2,7 @@ import React, { useState, } from 'react'
 import Friend from './components/Friend'
 import FriendForm from './components/FriendForm'
 import './App.css';
+import { getByPlaceholderText } from '@testing-library/react';
 
 const initialFormValues = {
   username: '',
@@ -9,8 +10,11 @@ const initialFormValues = {
   role: '',
 }
 
+const starterFriends = [
+  {username: 'Bob', email: 'whatever@ya.co', role: 'Frnotend Engineer' }
+]
 export default function App() {
-  const [friends, setFriends] = useState([]) 
+  const [friends, setFriends] = useState(starterFriends) 
   const [formValues, setFormValues] = useState(initialFormValues);
 
   const updateForm = (inputName, inputValue) => {
@@ -26,10 +30,12 @@ export default function App() {
     if (!newFriend.username || !newFriend.email || !newFriend.role){
       return
     }
+    setFriends([...friends, newFriend])
+    setFormValues(initialFormValues)
   }
   return (
     <div className='container'>
-      <h1>Form App</h1>
+      <h1>Team App</h1>
 
       <FriendForm
         values={formValues} 
