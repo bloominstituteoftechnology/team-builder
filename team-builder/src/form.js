@@ -37,7 +37,14 @@ export default function Form(props) {
             value={formValues.email}
           />
         </label>
-        <label htmlFor="role"></label>
+              <label htmlFor="role">
+                  <select name='role' onChange={onChange} value={formValues.role}>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+        </label>
       </form>
     </div>
   );
