@@ -13,7 +13,7 @@ import React, {useState} from "react";
 //Dummy data array
 const dummyData = 
 [
-    { name: "Jesse Johns", email: "space@cadet.com", role: "Spacey Cadet" },
+    { name: "Jesse Johns", email: "space@cadet.com", role: "Space Cadet" },
     { name: "John Glenn", email: "john@glenn.com", role: "Astronaut" },
 ]
 
