@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-// import Form from ",/Form"
+import Form from "./Form"
 import './App.css';
 
 const fakeTeam = [
   {
-    name: "Jon",
-    email: "jon@name.com",
+    name: "Ann",
+    email: "ann@name.com",
     role: "backend engineer",
   },
   {
@@ -18,6 +18,16 @@ const fakeTeam = [
     email: "tom@name.com",
     role: "designer",
   },
+  {
+    name: "Jon",
+    email: "jon@name.com",
+    role: "nocho maker",
+  },
+  {
+    name: "Klove",
+    email: "klove@name.com",
+    role: "me",
+  }
 ]
 
 const initialFormValues = {
@@ -28,14 +38,17 @@ const initialFormValues = {
 
 function App() {
   const [team, setTeam] = useState([]);
+
   useEffect(() =>{
     return setTeam(fakeTeam)
   }, []);
+
   console.log(team);
+
   return (
     <div>
       <h1>Team members</h1>
-      {/* <Form/> */}
+      <Form/>
       <h2>{team.name}</h2>
       <p>Email{team.email}</p>
       <p>Role{team.role}</p>
