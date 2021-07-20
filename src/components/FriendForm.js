@@ -41,7 +41,8 @@ export default function FriendForm(props) {
         <label>Role        
         <select name='role' value={values.role} onChange={onChange}>
           <option value="">--select role--</option>
-          <option value="Fackend Engineer">Backend Engineer</option>
+          <option value="Full Stack Engineer">Full Stack Engineer</option>
+          <option value="Backend Engineer">Backend Engineer</option>
           <option value="Frontend Engineer">Fronend Engineer</option>
           <option value="Designer">Designer</option>
         </select>
