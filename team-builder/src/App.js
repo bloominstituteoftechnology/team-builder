@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import { useState } from "react";
 import Form from "./form";
 import Member from "./member";
