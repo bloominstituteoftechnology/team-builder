@@ -1,8 +1,25 @@
 import React, { useState, } from 'react'
 import Friend from './components/Friend'
 import FriendForm from './components/FriendForm'
-import './App.css';
+import styled from  'styled-components';
+import './index.css';
 
+
+const Wrapper = styled.div`
+    h1 .container{
+        font-family: 'Chelsea Market', cursive;
+        font-size: 2rem;
+        color: black;
+        padding-left: 2%;
+        
+    }
+    h2 .container{
+    font-family: 'Chelsea Market', cursive;
+    font-size: 4rem;
+	color: black;
+	padding-left: 2%;
+}
+`;
 
 const initialFormValues = {
   username: '',
@@ -13,7 +30,7 @@ const initialFormValues = {
 const starterFriends = [
   {username: 'Rick Mansfield', 
   email: 'RicksMyCodeGuy@gmail.com', 
-  role: 'Frnotend Engineer' }
+  role: 'Frontend Engineer' }
 ]
 export default function App() {
   const [friends, setFriends] = useState(starterFriends) 
@@ -36,15 +53,16 @@ export default function App() {
     setFormValues(initialFormValues)
   }
   return (
+ 
     <div className='container'>
       <h1>Team App</h1>
-
+      <Wrapper>
       <FriendForm
         values={formValues} 
         update={updateForm} 
         submit={submitForm}
       />
-
+      </Wrapper>
       {
         friends.map(friend => {
           return (
@@ -53,5 +71,6 @@ export default function App() {
         })
       }
     </div>
+   
   )
 }

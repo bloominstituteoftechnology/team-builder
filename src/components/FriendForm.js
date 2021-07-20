@@ -43,7 +43,7 @@ export default function FriendForm(props) {
           <option value="">--select role--</option>
           <option value="Full Stack Engineer">Full Stack Engineer</option>
           <option value="Backend Engineer">Backend Engineer</option>
-          <option value="Frontend Engineer">Fronend Engineer</option>
+          <option value="Frontend Engineer">Frontend Engineer</option>
           <option value="Designer">Designer</option>
         </select>
         </label>
