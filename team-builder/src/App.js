@@ -5,24 +5,17 @@ import Member from "./member";
 import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+  const team = [
+    { username: 'Mike', email: 'MikeSmith@gmail.com', role: 'Accountant' },
+    { username: 'John', email: 'JohnDoe@gmail.com', role: 'Mechanic' },
+    { username: 'Taylor', email: 'TaylorMarks@gmail.com', role: 'Dentist' },
+    { username: 'Courtney', email: 'CourtneySimmons@gmail.com', role: 'Lawyer' },
+    { username: 'Brittany', email: 'BrittanyAndrews@gmail.com', role: 'Doctor' },
+  ]
+
+
+
+
+  
 export default App;
