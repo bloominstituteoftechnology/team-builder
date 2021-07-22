@@ -69,7 +69,7 @@ Okay, now that we understand how `Form.js` knows if we are editing or creating m
 - [ ] Create a new function in `App.js` called `editMember` that will edit one or more of the details of a team member and pass it down to the second form component. You'll have to find a way to loop over the data in your state, find the specific team member you intend to edit, and finally change the details with the data sent up to you from the second form component. `.map()` will be your friend for that task. You'll also want to avoid directly mutating your data. The `...` spread operator will be your friend there.
 - [ ] On form submit, do an `if` check to see if the `memberToEdit` prop is there or not, and run the correct functions in the `if` and `else` blocks based on that check.
 
-Observe the power of reusability!
+Observe the power of reusability! 12e4
 
 #### More Stretch Problems
 
@@ -82,4 +82,4 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission Format
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo). **Please don't merge your own pull request**
