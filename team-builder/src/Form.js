@@ -21,7 +21,7 @@ export default function Form(props) {
               <input 
                 type="text"
                 name="name"
-                value={values.username}
+                value={values.name}
                 placeholder="Type in a name"
                 maxLength="30"
                 onChange={onChange}

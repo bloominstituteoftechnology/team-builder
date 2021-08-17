@@ -25,7 +25,7 @@ export default function App() {
       email: formValues.email.trim(),
       role: formValues.role,
     };
-    if (!newPerson.username || !newPerson.email || !newPerson.role) {
+    if (!newPerson.name || !newPerson.email || !newPerson.role) {
       setError("You've gotta fill  out all of the fields, ya chump!");
       return;
     }
