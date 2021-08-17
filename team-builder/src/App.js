@@ -10,7 +10,7 @@ const initialFormValues = {
 }
 
 export default function App() {
-  const [people, setPeople] = useState([])
+  const [team, setTeam] = useState([])
 
   const [formValues, setFormValues] = useState(initialFormValues)
   const [error, setError] = useState('');
@@ -19,7 +19,7 @@ export default function App() {
     setFormValues({ ...formValues, [inputName]: inputValue });
   }
 
-  const submitForm = async () => {
+  const submitForm = () => {
     const newPerson = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
@@ -29,7 +29,7 @@ export default function App() {
       setError("Error: must provide valid inputs");
       return;
     }
-    setPeople([newPerson, ...people]);
+    setTeam([newPerson, ...team]);
     setFormValues(initialFormValues);
     setError('');
 
@@ -43,7 +43,7 @@ export default function App() {
     //   })
     //   .catch(err => console.log(err));
   }
-  
+
   // useEffect(() => {
   //   axios.get('fakeapi.com').then(res => setPeople(res.data))
   // }, [])
@@ -58,7 +58,7 @@ export default function App() {
         submit={submitForm}
       />
       {
-        people.map(person => {
+        team.map(person => {
           return (
             <Person key={person.id} details={person} />
           )
