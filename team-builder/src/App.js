@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
+import List from './List/list'
+import ListForm from './List/listForm'
 import './App.css';
 
+const initialFromValues = {
+  name: '',
+  email: '',
+  role: '',
+}
+
 function App() {
+  const [list, setList] = useState([])
+  
+  const [formValues, setFormValues] = useState(initialFromValues);
+  const [error, setError] = useState("")
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({...formValues, [inputName]: inputValue});
+  }
+  
+  const submitForm = async () => {
+    
+    const newMember = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+    };
+    if(!newMember.name || !newMember.email || !newMember.role) {
+      setError("Error must type in something")
+    }
+    setList([newMember, ...list]);
+  
+  }
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
