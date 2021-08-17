@@ -17,7 +17,7 @@ In this project you'll build an app that will keep track of memebers of a team. 
 - [ ] Start up the app using `npm start`
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [ ] Push commits: git push origin `<firstName-lastName>`..
 
 ### Task 2: Minimum Viable Product
 
