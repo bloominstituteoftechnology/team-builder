@@ -26,23 +26,26 @@ export default function App() {
       role: formValues.role,
     };
     if (!newPerson.name || !newPerson.email || !newPerson.role) {
-      setError("You've gotta fill  out all of the fields, ya chump!");
+      setError("Error: must provide valid inputs");
       return;
     }
-    
-    // const addedFriend = await axios.post('fakeapi.com', newFriend);
+    setPeople([newPerson, ...people]);
+    setFormValues(initialFormValues);
+    setError('');
 
-    // axios.post('fakeapi.com', newFriend)
+    // const addedPerson = await axios.post('fakeapi.com', newPerson);
+
+    // axios.post('fakeapi.com', newPerson)
     //   .then(res => {
-    //     setFriends([res.data, ...friends]);
+    //     setPeople([res.data, ...people]);
     //     setFormValues(initialFormValues);
     //     setError('');
     //   })
     //   .catch(err => console.log(err));
   }
-
+  
   // useEffect(() => {
-  //   axios.get('fakeapi.com').then(res => setFriends(res.data))
+  //   axios.get('fakeapi.com').then(res => setPeople(res.data))
   // }, [])
 
   return (

@@ -9,7 +9,7 @@ export default function Person(props) {
 
     return (
         <div className='person container'>
-            <h2>{details.name}</h2>
+            <h2>Name: {details.name}</h2>
             <p>Email: {details.email}</p>
             <p>Role: {details.role}</p>
         </div>
