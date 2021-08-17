@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axios from '../axios';
 
 import logo from './logo.svg';
 import './App.css';
+import Form from './Form'
 import { assertExpressionStatement } from '@babel/types';
 
 const initialFormValues = {
@@ -29,28 +29,13 @@ function App() {
     if (!newTeam.name || !newTeam.email || !newTeam.role) {
       setError('Please fill out all of the empty fields');
     }
-    axios.post('fakeapi.com', newTeam)
-      .then(res => {
-        setTeam([res.data, ...team]);
-        setFormValues(initialFormValues);
-        setError('');
-      })
-      .catch(err => {
-        console.error(err);
-      })
   }
-
-  useEffect(() => {
-    axios.get('fakeapi.com').then(res => setTeam(res.data))
-  }, [])
 
   return (
     <div className="App">
       <h1>Team Form App</h1>
       {/* <h3>{error}</h3> */}
-      <Form 
 
-      />
     </div>
   );
 }
