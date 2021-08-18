@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  color: mediumspringgreen ;
+  background-color: cornflowerblue;
+  margin: 5%;
+  padding: 5%;
+  border: 3px solid black;
+  border-radius: 8px;
 }
 
 .App-logo {
