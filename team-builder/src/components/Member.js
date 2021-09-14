@@ -14,7 +14,7 @@ export default function Member(props) {
                 <p>
                 {details.name} <br/>
                 {details.email} <br/>
-                {/* {details.} */}
+                {details.role}
                 </p>
             </div>
         )

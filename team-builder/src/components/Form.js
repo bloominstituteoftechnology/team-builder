@@ -14,7 +14,7 @@ export default function Form (props) {
         event.preventDefault();
         submit();
     }
-    
+
     return (
         <div className="Form-name">
             <form onSubmit={onSubmit}>
@@ -39,9 +39,9 @@ export default function Form (props) {
                 </label>
             </div>
                 <label>
-                    <select onChange={onChange}>
+                    <select name="role" onChange={onChange}>
                         <option value="select">role</option>
-                        <option value="noob">novice</option>
+                        <option value="chump">novice</option>
                         <option value="casual">amateur</option>
                         <option value="pro">skilled</option>
                     </select>
