@@ -17,7 +17,7 @@ export default function Form (props) {
 
     return (
         <div className="Form-name">
-            <form onSubmit={onSubmit}>
+            <form autoComplete="off" onSubmit={onSubmit}>
                 <label>
                     <input 
                     type="text"
@@ -25,6 +25,7 @@ export default function Form (props) {
                     placeholder="name"
                     onChange={onChange}
                     value={value.name}
+                    required={true}
                 />
                 </label>
             <div className="Form-email">
@@ -35,6 +36,7 @@ export default function Form (props) {
                     placeholder="email"
                     onChange={onChange}
                     value={value.email}
+                    required={true}
                     />
                 </label>
             </div>

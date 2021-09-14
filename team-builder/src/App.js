@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import axios from 'axios';
-import { Switch, Route, Link } from 'react-router-dom';
+// import axios from 'axios';
+// import { Switch, Route, Link } from 'react-router-dom';
 
 import Form from './components/Form';
 import Member from './components/Member';
@@ -16,29 +16,28 @@ function App() {
   const [formValue, setFormValue] = useState(initialFormValues);
   const [members, setMembers] = useState([]);
   const [error, setError] = useState("");
-
+//UPDATE AREA
   const formUpdate = (inputName, inputValue) => {
     setFormValue({ ...formValue, [inputName]: inputValue});
   }
-
+//SUBMIT FUNCTION
   const formSubmit = () => {
     const newMember = {
       name: formValue.name.trim(),
       email: formValue.email.trim(),
       role: formValue.role
     }
-    if (!newMember.user){
+//ERROR SECTION
+    if (!newMember.name){
       setError('username required');
-    }
-    else if (!newMember.email){
+    } else if (!newMember.email){
       setError('email required');
-    }
-    else if (!newMember.role){
+    } else if (!newMember.role){
       setError('pick a role please');
-    }
-    else {
+    } else {
       setError('');
     }
+//SUCCESS SECTION
     if(!error){
       setMembers([ ...members, newMember]);
       setFormValue(initialFormValues);
@@ -83,10 +82,10 @@ function App() {
         {/* <Link to="/members">Members List</Link> */}
       </header>
         {/* <Route path="/members">
-          <Member />
+          <Member members={members}/>
         </Route>
         <Route exact path="/">
-          <App />
+          <Form value={formValue} update={formUpdate} submit={formSubmit}/>
         </Route> */}
     </div>
   );
