@@ -20,10 +20,6 @@ const initialUsers = [
   email: 'yachump@gmail.com',
   role: 'Wizard'},
 
-  {name: 'Brit',
-  email: 'coder@gmail.com',
-  role: 'Mother of Dragons'},
-
 ]
 
 function App() {
