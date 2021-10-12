@@ -9,7 +9,7 @@ function UserList (props) {
     return (
         <div className='User-List'>
             <h2>Users</h2>
-            { users.map( user => { return <User name={users.name} email={users.email} role={users.role}/>}
+            { users.map( user => { return <User name={user.name} email={user.email} role={user.role}/>}
             )
             }
         </div>

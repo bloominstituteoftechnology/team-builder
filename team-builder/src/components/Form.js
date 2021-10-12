@@ -3,7 +3,7 @@ import { useState } from 'react';
 function Form (props) {
 
     const { values, updateForm, submitForm } = props
-
+    console.log(values)
     const onChange = (evt) => {
         const { name, value } = evt.target
         updateForm(name, value)
@@ -15,14 +15,14 @@ function Form (props) {
     }
 
     return(
-        <form onSubmit={submitForm}>
+        <form onSubmit={onSubmitForm}>
             <label>Name: 
                 <input 
                 type='text'
                 name='name'
                 placeholder='Enter a name'
                 onChange={onChange}
-                
+                value={values.name}
                 />
             </label>
             <br/>
@@ -32,14 +32,14 @@ function Form (props) {
                 name='email'
                 placeholder='Enter an email'
                 onChange={onChange}
-                
+                value={values.email}
                 />
             </label>
             <br/>
             <select
             name='role'
             onChange={onChange}
-            
+            value={values.role}
             >
                 <option value=''>--Select a Role--</option>
                 <option value='Backend Engineer'>Backend Engineer</option>

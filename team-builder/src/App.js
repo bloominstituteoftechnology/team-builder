@@ -45,21 +45,12 @@ function App() {
       return;
     }
 
-    axios.post('fakeapi.com', newUser)
-    .then(resp => {
-      setUserList([resp.data, ...userList])
+      setUserList([newUser, ...userList])
       setFormValues(initialFormValues)
       setErrorText('')
-    })
-    .catch(err => {
-      console.error(err)
-    })
 
   }
 
-  useEffect(() => {
-    axios.get('fakeapi.com').then(resp => setUserList(resp.data))
-  }, [])
 
   return (
     <div>
@@ -67,7 +58,7 @@ function App() {
       <h1>Friend Form</h1>
       <div className='error'><h3>{errorText}</h3></div>
       <Form 
-      formValues={formValues}
+      values={formValues}
       updateForm={updateForm}
       submitForm={submitForm}
       />
