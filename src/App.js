@@ -25,26 +25,27 @@ function App() {
       role: teamMembers.role,
     };
 
-  if (!newTeamMember.name || !newTeamMember.email || newTeamMember.role) {
+    if (!newTeamMember.name || !newTeamMember.email || !newTeamMember.role) {
     setErrorText('You must complete all fields')
     return
   }
 
-  axios
-    .post("fakeapi.com", newTeamMember)
-    .then((res) => {
-      setTeamMembers([res.data, teamMembers])
-      setFormValues(initialTeamValue)
-      setErrorText('')
-    })
-    .catch((err) => {
-    console.error(err)
-    })
+    axios
+      .post("fakeapi.com", newTeamMember)
+      .then((res) => {
+        setTeamMembers([res.data, teamMembers])
+        setFormValues(initialTeamValue)
+        setErrorText('')
+      })
+      .catch((err) => {
+      console.error(err)
+      })
+    }
 
     useEffect(() => {
       axios.get("fakeapi.com").then((res) => setTeamMembers(res.data))
     })
-}
+
   return (
     <div className="App">
       <h2>Hello World!</h2>
@@ -54,6 +55,10 @@ function App() {
         submit={submitForm}
         errorText={errorText}
       />
+
+      {teamMembers.map((team) => {
+        return <Form key={team.id} details={team} />
+      })}
     </div>
   );
 }
