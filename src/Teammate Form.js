@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function TeammmateForm(props){
-    const {values, update, submit} = props;
+export default function TeammateForm(props){
+    const {values, update, submit, errorText} = props
 
     const onChange= evt => {
         const {name, value} = evt.target;
@@ -15,6 +15,7 @@ export default function TeammmateForm(props){
 
     return (
         <form className = '' onSubmit = {onSubmit}>
+            <h2 className="error">{errorText}</h2>
             <div className = ''>
 
                 <label> Name
@@ -29,8 +30,8 @@ export default function TeammmateForm(props){
 
                 <label> Email
                     <input
-                        type= 'text'
-                        email= 'email'
+                        type= 'email'
+                        name= 'email'
                         value= {values.email}
                         onChange= {onChange}
                         placeholder= 'Enter your email here'
@@ -38,7 +39,7 @@ export default function TeammmateForm(props){
                 </label>
 
                 <label> Role
-                    <select value= {values.role} name= 'name' onChange= {onChange}>
+                    <select value= {values.role} name= 'role' onChange= {onChange}>
                         <option value= ''>-- Select your role --</option>
                         <option value= 'guard'>Guard</option>
                         <option value= 'forward'>Forward</option>

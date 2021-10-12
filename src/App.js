@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import './App.css';
+import React, {useState} from 'react';
+import TeammateForm from './Teammate Form'
+import Teammate from './Teammate'
+
 
 const initialFormValues = {
   name: "",
@@ -8,25 +10,27 @@ const initialFormValues = {
 }
 function App() {
 
-  const[teammate, setTeammate] = useState([])
+  const[teammates, setTeammates] = useState([]);
   const[errorText, setErrorText] = useState('')
 
-  const[formValues, setFormValues] = useState(intialFormValues);
+  const[formValues, setFormValues] = useState(initialFormValues);
 
   const updateForm = (inputName, inputValue) => {
     setFormValues({...formValues, [inputName]: inputValue});
+  }
 
   const submitForm = () => {
-    const newTeammmate = {
+    const newTeammate = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
       role: formValues.role,
     }
-    if(!newTeammmate.name || !newTeammmate.email || !newTeammmate.role){
+    if(!newTeammate.name || !newTeammate.email || !newTeammate.role){
       setErrorText('Please fill out all fields');
       return;
     }
-  }
+    teammates.push(newTeammate)
+    setFormValues(initialFormValues);
   }
 
 
@@ -39,10 +43,11 @@ function App() {
         submit= {submitForm}
         errorText= {errorText}
         />
-
       {
-        teammate.map(teammate => {
-          return
+        teammates.map(item =>{
+          return (
+            <Teammate key= {item.id} details= {item} />
+          )
         })
       }
     </div>
