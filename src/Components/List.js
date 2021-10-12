@@ -35,8 +35,8 @@ const StyledList = styled.div`
 
 export default function List({ teamMembers }) {
   return (
-    <>
-      <StyledH1>your team members</StyledH1>
+    <div style={{ width: "50%" }}>
+      <StyledH1>The Dev Team</StyledH1>
       <StyledList>
         <div className="members-container">
           {teamMembers.map((member) => {
@@ -50,6 +50,6 @@ export default function List({ teamMembers }) {
           })}
         </div>
       </StyledList>
-    </>
+    </div>
   );
 }
