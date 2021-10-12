@@ -24,6 +24,7 @@ export default function App() {
       role: formValues.role 
     }
     setPerson(person.concat(newPerson))
+    setFormValues(initialFormValues);
   }
 
   return (
@@ -35,7 +36,7 @@ export default function App() {
         update={updateForm}
         submit={submitForm}
       />
-      {person.map(event => {
+      {person.map(person => {
         return (
           <Person key={person.id} details={person}/>
         )
@@ -45,53 +46,3 @@ export default function App() {
 }
 
 // export default App;
-
-
-// import './App.css';
-// import React, { useState } from 'react';
-// import PersonForm from './components/PersonForm';
-// import Person from './components/Person';
-
-// const initialFormValues = {
-//   username: '',
-//   email: '',
-//   FaveSport: '',
-// }
-
-// export default function App() {
-//   const [ person, setPerson ] = useState([])
-//   const [ formValues, setFormValues ] = useState(initialFormValues) 
-
-//   const updateForm = (inputName, inputValue) => {
-//     setFormValues({ ...formValues, [inputName]: inputValue })
-//   }
-
-//   const submitForm = () => {
-//     const newPerson = {
-//       username: formValues.username.trim(),
-//       email: formValues.email.trim(),
-//       FaveSport: formValues.FaveSport
-//     }
-//     setPerson(person.concat(newPerson));
-//     setFormValues(initialFormValues);
-//   }
-
-//   return (
-//     <div className='App'>
-//       <h1>Hello World!</h1>
-
-//       <PersonForm
-//        values={formValues}
-//        update={updateForm}
-//        submit={submitForm}
-//       />
-//       {
-//         person.map(person => {
-//           return (
-//             <Person key={person.id} details={person} />
-//           )
-//         })
-//       }
-//     </div>
-//   )
-// }
