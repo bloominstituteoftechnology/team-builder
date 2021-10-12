@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Form from "./Form";
 import "./App.css";
-import axios from 'axios'
+import axios from './axios/index'
 
 const initialTeamValue = {
   name: "",
@@ -20,15 +20,15 @@ function App() {
 
   const submitForm = () => {
     const newTeamMember = {
-      name: teamMembers.name.trim,
-      email: teamMembers.email.trim,
-      role: teamMembers.role,
+      name: formValues.name.trim,
+      email: formValues.email.trim,
+      role: formValues.role,
     };
 
-    if (!newTeamMember.name || !newTeamMember.email || !newTeamMember.role) {
-    setErrorText('You must complete all fields')
-    return
-  }
+    // if (!newTeamMember.name || !newTeamMember.email || !newTeamMember.role) {
+    // setErrorText('You must complete all fields')
+    // return
+  // }
 
     axios
       .post("fakeapi.com", newTeamMember)
@@ -55,10 +55,6 @@ function App() {
         submit={submitForm}
         errorText={errorText}
       />
-
-      {teamMembers.map((team) => {
-        return <Form key={team.id} details={team} />
-      })}
     </div>
   );
 }
