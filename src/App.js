@@ -37,7 +37,7 @@ function App() {
     setFormValues(initialFormValues);
     setErrorText('');
     setSuccessText('Submission Success')
-    setTimeout(Submission Success,1100,'');
+    setTimeout(setSuccessText,2000,'');
   }
 
   return (
@@ -48,6 +48,7 @@ function App() {
       update={updateForm}
       submit={submitForm}
       errorText={errorText}
+      successText={successText}
       />
       {
         members.map((member, idx) => {

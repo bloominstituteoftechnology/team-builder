@@ -68,6 +68,6 @@ button {
 .errorText{
   color:rgb(247, 62, 62);
 }
-.green.errorText{
+.successText{
   color:green;
 }
