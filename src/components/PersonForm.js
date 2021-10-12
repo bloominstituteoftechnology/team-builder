@@ -13,12 +13,6 @@ export default  function PersonForm(props) {
         event.preventDefault()
         submit()
     }
-
-    // const initialFormValues = {
-    //     username: '',
-    //     email: '',
-    //     role: '',
-    // }
     
     return(
         <form className='personForm' onSubmit={onSubmit}>
@@ -29,21 +23,20 @@ export default  function PersonForm(props) {
                         name='username'
                         value={values.username}
                         onChange={onChange}
-                        // submit={onSubmit}
+                        placeholder='Enter Username'
                     />
                 </label>
                 <label> Email
                     <input 
-                        type='text' //TODO: Change back to email
-                        name='username'
+                        type='email'
+                        name='email'
                         value={values.email}
                         onChange={onChange}
-                        // submit={onSubmit}
+                        placeholder='Enter Email'
                     />
                 </label>
                 <label> Favorite Sport
                     <select
-                        // type='uneeded'
                         name='role'
                         value={values.role}
                         onChange={onChange}
@@ -52,28 +45,9 @@ export default  function PersonForm(props) {
                         <option value='Hockey'>Hockey</option>
                         <option value='Foosball'>Foosball</option>
                         <option value='Dodgeball'>Dodgeball</option>
-                        <option value='Hackey Sack'>Hackey Sack</option>
-                        
+                        <option value='Hackey-Sack'>Hackey-Sack</option>
                     </select>
                 </label>
-                {/* <label> First Name
-                    <input 
-                        type='text'
-                        name='username'
-                        value={values.username}
-                        onChange={onChange}
-                        // submit={onSubmit}
-                    />
-                </label>
-                <label> Last Name
-                    <input 
-                        type='text'
-                        name='username'
-                        value={values.username}
-                        onChange={onChange}
-                        // submit={onSubmit}
-                    />
-                </label> */}
                 <div className='submit'>
                     <button>S U M B I T</button>
                 </div>
@@ -81,3 +55,63 @@ export default  function PersonForm(props) {
         </form>
     )
 }
+
+
+
+// import React from "react";
+
+
+// export default function PersonForm(props) {
+
+//     const { values, update, submit } = props;
+
+//     const onChange = (evt) => {
+//         const name = evt.target.name
+//         const value = evt.target.value
+//         update(name, value)
+//     }
+
+//     const onSubmit = (evt) => {
+//         evt.preventDefault();
+//         submit();
+//     }
+
+//     return(
+//         <form className='personForm' onSubmit={onSubmit}>
+//             <div className='inputs'> 
+//               <label> username
+//                   <input 
+//                   type='text'
+//                   name='username'
+//                   value={values.username}
+//                   onChange={onChange}
+//                   />
+//               </label>
+//               <label> Email
+//                   <input 
+//                   type='email'
+//                   name='email'
+//                   value={values.email}
+//                   onChange={onChange}
+//                   placeholder='Enter an email'
+//                   />
+//               </label>
+//               <label>
+//                   <select
+//                   name='FaveSport'
+//                   value={values.role}
+//                   onChange={onChange}
+//                   >
+//                       <option value=''> --select a sport--</option>
+//                       <option value='Basketball'>Basketball</option>
+//                       <option value='Baseball'>Baseball</option>
+//                       <option value='Hockey'>Hockey</option>
+//                       </select>
+//               </label>
+//               <div className='submit'>
+//               <button disabled={!values.email || !values.username || !values.FaveSport}>submit</button>
+//              </div>
+//             </div>
+//         </form>
+//     )
+// }
