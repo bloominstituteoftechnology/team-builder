@@ -18,7 +18,12 @@ function App() {
   }
 
   const submitForm = (event) => {
-
+    const newPerson = {
+      username: formValues.username.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role 
+    }
+    setPerson(person.concat(newPerson))
   }
 
 

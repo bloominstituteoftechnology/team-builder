@@ -10,7 +10,8 @@ export default  function PersonForm(props) {
     }
 
     const onSubmit = (event) => {
-
+        event.preventDefault()
+        submit()
     }
 
     // const initialFormValues = {
@@ -20,7 +21,7 @@ export default  function PersonForm(props) {
     // }
     
     return(
-        <form className='personForm'>
+        <form className='personForm' onSubmit={onSubmit}>
             <div className='inputs'>
                 <label> Username
                     <input 
@@ -51,11 +52,11 @@ export default  function PersonForm(props) {
                         <option value='Hockey'>Hockey</option>
                         <option value='Foosball'>Foosball</option>
                         <option value='Dodgeball'>Dodgeball</option>
+                        <option value='Hackey Sack'>Hackey Sack</option>
                         
-
                     </select>
                 </label>
-                {/* <label> Username
+                {/* <label> First Name
                     <input 
                         type='text'
                         name='username'
@@ -64,7 +65,7 @@ export default  function PersonForm(props) {
                         // submit={onSubmit}
                     />
                 </label>
-                <label> First name
+                <label> Last Name
                     <input 
                         type='text'
                         name='username'
@@ -73,6 +74,9 @@ export default  function PersonForm(props) {
                         // submit={onSubmit}
                     />
                 </label> */}
+                <div className='submit'>
+                    <button>S U M B I T</button>
+                </div>
             </div>
         </form>
     )
