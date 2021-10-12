@@ -10,7 +10,7 @@ const initialFormValues = {
 }
 
 export default function App() {
-  const [person, setPerson] = useState([]);
+const [person, setPerson] = useState([]);
   const [formValues, setFormValues] = useState(initialFormValues);
   
   const updateForm = (input1, input2) => {
@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Hello world!</h1>
+      <h1>Hello World!</h1>
 
       <PersonForm 
         values={formValues}
@@ -44,5 +44,3 @@ export default function App() {
     </div>
   )
 }
-
-// export default App;
