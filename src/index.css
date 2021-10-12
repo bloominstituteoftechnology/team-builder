@@ -16,7 +16,7 @@ code {
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(244, 244, 244);
+  background-color: rgb(230, 225, 225);
   color: rgb(65, 75, 60);
   font-family: 'Bitter', serif;
   padding: 32px;
@@ -30,10 +30,10 @@ body {
   margin-bottom: 24px;
 }
 h1, h2, h3, h4 {
-  color: royalblue;
+  color: rgb(65, 65, 66);
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 h2 {
@@ -63,4 +63,8 @@ button {
 .submit {
   display: flex;
   justify-content: flex-end;
+}
+
+.errorText{
+  color:rgb(247, 62, 62);
 }

@@ -32,9 +32,10 @@ function App() {
       setErrorText("Please complete all fields before submission.");
       return;
     }
-    setMembers(members.concat(newMember))
-    setFormValues(initialFormValues)
-    setErrorText('')
+    setMembers(members.concat(newMember));
+    setFormValues(initialFormValues);
+    setErrorText('Submission Successful');
+    setTimeout(setErrorText,1100,'');
   }
 
   return (

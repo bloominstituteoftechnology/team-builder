@@ -21,14 +21,14 @@ export default function Form(props){
     <form className='for container' onSubmit={onSubmit}>
         <h2 className='errorText'>{errorText}</h2>
         <div className='form-group inputs'>
-            <label>Username
+            <label>Name
                 <input
                 type="text"
                 name="name"
                 value={values.name}
                 onChange={onChange}
                 maxLength="30"
-                placeholder="Enter a username"
+                placeholder="Enter your name"
                 />
             </label>
             <label>Email
@@ -43,7 +43,7 @@ export default function Form(props){
             </label>
             <label>Role
             <select value={values.role} name="role" onChange={onChange}>
-                <option value="">-- Select a role --</option>
+                <option value="">--- Select role ---</option>
                 <option value="Frontend">Frontend</option>
                 <option value="Backend">Backend</option>
                 <option value="Full Stack">Full Stack</option>
