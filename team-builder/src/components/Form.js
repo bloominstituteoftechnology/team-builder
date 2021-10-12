@@ -48,7 +48,7 @@ function Form (props) {
                 <option value='Product Manager'>Product Manager</option>
             </select>
             <br/>
-            <input type='submit'/>
+            <button>Add an User</button>
         </form>
     )
 }
