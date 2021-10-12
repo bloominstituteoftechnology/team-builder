@@ -1,13 +1,15 @@
 import '../App.css';
 
-function User () {
+function User (props) {
+
+    const { name, email, role } = props
 
     return(
 
         <div className='user'>
-            <h3>Name: (name variable here)</h3>
-            <p>Email: (email variable here)</p>
-            <p>Role: (role variable here)</p>
+            <h3>Name: {name}</h3>
+            <p>Email: {email}</p>
+            <p>Role: {role}</p>
         </div>
     )
 }

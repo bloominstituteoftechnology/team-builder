@@ -21,10 +21,13 @@ function Form () {
             <br/>
             <select>
                 <option>--Select a Role--</option>
-                <option>Engineer</option>
-                <option>Student</option>
-                <option>.</option>
+                <option>Backend Engineer</option>
+                <option>Frontend Engineer</option>
+                <option>Designer</option>
+                <option>Product Manager</option>
             </select>
+            <br/>
+            <input type='submit'/>
         </form>
     )
 }
