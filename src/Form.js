@@ -1,18 +1,18 @@
 import React from 'react';
 
-export default function Form(props) {
+export default function PersonForm(props) {
 
     const { vals, update, submit } = props;
 
-    const onChange = (evt) => {
+    const onChange = evt => {
         const name = evt.target.name
         const value = evt.target.value
         update(name, value)
     }
 
-    const onSubmit = (evt) => {
-        evt.preventDefault()
-        submit()
+    const onSubmit = evt => {
+        evt.preventDefault();
+        submit();
     }
 
     // const initialFormVals = {
@@ -22,7 +22,7 @@ export default function Form(props) {
     //   }
 
     return (
-        <form className='Form'onSubmit={onSubmit}>
+        <form className='Form' onSubmit={onSubmit}>
             <div className='input'>
                 <label> Username
                     <input
@@ -30,6 +30,7 @@ export default function Form(props) {
                         name='username'
                         value={vals.username}
                         onChange={onChange}
+                        placeholder="Enter a username"
                     />
                 </label>
                 <label> Email
@@ -38,6 +39,7 @@ export default function Form(props) {
                         name='email'
                         value={vals.email}
                         onChange={onChange}
+                        placeholder="Enter an email"
                         />
                 </label>
                 <label> Favorite Sport
@@ -57,8 +59,8 @@ export default function Form(props) {
                 </label>
                 <div className="submit">
                     <button> Submit </button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
     )
 }
