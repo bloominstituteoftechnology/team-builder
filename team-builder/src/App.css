@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  margin: 3% 10%;
+  padding: 5%;
+  border: black 1px solid;
+}
+
+.User-List {
+  text-align: center;
+  margin: 3% 10%;
+  padding: 5%;
+  border: black 1px solid;
+}
+
+.user {
+  background-color: salmon;
+  border: black 5px solid;
+  padding: 5%;
+  margin: 2% 0%;
+  text-align: left;
+}
+
+.error {
+  color: red;
+}
+
+
