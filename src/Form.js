@@ -41,16 +41,21 @@ export default function Form(props) {
           Role
           <select value={values.role} name="role" onChange={onChange}>
             <option value="">--Choose a role!--</option>
-            <option value="front-end">Frnt-end Developer</option>
+            <option value="front-end">Front-end Developer</option>
             <option value="back-end">Back-End Developer</option>
             <option value="designer">UI Designer</option>
             <option value="hacker">Ethical Hacker</option>
             <option value="freelancer">Freelancer</option>
           </select>
         </lable>
-        <div className='submit'>
-            <button>Submit Details</button>
+        <div className="submit">
+          <button>Submit Details</button>
         </div>
+        {/* <div>
+          <h2>{details.name}</h2>
+          <p>Email: {details.email}</p>
+          <p>Role: {details.role}</p>
+        </div> */}
       </form>
     </div>
   );
