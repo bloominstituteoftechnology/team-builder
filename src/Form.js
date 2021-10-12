@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Form(props){
 
-    const { values, update, submit, errorText } = props
+    const { values, update, submit, errorText, successText } = props
     const onChange = evt => {
         const name = evt.target.name;
         const value = evt.target.value;
@@ -20,6 +20,7 @@ export default function Form(props){
     return(
     <form className='for container' onSubmit={onSubmit}>
         <h2 className='errorText'>{errorText}</h2>
+        <h2 className='successText'>{successText}</h2>
         <div className='form-group inputs'>
             <label>Name
                 <input

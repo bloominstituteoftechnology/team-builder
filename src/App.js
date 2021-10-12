@@ -16,6 +16,7 @@ function App() {
   const [members, setMembers] = useState([]);
   const [errorText, setErrorText]= useState("")
   const [formValues, setFormValues] =useState(initialFormValues);
+  const [successText, setSuccessText] = useState('')
 
   const updateForm =(inputName, inputValue)=>{
     setFormValues({...formValues, [inputName]: inputValue});
@@ -34,8 +35,9 @@ function App() {
     }
     setMembers(members.concat(newMember));
     setFormValues(initialFormValues);
-    setErrorText('Submission Successful');
-    setTimeout(setErrorText,1100,'');
+    setErrorText('');
+    setSuccessText('Submission Success')
+    setTimeout(Submission Success,1100,'');
   }
 
   return (
