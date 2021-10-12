@@ -12,16 +12,20 @@ const initialValue ={
 
 
 function App() {
-  const [member, setMember] =useState([])
+  const [member, setMember] = useState([])
   const [formValues, setFormValues] = useState(initialValue)
   const submitForm = () =>{
-    
-
+    const newMember = {
+      username:formValues.username.trim(),
+      email:formValues.email.trim(),
+      role:formValues.role
     }
-  
+    setMember(member.concat(newMember))
+    // console.log(newMember)
+    }
+
   const updateForm = (input1, input2) =>{
-    setFormValues({...formValues, [input1]:input2})
-    
+    setFormValues({...formValues, [input1]:input2}) 
   }
 
 
@@ -39,6 +43,13 @@ function App() {
     />
         </div>
       </header>
+      {
+      member.map(member => {
+          return (
+      <Member key={member.id} details={member} />
+      )
+    })
+  }
     </div>
   );
 }
