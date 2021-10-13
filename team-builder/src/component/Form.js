@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 
-const Form = () => {
+const Form = (props) => {
+    console.log(props);
     const [state, setState] = useState({
         name:"",
         password:"",
         email:""
     })
+
 
     const handleChange= (event) => { 
 const {name,value} = event.target
@@ -14,6 +16,7 @@ setState ( {...state, [name]:value})
 const handleSubmit =(event) => { 
 console.log(event);
 event.preventDefault ()
+props.listMaker(state)
 }
 
 
