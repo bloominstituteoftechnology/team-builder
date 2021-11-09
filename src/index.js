@@ -5,9 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <>
+  <div className = 'container'>
     <App />
-  </>
+  </div>
   , document.getElementById('root')
 );
 
