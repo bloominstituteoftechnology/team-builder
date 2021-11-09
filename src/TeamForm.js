@@ -39,10 +39,9 @@ export default function TeamForm(props) {
             <label>Role
                 <select name='role' value={values.role} onChange={onChange}>
                     <option value=''> --Select a Role--</option>
-                    <option value='supervisor'>Supervisor</option>
-                    <option value='manager'>Manager</option>
-                    <option value='lead'>Team Lead</option>
-                    <option value='associate'>Associate</option>
+                    <option value='front-end-dev'>Front end Developer</option>
+                    <option value='back-end-dev'>Back end Developer</option>
+                    <option value='full-stack-dev'>Full Stack Developer</option>
                 </select>
             </label>
 
