@@ -22,7 +22,7 @@ function App() {
   const submitForm = () =>{
 
     const newMember = {
-      username: formValues.name.trim(),
+      name: formValues.name.trim(),
       email: formValues.email.trim(),
       role: formValues.role,
     }
@@ -36,7 +36,6 @@ function App() {
         console.error(err);
       })
     setMembers(members.concat(newMember));
-    setFormValues({petName: '', petType: ''})
   }
 
   useEffect(() => {

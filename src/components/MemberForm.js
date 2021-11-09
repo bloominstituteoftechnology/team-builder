@@ -56,7 +56,7 @@ export default function MemberForm(props){
         </label>
 
         <div className='submit'>
-          <button disabled={!values.name || !values.email || !values.role}>submit</button>
+          <button>submit</button>
         </div>
       </div>
     </form>
