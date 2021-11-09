@@ -1,7 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React, { useState } from "react";
+
+const teams = [
+  { name: "Jennifer" },
+  { name: "Isabel" },
+  { name: "Hope" },
+  { name: "Zoe" },
+];
 
 function App() {
+  const [teamNames, setTeamNames] = useState(teams);
   return (
     <div className="App">
       <header className="App-header">
