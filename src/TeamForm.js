@@ -1,19 +1,17 @@
 import React from 'react';
 
-export default function TeamForm(props) {
-
-    const { values, update, submit } = props
+const TeamForm = (props) => {
 
     const onChange = evt => {
         const { name, value } = evt.target;
 
-        update(name, value);
+        props.onChange(name, value);
     }
 
     const onSubmit = evt => {
         evt.preventDefault();
 
-        submit();
+        props.submit();
     }
 
     return (
@@ -21,7 +19,7 @@ export default function TeamForm(props) {
             <label>Name
                 <input type='text' 
                 name='name' 
-                value={values.name}
+                value={props.values.name}
                 onChange={onChange}
                 maxLength= '35'
                 />
@@ -31,13 +29,13 @@ export default function TeamForm(props) {
                 <input
                 type='email'
                 name='email'
-                value={values.email}
+                value={props.values.email}
                 onChange={onChange}
                 />
             </label>
 
             <label>Role
-                <select name='role' value={values.role} onChange={onChange}>
+                <select name='role' value={props.values.role} onChange={onChange}>
                     <option value=''> --Select a Role--</option>
                     <option value='front-end-dev'>Front end Developer</option>
                     <option value='back-end-dev'>Back end Developer</option>
@@ -53,3 +51,5 @@ export default function TeamForm(props) {
         </form>
     )
 }
+
+export default TeamForm;

@@ -2,25 +2,34 @@ import { useState } from 'react';
 import './App.css';
 import TeamForm from './TeamForm';
 
+
 const initialValues = {
-  username: '',
+  name: '',
   email: '',
   role: '',
 }
 
 function App() {
-  const [ teamMember, setTeamMemmber ] = useState([]);
+  const [ teamMember, setTeamMember ] = useState({name:'', email:'', role:''});
   const [ formValues, setFormValues ] = useState(initialValues);
-  const [formErrors, setFormErrors ] = useState('');
+
+
+const onSubmit = () => {
+  setTeamMember({formValues, ...teamMember})
+}
+
+const onChange = (name, value) => {
+  setFormValues({...formValues, [name]: value})
+}
 
   return (
     <div className="container">
       <h1>Team Members</h1>
-      <h3 className='error-text'>
-        {formErrors}
-      </h3>
-      
-
+      <TeamForm
+        values={formValues}
+        change={onChange}
+        submit={onSubmit}
+      />
     </div>
   );
 }
