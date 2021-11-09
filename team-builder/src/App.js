@@ -33,6 +33,7 @@ function App() {
          update={updateForm}
          submit={submitForm}
       />
+      <h2>Team members:</h2>
       {
         teamMember.map((member,idx) => <Member key={idx} details= {member}/>)
       }

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function TeamForm(props){
     const {values,update,submit} = props;
-console.log(values)
+ 
     const onChange = (event) => {
         const {name,value}= event.target;
 
@@ -14,7 +14,7 @@ console.log(values)
     }
     return(
         <div>
-            <form onSubmit={onSubmit}>
+            <form className = "form-container" onSubmit={onSubmit}>
                 <label>Name: </label>
                 <input
                     type="text"
@@ -40,7 +40,9 @@ console.log(values)
                     
                 </select>
                 <br/>
-                <input type="Submit"/>
+                <div>
+                    <button disabled={!values.name || !values.email || !values.role}>Submit</button>
+                </div>
             </form>
         </div>
     )
