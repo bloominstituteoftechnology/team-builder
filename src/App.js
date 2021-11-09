@@ -1,9 +1,19 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
+const initialValues = {
+  username: '',
+  email: '',
+  role: '',
+}
+
 function App() {
+  const [ teamMember, setTeamMemmber ] = useState([]);
+  const [ formValues, setFormValues ] = useState(initialValues);
+  const [formErrors, setFormErrors ] = useState('');
+
   return (
-    <div className="Container">
+    <div className="App">
 
     </div>
   );
