@@ -1,72 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-import Form from './components/Form.js';
-import FormInfo from './Components/FormInfo'
 import React, { useState } from 'react';
 
-const teamList = [
-  {
-      name: 'Casper',
-      email: 'casper@ghostmail.com',
-      role: 'Ghost'
-  },
-  {
-      name: 'Dracula',
-      email: 'blehblehbleh@vampmail.net',
-      role: 'Vampire'
-  },
-  {
-      name: 'Lucien',
-      email: 'nosilver@wolfmail.ca',
-      role: 'Lycan'
-  }
-];
+import Form from './Components/Form'
 
 function App() {
-  const [formValues, setFormValues] = useState({ name: '', email: '', role: '', monster: false});
-  const [teamMember, setTeamMember] = useState(teamList);
+  const [members, setMembers] = useState([]);
+  const [values, setValues] = useState({name: '', email:'', role:''});
 
-  const submit = (e) => {
-    e.preventDefault();
-        const newTeamMember = {
-            name: formValues.name.trim(),
-            email: formValues.email.trim(),
-            role: formValues.role.trim()
-            }
-            setTeamMember(teamMember.concat(newTeamMember))
-            setFormValues({ name: '', email: '', role: '', monster: false})
-    };
+  const onSubmit= ()=> {
+    setMembers([values, ...members]);
+    setValues({name:'', email:'', role:''});
+  }
 
-  const update = (e) => {
-        const { name, value, checked, type } = e.target;
-        const realValue = type === 'checkbox' ? checked : value;
-        setFormValues({...formValues, [name]: realValue});
-    }
+  const onChange=(name, value) => {
+    setValues({ ...values, [name]: value })
+  }
 
-  
 
   return (
     <div className="App">
-
-      <Form 
-        formValues={formValues}
-        submit={submit}
-        change={update}
-        teamMember={teamMember}
-      />
-      <h1> Meet the team! </h1>
-      {
-        teamMember.map(ea => {
+      <h1>Team Builder App!</h1>
+      <Form
+        values={values}
+        change={onChange}
+        submit={onSubmit}
+        />
+        {members.map((member,idx) => {
           return (
-            <FormInfo key={ea.id} details={ea}/>
+            <div key={idx}>
+              {member.email}, {member.name}, {member.role}
+            </div>
           )
-        })
-
-      }
-
+        })}
     </div>
   );
 }
 
 export default App;
-

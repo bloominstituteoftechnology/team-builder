@@ -1,49 +1,49 @@
 import React from 'react';
 
 
+const Form = (props) => {
 
-export default function Form (props){
-  const { submit, change, formValues } = props;
+    const handleChange = event => {
+        const {name, value} = event.target;
 
+
+        props.change(name,value);
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        props.submit();
+    }
     return(
-      <div> 
-        <h2> Add a team member: </h2>
-        <form onSubmit={submit}>
-            <input 
-              type='text'
-              value={formValues.name}
-              name='name'
-              onChange={change}
-              placeholder='Team member name'
+    <form onSubmit = {handleSubmit}>
+        <label>Name
+        <input
+            placeholder="Enter your name here!"
+            value={props.values.name}
+            name="name"
+            onChange={handleChange}
+        />
+        </label>
+        <label>Email
+            <input
+            placeholder="Enter your email here!"
+            value={props.values.email}
+            name="email"
+            onChange={handleChange}
             />
-             <input 
-              type='email'
-              value={formValues.email}
-              name='email'
-              onChange={change}
-              placeholder='Email'
+        </label>
+        <label>Role
+            <input
+            placeholder="Enter your role here!"
+            value={props.values.role}
+            name="role"
+            onChange={handleChange}
             />
-            <input 
-              type='text'
-              value={formValues.role}
-              name='role'
-              onChange={change}
-              placeholder='Role'
-            />
-            <label> Monster?
-                <input
-             type='checkbox'
-             name='monster'
-             checked={formValues.monster}
-             onChange={change}
-             />
-             </label>
-        <div>
-            <button disabled={!formValues.monster}> Submit </button>
-        </div>
-        </form>
-
-      </div>  
+        </label>
+    </form>
     )
 
 }
+
+
+export default Form;
