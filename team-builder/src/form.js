@@ -1,13 +1,32 @@
 import React from "react";
 
-const form = (props) => {
+const Form = (props) => {
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    props.change(name, value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.submit();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="firstName">First name: </label>
-      <input type="text" id="firstName" name="firstName" />
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        onChange={handleChange}
+      />
 
       <label htmlFor="email">Enter your email:</label>
-      <input type="email" id="email" name="email"></input>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        onChange={handleChange}
+      ></input>
 
       <label htmlFor="role">
         <select className="role">
@@ -22,3 +41,5 @@ const form = (props) => {
     </form>
   );
 };
+
+export default Form;
