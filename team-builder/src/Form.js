@@ -3,15 +3,19 @@ import React, { useState } from 'react';
 
 export default function Form(props){
     const [playerName, setPlayerName] = useState('');
+    const [playerData, setPlayerData] = useState({name: '', character: ''});
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log('submitted')
+        const newTeamList = [ ...props.teamList ]
+        newTeamList.push(playerData);
+        props.setTeamList(newTeamList);
+        console.log(newTeamList);
     }
 
     const handleChange = (evt) => {
         evt.preventDefault();
-        setPlayerName(evt.target.value)
+        setPlayerData({ ...playerData, [evt.target.name]: evt.target.value })
     }
 
     return(
@@ -19,7 +23,14 @@ export default function Form(props){
             <input 
                 type='text'
                 name='name'
-                value={playerName}
+                value={playerData.name}
+                onChange={handleChange}
+
+            />
+            <input 
+                type='text'
+                name='character'
+                value={playerData.character}
                 onChange={handleChange}
             />
             <button>Submit</button>

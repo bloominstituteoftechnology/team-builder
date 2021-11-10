@@ -12,10 +12,14 @@ function App() {
     { name: 'Anauris', character: 'Harley'},
 ])
 
+  
 
   return (
     <div className="App">
-      <Form />
+      <Form 
+        teamList={teamList}
+        setTeamList={setTeamList}
+      />
       {JSON.stringify(teamList)}
     </div>
   );
