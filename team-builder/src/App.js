@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, {useState } from 'react';
 import './App.css';
+import Form from './Form';
 
 function App() {
+
+  const [teamMembers, setTeamMembers] = useState([]); 
+  const [values, setValues] = useState({name:'', email:'', role:''});
+  
+  const onSubmit = () => {
+    setTeamMembers([values,...teamMembers]);
+    setValues({name:'',email:'', role:'' });
+  }
+
+  const onChange = (name, value) => {
+    setValues({ ...values, [name]: value});
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Team Builder App!</h1>
+      <Form
+      values ={values}
+      change={onChange}
+      submit={onSubmit}
+      />
+  
+    {teamMembers.map((member, idx)=>{
+    return (
+      <div key={idx}>
+      {member.email}, {member.name}, {member.role}
+      </div>
+    )
+    })}
     </div>
-  );
-}
+    );
+  }
 
 export default App;
