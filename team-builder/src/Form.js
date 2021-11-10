@@ -1,8 +1,30 @@
+import React, { useState } from 'react';
 
 
-const teamList = [
-    { name: 'Dionis', character: 'Karlee'},
-    { name: 'Mark', character: 'Evangelo'},
-    { name: 'Brian', character: 'Doc'},
-    { name: 'Anauris', character: 'Harley'},
-]
+export default function Form(props){
+    const [playerName, setPlayerName] = useState('');
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        console.log('submitted')
+    }
+
+    const handleChange = (evt) => {
+        evt.preventDefault();
+        setPlayerName(evt.target.value)
+    }
+
+    return(
+        <form onSubmit={handleSubmit}>
+            <input 
+                type='text'
+                name='name'
+                value={playerName}
+                onChange={handleChange}
+            />
+            <button>Submit</button>
+        </form>
+    )
+}
+
+
