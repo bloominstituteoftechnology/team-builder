@@ -19,6 +19,7 @@ const Form = (props) => {
         name="firstName"
         onChange={handleChange}
       />
+      <br />
 
       <label htmlFor="email">Enter your email:</label>
       <input
@@ -27,6 +28,7 @@ const Form = (props) => {
         name="email"
         onChange={handleChange}
       ></input>
+      <br />
 
       <label htmlFor="role">
         <select className="role">
@@ -38,6 +40,10 @@ const Form = (props) => {
           <option>Project Manager</option>
         </select>
       </label>
+
+      <div className="submit">
+        <button>Submit</button>
+      </div>
     </form>
   );
 };

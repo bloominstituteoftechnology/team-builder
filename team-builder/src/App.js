@@ -17,9 +17,17 @@ const teams = [
 
 function App() {
   const [teamNames, setTeamNames] = useState(teams);
+  const [values, setValues] = useState({ name: "", email: "", role: "" });
+  const onSubmit = () => {
+    setTeamNames([values, ...teamNames]);
+    setValues({ name: "", email: "", role: "" });
+  };
+  const onChange = (name, value) => {
+    setValues({ ...values, [name]: value });
+  };
   return (
     <div className="App">
-      <Form setTeamNames={setTeamNames} />
+      <Form values={values} change={onChange} submit={onSubmit} />
     </div>
   );
 }
