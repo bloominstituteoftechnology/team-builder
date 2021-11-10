@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 
 export default function Form(props){
-    const [playerName, setPlayerName] = useState('');
     const [playerData, setPlayerData] = useState({name: '', character: ''});
 
     const handleSubmit = (evt) => {
@@ -25,7 +24,6 @@ export default function Form(props){
                 name='name'
                 value={playerData.name}
                 onChange={handleChange}
-
             />
             <input 
                 type='text'
