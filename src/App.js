@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import TeamForm from './TeamForm';
 
@@ -10,16 +10,18 @@ const initialValues = {
 }
 
 function App() {
-  const [ teamMember, setTeamMember ] = useState({name:'', email:'', role:''});
+  const [ teamMember, setTeamMember ] = useState([]);
   const [ formValues, setFormValues ] = useState(initialValues);
 
 
 const onSubmit = () => {
-  setTeamMember({formValues, ...teamMember})
+  setTeamMember([formValues, ...teamMember])
+
+  setFormValues(initialValues);
 }
 
 const onChange = (name, value) => {
-  setFormValues({...formValues, [name]: value})
+  setFormValues({...formValues, [name]: value});
 }
 
   return (
@@ -30,6 +32,13 @@ const onChange = (name, value) => {
         change={onChange}
         submit={onSubmit}
       />
+      {teamMember.map((member, index) => {
+        return (
+          <div key={index}>
+            {member.email}, {member.name}, {member.role}
+          </div>
+        )
+      })}
     </div>
   );
 }
