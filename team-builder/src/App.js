@@ -3,10 +3,15 @@ import "./App.css";
 import React, { useState } from "react";
 
 const teams = [
-  { name: "Jennifer" },
-  { name: "Isabel" },
-  { name: "Hope" },
-  { name: "Zoe" },
+  {
+    name: "Jennifer",
+    email: "Jennifer@yahoo.com",
+    role: "Front-End Developer",
+  },
+  { name: "Jennifer", email: "Jennifer@yahoo.com", role: "Back-End Developer" },
+  { name: "Hope", email: "Hope@yahoo.com", role: "Full-Stack Developer" },
+  { name: "Hope", email: "Hope@yahoo.com", role: "Project Manager" },
+  { name: "Zoe", email: "Zoe@yahoo.com", role: "Designer" },
 ];
 
 function App() {

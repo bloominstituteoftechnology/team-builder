@@ -13,16 +13,16 @@ In this project you'll build an app that will keep track of memebers of a team. 
 - [ x] Create a forked copy of this project.
 - [ x] Clone your OWN version of the repository in your terminal
 - [ x] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
-- [ x] CD into your `team-builder` directory
-- [x ] Start up the app using `npm start`
-- [ x] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ x] Push commits: git push origin `<firstName-lastName>`.
+- [x] CD into your `team-builder` directory
+- [x] Start up the app using `npm start`
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 ### Task 2: Minimum Viable Product
 
 - [x ] Render a list of team members from state.
-- [ x] Build a form to add a new member to the list of members.
+- [x] Build a form to add a new member to the list of members.
 
 #### Setup your state
 
