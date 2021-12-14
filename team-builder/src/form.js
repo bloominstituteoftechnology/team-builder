@@ -25,7 +25,7 @@ return (
         value={values.name}
         onChange={onChange}
         />
-      </label><br/>
+      </label>
       <label>Email: 
         <input
         name='email'
@@ -34,7 +34,7 @@ return (
         value={values.email}
         onChange={onChange}
         />
-      </label><br/>
+      </label>
       <label>Role: 
         <select value={values.role} name='role' onChange={onChange}>
             <option value=''>-- Select a Role --</option>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './App.css';
 import Form from './form';
-// import axios from 'axios';
 
 
 const initialFormValues = {
@@ -11,7 +10,7 @@ const initialFormValues = {
 }
 
 const membersList = [
-  { name: 'Eli', email: 'test@test.com', role: 'Fullstack'},
+  { name: 'John', email: 'test@test.com', role: 'Fullstack'},
   { name: 'Britt', email: 'abc@123.com', role: 'Senior'},
 ]
 
@@ -26,7 +25,7 @@ export default function App() {
     setFormValues({ ...formValues, [inputName]: inputValue});
   }
 
-  const submitForm = () => {
+  const submitForm = (event) => {
     const newMember = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
@@ -45,12 +44,20 @@ export default function App() {
   return (
     <div className='container'>
       <h1>Team Members</h1>
+
       <h2>{error}</h2>
       <Form 
         values={formValues}
         update={updateList}
         submit={submitForm}
       />
+      <div>
+        {teamMember.map((member, index) => (
+        <div key={index}>
+          <p>Member: {member.name} Role: {member.role} Email: {member.email}</p>
+        </div>
+      ))}
+      </div>
     </div>
   );
 }
