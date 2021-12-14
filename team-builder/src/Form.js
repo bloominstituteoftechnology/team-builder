@@ -40,15 +40,14 @@ export default function Form(props) {
           <label>Role
             <select value={values.role} name='role' onChange={onChange}>
               <option value=''>-- Select a Role --</option>
-              <option value='frontend'> Frontend Engineer</option>
-              <option value='backend'>Backend Engineer</option>
-              <option value='designer'>Web Designer</option>
-              <option value='retired'>Retired</option>
+              <option value='Frontend Engineer'> Frontend Engineer</option>
+              <option value='Backend Engineer'>Backend Engineer</option>
+              <option value='Web Designer'>Web Designer</option>
             </select>
           </label>
 
           <div className='submit'>
-              <button>Submit</button>
+              <button>Add Teammate!</button>
           </div>
         </div>
       </form>

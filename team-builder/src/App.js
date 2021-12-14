@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Form from './Form';
+import Teammate from './Teammate'
 
 const initialFormValues = {
   name: '',
@@ -25,18 +25,20 @@ function App() {
       role: formValues.role
     }
     setTeammates(teammates.concat(newEntry));
+    setFormValues(initialFormValues);
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>People</h1>
-        <h2>{error}</h2>
-        <Form 
-        values={formValues}
-        update={updateForm}
-        submit={submitForm}
-        />
+        <Form values={formValues} update={updateForm} submit={submitForm}/>
+        <h1>My Team</h1>
+        {teammates.map((teammate, idx) => {
+          console.log(teammate)
+          return (
+            <Teammate key={idx} details={teammate}/>
+          )
+        })}
       </header>
     </div>
   );
