@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function form(props) {
-    const { values, update, submit } = props
+    const { values, update, submit } = props;
 
     const onChange = event => {
         const { name, value } = event.target;

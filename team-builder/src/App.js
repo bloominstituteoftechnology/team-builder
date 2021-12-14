@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
 import Form from './form';
-
+// import axios from 'axios';
 
 
 const initialFormValues = {
@@ -19,6 +19,7 @@ export default function App() {
 
   const [formValues, setFormValues] = useState(initialFormValues);
   const [teamMember, setTeamMember] = useState(membersList);
+  const [error, setError] = useState('');
 
 
   const updateList = (inputName, inputValue) => {
@@ -31,16 +32,20 @@ export default function App() {
       email: formValues.email.trim(),
       role: formValues.role
     }
-    setTeamMember(teamMember.concat(newMember));
-    setFormValues(initialFormValues);
+    if (!newMember.name || !newMember.email || !newMember.role) {
+      setError('Looks like your missing something!');
+    } else {
+      setTeamMember(teamMember.concat(newMember));
+      setFormValues(initialFormValues);
+      setError('')
+    }
 }
 
 
   return (
     <div className='container'>
       <h1>Team Members</h1>
-     
-
+      <h2>{error}</h2>
       <Form 
         values={formValues}
         update={updateList}
