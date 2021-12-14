@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Form = (props) => {
-    console.log(props);
+    
     const { submitPerson, initialPerson, buttonText, history } = props;
     const [person, setPerson] = useState(initialPerson || {name: "", email: "", role: ""});
     const handleChange = event => {
