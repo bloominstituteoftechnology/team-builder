@@ -12,7 +12,7 @@ In this project you'll build an app that will keep track of memebers of a team. 
 
 - [ ] Create a forked copy of this project.
 - [ ] Clone your OWN version of the repository in your terminal
-- [ ] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
+- [ ] Use `npx create-react-app team-builder --use-npm` to initiate the project.
 - [ ] CD into your `team-builder` directory
 - [ ] Start up the app using `npm start`
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
@@ -32,7 +32,7 @@ In this project you'll build an app that will keep track of memebers of a team. 
 
 #### Build your form
 
-- [ ] In `Form.js` build out your markup.
+- [ ] Create a `Form.js` file and build out your form markup.
 - [ ] Build inputs for `name`, `email` and `role` (backend engineer, frontend engineer, designer, etc. Use your imagination).
 - [ ] You will have to decide which component is responsible for maintaining the _state_ of the form (`Form` itself, or its parent `App`). Each approach has advantages and disadvantages.
 - [ ] Render your `Form` component in `App`. The `App` component should hand down through props any callback(s) needed for `Form` to do its job (adding new members to your team members state on submit).
