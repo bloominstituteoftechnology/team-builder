@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
 import Form from './components/Form';
+import Member from './components/Member';
 
 function App() {
   const [team, setTeam] = useState([]);
@@ -28,6 +29,13 @@ function App() {
         change = {updateForm}
         submit = {submitForm}        
       />
+      {
+        team.map( member => {
+          return (
+            <Member key={member.id} details = {member}/>
+          )
+        })
+      }
     </div>
   );
 }
