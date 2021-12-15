@@ -31,7 +31,7 @@ function App() {
     }
 
     if (!newMember.username || !newMember.email || !newMember.role) {
-      setError("All fields are required, ya chump!!!");
+      setError(`dang glob it, you didn't fill out the form properly!!`);
     } else {
       axios.post("fakeapi.com", newMember)
         .then(res => {
