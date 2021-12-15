@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(244, 244, 244);
+  color: #282c34;
+  font-family: 'Bitter', serif;
+  
+  padding: 32px;
+}
+.container {
+  color: #014f86;
+  font-style: bold;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  padding: 32px;
+  background-color: #e85d04;
+  margin-bottom: 24px;
+}
