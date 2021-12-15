@@ -1,28 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import React from 'react';
+import Form from './Form.js';
 
 function App() {
-  return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
 
-    <div>
-      <h1>hello world</h1>
-    </div>
+  const team = [{id: 0, name: 'andrew', age: 30, location: 'hell'}, {id: 1, name: 'katie', age: 29, location: 'oswego il'}];
+
+  const [teamMembers, setTeamMembers] = useState(team);
+
+  useEffect(() => {
+    setTeamMembers(team);
+  }, []);
+
+  console.log(teamMembers);
+
+  return (
+    
+    <>
+    <Form teamMembers={teamMembers} />
+    
+    </>
   );
 }
 
