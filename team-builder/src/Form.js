@@ -1,14 +1,14 @@
 import React from "react";
 
-export default function Form({ TeamMembers, Update, Submit }) {
+export default function Form({ teamMembers, update, submit }) {
   const handleChange = (evt) => {
     const { name, value } = evt.target;
-    Update(name, value);
+    update(name, value);
   };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    Submit();
+    submit();
   };
 
   return (
@@ -19,7 +19,7 @@ export default function Form({ TeamMembers, Update, Submit }) {
           <input
             name="name"
             type="text"
-            value={TeamMembers.name}
+            value={teamMembers.name}
             maxLength="30"
             onChange={handleChange}
           />
@@ -29,14 +29,14 @@ export default function Form({ TeamMembers, Update, Submit }) {
           <input
             name="email"
             type="text"
-            value={TeamMembers.email}
+            value={teamMembers.email}
             maxLength="30"
             onChange={handleChange}
           />
         </label>
         <label>
           Role:
-          <select name="role" value={TeamMembers.role} onChange={handleChange}>
+          <select name="role" value={teamMembers.role} onChange={handleChange}>
             <option value="">Select a Role</option>
             <option value="Backend Engineer">Backend Engineer</option>
             <option value="Frontend Engineer">Frontend Engineer</option>
