@@ -6,9 +6,9 @@ import Form from './Form.js';
 
 function App() {
 
-  const team = [{id: 0, name: 'andrew', age: 30, location: 'hell'}, {id: 1, name: 'katie', age: 29, location: 'oswego il'}];
+  const team = [{id: 0, name: 'andrew', email: 'andrew.gary91@gmail.com', location: 'oswego IL'}, {id: 1, name: 'katie',email: 'katiebennett@gmail.com', location: 'oswego il'}];
 
-  const [teamMembers, setTeamMembers] = useState(team);
+  const [teamMembers, setTeamMembers] = useState([]);
 
   useEffect(() => {
     setTeamMembers(team);
