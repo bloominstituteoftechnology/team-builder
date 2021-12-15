@@ -5,10 +5,8 @@ import MemberForm from './MemberForm';
 
 
 const initialFormValues = { 
-  // Text input
-  MemberName: '', 
+  memberName: '', 
   email: '', 
-  // DropDown input
   role: ''}
 
 function App() {
@@ -22,7 +20,7 @@ function App() {
 
   const submitForm = () => {
     const newMember = {
-      MemberName: formValues.MemberName.trim(),
+      MemberName: formValues.memberName.trim(),
       email: formValues.email.trim(),
       role: formValues.role
     }
@@ -32,6 +30,7 @@ function App() {
     } else {
       setMembers([...members]);
       setFormValues(initialFormValues);
+      setError('');
     }
   }
 
@@ -46,9 +45,9 @@ function App() {
         />
 
         {
-          members.map(member => {
+          members.map((member, idx) => {
             return (
-              <Member key={member.id} details={member} />
+              <Member key={idx} details={member} />
             )
           })
         }
