@@ -1,19 +1,28 @@
 import React from 'react';
 import "../App.css";
 
-const Form = (props) => {
-    const { values, update, submit } = (props);
+export default function MemberForm (props) {
+    const { values, update, submit } = (props)
 
     const onChange = evt => {
-        const { name, value } = evt.target;
+        const name = evt.target.name;
+        const { value } = evt.target;
+
         update(name, value);
     }
 
+    const onSubmit = evt => {
+        evt.preventDefault();
+        submit();
+    }
+
     return (
-        <form className='="form-container'>
+        <form className='form-container' onSubmit={onSubmit}>
+            <div className='form-group inputs'></div>
             <label>
-                Name:
+                Member Name:
                 <input 
+                name='name'
                 values={values.memberName}
                 onChange={onChange}
                 className='form-input'
@@ -24,21 +33,16 @@ const Form = (props) => {
             <label>
                 Email:
                 <input 
+                 name='email'
                  value={values.email}
                  onChange={onChange}
-                 className='form-input'
                  type='email'
                  placeholder='Email'
                 />
             </label>
             <label>
                 Role:
-                <select 
-                    name='role'
-                    value={values.role}
-                    onChange={onChange}
-                    className='form-input'
-                >
+                <select value={values.role} name='role' onChange={onChange}>
                     <option value=''>-- Select a Role --</option>
                     <option value='Backend Engineer'>Backend Engineer</option>
                     <option value='Frontend Engineer'>Frontend Engineer</option>
@@ -51,4 +55,3 @@ const Form = (props) => {
     );
 };
 
-export default Form;
