@@ -20,7 +20,8 @@ const submit = (event) => {
     event.preventDefault();
     const newTeamMember = {
         name: formValues.name.trim(),
-        email: formValues.email.trim()
+        email: formValues.email.trim(),
+        position: formValues.position
     }
     console.log(newTeamMember);
     setTeamMembers(teamMembers.concat(newTeamMember));
@@ -49,8 +50,12 @@ return (
                 />
             </label>
             <label>Position:
-                <select value='' name='position' onChange={change}>
-                    <option>--Your Position--</option>
+                <select value={formValues.position} name='position' onChange={change}>
+                    <option value=''>--Your Position--</option>
+                    <option value='CEO'>CEO</option>
+                    <option value='Janitor'>Janitor</option>
+                    <option value='Programmer'>Programmer</option>
+                    <option value='Chef'>Chef</option>
                 </select>
             </label>
             <button>Submit</button>
@@ -58,7 +63,7 @@ return (
         {teamMembers.map((member, index) => (
             <>
                 <h1>List of Team Members</h1>
-                <div>{`Name: ${member.name}, Email: ${member.email}`}</div>
+                <div>{`Name: ${member.name}, Email: ${member.email}, Position: ${member.position}`}</div>
             </>
         ))}
     </div>
