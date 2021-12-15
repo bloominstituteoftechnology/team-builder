@@ -43,18 +43,20 @@ export default function App() {
 
   return (
     <div className='container'>
-      <h1>Team Members</h1>
-
-      <h2>{error}</h2>
+      <h1>Create Your Team</h1>
       <Form 
         values={formValues}
         update={updateList}
         submit={submitForm}
       />
-      <div>
+      <h4 className='error'>{error}</h4>
+      <h2>Team Members:</h2>
+      <div className='memberList'>
         {teamMember.map((member, index) => (
-        <div key={index}>
-          <p>Member: {member.name} Role: {member.role} Email: {member.email}</p>
+        <div className='member' key={index}>
+         <h3> Member: {member.name}</h3> 
+         <p>Role: {member.role}</p>
+         <p>Email: {member.email}</p>
         </div>
       ))}
       </div>
