@@ -11,14 +11,23 @@ const teamMemberInfo = {
 
 function App() {
   const [teamMembers, setTeamMembers] = useState({ teamMemberInfo });
+  const [error, setError] = useState("");
 
-  const handleChange = (evt) => {
-    const { value, name } = evt.target;
-    setTeamMembers({ ...teamMemberInfo, [name]: value });
+  const updateForm = (name, value) => {
+    setTeamMembers({ ...teamMembers, [name]: value });
   };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
+  const submitForm = () => {
+    const newTeamMember = {
+      name: teamMembers.name.trim(),
+      email: teamMembers.email.trim(),
+      role: teamMembers.role,
+    };
+
+    if (!newTeamMember.name || !newTeamMember.email || !newTeamMember.role) {
+      setError("You missed adding something to one of the fields");
+    } else {
+    }
   };
 
   return (
@@ -37,11 +46,9 @@ function App() {
           Learn React
         </a>
       </header>
-      <Form
-        TeamMembers={teamMembers}
-        HandleChange={handleChange}
-        HandleSubmit={handleSubmit}
-      />
+      <h1>Team Builder</h1>
+      <h2>{error}</h2>
+      <Form TeamMembers={teamMembers} Update={updateForm} Submit={submitForm} />
     </div>
   );
 }

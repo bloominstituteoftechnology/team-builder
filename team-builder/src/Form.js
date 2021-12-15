@@ -1,20 +1,27 @@
 import React from "react";
 
-export default function TeamMembers({
-  TeamMembers,
-  HandleChange,
-  HandleSubmit,
-}) {
+export default function Form({ TeamMembers, Update, Submit }) {
+  const handleChange = (evt) => {
+    const { name, value } = evt.target;
+    Update(name, value);
+  };
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    Submit();
+  };
+
   return (
     <div>
-      <form onSubmit={() => HandleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>
           Name:
           <input
             name="name"
             type="text"
             value={TeamMembers.name}
-            onChange={() => HandleChange}
+            maxLength="30"
+            onChange={handleChange}
           />
         </label>
         <label>
@@ -23,12 +30,20 @@ export default function TeamMembers({
             name="email"
             type="text"
             value={TeamMembers.email}
-            onChange={() => HandleChange}
+            maxLength="30"
+            onChange={handleChange}
           />
         </label>
         <label>
           Role:
-          <input name="role" />
+          <select name="role" value={TeamMembers.role} onChange={handleChange}>
+            <option value="">Select a Role</option>
+            <option value="Backend Engineer">Backend Engineer</option>
+            <option value="Frontend Engineer">Frontend Engineer</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="Product Designer">Product Designer</option>
+            <option value="Quality Assurance">Quality Assurance</option>
+          </select>
         </label>
         <button>Submit</button>
       </form>
