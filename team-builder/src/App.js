@@ -20,18 +20,21 @@ function App() {
 
   const submitForm = () => {
     const newMember = {
-      MemberName: formValues.memberName.trim(),
+      memberName: formValues.memberName.trim(),
       email: formValues.email.trim(),
       role: formValues.role
     }
 
-    if(!newMember.MemberName || !newMember.email || !newMember.role) {
+    if(!newMember.memberName || !newMember.email || !newMember.role) {
       setError('Oopsies! You have to fill out all the fields!')
     } else {
       setMembers([...members]);
       setFormValues(initialFormValues);
       setError('');
     }
+
+    setMembers(members.concat(newMember));
+    
   }
 
   return (
