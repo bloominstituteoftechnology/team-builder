@@ -19,17 +19,7 @@ function SimpleForm() {
 
   const change = (evt) => {
     const { value, name } = evt.target;
-    /**
-     * const value = evt.target.value
-     * const name = evt.target.name
-     */
     setFormValues({ ...formValues, [name]: value });
-    /**
-     * formValues = {
-     *  memberName: "",
-     *  petType: "",
-     * }
-     */
   }
 
   const submit = (evt) => {
@@ -44,10 +34,10 @@ function SimpleForm() {
 
   return (
     <div>
-      <h1>Simple Form App</h1>
-      {member.map((pet, idx) => (
+      <h1>People of Ooo Form App</h1>
+      {member.map((member, idx) => (
         <div key={idx}>
-          {pet.memberName} is a {pet.memberRole}
+          {member.memberName} is a {member.memberRole}
         </div>
       ))}
       <form onSubmit={submit}>
@@ -77,7 +67,7 @@ ReactDOM.render(
     , document.querySelector('#root')  
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// // If you want to start measuring performance in your app, pass a function
+// // to log results (for example: reportWebVitals(console.log))
+// // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// reportWebVitals();
