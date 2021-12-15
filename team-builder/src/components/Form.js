@@ -1,16 +1,27 @@
 import React from "react";
 
 export default function Form(props) {
-    const { value } = props
+    const { value, update, submit } = props
+
+    const onChange = evt => {
+        const { name, value } = evt.target;
+        update(name, value);
+    }
+
+    const onSubmit = evt => {
+        evt.preventDefault();
+        submit();
+      }
 
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <label>Name
                 <input 
                 name='name'
                 type='text'
                 placeholder='enter name'
                 value={value.name}
+                onChange={onChange}
                 />
             </label>
                 
@@ -20,11 +31,12 @@ export default function Form(props) {
                 type='email'
                 placeholder='enter email'
                 value={value.email}
+                onChange={onChange}
                 />
             </label>
                 
             <label>Role
-                <select name='role'>
+                <select name='role' value={value.role} onChange={onChange}>
                     <option value=''>select a role</option>
                     <option value='frontend engineer'>frontend engineer</option>
                     <option value='backend engineer'>backend engineer</option>
