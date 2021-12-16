@@ -40,7 +40,18 @@ export default function MemberForm(props) {
             />
         </label>
 
-        {/* <label>Role</label> */}
+        <label>Role
+          <select
+            onChange={onChange}
+            value={values.role}
+            name='role'
+          >
+            <option value=''>- Select an option -</option>
+            <option value='hero'>Hero</option>
+            <option value='old-hero'>Old Hero</option>
+            <option value='artist'>Artist</option>
+          </select>
+        </label>
 
         <div className='submit'>
           <button>submit</button>

@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import React, { useState } from 'react';
 
 
@@ -35,7 +34,7 @@ function SimpleForm() {
   return (
     <div>
       <h1>People of Ooo Form App</h1>
-      {member.map((member, idx) => (
+      {/* {member.map((member, idx) => (
         <div key={idx}>
           {member.memberName} is a {member.memberRole}
         </div>
@@ -54,7 +53,7 @@ function SimpleForm() {
           type="text"
         />
         <button>submit</button>
-      </form>
+      </form> */}
     </div>
   )
 }
