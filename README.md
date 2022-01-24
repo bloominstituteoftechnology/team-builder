@@ -15,9 +15,8 @@ In this project you'll build an app that will keep track of memebers of a team. 
 - [ ] Use `npx create-react-app team-builder --use-npm` to initiate the project.
 - [ ] CD into your `team-builder` directory
 - [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [ ] Implement the project on your newly created `main` branch, committing changes regularly.
+- [ ] Push commits: git push origin `main`.
 
 ### Task 2: Minimum Viable Product
 
@@ -82,4 +81,4 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission Format
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+- [ ] Submit a link to your github repository in canvas.
