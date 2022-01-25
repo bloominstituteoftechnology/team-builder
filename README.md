@@ -12,7 +12,7 @@ In this project you'll build an app that will keep track of memebers of a team. 
 
 - [ ] Create a forked copy of this project.
 - [ ] Clone your OWN version of the repository in your terminal
-- [ ] Use `npx create-react-app team-builder --use-npm` to initiate the project.
+- [ ] Use `npx create-react-app .` (NOTE THE PERIOD AT THE END!) to initiate the project.
 - [ ] CD into your `team-builder` directory
 - [ ] Start up the app using `npm start`
 - [ ] Implement the project on your newly created `main` branch, committing changes regularly.
