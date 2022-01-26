@@ -2,13 +2,18 @@ import React from "react";
 
 
 export default function Form(props) {
-    const { values, update, submit } = props
+    const { 
+        values,
+        update, 
+        submit,
+        errors,
+    } = props
 
     const onChange = evt => {
         
-        const name = evt.target.name;
-        const { value } = evt.target;
-        update(name, value);
+        const { name, value, checked, type } = evt.target
+        const trueValue = type === 'checkbox' ? checked : value;
+        update(name, trueValue);
     }
 
     const onSubmit = evt => {
@@ -18,6 +23,12 @@ export default function Form(props) {
 
     return (
         < form onSubmit={onSubmit}>
+           <div className='errors'>
+               <div>{errors.name}</div>
+               <div>{errors.email}</div>
+               <div>{errors.role}</div>
+           </div>
+           
             <label>Name 
                 <input  
                  name='name'
@@ -45,6 +56,16 @@ export default function Form(props) {
                  <option value='general'>General</option>
                  <option value='pilot'>Pilot</option>     
                 </select>  
+            </label>
+            <label>Terms of Service
+                <input 
+                  type='checkbox'
+                  name='terms'
+                  checked={values.terms}
+                  onChange={onChange}
+
+                />
+
             </label>
 
             <div>

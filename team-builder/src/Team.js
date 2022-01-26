@@ -5,9 +5,9 @@ export default function Team(props) {
 
 
     return (
-        props.teamMembers.map(member => {
+        props.teamMembers.map((member, idx)  => {
             const {name, role, email} = member;
-            return <Member name={name} email={email} role={role}   />
+            return <Member name={name} email={email} role={role} key={idx}  />
         })
 
     )
