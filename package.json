@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "cypress": "^9.3.1"
   }
 }
