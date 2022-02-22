@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScrghvv4RkwYHfRR2GzfVDmIbmjaatxqc7wee56grZNbo5_pXMeFr8BecBnG-ApN-8xbM&usqp=CAU);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-y:center;
+}
+
+h1 {
+  text-align: center;
+  border-bottom: 2px double rgba(178, 34, 34, 0.5);
+}
+
+.container form {
+  display:flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: lightblue;
+}
