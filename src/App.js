@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, {useState} from 'react';
+import Form from './Form'
 
 const initialFormValues = {
   name: '',
@@ -9,25 +10,23 @@ const initialFormValues = {
 }
 
 function App() {
-
-  const [formValues, setFormValues] = useState(initialFormValues)
-
+  const [members, setMembers] = useState([])
+  const [formValues, setFormValues] = useState({initialFormValues})
+  const onSubmit = () => {
+    setMembers([formValues, ...members])
+  }
+  const onChange = (name, value) => {
+    setFormValues({...formValues, [name]: value})
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Team Form</h1>
+      <Form
+      values={formValues}
+      change={onChange}
+      submit={onSubmit}
+
+      />
     </div>
   );
 }

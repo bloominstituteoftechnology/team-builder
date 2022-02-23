@@ -61,8 +61,8 @@ const submit = evt => {
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <SimpleForm />
+    <App />
+    {/* <SimpleForm /> */}
   </React.StrictMode>,
   
   document.getElementById('root')

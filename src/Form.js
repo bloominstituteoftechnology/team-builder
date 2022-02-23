@@ -1,13 +1,14 @@
 import React from 'react'
 
 export default function Form(props){
-    const {values, update, submit} = props
 
     const onChange = evt => {
-
+        const {name, value} = evt.target
+        props.onChange(name, value);
     }
     const onSubmit = evt => {
-
+        evt.preventDefault();
+        props.submit();
     }
 
 return (
@@ -16,7 +17,8 @@ return (
             <input
             name='name'
             type='text'
-            value={values.name}
+            placeholder='name'
+            value={props.values.name}
             onChange={onChange}
             />
         </label>
@@ -24,7 +26,8 @@ return (
             <input
             name='email'
             type='email'
-            value={values.email}
+            placeholder='email'
+            value={props.values.email}
             onChange={onChange}
             />
         </label>
@@ -32,10 +35,12 @@ return (
             <input
             name='role'
             type='text'
-            value={values.role}
+            placeholder='role'
+            value={props.values.role}
             onChange={onChange}
             />
         </label>
+        <input type='submit' value='Create team member'/>
     </form>
 )
 }
