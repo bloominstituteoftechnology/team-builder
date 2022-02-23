@@ -3,20 +3,26 @@ import './App.css';
 import React, {useState} from 'react';
 import Form from './Form'
 
-const initialFormValues = {
-  name: '',
-  email: '',
-  role: '',
-}
+
 
 function App() {
-  const [members, setMembers] = useState([])
-  const [formValues, setFormValues] = useState({initialFormValues})
-  const onSubmit = () => {
-    setMembers([formValues, ...members])
+  const initialFormValues = {
+    name: '',
+    email: '',
+    role: '',
   }
+  
+  const [members, setMembers] = useState([]);
+  const [formValues, setFormValues] = useState({initialFormValues});
+
+  const onSubmit = () => {
+    setMembers([formValues, ...members]);
+    setFormValues({name:'', email: '', role: ''});
+  }
+
   const onChange = (name, value) => {
     setFormValues({...formValues, [name]: value})
+   
   }
   return (
     <div className="App">
@@ -27,8 +33,19 @@ function App() {
       submit={onSubmit}
 
       />
-    </div>
+      
+      {members.map((member, idx) => {
+        return (
+          <div key={idx}>
+            {member.email}, {member.email}, {member.role}
+          </div>
+        )
+      })}
+      </div>
   );
 }
+
+      
+
 
 export default App;
