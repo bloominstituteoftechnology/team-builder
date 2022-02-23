@@ -29,10 +29,10 @@ function App() {
 
   const submit = () => {
     const newFamilyMember = {
-      name: formValues.name,
-      age: formValues.age,
-      location: formValues.location,
-      relationship: formValues.relationship
+      name: formValues.name.trim(),
+      age: formValues.age.trim(),
+      location: formValues.location.trim(),
+      relationship: formValues.relationship.trim()
     }
     if (!newFamilyMember.name||!newFamilyMember.age||!newFamilyMember.location||!newFamilyMember.relationship) {
       return
@@ -40,9 +40,14 @@ function App() {
     setFamilyMembers(familyMembers.concat(newFamilyMember))
     setFormValues(initialFormValues)
    
+    const cleanup= () => {
+      family.push(newFamilyMember)
+      setFamilyMembers(family);
+      setFormValues(initialFormValues);
+    }
   }
 
-
+console.log(formValues)
 
 
   return (
