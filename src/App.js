@@ -1,7 +1,8 @@
 
 import './App.css';
 import React, {useState} from 'react'
-import FamilyMembers from './FamilyMembers'
+import FamilyForm from './FamilyForm'
+import FamilyMember from './FamilyMembers'
 
 
 const initialFormValues ={
@@ -20,14 +21,13 @@ function App() {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [familyMembers, setFamilyMembers] = useState(family);
 
-  const change = (evt) => {
+  const change = (inputName, inputValue) => {
     // console.log(evt)
-      setFormValues({ ...formValues, [evt.target.name]: evt.target.value})
+      setFormValues({ ...formValues, [inputName]: inputValue})
     }
   
 
-  const submit = (evt) => {
-    evt.preventDefault();
+  const submit = () => {
     const newFamilyMember = {
       name: formValues.name,
       age: formValues.age,
@@ -43,9 +43,7 @@ function App() {
   }
 
 
-  // if (!familyMembers.name||!familyMembers.age||!familyMembers.location||!familyMembers.relationship) {
-  //   return
-  // }
+
 
   return (
     <div className="container">
@@ -53,40 +51,20 @@ function App() {
       {familyMembers.map((familyMember, index) => {
         return <p key= {index}> {familyMember.name} is {familyMember.age}, lives in {familyMember.location}, and is {familyMember.relationship} to Elijah.</p>
       })}
-      <form onSubmit={submit}>
-       
-        <input
-        name= "name"
-        type= "text"
-        value= {formValues.name}
-        onChange={change}
-        placeholder= "name"
-        />
-          <input 
-        name= "age"
-        type= "text"
-        value= {formValues.age}
-        onChange={change}
-        placeholder= "age"      
-        />
-        <input 
-        name= "location"
-        type= "text"
-        value= {formValues.location}
-        onChange={change}
-        placeholder="location"
-        />
-          <select value = {formValues.relationship} name= "relationship" onChange={change} >
-            <option value= "">--Select--</option>
-            <option value= "self"> Self </option>
-            <option value= "wife"> Wife </option>
-            <option value= "son" > Son </option>
-            <option value= "daughter"> Daughter </option>
-          </select>
-        <input  type= "submit" value= "Add a Family Member"/>
-      </form>
-      {/* <FamilyMembers */}
-      {/* values={formValues}/> */}
+      <FamilyForm 
+      value={formValues}
+      update= {change}
+      submit= {submit}
+      />
+      {
+        familyMembers.map((familyMember, index) => {
+          return (
+            <FamilyMember key={index} details={familyMember}/>
+          )
+        })
+      }
+      
+
     </div>
   );
 }
