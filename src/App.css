@@ -10,6 +10,33 @@
   color: white;
 }
 
-.Form {
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container h1 {
+  width: 20%;
+  /* border: 1px solid white; */
+}
+.data-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.team-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form {
+  padding: 1%;
   border: 1px solid white;
 }
