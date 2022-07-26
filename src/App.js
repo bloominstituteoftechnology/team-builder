@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './CSS/App.css';
 import './CSS/reset.css';
 import Form from './Form'
-import FormVaules from './formValues'
+import Member from './formValues'
 
 
 const teamMemberList = [
@@ -12,17 +12,16 @@ const teamMemberList = [
 ]
 
 
+
+
 function App() {
   const [teamMembers, setTeamMembers] = useState(teamMemberList)
   const [formValues, setFormValues] = useState({name: '', email: '', role: ''})
 
-
-
-
   return (
     <div className="App">
-    
-    <FormVaules values={teamMembers} />
+    <Member teamMembers={teamMembers}  />
+    <Form setFormValues={setFormValues}  formValues={formValues} setTeamMembers={setTeamMembers} teamMembers={teamMembers}/>
     </div>
   );
 }
