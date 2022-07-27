@@ -1,51 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function Form(props) {
-    const { formValues, setFormValues, setTeamMembers, teamMembers } = props
-
-    const change = (evt) => {
-        const { name, value } = evt.target;
-      
-        setFormValues({...formValues, [name]: value})
-      }
-
-      const onSubmit = (evt) => {
-        evt.preventDefault()
-
-        const newTeamMember = {
-            name: formValues.name,
-            email: formValues.email,
-            role: formValues.role
-        }
-            setTeamMembers(teamMembers.concat(newTeamMember));
-            setFormValues({name: '', email: '', role: ''})
-      }
+    const { onSubmit, formValues, disabled, inputChange, errors } = props
 
     return (
-
         <form onSubmit={onSubmit}>
+            {errors.name.length > 0 && <p>{errors.name}</p>}
             <input
                 type='text'
                 value = {formValues.name}
                 name='name'
                 placeholder='Name'
-                onChange={change}
+                onChange={inputChange}
             />
+             { errors.email.length > 0 && <p>{errors.email}</p>}
             <input
                 type='email'
                 value = {formValues.email}
                 name='email'
                 placeholder='Email'
-                onChange={change}
+                onChange={inputChange}
             />
-            <input
-                type='text'
-                value = {formValues.role}
-                name='role'
-                placeholder='Role'
-                onChange={change}
-            />
-            <input type='submit' value = 'Fill out your information'/>
+            {<p>{errors.role}</p>}
+            <select name = 'role' value={formValues.role}
+            onChange={inputChange}>
+                <option value = ''>select a role</option>
+                <option value= 'Front End Dev'>Front End Dev</option>
+                <option value= 'Back End Dev'>Back End Dev</option>
+            </select>
+            <button disabled={disabled}>submit</button>
         </form>
 
     )
