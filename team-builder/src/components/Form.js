@@ -18,7 +18,7 @@ const Form = props => {
             ...formInfo,
             id
         })
-    }, [])
+    }, [formInfo, props.teamMemberList]);
 
     const onChangeHandler = event => {
         event.preventDefault();
@@ -67,9 +67,8 @@ const Form = props => {
                     </select>
                 </label>
                 <button type="submit">Add Team Member</button>
-                <button type='clear'>Clear</button>
-                <input type="text" value={val} />
-      <button onClick={() => setVal(() => "")}>Reset</button>
+                 <input type="text" value={val} />
+                <button onClick={() => setVal(() => "")}>Reset</button>
             </form>
         </div>
     );

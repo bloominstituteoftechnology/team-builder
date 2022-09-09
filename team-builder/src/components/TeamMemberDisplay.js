@@ -36,7 +36,7 @@ const TeamMemberDisplay = props => {
     const editTeamMember = () => {
         setIsEditing( !isEditing );
     }    
-
+    const [val, setVal] = useState();
     return(
         <tr>
             <td>Name:</td>
@@ -59,10 +59,14 @@ const TeamMemberDisplay = props => {
              ) : props.teamMember.role}</td>
             <td>
                 { isEditing ?
+                 
+          
                     <button className="save" onClick={saveChanges}>Save</button>
                 :
                     <button className="edit" onClick={editTeamMember}>Edit</button> 
-                }
+                     
+                };
+                <button>clear</button>
             </td>
         </tr>
     );
