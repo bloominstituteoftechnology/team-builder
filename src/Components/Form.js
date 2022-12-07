@@ -4,10 +4,16 @@ const Form = (props) => {
 
     const handleChange = event => {
         const {name, value} = event.target;
+        props.change(name,value);
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        props.submit();
     }
 
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Name
             <input
                 placeholder="Enter name here!"
