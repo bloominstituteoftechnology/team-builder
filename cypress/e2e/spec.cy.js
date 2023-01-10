@@ -5,14 +5,14 @@ describe('Team Builder App', () => {
   })
 
   //helpers
-  const textInput = () => cy.get("input[name=name]");
+  const nameInput = () => cy.get("input[name=name]");
   const emailInput = () => cy.get("input[name=email]");
   const roleInput = () => cy.get("input[name=role]");
   const foobarInput = () => cy.get("input[name=foobar]");
   const inputBtn = () => cy.get(`input[type="submit"]`);
 
   it("the proper elements are showing", () => {
-    textInput().should("exist");
+    nameInput().should("exist");
     emailInput().should("exist");
     roleInput().should("exist");
     foobarInput().should("not.exist");
@@ -27,7 +27,7 @@ describe('Team Builder App', () => {
     })
 
     it("can type in the inputs", () => {
-      textInput()
+      nameInput()
         .should('have.value', "")
         .type("Texi Schaeffer")
         .should("have.value", "Texi Schaeffer");
@@ -42,8 +42,20 @@ describe('Team Builder App', () => {
         .type("software engineer")
         .should("have.value", "software engineer");
     })
+  })
+
+  describe("Adding a new teammate", () => {
+    it("Can submit new teammate", () => {
+      nameInput().type("Texi Schaeffer");
+      emailInput().type("texirae.schaeffer@gmail.com");
+      roleInput().type("software engineer");
+      inputBtn().click();
+      cy.contains("Texi Schaeffer").should("exist");
+      cy.contains("texirae.schaeffer@gmail.com").should("exist");
+      cy.contains("software engineer").should("exist");
 
 
+    })
   })
 
   
