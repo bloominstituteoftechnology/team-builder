@@ -21,10 +21,23 @@ describe('Team Builder App', () => {
     emailInput().should("exist");
     roleInput().should("exist");
     foobarInput().should("not.exist");
+
+    cy.contains(/create your team!/i).should("exist");
   })
 
+  describe("Filling out the inputs", () => {
+    it("can navigate to the site", () => {
+      cy.url().should("include", "localhost");
+    })
 
+    it("can type in the inputs", () => {
+      textInput().should('have.value', "").type("Texi Schaeffer").should("have.value", "Texi Schaeffer");
+      
+      emailInput().should("have.value", "").type("texirae.schaeffer@gmail.com").should("have.value", "texirae.schaeffer@gmail.com");
 
+      roleInput().should("have.value", "").type("software engineer").should("have.value", "software engineer");
+    })
+  })
 
   
   
