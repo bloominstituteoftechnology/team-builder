@@ -53,14 +53,6 @@ describe('Team Builder App', () => {
       cy.contains("Texi Schaeffer").should("exist");
       cy.contains("texirae.schaeffer@gmail.com").should("exist");
       cy.contains("software engineer").should("exist");
-
-
     })
-  })
-
-  
-  
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
   })
 })
