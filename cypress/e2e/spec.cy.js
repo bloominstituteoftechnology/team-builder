@@ -9,18 +9,14 @@ describe('Team Builder App', () => {
   const emailInput = () => cy.get("input[name=email]");
   const roleInput = () => cy.get("input[name=role]");
   const foobarInput = () => cy.get("input[name=foobar]");
-
-  //sanity test check
-  if("sanity check", () => {
-    expect(1+1).to.equal(2);
-    expect(2+2).not.equal(5);
-  })
+  const inputBtn = () => cy.get(`input[type="submit"]`);
 
   it("the proper elements are showing", () => {
     textInput().should("exist");
     emailInput().should("exist");
     roleInput().should("exist");
     foobarInput().should("not.exist");
+    inputBtn().should("exist");
 
     cy.contains(/create your team!/i).should("exist");
   })
@@ -31,12 +27,23 @@ describe('Team Builder App', () => {
     })
 
     it("can type in the inputs", () => {
-      textInput().should('have.value', "").type("Texi Schaeffer").should("have.value", "Texi Schaeffer");
+      textInput()
+        .should('have.value', "")
+        .type("Texi Schaeffer")
+        .should("have.value", "Texi Schaeffer");
       
-      emailInput().should("have.value", "").type("texirae.schaeffer@gmail.com").should("have.value", "texirae.schaeffer@gmail.com");
+      emailInput()
+        .should("have.value", "")
+        .type("texirae.schaeffer@gmail.com")
+        .should("have.value", "texirae.schaeffer@gmail.com");
 
-      roleInput().should("have.value", "").type("software engineer").should("have.value", "software engineer");
+      roleInput()
+        .should("have.value", "")
+        .type("software engineer")
+        .should("have.value", "software engineer");
     })
+
+
   })
 
   
