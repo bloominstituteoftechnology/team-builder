@@ -81,4 +81,4 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission Format
 
-- [ ] Submit a link to your github repository in canvas.
+- [ ] Submit a link to your fork on GitHub from your learning platform.
