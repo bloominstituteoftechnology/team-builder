@@ -1,21 +1,21 @@
 # Module Project: Forms - Team Builder
 
-This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored Form management in React. You learned about controled inputs, semantic HTML, some ES6 tools like the spread operator and computed properties, and synthetic events. In your project you will demonstrate proficiency of these subjects and principles by creating an application using each of these.
+This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored Form management in React. You learned about controlled inputs, semantic HTML, some ES6 tools like the spread operator and computed properties, and synthetic events. In your project you will demonstrate proficiency of these subjects and principles by creating an application using each of these.
 
 ## Introduction
 
-In this project you'll build an app that will keep track of memebers of a team. You'll be able to add members to this team as well as edit their details.
+In this project you'll build an app that will keep track of mebers of a team. You'll be able to add members to this team as well as edit their details.
 
 ## Instructions
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project.
+- [ ] Create a forked copy of this project
 - [ ] Clone your OWN version of the repository in your terminal
 - [ ] `cd` into the cloned project directory
-- [ ] Use `npx create-react-app .` (NOTE THE PERIOD AT THE END!) to initiate the project.
+- [ ] Use `npx create-react-app .` (NOTE THE PERIOD AT THE END!) to initiate the project
 - [ ] Start up the app using `npm start`
-- [ ] Implement the project on your newly created `main` branch, committing changes regularly.
+- [ ] Implement the project on your newly created `main` branch, committing changes regularly
 - [ ] Push commits: git push origin `main`.
 
 ### Task 2: Minimum Viable Product
@@ -68,7 +68,7 @@ Okay, now that we understand how `Form.js` knows if we are editing or creating m
 - [ ] Create a new function in `App.js` called `editMember` that will edit one or more of the details of a team member and pass it down to the second form component. You'll have to find a way to loop over the data in your state, find the specific team member you intend to edit, and finally change the details with the data sent up to you from the second form component. `.map()` will be your friend for that task. You'll also want to avoid directly mutating your data. The `...` spread operator will be your friend there.
 - [ ] On form submit, do an `if` check to see if the `memberToEdit` prop is there or not, and run the correct functions in the `if` and `else` blocks based on that check.
 
-Observe the power of reusability!
+Observe the power of re-usability!
 
 #### More Stretch Problems
 
