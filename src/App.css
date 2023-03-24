@@ -141,6 +141,12 @@ table {
 }
 .title {
   text-align: center;
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+.members {
+  margin-top: 20px;
 }
 
 .memberSection {
@@ -148,4 +154,19 @@ table {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+#memberName {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+#memberRole {
+  margin-top: 30px;
+}
+
+#profilePic {
+  margin-top: 20px;
+  width: 175px;
+  height: 125px;
 }

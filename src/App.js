@@ -2,15 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 
-const members = [
-  {
-    name: "",
-    email: "",
-    role: "",
-  },
-];
 function App() {
-  const [memberList, setMemberList] = useState(members);
+  const [memberList, setMemberList] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,7 +12,6 @@ function App() {
   const change = (evt) => {
     const { name, value } = evt.target;
     setFormData({ ...formData, [name]: value });
-    // setFormData(...form{ name: "", email: "", role: "" });
   };
 
   const submit = (evt) => {
@@ -31,6 +23,7 @@ function App() {
         role: formData.role,
       })
     );
+    setFormData({ name: "", email: "", role: "" });
   };
   return (
     <div className="pageContainer">
@@ -42,6 +35,8 @@ function App() {
           name="name"
           placeholder="Enter Name"
           onChange={change}
+          value={formData.name}
+          required
         />
         <label htmlFor="email"> Email: </label>
         <input
@@ -49,9 +44,17 @@ function App() {
           name="email"
           placeholder="Enter Email"
           onChange={change}
+          value={formData.email}
+          required
         />
         <label htmlFor="role"> Role: </label>
-        <select id="roleSelection" name="role" onChange={change}>
+        <select
+          id="roleSelection"
+          name="role"
+          onChange={change}
+          value={formData.role}
+          required
+        >
           <option value="">Select Role</option>
           <option value="Backend engineer">Backend Engineer</option>
           <option value="Frontend engineer">Frontend engineer</option>
@@ -65,11 +68,16 @@ function App() {
       <div className="memberSection members">
         {memberList.map((member, idx) => {
           return (
-            <div className={"memberCard"}>
+            <div key={idx} className={"memberCard"}>
               <div>
-                <h1>{member.name}</h1>
-                <h2>{member.email}</h2>
-                <h2>{member.role}</h2>
+                <h1 id="memberName">{member.name}</h1>
+                <img
+                  id="profilePic"
+                  src="https://vectorified.com/images/no-profile-picture-icon-28.png"
+                  alt="profile"
+                ></img>
+                <h2 id="memberRole">{member.role}</h2>
+                <h2 id="memberEmail">{member.email}</h2>
               </div>
             </div>
           );
