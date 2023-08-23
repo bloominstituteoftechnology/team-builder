@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Titillium Web';
+  src: url('../fonts/TitilliumWeb-SemiBold.ttf');
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  border: 1rem solid #ff4b00;
+}
+
+#root,
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #93005a;
+  margin-bottom: 1rem;
+}
+
+#root {
+  width: 100%;
+  overflow-y: auto;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+header,
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.member {
+  border: 1px solid lightcoral;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.member p {
+  font-size: 0.8em;
+  color: rgb(81, 81, 81);
+}
+
+.member button {
+  align-self: flex-start;
+  margin-top: -.2rem;
+  margin-right: -.2rem;
+}
+
+button,
+input[type=submit] {
+  border: 1px solid lightcoral;
+  border-radius: 3px;
+  background-color: white;
+  color: #ff4b00;
+}
+
+button:hover,
+input[type=submit]:hover {
+  border-width: 2px;
+}
+
+button:active {
+  border-color: #ff4b00;
+}
+
+#membersForm,
+#membersList {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  margin-bottom: 1.4rem;
+  max-width: 500px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+form div:last-child {
+  justify-content: flex-end;
+}
+
+input,
+textarea {
+  width: 70%;
+  border: 1px solid lightcoral;
+}
+
+textarea {
+  resize: vertical;
+}
