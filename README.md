@@ -1,6 +1,6 @@
 # Sprint 7 Module 2 Project
 
-## Introduction
+## Introduction..
 
 Welcome to Module 2 Project! In this project, you will practice working with forms in React.
 
