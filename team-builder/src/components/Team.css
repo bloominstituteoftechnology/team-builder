@@ -1,0 +1,25 @@
+.team-list {
+    color: white;
+    font-size: 1.5rem;
+    border: 3px solid white;
+    border-radius: 8px;
+    background-color: lightseagreen;
+    margin: 5%;
+    padding: 2%;
+}
+
+.email {
+    text-decoration: underline;
+    color: mediumblue;
+}
+
+h2 {
+  color: blanchedalmond;  
+}
+
+.member {
+    border: 3px solid white;
+    border-radius: 8px;
+    background-color: mediumturquoise;
+    margin: 5%;
+}
